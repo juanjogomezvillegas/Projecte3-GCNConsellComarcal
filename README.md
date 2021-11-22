@@ -1,0 +1,1 @@
+# Projecte3-GCNConsellComarcal
