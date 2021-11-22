@@ -1,0 +1,24 @@
+<IfModule mod_ssl.c>	
+	<VirtualHost *:443>
+		ServerName (nom)
+		ServerAlias www.(nom)
+
+		ServerAdmin dprados@cendrassos.net
+
+		DocumentRoot /var/www/vhost/(nom)/www/
+	
+		DirectoryIndex index.php index.html
+
+		SSLEngine on
+        SSLCertificateFile /etc/apache2/ssl/(cert).pem
+        SSLCertificateKeyFile /etc/apache2/ssl/(cert).key
+	
+		ErrorLog /var/www/vhost/(nom)/logs/error.log
+		CustomLog /var/www/vhost/(nom)/logs/access.log combined
+	</VirtualHost>
+</IfModule>
+
+<directory /var/www/vhost/(nom)>
+        AllowOverride All
+        Options -Indexes
+</directory>
