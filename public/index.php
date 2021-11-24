@@ -6,13 +6,13 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 include "../src/config.php";
 
 /*Afegim els controladors necessaris per executar tots els requests*/
-include "../src/controladors/index.php";
-include "../src/controladors/article.php";
-include "../src/controladors/login.php";
-include "../src/controladors/registre.php";
-include "../src/controladors/blog.php";
-include "../src/controladors/tramit.php";
-include "../src/controladors/admin.php";
+include "../src/controller/portada.php";
+include "../src/controller/article.php";
+include "../src/controller/login.php";
+include "../src/controller/registre.php";
+include "../src/controller/blog.php";
+include "../src/controller/tramit.php";
+include "../src/controller/admin.php";
 
 $contenidor = new \Emeset\Contenidor($config);
 $peticio = $contenidor->peticio();
@@ -20,8 +20,8 @@ $resposta = $contenidor->resposta();
 
 $r = $_REQUEST["r"];
 
-if ($r === "index") {
-    $resposta = ctrlIndex($peticio, $resposta, $contenidor);
+if ($r === "") {
+    $resposta = ctrlPortada($peticio, $resposta, $contenidor);
 }
 elseif ($r === "article") {
     $resposta = ctrlArticle($peticio, $resposta, $contenidor);
@@ -41,3 +41,8 @@ elseif ($r === "tramit") {
 elseif ($r === "admin") {
     $resposta = ctrlAdmin($peticio, $resposta, $contenidor);
 }
+elseif ($r === "portada") {
+    $resposta = ctrlPortada($peticio, $resposta, $contenidor);
+}
+
+$resposta->resposta();
