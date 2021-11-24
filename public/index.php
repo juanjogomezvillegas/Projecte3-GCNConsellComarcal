@@ -17,31 +17,27 @@ include "../src/controller/admin.php";
 $contenidor = new \Emeset\Contenidor($config);
 $peticio = $contenidor->peticio();
 $resposta = $contenidor->resposta();
+$modelPDO = $contenidor->modelPDO();
 
 $r = $_REQUEST["r"];
 
-if ($r === "") {
-    $resposta = ctrlPortada($peticio, $resposta, $contenidor);
-}
-elseif ($r === "article") {
-    $resposta = ctrlArticle($peticio, $resposta, $contenidor);
-}
-elseif ($r === "login") {
+if ($r === "login") {
     $resposta = ctrlLogin($peticio, $resposta, $contenidor);
-}
-elseif ($r === "registre") {
+} else if ($r === "dologin") {
+    $resposta = ctrlDoLogin($peticio, $resposta, $contenidor);
+} else if ($r === "logout") {
+    $resposta = ctrlLogout($peticio, $resposta, $contenidor);
+} else if ($r === "registre") {
     $resposta = ctrlRegistre($peticio, $resposta, $contenidor);
-}
-elseif ($r === "blog") {
+} else if ($r === "article") {
+    $resposta = ctrlArticle($peticio, $resposta, $contenidor);
+} else if ($r === "blog") {
     $resposta = ctrlBlog($peticio, $resposta, $contenidor);
-}
-elseif ($r === "tramit") {
+} else if ($r === "tramit") {
     $resposta = ctrlTramit($peticio, $resposta, $contenidor);
-}
-elseif ($r === "admin") {
+} else if ($r === "admin") {
     $resposta = ctrlAdmin($peticio, $resposta, $contenidor);
-}
-elseif ($r === "portada") {
+} else if ($r == "") {
     $resposta = ctrlPortada($peticio, $resposta, $contenidor);
 }
 
