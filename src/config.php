@@ -7,3 +7,7 @@ $config["user"] = "gcnaltemporda_cat";
 $config["pass"] = "1234";
 $config["dbname"] = "gcnaltemporda_cat";
 $config["host"] = "localhost";
+
+require_once "../src/emeset/contenidor.php";
+require_once "../src/emeset/peticio.php";
+require_once "../src/emeset/resposta.php";

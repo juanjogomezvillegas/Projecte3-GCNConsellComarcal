@@ -14,11 +14,9 @@ include "../src/controladors/blog.php";
 include "../src/controladors/tramit.php";
 include "../src/controladors/admin.php";
 
-
-/*Creem els diferents models necessaris per executar la pagina */
-
-
-
+$contenidor = new \Emeset\Contenidor($config);
+$peticio = $contenidor->peticio();
+$resposta = $contenidor->resposta();
 
 $r = $_REQUEST["r"];
 
@@ -43,4 +41,3 @@ elseif ($r === "tramit") {
 elseif ($r === "admin") {
     $resposta = ctrlAdmin($peticio, $resposta, $contenidor);
 }
-
