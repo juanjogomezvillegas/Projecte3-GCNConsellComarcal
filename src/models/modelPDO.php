@@ -14,19 +14,11 @@ class ModelPDO
 
     /**
      * __construct: S'encarrega de establir la connexió amb la base de dades
-     * @param config conte les dades necessaries per connectar-se amb la base de dades
+     * @param connexio conte l'objecte que es connecta a la base de dades
      **/
-    public function __construct($config)
+    public function __construct($connexio)
     {
-        $dsn = "mysql:dbname={$config['dbname']};host={$config['host']}";
-        $usuari = $config['user'];
-        $password = $config['pass'];
-
-        try {
-            $this->sql = new \PDO($dsn, $usuari, $password);
-        } catch (\PDOException $e) {
-            die("Ha fallat la connexió: " . $e->getMessage() . " $usuari");
-        }
+        $this->sql = $connexio->getConnexio();
     }
 
     /**
@@ -35,16 +27,15 @@ class ModelPDO
       **/
     public function llistat($taula)
     {
-        $query = "select * from :taula;";
-         $stm = $this->sql->prepare($query);
-         $result = $stm->execute([':taula' => $taula]);
+        $query = "select * from $taula;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
  
-         if ($stm->errorCode() !== '00000') {
-             $err = $stm->errorInfo();
-             $code = $stm->errorCode();
-             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-         }
+        $usuaris = array();
+        while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $usuaris[$usuari["id"]] = $usuari;
+        }
  
-         return $stm->fetch(\PDO::FETCH_ASSOC);
+        return $usuaris;
     }
 }
