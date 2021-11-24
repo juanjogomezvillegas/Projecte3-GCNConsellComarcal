@@ -5,6 +5,8 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /*Inclou el fitxer config.php*/
 include "../src/config.php";
 
-$r = $_REQUEST["r"];
+$contenidor = new \Emeset\Contenidor($config);
+$peticio = $contenidor->peticio();
+$resposta = $contenidor->resposta();
 
-echo "Hola";
+$r = $_REQUEST["r"];
