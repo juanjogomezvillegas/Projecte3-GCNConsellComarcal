@@ -4,8 +4,8 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $usuarilogat = $peticio->set(INPUT_POST, "inputusuari");
-    $passwordlogat = $peticio->set(INPUT_POST, "inputpassword");
+    $usuarilogat = $peticio->get(INPUT_POST, "inputusuari");
+    $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
     $error = false;
     if ($usuarilogat == "" || $passwordlogat == "") {

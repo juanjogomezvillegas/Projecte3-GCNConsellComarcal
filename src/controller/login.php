@@ -2,8 +2,8 @@
 
 function ctrlLogin($peticio, $resposta, $contenidor)
 {
-    $usuarilogat = $peticio->set(INPUT_COOKIE, "usuarilogat");
-    $missatgeError = $peticio->set("SESSION", "missatgeError");
+    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $missatgeError = $peticio->get("SESSION", "missatgeError");
 
     $resposta->set("usuarilogat", $usuarilogat);
     $resposta->set("missatgeError", $missatgeError);
