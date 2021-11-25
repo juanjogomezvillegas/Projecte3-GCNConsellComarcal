@@ -38,4 +38,8 @@ class Contenidor
     public function modelPDO(){
         return new \ModelPDO($this->connexio);
     }
+
+    public function usuarisPDO(){
+        return new \UsuarisPDO();
+    }
 }
