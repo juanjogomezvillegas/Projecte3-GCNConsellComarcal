@@ -41,6 +41,18 @@ class Resposta
     }
 
     /**
+      * logout: obté un valor de l'entrada especificada amb el filtre indicat
+      *
+      * @param id string identificadro del valor que deem.
+      * @param valor mixed filtre a desar
+      *
+    **/
+    public function logout()
+    {
+        session_unset();
+    }
+
+    /**
      * setSession: guarda un valor a la sessió
      *
      * @param string id  clau del valor que volem desar
