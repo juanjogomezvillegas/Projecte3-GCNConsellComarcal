@@ -2,6 +2,8 @@
 
 function ctrlLogout($peticio, $resposta, $contenidor)
 {
-    $resposta->redirect("Location:index.php?r=login");
+    $resposta->logout();
+
+    $resposta->redirect("Location:index.php");
     return $resposta;
 }

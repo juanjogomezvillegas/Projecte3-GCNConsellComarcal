@@ -44,11 +44,11 @@ class ModelPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
  
-        $usuaris = array();
-        while ($usuari = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $usuaris[$usuari["id"]] = $usuari;
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
         }
  
-        return $usuaris;
+        return $registres;
     }
 }

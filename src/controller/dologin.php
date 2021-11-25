@@ -2,6 +2,8 @@
 
 function ctrlDoLogin($peticio, $resposta, $contenidor)
 {
+    $usuarisPDO = $contenidor->usuarisPDO();
+
     $usuarilogat = $peticio->set(INPUT_POST, "inputusuari");
     $passwordlogat = $peticio->set(INPUT_POST, "inputpassword");
 
@@ -12,8 +14,21 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
         $resposta->setCookie("usuarilogat", $usuarilogat, "+1 month");
     }
 
-    $logat = false;
+    $logat = $usuarisPDO->islogin();
+    if ($logat) {
+        $error = false;
+    } else {
+        $error = true;
+    }
 
-    $resposta->redirect("Location:index.php?r=login");
+    $resposta->setSession("logat", $logat);
+
+    if (!$error) {
+        $resposta->redirect("Location:index.php");
+    } else {
+        $resposta->setSession("missatgeError", "Error: Usuari o Contrasenya Incorrectes !!!");
+        $resposta->redirect("Location:index.php?r=login");
+    }
+
     return $resposta;
 }
