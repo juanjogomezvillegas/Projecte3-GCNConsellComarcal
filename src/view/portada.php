@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Lorem, ipsum.</h1>
+    <?php
+    include '../src/includes/nav.php';
+    ?>
+<h1 class="text-danger">Lorem, ipsum.</h1>
 <h2>Lorem, ipsum dolor.</h2>
 <h3>Lorem ipsum dolor sit.</h3>
 </body>
