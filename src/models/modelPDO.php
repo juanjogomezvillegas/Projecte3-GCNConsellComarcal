@@ -22,6 +22,19 @@ class ModelPDO
     }
 
     /**
+     * getConnexio: S'encarrega de retorna la connexio a la base de dades
+     * @return sql la connexio a la base de dades
+     **/
+    public function getConnexio()
+    {
+        return $this->sql;
+    }
+
+    /**
+     * Metodes mes comuns entre tots els models
+     * **/
+
+    /**
       * llistat: Mostra tots els registres de la taula especificada per parametre
       * @param taula taula que volem consultar
       **/
