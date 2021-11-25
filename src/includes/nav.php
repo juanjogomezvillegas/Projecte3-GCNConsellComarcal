@@ -11,10 +11,10 @@
 						</div>
 						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-4 px-2 text-white border-b-4 border-gray-300 font-semibold ">Home</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">Services</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">About</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">Contact Us</a>
+							<a href="" class="py-4 px-2 text-white hover:text-gray-400 transition duration-300 font-semibold ">Home</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Services</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">About</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Contact Us</a>
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->
@@ -25,7 +25,7 @@
 					<!-- Mobile menu button -->
 					<div class="md:hidden flex items-center">
 						<button class="outline-none mobile-menu-button">
-						<svg class=" w-6 h-6 text-gray-500 hover:text-red-500 "
+						<svg class=" w-6 h-6 text-white hover:text-white"
 							x-show="!showMenu"
 							fill="none"
 							stroke-linecap="round"
@@ -43,10 +43,10 @@
 			<!-- mobile menu -->
 			<div class="hidden mobile-menu">
 				<ul class="">
-					<li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-red-500 font-semibold">Home</a></li>
-					<li><a href="#services" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Services</a></li>
-					<li><a href="#about" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">About</a></li>
-					<li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-red-500 transition duration-300">Contact Us</a></li>
+					<li class="active"><a href="#home" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Home</a></li>
+					<li><a href="#services" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Services</a></li>
+					<li><a href="#about" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">About</a></li>
+					<li><a href="#contact" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Contact Us</a></li>
 				</ul>
 			</div>
 			<script>
