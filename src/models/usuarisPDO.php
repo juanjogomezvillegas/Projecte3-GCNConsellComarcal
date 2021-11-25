@@ -15,17 +15,16 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * __construct: S'encarrega de establir la connexió amb la base de dades
-     * @param connexio conte l'objecte que es connecta a la base de dades
      **/
     public function __construct()
     {
-        $this->sql = parent::getConnexio();
+        $this->sql = parent::getSql();
     }
 
     /**
-     * llistat: Mostra tots els usuaris
+     * getllistat: Mostra tots els usuaris
      **/
-    public function llistat()
+    public function getllistat()
     {
         $usuaris = parent::llistat($this->taula);
 
@@ -43,7 +42,7 @@ class UsuarisPDO extends ModelPDO
 
         $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':username' => $usuari,':pass' => $password]);
+        $result = $stm->execute([':usuari' => $usuari,':pass' => $password]);
 
         $logat = $stm->fetch(\PDO::FETCH_ASSOC);
 

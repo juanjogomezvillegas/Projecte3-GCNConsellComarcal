@@ -4,3 +4,4 @@
 <link rel="shortcut icon" href="img/icona.png">
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="style/style.css">
+<link type="text/css" rel="stylesheet" href="style/styleDefinits.css">

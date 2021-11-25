@@ -8,13 +8,17 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
     $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
     $error = false;
-    if ($usuarilogat == "" || $passwordlogat == "") {
+    if ($usuarilogat == "") {
         $error = true;
     } else {
         $resposta->setCookie("usuarilogat", $usuarilogat, "+1 month");
     }
 
-    $logat = $usuarisPDO->islogin();
+    if ($passwordlogat == "") {
+        $error = true;
+    }
+
+    $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat);
     if ($logat) {
         $error = false;
     } else {

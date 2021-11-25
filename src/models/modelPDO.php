@@ -22,10 +22,10 @@ class ModelPDO
     }
 
     /**
-     * getConnexio: S'encarrega de retorna la connexio a la base de dades
+     * getSql: S'encarrega de retorna la connexio a la base de dades
      * @return sql la connexio a la base de dades
      **/
-    public function getConnexio()
+    public function getSql()
     {
         return $this->sql;
     }
