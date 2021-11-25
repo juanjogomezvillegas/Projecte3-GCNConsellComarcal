@@ -1,27 +1,26 @@
 		<!-- Navbar goes here -->
-		<nav class="bg-white shadow-lg">
+		<nav class="bg-red-500 shadow-lg">
 			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between">
 					<div class="flex space-x-7">
 						<div>
 							<!-- Website Logo -->
 							<a href="#" class="flex items-center py-4 px-2">
-								<img src="logo.png" alt="Logo" class="h-8 w-8 mr-2">
-								<span class="font-semibold text-gray-500 text-lg">Navigation</span>
+								<img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-15 w-10 mr-2">
 							</a>
 						</div>
 						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-4 px-2 text-red-500 border-b-4 border-red-500 font-semibold ">Home</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Services</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">About</a>
-							<a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-red-500 transition duration-300">Contact Us</a>
+							<a href="" class="py-4 px-2 text-white border-b-4 border-gray-300 font-semibold ">Home</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">Services</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">About</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-300 transition duration-300">Contact Us</a>
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->
 					<div class="hidden md:flex items-center space-x-3 ">
-						<a href="" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-red-300 hover:text-white transition duration-300">Log In</a>
-						<a href="" class="py-2 px-2 font-medium text-white bg-red-500 rounded hover:bg-red-100 transition duration-300">Sign Up</a>
+						<a href="" class="py-2 px-2 font-medium text-white rounded hover:bg-red-300 hover:text-white transition duration-300">Inicia Sessió</a>
+						<a href="" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrar-se</a>
 					</div>
 					<!-- Mobile menu button -->
 					<div class="md:hidden flex items-center">
