@@ -13,14 +13,20 @@ CREATE OR REPLACE TABLE usuari (
     telefon VARCHAR(15)
 );
 
+CREATE TABLE categoria(
+    id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(150)
+);
+
 CREATE TABLE article (
     id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     id_usuari BIGINT UNSIGNED,
     data_creacio DATE,
     titulo VARCHAR(150),
-    contingut VARCHAR(150),
-    categoria VARCHAR(150),
-    foreign key (id_usuari) references usuari(id)
+    contingut VARCHAR(5000),
+    id_categoria BIGINT UNSIGNED,
+    foreign key (id_usuari) references usuari(id),
+    foreign key (id_categoria) references categoria(id)
 );
 
 INSERT INTO usuari VALUES (1,'admin','admin','admin','1234','Administrador','admin@cendrassos.net','111 111 111');
