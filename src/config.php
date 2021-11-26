@@ -9,8 +9,12 @@ $config["dbname"] = "gcnaltemporda_cat";
 $config["host"] = "localhost";
 
 require_once "../src/emeset/contenidor.php";
-require_once "../src/emeset/peticio.php";
-require_once "../src/emeset/resposta.php";
+require_once "../src/emeset/emeset.php";
+require_once "../src/emeset/Middleware.php";
+require_once "../src/emeset/ruters/RuterParam.php";
+require_once "../src/emeset/http/peticio.php";
+require_once "../src/emeset/http/resposta.php";
+
 require_once "../src/models/connexio.php";
 require_once "../src/models/modelPDO.php";
 require_once "../src/models/usuarisPDO.php";

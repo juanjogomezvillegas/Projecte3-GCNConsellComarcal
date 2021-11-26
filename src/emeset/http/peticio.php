@@ -3,7 +3,7 @@
  * Classe per gesionar la peticio HTTP
  * **/
 
-namespace Emeset;
+namespace Emeset\HTTP;
 
 /**
  * Petitcio: Classe que gestiona la petició HTTP
@@ -37,6 +37,9 @@ class Peticio
             $result = $_SESSION[$id];
         } elseif ($input === 'FILES') {
             $result = $_FILES[$id];
+        } elseif ($input === INPUT_REQUEST) {
+            $var = $_REQUEST[$id];
+            $result = filter_var($var,$filtre, $opcions);
         } else {
             $result = filter_input($input, $id, $filtre, $opcions);
         }

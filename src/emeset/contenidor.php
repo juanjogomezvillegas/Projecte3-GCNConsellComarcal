@@ -28,11 +28,15 @@ class Contenidor
     }
 
     public function resposta(){
-        return new \Emeset\Resposta();
+        return new \Emeset\HTTP\Resposta();
     }
 
     public function peticio(){
-        return new \Emeset\Peticio();
+        return new \Emeset\HTTP\Peticio();
+    }
+
+    public function ruter(){
+        return new \Emeset\Ruters\RuterParam($this->config);
     }
 
     public function modelPDO(){
