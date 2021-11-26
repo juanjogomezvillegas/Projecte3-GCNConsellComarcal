@@ -11,10 +11,15 @@
 						</div>
 						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
-							<a href="" class="py-4 px-2 text-white hover:text-gray-400 transition duration-300 font-semibold ">Home</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Services</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">About</a>
-							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Contact Us</a>
+							<a href="" class="py-4 px-2 text-white hover:text-gray-400 transition duration-300 font-semibold ">Inici</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Ambits</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Salut</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Ocupació i formació</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Cites previes</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Habitatge</a>
+							<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Consell comarcal</a>
+
+
 						</div>
 					</div>
 					<!-- Secondary Navbar items -->
@@ -50,6 +55,7 @@
 				</ul>
 			</div>
 			<script>
+				/*Guarradas no porfavor alex :)*/
 				const btn = document.querySelector("button.mobile-menu-button");
 				const menu = document.querySelector(".mobile-menu");
 
