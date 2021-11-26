@@ -1,6 +1,4 @@
 <nav id="header" class="bg-red-500 fixed w-full z-10 top-0 shadow">
-	
-
 		<div class="w-full container mx-auto flex flex-wrap items-center mt-0 pt-3 pb-3 md:pb-0">
 				
 			<div class="flex w-1/2 pl-2 md:pl-0">
