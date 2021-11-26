@@ -1,4 +1,5 @@
  <!-- Footer section -->
+
  <div class="bg-cover bg-center" style="background-image: url('https://cdn.pixabay.com/photo/2014/03/22/17/03/the-background-292729_960_720.png');">
         <div style="background-color: rgba(0, 0, 0, 0.6);">
             <div class="container mx-auto px-6 lg:px-20 py-12 text-center">
