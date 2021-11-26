@@ -6,7 +6,7 @@
                     <div class="w-full lg:w-2/3">
                         <div class="lg:flex">
                             <div class="w-full mb-12 lg:mb-0 lg:w-1/2">
-                                <h2 class="font-bold text-xl text-gray-100 mb-4">Gcn logo</h2>
+                                <img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-25 w-20 block m-auto">
                                 <p class="text-gray-400">
                                     La nostra pàgina mostra,
                                     it moltes coses
@@ -17,8 +17,6 @@
                                         class="flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook-f"></i>
                                     <i style="background-color:#dd4b39"
                                         class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fas fill-current text-white text-xl fa-envelope"></i>
-                                    <i style="background-color:#125688;"
-                                        class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-instagram"></i>
                                     <i style="background-color:#55ACEE;"
                                         class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i>
                                 </div>
