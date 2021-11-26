@@ -10,16 +10,8 @@
  * **/
 class UsuarisPDO extends ModelPDO
 {
-    private $sql;
     private $taula = "usuari";
 
-    /**
-     * __construct: S'encarrega de establir la connexió amb la base de dades
-     **/
-    public function __construct()
-    {
-        $this->sql = parent::getSql();
-    }
 
     /**
      * getllistat: Mostra tots els usuaris
@@ -27,6 +19,13 @@ class UsuarisPDO extends ModelPDO
     public function getllistat()
     {
         $usuaris = parent::llistat($this->taula);
+
+        return $usuaris;
+    }
+    
+    public function gettotalregistres()
+    {
+        $usuaris = parent::totalregistres($this->taula);
 
         return $usuaris;
     }
@@ -40,7 +39,7 @@ class UsuarisPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass;";
+        $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':usuari' => $usuari,':pass' => $password]);
 
