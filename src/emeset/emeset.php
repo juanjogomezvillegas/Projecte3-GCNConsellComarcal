@@ -16,6 +16,7 @@ class Emeset
     public $ruter = null;
     public $config = [];
     public $constructor = null;
+    public $modelPDO;
 
     public function __construct($contenidor)
     {
@@ -24,6 +25,7 @@ class Emeset
         $this->resposta = $contenidor->resposta();
         $this->peticio = $contenidor->peticio();
         $this->ruter = $contenidor->ruter();
+        $this->modelPDO = $contenidor->modelPDO();
     }
 
     public function ruta($id, $callback, $midelware = false)

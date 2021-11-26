@@ -15,30 +15,16 @@ include "../src/controller/tramit.php";
 include "../src/controller/admin.php";
 
 $contenidor = new \Emeset\Contenidor($config);
-$peticio = $contenidor->peticio();
-$resposta = $contenidor->resposta();
-$modelPDO = $contenidor->modelPDO();
+$app = new \Emeset\Emeset($contenidor);
 
-$r = $_REQUEST["r"];
+$app->ruta("", "ctrlPortada");
+$app->ruta("login", "ctrlLogin");
+$app->ruta("dologin", "ctrlDoLogin");
+$app->ruta("logout", "ctrlLogout");
+$app->ruta("registre", "ctrlRegistre");
+$app->ruta("article", "ctrlArticle");
+$app->ruta("blog", "ctrlBlog");
+$app->ruta("tramit", "ctrlTramit");
+$app->ruta("admin", "ctrlAdmin");
 
-if ($r === "login") {
-    $resposta = ctrlLogin($peticio, $resposta, $contenidor);
-} else if ($r === "dologin") {
-    $resposta = ctrlDoLogin($peticio, $resposta, $contenidor);
-} else if ($r === "logout") {
-    $resposta = ctrlLogout($peticio, $resposta, $contenidor);
-} else if ($r === "registre") {
-    $resposta = ctrlRegistre($peticio, $resposta, $contenidor);
-} else if ($r === "article") {
-    $resposta = ctrlArticle($peticio, $resposta, $contenidor);
-} else if ($r === "blog") {
-    $resposta = ctrlBlog($peticio, $resposta, $contenidor);
-} else if ($r === "tramit") {
-    $resposta = ctrlTramit($peticio, $resposta, $contenidor);
-} else if ($r === "admin") {
-    $resposta = ctrlAdmin($peticio, $resposta, $contenidor);
-} else if ($r == "") {
-    $resposta = ctrlPortada($peticio, $resposta, $contenidor);
-}
-
-$resposta->resposta();
+$app->executa();
