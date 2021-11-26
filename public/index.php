@@ -7,9 +7,10 @@ include "../src/config.php";
 
 /*Afegim els controladors necessaris per executar tots els requests*/
 include "../src/controller/portada.php";
-include "../src/controller/article.php";
 include "../src/controller/login.php";
+include "../src/controller/dologin.php";
 include "../src/controller/registre.php";
+include "../src/controller/article.php";
 include "../src/controller/blog.php";
 include "../src/controller/tramit.php";
 include "../src/controller/admin.php";

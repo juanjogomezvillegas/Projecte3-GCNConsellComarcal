@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
     <!-- Incluguem el fitxer head que contindrà totes  -->
-   <?php include '../src/includes/head.php';?>
-    <title>Document</title>
+    <?php include '../src/includes/head.php'; ?>
+    <title>GCN Consell Comarcal</title>
 </head>
 <body>
     <?php

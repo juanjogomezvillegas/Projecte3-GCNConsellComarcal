@@ -6,7 +6,7 @@
 						<div>
 							<!-- Website Logo -->
 							<a href="#" class="flex items-center py-4 px-2">
-								<img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-15 w-10 mr-2">
+								<img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-15 w-10 mr-2 ">
 							</a>
 						</div>
 						<!-- Primary Navbar items -->
@@ -64,3 +64,4 @@
 				});
 			</script>
 		</nav>
+		

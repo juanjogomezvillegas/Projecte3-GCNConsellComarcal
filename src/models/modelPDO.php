@@ -10,7 +10,7 @@
  * **/
 class ModelPDO
 {
-    private $sql;
+    protected $sql;
 
     /**
      * __construct: S'encarrega de establir la connexió amb la base de dades
@@ -21,14 +21,6 @@ class ModelPDO
         $this->sql = $connexio->getConnexio();
     }
 
-    /**
-     * getConnexio: S'encarrega de retorna la connexio a la base de dades
-     * @return sql la connexio a la base de dades
-     **/
-    public function getConnexio()
-    {
-        return $this->sql;
-    }
 
     /**
      * Metodes mes comuns entre tots els models
@@ -50,5 +42,15 @@ class ModelPDO
         }
  
         return $registres;
+    }
+
+    public function totalregistres($taula)
+    {
+        $query = "select count(*) from $taula;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+        
+        $total = $stm->fetch(\PDO::FETCH_ASSOC);
+        return $total;
     }
 }

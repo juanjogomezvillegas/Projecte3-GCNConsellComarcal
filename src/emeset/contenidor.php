@@ -39,7 +39,12 @@ class Contenidor
         return new \ModelPDO($this->connexio);
     }
 
+    //Aquest model 
     public function usuarisPDO(){
-        return new \UsuarisPDO();
+        return new \UsuarisPDO($this->connexio);
     }
+    
+    /*public function connexio(){
+        return $this->connexio;
+    }*/
 }

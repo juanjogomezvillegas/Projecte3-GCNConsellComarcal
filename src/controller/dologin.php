@@ -4,17 +4,21 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $usuarilogat = $peticio->set(INPUT_POST, "inputusuari");
-    $passwordlogat = $peticio->set(INPUT_POST, "inputpassword");
+    $usuarilogat = $peticio->get(INPUT_POST, "inputusuari");
+    $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
     $error = false;
-    if ($usuarilogat == "" || $passwordlogat == "") {
+    if ($usuarilogat == "") {
         $error = true;
     } else {
         $resposta->setCookie("usuarilogat", $usuarilogat, "+1 month");
     }
 
-    $logat = $usuarisPDO->islogin();
+    if ($passwordlogat == "") {
+        $error = true;
+    }
+
+    $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat);
     if ($logat) {
         $error = false;
     } else {
