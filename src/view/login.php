@@ -5,7 +5,7 @@
     <title>Login | GCN Consell Comarcal</title>
 </head>
 <body>
-    <div id="containerLogin" class="grid grid-cols-3 gap-4">
+    <div id="containerLogin" class="md:container md:mx-auto px-20">
         <div id="divLogin">
             <form class="mt-8 space-y-6" action="index.php?r=dologin" method="POST">
                 <div class="rounded-md shadow-sm -space-y-px">
@@ -24,7 +24,6 @@
                 </div>
             </form>
         </div>
-        <div></div>
     </div>
 </body>
 </html>
