@@ -12,6 +12,17 @@
 <h1 class="text-danger">Lorem, ipsum.</h1>
 <h2>Lorem, ipsum dolor.</h2>
 <h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<h3>Lorem ipsum dolor sit.</h3>
+<footer>
 <?php include '../src/includes/footer.php';?>
+</footer>
 </body>
 </html>
