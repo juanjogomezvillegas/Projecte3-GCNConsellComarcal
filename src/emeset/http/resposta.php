@@ -3,7 +3,7 @@
  * Objecte que encapsula la resposta
  * **/
 
-namespace Emeset;
+namespace Emeset\HTTP;
 
 /**
  * Resposta: Objecte que encapsula la resposta
