@@ -23,7 +23,7 @@
                         name="inputpassword"
                         placeholder="Contrasenya" />
 
-                        <button type="submit" class="w-full text-center py-3 rounded bg-red-500 text-white hover:bg-green-dark focus:outline-none my-1">Registrar-se</button>
+                        <button type="submit" class="w-full text-center py-3 rounded bg-red-500 text-white hover:bg-green-dark focus:outline-none my-1">Inicia Sessió</button>
                     
                         <div class="text-center text-sm text-grey-dark mt-4">
                     No tens una compte? 
