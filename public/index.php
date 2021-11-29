@@ -21,6 +21,7 @@ $app = new \Emeset\Emeset($contenidor);
 $app->ruta("", "ctrlPortada");
 $app->ruta("login", "ctrlLogin");
 $app->ruta("dologin", "ctrlDoLogin");
+$app->ruta("doregistre", "ctrlDoRegistre");
 $app->ruta("logout", "ctrlLogout");
 $app->ruta("registre", "ctrlRegistre");
 $app->ruta("article", "ctrlArticle");

@@ -7,6 +7,7 @@
 <body class="bg-red-500">
 <div class="bg-grey-lighter min-h-screen flex flex-col">
             <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <form action="index.php?r=doregistre" method="post">
                 <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                 <a href="index.php?r=">
                 <img src="../img/LogoConsellComarcalAmbLletra.jpg" alt="Logo" class="h-100 w-100 block m-auto">
@@ -64,6 +65,7 @@
                     </a>.
                     </div>
                 </div>
+                </form>
             </div>
         </div>
 </body>
