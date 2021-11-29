@@ -54,15 +54,15 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * get: Consulta les dades d'un usuari registrat amb l'id especificat per parametre a la base de dades
-     * @param id id de l'usuari a consultar
+     * @param nom nom de l'usuari a consultar
      **/
-    public function get($id)
+    public function get($nom)
     {
         $taula2 = $this->taula;
 
-        $query = "select * from $taula2 where id = :id;";
+        $query = "select * from $taula2 where username = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id]);
+        $result = $stm->execute([':id' => $nom]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

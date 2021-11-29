@@ -41,7 +41,7 @@ class RuterParam
      * @param Emeset/HTTP/Resposta $resposta
      * @return Emeset/HTTP/Resposta
      */
-    public function executa($peticio, $resposta)
+    public function executa($peticio, $resposta, $contenidor)
     {
         $ruta = $peticio->get(INPUT_REQUEST, "r");
 
@@ -83,7 +83,7 @@ class RuterParam
             //$resposta = $controlador[0]($peticio, $resposta, $this->config);
             $action[] = $controlador[0];
         }
-        $resposta = nextMiddleware($peticio, $resposta, $this->config, $action);
+        $resposta = nextMiddleware($peticio, $resposta, $contenidor, $action);
 
 
         return $resposta;

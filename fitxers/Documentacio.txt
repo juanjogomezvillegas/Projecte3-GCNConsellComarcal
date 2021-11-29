@@ -1,4 +1,4 @@
 //Comanda per crea fitxer de configuració del tailwindcss
 npx tailwindcss init
 //Comanda per guaradr configuració del tailwindcss
-npx tailwindcss build style.css -o ../public/style/style.css
+npx tailwindcss build style.css -o ../public/style/style.css (des de la carpeta on s'executa el tailwindcss)

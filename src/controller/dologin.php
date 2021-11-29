@@ -11,7 +11,7 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
     if ($usuarilogat == "") {
         $error = true;
     } else {
-        $resposta->setCookie("usuarilogat", $usuarilogat, "+1 month");
+        $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
     }
 
     if ($passwordlogat == "") {

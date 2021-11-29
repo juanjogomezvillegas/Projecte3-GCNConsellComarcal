@@ -17,6 +17,7 @@
 <h2>Lorem, ipsum dolor.</h2>
 <h3>Lorem ipsum dolor sit.</h3>
 <h3>Lorem ipsum dolor sit.</h3>
+<?=print_r($dadesUsuariLogat);?>
 <h3>Lorem ipsum dolor sit.</h3>
 <h3>Lorem ipsum dolor sit.</h3>
 <h3>Lorem ipsum dolor sit.</h3>

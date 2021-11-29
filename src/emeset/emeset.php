@@ -35,7 +35,7 @@ class Emeset
 
     public function executa()
     {
-        $resposta = $this->ruter->executa($this->peticio, $this->resposta);
+        $resposta = $this->ruter->executa($this->peticio, $this->resposta, $this->contenidor);
         $resposta->resposta();
     }
 }
