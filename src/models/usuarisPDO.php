@@ -25,9 +25,9 @@ class UsuarisPDO extends ModelPDO
     
     public function gettotalregistres()
     {
-        $usuaris = parent::totalregistres($this->taula);
+        $usuaris1 = parent::totalregistres($this->taula);
 
-        return $usuaris;
+        return $usuaris1;
     }
 
     /**

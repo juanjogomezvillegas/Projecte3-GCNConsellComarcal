@@ -49,3 +49,10 @@
 	  }
 	  return false;
 	}
+
+	// Carregador de la nostra pagina
+	$(window).on('load', function() {
+
+        $('#js-preloader').addClass('loaded');
+
+    });

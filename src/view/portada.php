@@ -8,6 +8,9 @@
 </head>
 <body>
     <?php
+    include '../src/includes/preloader.php';
+    ?>
+    <?php
     include '../src/includes/nav.php';
     ?>
 <h1 class="text-danger">Lorem, ipsum.</h1>
@@ -25,5 +28,7 @@
 <footer>
 <?php include '../src/includes/footer.php';?>
 </footer>
+<?php include '../src/includes/scripts.php';?>
+
 </body>
 </html>

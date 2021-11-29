@@ -46,10 +46,9 @@ class ModelPDO
 
     public function totalregistres($taula)
     {
-        $query = "select count(*) from $taula;";
+        $query = "select count(*) 'totalusuaris' from $taula;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
-        
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
         return $total;
     }

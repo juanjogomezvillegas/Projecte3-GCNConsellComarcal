@@ -7,6 +7,9 @@
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
+    include '../src/includes/preloader.php';
+    ?>
+    <?php
     include '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
@@ -20,8 +23,8 @@
                                 <div class="rounded p-3 bg-green-600"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-400">Total Revenue</h5>
-                                <h3 class="font-bold text-3xl text-gray-600">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-400">Usuaris</h5>
+                                <h3 class="font-bold text-3xl text-gray-600"><?= $totalusers["totalusuaris"]; ?> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -105,9 +108,7 @@
             </div>
 </div>
 </div>
-        
-	<script type="text/javascript" src="/script/script.js"></script>
-
-
 </body>
+<?php include '../src/includes/scripts.php';?>
+
 </html>
