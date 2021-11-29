@@ -24,8 +24,8 @@
 					</div>
 					<!-- Secondary Navbar items -->
 					<div class="hidden md:flex items-center space-x-3 ">
-						<a href="" class="py-2 px-2 font-medium text-white rounded hover:bg-red-300 hover:text-white transition duration-300">Inicia Sessió</a>
-						<a href="" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrar-se</a>
+						<a href="index.php?r=login" class="py-2 px-2 font-medium text-white rounded hover:bg-red-300 hover:text-white transition duration-300">Inicia Sessió</a>
+						<a href="index.php?r=registre" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrat</a>
 					</div>
 					<!-- Mobile menu button -->
 					<div class="md:hidden flex items-center">
