@@ -4,27 +4,38 @@
     <?php include '../src/includes/head.php'; ?>
     <title>Login | GCN Consell Comarcal</title>
 </head>
-<body>
-    <div id="containerLogin" class="md:container md:mx-auto px-20">
-        <div id="divLogin">
-            <form class="mt-8 space-y-6" action="index.php?r=dologin" method="POST">
-                <div class="rounded-md shadow-sm -space-y-px">
-                    <div>
-                        <label for="nomusuari" class="sr-only">Nom d'Usuari</label>
-                        <input id="nomusuari" name="inputusuari" type="text" value="<?=$usuarilogat;?>" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nom d'Usuari">
-                    </div>
-                    <div>
-                        <label for="password" class="sr-only">Contrasenya</label>
-                        <input id="password" name="inputpassword" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Contrasenya">
-                    </div>
-                    <div>
-                        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            Inicia Sessió</button>
-                    </div>
+<body class="bg-red-500">
+<div class="bg-grey-lighter min-h-screen flex flex-col">
+            <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+                <form action="index.php?r=dologin" method="post">
+                    <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                        <a href="index.php?r=">
+                            <img src="../img/LogoConsellComarcalAmbLletra.jpg" alt="Logo" class="h-100 w-100 block m-auto">
+                        </a>
+                        <input 
+                        type="text"
+                        class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="inputusuari"
+                        placeholder="Nom d'usuari" />
+                        <input 
+                        type="password"
+                        class="block border border-grey-light w-full p-3 rounded mb-4"
+                        name="inputpassword"
+                        placeholder="Contrasenya" />
+
+                        <button type="submit" class="w-full text-center py-3 rounded bg-red-500 text-white hover:bg-green-dark focus:outline-none my-1">Registrar-se</button>
+                    
+                        <div class="text-center text-sm text-grey-dark mt-4">
+                    No tens una compte? 
+                    <a class="no-underline border-b border-blue text-blue" href="index.php?r=registre">
+                        Registrat!
+                    </a>.
                 </div>
-            </form>
+
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
     <?php include '../src/includes/scripts.php';?>
 </body>
 </html>
