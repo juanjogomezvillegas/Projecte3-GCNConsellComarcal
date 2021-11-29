@@ -14,12 +14,16 @@ include "../src/controller/article.php";
 include "../src/controller/blog.php";
 include "../src/controller/tramit.php";
 include "../src/controller/admin.php";
+include "../src/controller/llistarusuari.php";
+
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
 
+
 $app->ruta("", "ctrlPortada");
 $app->ruta("login", "ctrlLogin");
+$app->ruta("llistarusuari", "ctrlLlistarusuari");
 $app->ruta("dologin", "ctrlDoLogin");
 $app->ruta("doregistre", "ctrlDoRegistre");
 $app->ruta("logout", "ctrlLogout");
@@ -28,5 +32,7 @@ $app->ruta("article", "ctrlArticle");
 $app->ruta("blog", "ctrlBlog");
 $app->ruta("tramit", "ctrlTramit");
 $app->ruta("admin", "ctrlAdmin");
+
+
 
 $app->executa();
