@@ -57,6 +57,11 @@ class Contenidor
     public function usuarisPDO(){
         return new \UsuarisPDO($this->connexio);
     }
-
+    public function articlesPDO(){
+        return new \ArticlesPDO($this->connexio);
+    }
+    public function categoriesPDO(){
+        return new \CategoriesPDO($this->connexio);
+    }
 
 }
