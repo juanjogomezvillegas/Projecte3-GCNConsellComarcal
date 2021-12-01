@@ -16,11 +16,11 @@ include "../src/controller/blog.php";
 include "../src/controller/tramit.php";
 include "../src/controller/admin.php";
 include "../src/controller/llistarusuari.php";
-require_once "../src/controller/llistararticle.php";
-require_once "../src/controller/llistarcategoria.php";
-require_once "../src/controller/esborrarusuari.php";
-require_once "../src/controller/esborrararticle.php";
-require_once "../src/controller/esborrarcategoria.php";
+include "../src/controller/llistararticle.php";
+include "../src/controller/llistarcategoria.php";
+include "../src/controller/esborrarusuari.php";
+include "../src/controller/esborrararticle.php";
+include "../src/controller/esborrarcategoria.php";
 
 
 $contenidor = new \Emeset\Contenidor($config);
