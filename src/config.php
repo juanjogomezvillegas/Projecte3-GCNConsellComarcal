@@ -18,3 +18,5 @@ require_once "../src/emeset/http/resposta.php";
 require_once "../src/models/connexio.php";
 require_once "../src/models/modelPDO.php";
 require_once "../src/models/usuarisPDO.php";
+require_once "../src/models/articlesPDO.php";
+require_once "../src/models/categoriesPDO.php";

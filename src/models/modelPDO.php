@@ -40,13 +40,13 @@ class ModelPDO
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
- 
+  
         return $registres;
     }
 
     public function totalregistres($taula)
     {
-        $query = "select count(*) 'totalusuaris' from $taula;";
+        $query = "select count(*) 'total' from $taula;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
