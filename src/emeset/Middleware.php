@@ -1,27 +1,17 @@
 <?php
 
-function nextMiddleware($peticio, $resposta, $config, $next)
+function nextMiddleware($peticio, $resposta, $contenidor, $next)
 {
-    $usuarisPDO = $config->usuarisPDO();
-
-    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $logat = $peticio->get("SESSION", "logat");
-    
-    $dadesUsuariLogat = $usuarisPDO->get($usuarilogat);
-     
-    $resposta->set("dadesUsuariLogat", $dadesUsuariLogat);
-    $resposta->set("logat", $logat);
-
     if (is_array($next)) {
         if (count($next) > 1) {
             $call = array_shift($next);
             //echo $call. " ";
-            $resposta = $call($peticio, $resposta, $config, $next);
+            $resposta = $call($peticio, $resposta, $contenidor, $next);
         } else {
-            $resposta = call_user_func($next[0], $peticio, $resposta, $config);
+            $resposta = call_user_func($next[0], $peticio, $resposta, $contenidor);
         }
     } else {
-        $resposta = call_user_func($next, $peticio, $resposta, $config);
+        $resposta = call_user_func($next, $peticio, $resposta, $contenidor);
     }
 
     return $resposta;

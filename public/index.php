@@ -9,6 +9,7 @@ include "../src/config.php";
 include "../src/controller/portada.php";
 include "../src/controller/login.php";
 include "../src/controller/dologin.php";
+include "../src/controller/doregistre.php";
 include "../src/controller/registre.php";
 include "../src/controller/article.php";
 include "../src/controller/blog.php";

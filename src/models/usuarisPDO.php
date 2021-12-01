@@ -83,13 +83,13 @@ class UsuarisPDO extends ModelPDO
      * @param email correu electronic de l'usuari
      * @param telefon telefon de l'usuari
      **/
-    public function add($nom, $cognom, $username, $contrasenya, $rol, $email, $telefon)
+    public function add($nom, $cognom, $username, $pass, $rol, $email, $telefon)
     {
         $taula2 = $this->taula;
 
         $query = "insert into $taula2 (nom,cognom,username,contrasenya,rol,email,telefon) values (:nom,:cognom,:username,:pass,:rol,:email,:telefon);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom, ':cognom' => $cognom,':username' => $username,':pass' => $contrasenya,':rol' => $rol,':email' => $email,':telefon' => $telefon]);
+        $result = $stm->execute([':nom' => $nom, ':cognom' => $cognom,':username' => $username,':pass' => $pass,':rol' => $rol,':email' => $email,':telefon' => $telefon]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

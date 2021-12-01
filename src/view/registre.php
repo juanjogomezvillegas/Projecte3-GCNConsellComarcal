@@ -39,7 +39,7 @@
                         placeholder="Email" />
                     
                     <input 
-                        type="number"
+                        type="text"
                         class="block border border-grey-light w-full p-3 rounded mb-4 ml-2"
                         name="telefon"
                         placeholder="Número de telefon" />
@@ -55,6 +55,8 @@
                         class="block border border-grey-light w-full p-3 rounded mb-4"
                         name="confirm_password"
                         placeholder="Confirmar contrasenya" />
+                    
+                    <input type="hidden" name="rol" value="Usuari" />
 
                     <button type="submit" class="w-full text-center py-3 rounded bg-red-500 text-white hover:bg-green-dark focus:outline-none my-1">Registrar-se</button>
 

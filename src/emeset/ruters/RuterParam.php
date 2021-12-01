@@ -1,24 +1,33 @@
 <?php
+
 /**
- * Objecte que escull el controlador que s'ha d'executar
- * **/
+    * Exemple de MVC per a M07 Desenvolupament d'aplicacions web en entorn de servidor.
+    * Ruter a partir d'un parametre d'entrada.
+    * @author: Dani Prados dprados@cendrassos.net
+    *
+    * Ruter que escull quin controlador s'ha d'executar
+    *
+**/
 
 namespace Emeset\Ruters;
 
+
 /**
- * RuterParam: Objecte que escull el controlador que s'ha d'executar
- * 
- * Per escullir el controlador que s'ha d'executar
- * **/
+    * Ruter: objecte que enruta a la petició al controlador adequat.
+    * @author: Dani Prados dprados@cendrassos.net
+    *
+    * Permet definir les rutes dels controladors
+    *
+**/
 class RuterParam
 {
     public $rutes = [];
-    public $config = [];
+    public $contenidor = null;
 
-    public function __construct($config)
+    public function __construct($contenidor)
     {
         // Per ara no fa res
-        $this->config = $config;
+        $this->contenidor = $contenidor;
     }
 
     /**
@@ -41,9 +50,9 @@ class RuterParam
      * @param Emeset/HTTP/Resposta $resposta
      * @return Emeset/HTTP/Resposta
      */
-    public function executa($peticio, $resposta, $contenidor)
+    public function executa($peticio, $resposta)
     {
-        $ruta = $peticio->get(INPUT_REQUEST, "r");
+        $ruta = $peticio->get("INPUT_REQUEST", "r");
 
         if (is_null($ruta)) {
             $ruta = "";    
@@ -58,21 +67,9 @@ class RuterParam
             die();
         }
 
-        // si té mildeware definit l'executem
-        /* if ($controlador[1]) {
-            if(is_array($controlador[1])){
-                $resposta = nextMiddleware($peticio, $resposta, $this->config, $controlador[0], $controlador[1]);
-            } else {
-                $resposta = $controlador[1]($peticio, $resposta, $this->config, $controlador[0]);    
-            }
-            
-        } else {
-            $resposta = $controlador[0]($peticio, $resposta, $this->config);
-        }
- */
         $action = [];
         if ($controlador[1]) {
-            //$resposta = $controlador[1]($peticio, $resposta, $this->config, $controlador[0]);
+            //$resposta = $controlador[1]($peticio, $resposta, $this->contenidor, $controlador[0]);
             if (is_array($controlador[1])) {
                 array_push($action, ...$controlador[1]);
             } else {
@@ -80,10 +77,10 @@ class RuterParam
             }
             array_push($action, $controlador[0]);
         } else {
-            //$resposta = $controlador[0]($peticio, $resposta, $this->config);
+            //$resposta = $controlador[0]($peticio, $resposta, $this->contenidor);
             $action[] = $controlador[0];
         }
-        $resposta = nextMiddleware($peticio, $resposta, $contenidor, $action);
+        $resposta = nextMiddleware($peticio, $resposta, $this->contenidor, $action);
 
 
         return $resposta;
