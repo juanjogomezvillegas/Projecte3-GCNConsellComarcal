@@ -8,11 +8,12 @@ if [ $# -gt 0 ]; then
     mkdir /var/www/vhost/$domini
     mkdir /var/www/vhost/$domini/www
     mkdir /var/www/vhost/$domini/logs
+    mkdir /var/www/vhost/$domini/certs
 
     chmod -R 755 /var/www/vhost/$domini
     chown -R debian:www-data /var/www/vhost/$domini
 
-    openssl req -new -x509 -days 365 -nodes -out /etc/apache2/ssl/cert-$domini.pem -keyout /etc/apache2/ssl/cert-$domini.key
+    openssl req -new -x509 -days 365 -nodes -out /var/www/vhost/$domini/certs/cert-$domini.pem -keyout /var/www/vhost/$domini/certs/cert-$domini.key
 
     cat template.txt | awk -v nom=$domini '{gsub(/\(nom\)/,nom)}1' | awk -v cert=cert-$domini '{gsub(/\(cert\)/,cert)}1' > /etc/apache2/sites-available/$domini.conf
 

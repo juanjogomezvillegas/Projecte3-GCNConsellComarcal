@@ -3,17 +3,17 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /*Inclou el fitxer config.php*/
-include "../src/config.php";
+require_once "../src/config.php";
 
 /*Afegim els controladors necessaris per executar tots els requests*/
-include "../src/controller/portada.php";
-include "../src/controller/login.php";
-include "../src/controller/dologin.php";
-include "../src/controller/registre.php";
-include "../src/controller/article.php";
-include "../src/controller/blog.php";
-include "../src/controller/tramit.php";
-include "../src/controller/admin.php";
+require_once "../src/controller/portada.php";
+require_once "../src/controller/login.php";
+require_once "../src/controller/dologin.php";
+require_once "../src/controller/registre.php";
+require_once "../src/controller/article.php";
+require_once "../src/controller/blog.php";
+require_once "../src/controller/tramit.php";
+require_once "../src/controller/admin.php";
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
