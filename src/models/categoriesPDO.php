@@ -12,11 +12,38 @@ class CategoriesPDO extends ModelPDO
 {
     private $taula = "categoria";
 
+    /**
+     * gettotalregistres: Mostra el numero total de categories
+     **/
  public function gettotalregistres()
     {
-        $article = parent::totalregistres($this->taula);
+        $categoria = parent::totalregistres($this->taula);
 
-        return $article;
+        return $categoria;
     }
+    /**
+     * getllistat: Mostra tots els articles
+     **/
+    public function getllistat()
+    {
+        $categories = parent::llistat($this->taula);
 
+        return $categories;
+    }
+    public function delete($id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "delete from $taula2 where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }

@@ -22,7 +22,10 @@ class UsuarisPDO extends ModelPDO
 
         return $usuaris;
     }
-    
+     /**
+     * gettotalregistres: Mostra el numero total de usuaris
+     **/
+
     public function gettotalregistres()
     {
         $usuaris1 = parent::totalregistres($this->taula);
