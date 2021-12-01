@@ -28,26 +28,11 @@
                                 Nom
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Cognom
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Usuari
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Rol
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Email
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Telefón
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Accions
                             </th>
                         </tr>
                     </thead>
-    <?php foreach($dadesusuari as $actual) { ?>
+    <?php foreach($dadescategoria as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['id'];?>
@@ -58,22 +43,9 @@
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['cognom'];?>
                             </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['username'];?>
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['rol'];?>
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['email'];?>
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['telefon'];?>
-                            </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
-                                <a href="index.php?r=esborrarusuari&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">Esborrar</a>
-                            </td>
+                            <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
+                            <a href="index.php?r=esborrarcategoria&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">Esborrar</a>                            </td>
                         </tr>
     <?php } ?>
                 </table>

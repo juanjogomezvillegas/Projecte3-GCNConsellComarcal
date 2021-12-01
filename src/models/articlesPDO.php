@@ -12,11 +12,42 @@ class ArticlesPDO extends ModelPDO
 {
     private $taula = "article";
 
+    /**
+     * gettotalregistres: Mostra el numero total de articles
+     **/
  public function gettotalregistres()
     {
         $article = parent::totalregistres($this->taula);
 
         return $article;
     }
+    /**
+     * getllistat: Mostra tots els articles
+     **/
+    public function getllistat()
+    {
+        $articles = parent::llistat($this->taula);
 
+        return $articles;
+    }
+      /**
+     * delete: esborra un article amb l'id especificat per parametre de la base de dades
+     * @param id id de l'article a borrar
+     **/
+    public function delete($id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "delete from $taula2 where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }

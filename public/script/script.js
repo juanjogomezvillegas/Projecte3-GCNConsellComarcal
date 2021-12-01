@@ -56,3 +56,4 @@
         $('#js-preloader').addClass('loaded');
 
     });
+	//Modal

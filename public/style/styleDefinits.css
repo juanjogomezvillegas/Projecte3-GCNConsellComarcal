@@ -97,3 +97,15 @@ Carregador de la nostra pagina
     background: #fff;
     border-radius: 50%;
 }
+/* 
+---------------------------------------------
+Modal Jquery de la nostra pagina
+--------------------------------------------- 
+*/
+.hide{
+    display: none; 
+  }
+  
+  .show{
+    display: block;
+  }
