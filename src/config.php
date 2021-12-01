@@ -8,8 +8,8 @@ $config["pass"] = "1234";
 $config["dbname"] = "gcnaltemporda_cat";
 $config["host"] = "localhost";
 
-require_once "../src/emeset/contenidor.php";
-require_once "../src/emeset/emeset.php";
+require_once "../src/emeset/Contenidor.php";
+require_once "../src/emeset/Emeset.php";
 require_once "../src/emeset/Middleware.php";
 require_once "../src/emeset/ruters/RuterParam.php";
 require_once "../src/emeset/http/peticio.php";

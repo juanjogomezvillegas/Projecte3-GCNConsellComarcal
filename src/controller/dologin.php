@@ -8,13 +8,13 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
     $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
     $error = false;
-    if ($usuarilogat == "") {
+    if (empty($usuarilogat)) {
         $error = true;
     } else {
         $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
     }
 
-    if ($passwordlogat == "") {
+    if (empty(passwordlogat)) {
         $error = true;
     }
 
