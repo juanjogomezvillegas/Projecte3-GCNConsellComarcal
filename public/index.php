@@ -25,6 +25,8 @@ require_once "../src/controller/crearcategoria.php";
 require_once "../src/controller/esborrarusuari.php";
 require_once "../src/controller/esborrararticle.php";
 require_once "../src/controller/esborrarcategoria.php";
+require_once "../src/controller/actualitzararticle.php";
+
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
