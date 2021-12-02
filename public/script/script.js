@@ -2,11 +2,11 @@
 /*Toggle dropdown list*/
 	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
-	var userMenuDiv = document.getElementById("userMenu");
-	var userMenu = document.getElementById("userButton");
+	var userMenuDiv = $("#userMenu");
+	var userMenu = $("#userButton");
 	
-	var navMenuDiv = document.getElementById("nav-content");
-	var navMenu = document.getElementById("nav-toggle");
+	var navMenuDiv = $("#nav-content");
+	var navMenu = $("#nav-toggle");
 	
 	document.onclick = check;
 
