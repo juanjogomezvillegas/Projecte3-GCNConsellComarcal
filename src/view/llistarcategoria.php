@@ -59,5 +59,4 @@
 </div>
 </body>
 <?php include '../src/includes/scripts.php';?>
-
 </html>

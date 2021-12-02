@@ -1,3 +1,4 @@
+
 /*Toggle dropdown list*/
 	/*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
 
@@ -50,10 +51,28 @@
 	  return false;
 	}
 
-	// Carregador de la nostra pagina
+	
+	//Editor de articles
+	tinymce.init({
+		selector: 'textarea#editor-article',
+		height: 500,
+		menubar: false,
+		plugins: [
+		  'advlist autolink lists link image charmap print preview anchor',
+		  'searchreplace visualblocks code fullscreen',
+		  'insertdatetime media table paste code help wordcount'
+		],
+		toolbar: 'undo redo | formatselect | ' +
+		'bold italic backcolor | alignleft aligncenter ' +
+		'alignright alignjustify | bullist numlist outdent indent | ' +
+		'removeformat | help',
+		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+	  });
+	  
+
+// Carregador de la nostra pagina
 	$(window).on('load', function() {
 
         $('#js-preloader').addClass('loaded');
 
     });
-	//Modal

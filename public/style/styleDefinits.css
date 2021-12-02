@@ -102,10 +102,13 @@ Carregador de la nostra pagina
 Modal Jquery de la nostra pagina
 --------------------------------------------- 
 */
-.hide{
-    display: none; 
+
+  .toggle-checkbox:checked {
+    @apply: right-0 border-green-400;
+    right: 0;
+    border-color: #1ee703;
   }
-  
-  .show{
-    display: block;
+  .toggle-checkbox:checked + .toggle-label {
+    @apply: bg-green-400;
+    background-color: #1ee703;
   }
