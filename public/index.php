@@ -9,6 +9,7 @@ require_once "../src/config.php";
 require_once "../src/controller/portada.php";
 require_once "../src/controller/login.php";
 require_once "../src/controller/dologin.php";
+require_once "../src/controller/logout.php";
 require_once "../src/controller/doregistre.php";
 require_once "../src/controller/docrearcategoria.php";
 require_once "../src/controller/doregistreadmin.php";

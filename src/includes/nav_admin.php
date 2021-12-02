@@ -19,7 +19,7 @@
 							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Perfil</a></li>
 							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Configuració</a></li>
 							<li><hr class="border-t mx-2 border-gray-400"></li>
-							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Surt de la sessió</a></li>
+							<li><a href="index.php?r=logout" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Surt de la sessió</a></li>
 						  </ul>
 					  </div>
 				  </div>
