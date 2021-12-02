@@ -5,6 +5,9 @@
     <title>Login | GCN Consell Comarcal</title>
 </head>
 <body class="bg-red-500">
+<?php
+    include '../src/includes/preloader.php';
+?>
 <div class="bg-grey-lighter min-h-screen flex flex-col">
             <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
                 <form action="index.php?r=dologin" method="post">
