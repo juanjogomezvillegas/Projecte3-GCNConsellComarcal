@@ -6,27 +6,25 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 require_once "../src/config.php";
 
 /*Afegim els controladors necessaris per executar tots els requests*/
-
-include "../src/controller/portada.php";
-include "../src/controller/login.php";
-include "../src/controller/dologin.php";
-include "../src/controller/doregistre.php";
-include "../src/controller/docrearcategoria.php";
-include "../src/controller/doregistreadmin.php";
-include "../src/controller/registre.php";
-include "../src/controller/registreadmin.php";
-include "../src/controller/article.php";
-include "../src/controller/blog.php";
-include "../src/controller/tramit.php";
-include "../src/controller/admin.php";
-include "../src/controller/llistarusuari.php";
-include "../src/controller/llistararticle.php";
-include "../src/controller/llistarcategoria.php";
-include "../src/controller/crearcategoria.php";
-include "../src/controller/esborrarusuari.php";
-include "../src/controller/esborrararticle.php";
-include "../src/controller/esborrarcategoria.php";
-
+require_once "../src/controller/portada.php";
+require_once "../src/controller/login.php";
+require_once "../src/controller/dologin.php";
+require_once "../src/controller/doregistre.php";
+require_once "../src/controller/docrearcategoria.php";
+require_once "../src/controller/doregistreadmin.php";
+require_once "../src/controller/registre.php";
+require_once "../src/controller/registreadmin.php";
+require_once "../src/controller/article.php";
+require_once "../src/controller/blog.php";
+require_once "../src/controller/tramit.php";
+require_once "../src/controller/admin.php";
+require_once "../src/controller/llistarusuari.php";
+require_once "../src/controller/llistararticle.php";
+require_once "../src/controller/llistarcategoria.php";
+require_once "../src/controller/crearcategoria.php";
+require_once "../src/controller/esborrarusuari.php";
+require_once "../src/controller/esborrararticle.php";
+require_once "../src/controller/esborrarcategoria.php";
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
