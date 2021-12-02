@@ -11,7 +11,10 @@ include "../src/controller/portada.php";
 include "../src/controller/login.php";
 include "../src/controller/dologin.php";
 include "../src/controller/doregistre.php";
+include "../src/controller/docrearcategoria.php";
+include "../src/controller/doregistreadmin.php";
 include "../src/controller/registre.php";
+include "../src/controller/registreadmin.php";
 include "../src/controller/article.php";
 include "../src/controller/blog.php";
 include "../src/controller/tramit.php";
@@ -19,10 +22,10 @@ include "../src/controller/admin.php";
 include "../src/controller/llistarusuari.php";
 include "../src/controller/llistararticle.php";
 include "../src/controller/llistarcategoria.php";
+include "../src/controller/crearcategoria.php";
 include "../src/controller/esborrarusuari.php";
 include "../src/controller/esborrararticle.php";
 include "../src/controller/esborrarcategoria.php";
-include "../src/controller/actualitzararticle.php";
 
 
 $contenidor = new \Emeset\Contenidor($config);
