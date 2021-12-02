@@ -21,6 +21,8 @@ include "../src/controller/llistarcategoria.php";
 include "../src/controller/esborrarusuari.php";
 include "../src/controller/esborrararticle.php";
 include "../src/controller/esborrarcategoria.php";
+include "../src/controller/actualitzararticle.php";
+
 
 
 $contenidor = new \Emeset\Contenidor($config);
@@ -30,6 +32,7 @@ $app = new \Emeset\Emeset($contenidor);
 $app->ruta("", "ctrlPortada");
 $app->ruta("login", "ctrlLogin");
 
+$app->ruta("actualitzararticle", "ctrlActualitzararticle");
 $app->ruta("esborrarcategoria", "ctrlEsborrarcategoria");
 $app->ruta("esborrararticle", "ctrlEsborrararticle");
 $app->ruta("esborrarusuari", "ctrlEsborrarusuari");

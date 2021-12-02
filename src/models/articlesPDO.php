@@ -51,4 +51,20 @@ class ArticlesPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+    public function show($id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "select * from $taula2 where id = :id LIMIT 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }

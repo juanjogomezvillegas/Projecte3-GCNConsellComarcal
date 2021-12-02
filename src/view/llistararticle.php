@@ -65,7 +65,7 @@
                                  <?= $actual['categoria'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
+                            <a href="index.php?r=actualitzararticle&id=<?= $actual['id'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
                                 <a href="index.php?r=esborrararticle&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">Esborrar</a>                            </td>
                         </tr>
     <?php } ?>
@@ -78,5 +78,4 @@
 </div>
 </body>
 <?php include '../src/includes/scripts.php';?>
-
 </html>
