@@ -28,7 +28,6 @@ class Connexio
             die("Ha fallat la connexió: " . $e->getMessage() . " $usuari");
         }
     }
-
     /**
      * getConnexio: S'encarrega de retorna la connexio a la base de dades
      * @return sql la connexio a la base de dades

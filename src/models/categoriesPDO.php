@@ -46,4 +46,21 @@ class CategoriesPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+
+    public function add($nom)
+    {
+        $taula2 = $this->taula;
+
+        $query = "insert into $taula2 (nom) values (:nom);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nom' => $nom]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }
