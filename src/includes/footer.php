@@ -10,23 +10,19 @@
                                 <a href="index.php"><img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-25 w-20 block m-auto"></a>
                                 <div class="flex mt-6 justify-center">
                                     <a href="https://ca-es.facebook.com/ccaltemporda/"><i style="background-color: #3B5998;"
-                                        class="flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook-f"></i></a>
+                                        class="socialNetwork flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook"></i></a>
                                     <a href="mailto:consell@altemporda.cat"><i style="background-color:#dd4b39"
-                                        class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fas fill-current text-white text-xl fa-envelope"></i></a>
+                                        class="socialNetwork flex items-center justify-center h-12 w-12 mx-1 rounded-full fas fill-current text-white text-xl fa-envelope"></i></a>
                                     <a href="https://twitter.com/ccaltemporda"><i style="background-color:#55ACEE;"
-                                        class="flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i></a>
+                                        class="socialNetwork flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i></a>
                                 </div>
                             </div>
                             <div class="w-full inline-flex justify-center">
                                 <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
                                     <h2 class="font-bold text-gray-100 mb-4">
-                                        Articles</h2>
+                                        Articles Favorits</h2>
                                     <ul class="text-gray-500 text-sm">
                                         <li class="pt-1 pb-2"></li>
-                                        <li class="pt-1 pb-2">Web Development</li>
-                                        <li class="pt-1 pb-2">Product Management</li>
-                                        <li class="pt-1 pb-2">Marketing</li>
-                                        <li class="pt-1 pb-2">Graphics Design</li>
                                     </ul>
                                 </div>
                             </div>
