@@ -54,7 +54,7 @@
                             </div>
                             <div class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-100">Categories</h5>
-                                <h3 class="font-bold text-3xl text-gray-300"><?= $totalcategories["total"]; ?> <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-gray-300"><?= $totalcategories["total"]; ?> <span class="text-red-600"><i class="fas fa-caret-down"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -65,5 +65,6 @@
 </div>
 </body>
 <?php include '../src/includes/scripts.php';?>
+<script src="script/admin.js"></script>
 
 </html>
