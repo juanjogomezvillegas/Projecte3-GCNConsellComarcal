@@ -8,21 +8,30 @@
          </div>
 			<div class="w-1/2 pr-0">
 				<div class="flex relative inline-block float-right">
-				
-				  <div class="relative text-sm text-gray-100">
-					  <button id="userButton" class="flex items-center focus:outline-none mr-3">
-						<img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of User"> <span class="hidden md:inline-block text-gray-100">Admin/Gestor</span>
-						<svg class="pl-2 h-2 fill-current text-gray-100" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 129 129" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 129 129"><g><path d="m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z"/></g></svg>
-					  </button>
-					  <div id="userMenu" class="bg-red-500 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
-						  <ul class="list-reset">
-							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Perfil</a></li>
-							<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Configuració</a></li>
-							<li><hr class="border-t mx-2 border-gray-400"></li>
-							<li><a href="index.php?r=logout" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Surt de la sessió</a></li>
-						  </ul>
-					  </div>
-				  </div>
+					<div class="relative text-sm text-gray-100">
+						<?php if ($logat) { ?>
+							<div class="hidden md:flex items-center space-x-3 ">
+								<div class="relative text-sm text-gray-100">
+									<button id="userButton" class="flex items-center focus:outline-none mr-3">
+									<img src="img/user.png" alt="user"> <?=$usuarilogat;?>
+									</button>
+									<div id="userMenu" class="bg-red-500 rounded shadow-md mt-2 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
+										<ul class="list-reset">
+											<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Perfil</a></li>
+											<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Configuració</a></li>
+											<li><hr class="border-t mx-2 border-gray-400"></li>
+											<li><a href="index.php?r=logout" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Surt de la sessió</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						<?php } else { ?>
+							<div class="hidden md:flex items-center space-x-3 ">
+								<a href="index.php?r=login" class="py-2 px-2 font-medium text-white rounded hover:bg-red-300 hover:text-white transition duration-300">Inicia Sessió</a>
+								<a href="index.php?r=registre" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrat</a>
+							</div>
+						<?php } ?>
+					</div>
 
 
 					<div class="block lg:hidden pr-4">
@@ -37,6 +46,11 @@
 
 			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-red-500 z-20" id="nav-content">
 				<ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
+					<li class="mr-6 my-2 md:my-0">
+                        <a href="index.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100 border-gray-50 hover:border-blue-200">
+                            <i class="fas fa-home fa-fw mr-3 "></i><span class="pb-1 md:pb-0 text-sm">Inici</span>
+                        </a>
+                    </li>
 					<li class="mr-6 my-2 md:my-0">
                         <a href="index.php?r=admin" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100 border-gray-50 hover:border-blue-200">
                             <i class="fas fa-home fa-fw mr-3 "></i><span class="pb-1 md:pb-0 text-sm">Inici Panell</span>

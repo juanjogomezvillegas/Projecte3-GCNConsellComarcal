@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Middelware que gestiona l'autenticació
+ * Middelware que gestiona l'aplicació
  *
  * @param petitcio $peticio
  * @param resposta $resposta
@@ -9,7 +9,7 @@
  * @param array $config  paràmetres de configuració de l'aplicació
  * @return result
  */
-function middleLogat($peticio, $resposta, $contenidor, $next)
+function middleCentral($peticio, $resposta, $contenidor, $next)
 {    
     $usuarisPDO = $contenidor->usuarisPDO();
 
@@ -22,11 +22,7 @@ function middleLogat($peticio, $resposta, $contenidor, $next)
     $resposta->set("usuarilogat", $usuarilogat);
     $resposta->set("logat", $logat);
 
-    // si l'usuari està logat permetem carregar el recurs
-    if($logat) {
-        $resposta = nextMiddleware($peticio, $resposta, $contenidor, $next);
-    } else {
-        $resposta->redirect("location: index.php?r=login");
-    }
+    $resposta = nextMiddleware($peticio, $resposta, $contenidor, $next);
+
     return $resposta;
 }
