@@ -13,12 +13,16 @@
     include '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
-<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
+<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
+<button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5" href="index.php?r=creararticle">
+                <i class="fas fa-folder-plus"></i>
+                <span class="ml-1">Crear Article</span>
+            </button>
 <div class="flex flex-col">
-    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div>
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg shadow-md">
-                <table class="table-auto">
+            <table class="mr-auto ml-auto mt-5">
                 <thead class="bg-gray-100 dark:bg-gray-700">
                         <tr>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
@@ -34,7 +38,7 @@
                                 Títol	
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Contingut
+                                Publicació
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Categoria
@@ -56,10 +60,12 @@
                                  <?= $actual['data_creacio'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['titulo'];?>
+                                 <?= $actual['titol'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['contingut'];?>
+                                 <?php if($actual['publicat'] == 1){echo'<span class="text-green-500 font-semibold">Public</span>';}
+                                 else{echo'<span class="text-red-500 font-semibold">Privat</span>';}
+                                 ?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['categoria'];?>
@@ -73,6 +79,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 </div>

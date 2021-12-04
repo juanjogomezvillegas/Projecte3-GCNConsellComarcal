@@ -134,7 +134,7 @@ class UsuarisPDO extends ModelPDO
      * @param email correu electronic de l'usuari
      * @param telefon telefon de l'usuari
      **/
-    public function update($id, $nom, $cognom, $username, $rol, $email, $telefon)
+    public function update($id, $nom, $cognom, $username, $contrasenya, $rol, $email, $telefon)
     {
         $taula2 = $this->taula;
 

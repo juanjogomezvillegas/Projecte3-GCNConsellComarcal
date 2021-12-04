@@ -67,4 +67,36 @@ class ArticlesPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+     /**
+     * update: modificara els dades d'usuari registrat a la base de dades
+     * @param id id de l'usuari a modificar
+     * @param nom nom de l'usuari
+     * @param cognom cognom de l'usuari
+     * @param username nom que fara servir l'usuari per fer login
+     * @param rol rol de l'usuari
+     * @param email correu electronic de l'usuari
+     * @param telefon telefon de l'usuari
+     **/
+    public function update($id, $contingut, $titol,$publicat)
+    {
+        $taula2 = $this->taula;
+
+        $query = "update $taula2 set contingut = :contingut,titol = :titol,publicat = :publicat where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id,':contingut' => $contingut, ':titol' => $titol,':publicat' => $publicat]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function getAlert($id){
+        if ($id == 'faltacamp'){
+            $id = 'Introdueix tots els camps abans de enviar les dades';
+        }
+        return $id;
+    }
 }
