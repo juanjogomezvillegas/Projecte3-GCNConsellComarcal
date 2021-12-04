@@ -27,6 +27,8 @@ require_once "../src/controller/esborrarusuari.php";
 require_once "../src/controller/esborrararticle.php";
 require_once "../src/controller/esborrarcategoria.php";
 require_once "../src/controller/actualitzararticle.php";
+require_once "../src/controller/doactualitzararticle.php";
+
 
 
 $contenidor = new \Emeset\Contenidor($config);
@@ -47,6 +49,7 @@ $app->ruta("dologin", "ctrlDoLogin");
 $app->ruta("doregistre", "ctrlDoRegistre");
 $app->ruta("doregistreadmin", "ctrlDoRegistreAdmin");
 $app->ruta("docrearcategoria", "ctrlDoCrearCategoria");
+$app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle");
 $app->ruta("logout", "ctrlLogout");
 $app->ruta("registre", "ctrlRegistre");
 $app->ruta("registreadmin", "ctrlRegistreAdmin");

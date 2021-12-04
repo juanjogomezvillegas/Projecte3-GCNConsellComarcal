@@ -37,9 +37,9 @@ class Emeset
         $this->ruter = $contenidor->ruter();
     }
 
-    public function ruta($id, $callback, $midelware = false)
+    public function ruta($id, $callback, $middleware = false)
     {
-        $this->ruter->ruta($id, $callback, $midelware);
+        $this->ruter->ruta($id, $callback, $middleware);
     }
 
     public function executa()

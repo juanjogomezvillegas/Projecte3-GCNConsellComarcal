@@ -20,7 +20,7 @@ function ctrlDoCrearCategoria($peticio, $resposta, $contenidor)
     if ($error) {
         $resposta->redirect("Location:index.php?r=llistarcategoria");
     } else {
-        $resposta->setSession("missatgeError", "Error: El usuari no s'ha pogut crear!!!");
+        $resposta->setSession("missatgeError", "Error: La categoria no s'ha pogut crear!!!");
         $resposta->redirect("Location:index.php?r=crearcategoria");
     }
     return $resposta;
