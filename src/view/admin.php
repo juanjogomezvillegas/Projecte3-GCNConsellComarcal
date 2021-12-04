@@ -17,7 +17,7 @@
 <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                     <!--Etiqueta usuaris-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
+                    <div class="itemsAdminUsuaris bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
                                 <div class="rounded p-3 bg-red-500"><i class="fa fa-users fa-2x fa-fw fa-inverse"></i></div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                     <!--Etiqueta article-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
+                    <div class="itemsAdminArticles bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
                                 <div class="rounded p-3 bg-red-500"><i class="fas fa-newspaper fa-2x fa-fw fa-inverse"></i></div>
@@ -47,7 +47,7 @@
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                     <!--Etiqueta categories-->
-                    <div class="bg-gray-900 border border-gray-800 rounded shadow p-2">
+                    <div class="itemsAdminCategories bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
                                 <div class="rounded p-3 bg-red-500"><i class="fas fa-archive fa-2x fa-fw fa-inverse"></i></div>
