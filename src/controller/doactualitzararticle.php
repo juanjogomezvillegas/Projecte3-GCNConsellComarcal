@@ -12,7 +12,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $publicat = $peticio->get(INPUT_POST, "publicat");
 
-    $publicat = $peticio->get(INPUT_POST, "categoria");
+    $categoria = $peticio->get(INPUT_POST, "categoria");
 
     $categoriesPDO = $contenidor->categoriesPDO();
 
