@@ -64,12 +64,12 @@ function drawResultsUsuaris() {
     if (usuaris == usuarisAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Usuaris</h5>
         <h3 class="font-bold text-3xl text-gray-300">
-        ${usuaris} <span class="text-pink-500"><i class="fas fa-equals"></i></span>
+        ${usuaris} <span class="text-pink-600"><i class="fas fa-equals"></i></span>
         </h3>`;
     } else if (usuaris > usuarisAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Usuaris</h5>
         <h3 class="font-bold text-3xl text-gray-300">
-        ${usuaris} <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+        ${usuaris} <span class="text-green-600"><i class="fas fa-caret-up"></i></span>
         </h3>`;
     } else if (usuaris < usuarisAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Usuaris</h5>
@@ -87,12 +87,12 @@ function drawResultsArticles() {
     if (articles == articlesAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Articles</h5>
         <h3 class="font-bold text-3xl text-gray-300">
-        ${articles} <span class="text-pink-500"><i class="fas fa-equals"></i></span>
+        ${articles} <span class="text-pink-600"><i class="fas fa-equals"></i></span>
         </h3>`;
     } else if (articles > articlesAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Articles</h5>
         <h3 class="font-bold text-3xl text-gray-300">
-        ${articles} <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+        ${articles} <span class="text-green-600"><i class="fas fa-caret-up"></i></span>
         </h3>`;
     } else if (articles < articlesAntic) {
         tmp = `<h5 class="font-bold uppercase text-gray-100">Articles</h5>

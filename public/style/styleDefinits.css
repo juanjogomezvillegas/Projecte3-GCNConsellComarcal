@@ -131,3 +131,12 @@ Modal Jquery de la nostra pagina
     transform: scale(1.3) !important;
     transition: transform 1s !important;
 }
+div.itemsAdmin {
+    box-shadow: 0 0 10px 10px rgba(17, 24, 39, 0.7) !important;
+    transition: background-color 1s, box-shadow 1s;
+}
+div.itemsAdmin:hover {
+    box-shadow: 0 0 15px 10px rgba(17, 24, 39, 0.7) !important;
+    background-color: rgba(31, 41, 55, 1) !important;
+    transition: background-color 1s, box-shadow 1s;
+}
