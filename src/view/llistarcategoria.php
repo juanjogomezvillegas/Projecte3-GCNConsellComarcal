@@ -52,7 +52,7 @@
                                  <?= $actual['nom'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['id_usuari'];?>
+                                 <?= $actual['creador'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['data_creacio'];?>

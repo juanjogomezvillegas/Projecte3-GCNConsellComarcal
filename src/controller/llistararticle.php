@@ -4,7 +4,7 @@ function ctrlLlistararticle($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $dadesarticle = $articlesPDO->getllistat();
+    $dadesarticle = $articlesPDO->getllistatPublic();
 
     $resposta->set('dadesarticle', $dadesarticle);
 

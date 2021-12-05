@@ -4,7 +4,7 @@ function ctrlLlistarcategoria($peticio, $resposta, $contenidor)
 {
     $categoriesPDO = $contenidor->categoriesPDO();
 
-    $dadescategoria = $categoriesPDO->getllistat();
+    $dadescategoria = $categoriesPDO->getllistatPublic();
 
     $resposta->set('dadescategoria', $dadescategoria);
 

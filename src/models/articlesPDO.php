@@ -32,6 +32,25 @@ class ArticlesPDO extends ModelPDO
         return $articles;
     }
 
+    /**
+     * getllistatPublic: Mostra tots els articles
+     **/
+    public function getllistatPublic()
+    {
+        $query = "select a.id,a.titol,a.publicat,c.nom as categoria,concat(u.nom, ' ', u.cognom) as creador,a.data_creacio 
+        from article a left join usuari u on a.id_usuari = u.id 
+        left join categoria c on a.id_categoria = c.id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+ 
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+  
+        return $registres;
+    }
+
     public function getArrayValorsPredefinits($usuariLogat)
     {
         $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);;
