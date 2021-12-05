@@ -13,9 +13,14 @@
     include '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
-<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
+<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
+<a href="index.php?r=creararticle">
+<button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                <i class="fas fa-folder-plus"></i>
+                <span class="ml-1">Crear Article</span>
+            </button>
 <div class="flex flex-col">
-    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8 overflow-hidden sm:rounded-lg shadow-md">
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
             <div class="overflow-hidden sm:rounded-lg shadow-md">
                 <table class="table-auto">
