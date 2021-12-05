@@ -33,7 +33,6 @@ require_once "../src/controller/esborrarcategoria.php";
 require_once "../src/controller/actualitzararticle.php";
 require_once "../src/controller/doactualitzararticle.php";
 
-
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
 
