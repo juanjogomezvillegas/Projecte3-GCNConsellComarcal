@@ -32,10 +32,10 @@ Per accedir a l'aplicació fent servir un domini, s'ha d'executar l'script addho
 
 ```sh
 $ cd cli/
-$ ./addhost.sh gcnaltemporda.cat 1234
+$ ./addhost.sh parametre1 parametre2
 ```
 
-Nota: El primer parametre (gcnaltemporda.cat) correspon al domini que usarem per accedir a l'aplicació. I el segon parametre (1234) es el password de l'usuari de la base de dades (gcnaltemporda_cat).
+Nota: El primer parametre correspon al domini que usarem per accedir a l'aplicació. I el segon parametre es el password de l'usuari de la base de dades.
 
 Per accedir a l'aplicació via web usarem l'adreça "https://www.gcnaltemporda.cat/".
 
