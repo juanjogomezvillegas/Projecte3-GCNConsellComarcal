@@ -31,6 +31,13 @@ class ArticlesPDO extends ModelPDO
 
         return $articles;
     }
+
+    public function getArrayValorsPredefinits($usuariLogat)
+    {
+        $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);;
+
+        return $arrayPredefinit;
+    }
       /**
      * delete: esborra un article amb l'id especificat per parametre de la base de dades
      * @param id id de l'article a borrar
