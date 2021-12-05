@@ -23,10 +23,7 @@
 		  if (userMenuDiv.classList.contains("invisible")) {
 			userMenuDiv.classList.remove("invisible");
 		  } else {userMenuDiv.classList.add("invisible");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  userMenuDiv.classList.add("invisible");
-		}
+		} 
 	  }
 	  
 	  //Nav Menu
@@ -37,10 +34,7 @@
 		  if (navMenuDiv.classList.contains("hidden")) {
 			navMenuDiv.classList.remove("hidden");
 		  } else {navMenuDiv.classList.add("hidden");}
-		} else {
-		  // click both outside link and outside menu, hide menu
-		  navMenuDiv.classList.add("hidden");
-		}
+		} 
 	  }
 	  
 	}
@@ -78,3 +72,22 @@
         $('#js-preloader').addClass('loaded');
 
     });
+	
+	//Funció ajax
+	$(function () {
+
+        $('#contacte').on('submit', function (e) {
+
+          e.preventDefault();
+
+          $.ajax({
+            type: 'post',
+            url: 'index.php?r=docontacte',
+            data: $('#contacte').serialize(),
+            success: function () {
+			$(".success-missatge").removeClass( 'hidden' );
+			$('#contacte').trigger("reset");
+            }
+			});
+        });
+      });

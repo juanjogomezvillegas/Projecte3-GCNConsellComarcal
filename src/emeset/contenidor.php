@@ -53,6 +53,9 @@ class Contenidor
     public function categoriesPDO(){
         return new \CategoriesPDO($this->connexio);
     }
+    public function contactePDO(){
+        return new \ContactePDO($this->connexio);
+    }
     /*public function connexio(){
         return $this->connexio;
     }*/
