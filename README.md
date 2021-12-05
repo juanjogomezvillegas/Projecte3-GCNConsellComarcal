@@ -69,7 +69,7 @@ $ cd src/
 $ cat config.php
 ```
 
-I Executem el fitxer initPDO.php que es a la carpeta cli/ per crear les taules que necessita l'aplicació per funcionar.
+I Executem l'script initPDO.php que es a la carpeta cli/ per crear les taules que necessita l'aplicació per funcionar.
 
 ```sh
 $ cd cli/
