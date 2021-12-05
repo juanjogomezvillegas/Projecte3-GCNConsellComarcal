@@ -7,7 +7,7 @@
                     <div class="w-full lg:w-2/3">
                         <div class="lg:flex">
                             <div class="w-full mb-12 lg:mb-0 lg:w-1/2">
-                                <a href="index.php"><img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-25 w-20 block m-auto"></a>
+                                <a href="index.php"><img src="../img/logoNavbar-blanc.png" alt="Logo" class="logofooter h-25 w-20 block m-auto"></a>
                                 <div class="flex mt-6 justify-center">
                                     <a href="https://ca-es.facebook.com/ccaltemporda/"><i style="background-color: #3B5998;"
                                         class="socialNetwork flex items-center justify-center h-12 w-12 mr-1 rounded-full fab fill-current text-white text-xl fa-facebook"></i></a>
@@ -33,7 +33,8 @@
                             Dades de contacte
                         </h2>
                      <div class="text-gray-300 mb-8">
-                    <p>C/ Nou 48, 17600 Figueres</p>
+                    <a href="https://www.google.es/maps/place/Carrer+Nou,+48,+17600+Figueres,+Girona/@42.2647985,2.9635546,20.79z/data=!4m5!3m4!1s0x12ba8dc48bbfbff3:0x999e044eb2d67645!8m2!3d42.2648447!4d2.9635791">
+                        C/ Nou 48, 17600 Figueres</a>
                     <p>Tel. <a href="tel:972 503 088">972 503 088</a> </p>
                     <p>Fax. <a href="tel:972 505 681">972 505 681</a></p>
                     <a href="mailto:consell@altemporda.cat"><p>consell@altemporda.cat</p></a>

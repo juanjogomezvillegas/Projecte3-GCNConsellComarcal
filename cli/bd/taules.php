@@ -26,8 +26,10 @@ $connexio->query("CREATE TABLE article (
     titol VARCHAR(150),
     contingut TEXT,
     publicat INT(1) DEFAULT 0, 
+    id_categoria BIGINT UNSIGNED,
     id_usuari BIGINT UNSIGNED, 
     data_creacio TIMESTAMP, 
+    CONSTRAINT fk_categoriaArt FOREIGN KEY (id_categoria) REFERENCES categoria(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     CONSTRAINT fk_usuariArt FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
