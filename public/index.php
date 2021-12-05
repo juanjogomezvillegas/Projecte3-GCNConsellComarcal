@@ -6,6 +6,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 require_once "../src/config.php";
 
 /*Afegim els controladors necessaris per executar tots els requests*/
+require_once "../src/controller/ajaxServer.php";
 require_once "../src/controller/portada.php";
 require_once "../src/controller/login.php";
 require_once "../src/controller/dologin.php";
@@ -33,6 +34,10 @@ require_once "../src/middleware/middleLogat.php";
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
+
+$app->ruta("countUsuaris", "ctrlCountUsuaris");
+$app->ruta("countArticles", "ctrlCountArticles");
+$app->ruta("countCategories", "ctrlCountCategories");
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
