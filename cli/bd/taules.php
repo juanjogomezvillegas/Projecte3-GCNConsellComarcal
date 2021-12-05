@@ -59,3 +59,12 @@ $connexio->query("CREATE TABLE document (
     CONSTRAINT fk_articleDocument FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
+
+$connexio->query("CREATE TABLE contacte (
+    id BIGINT UNSIGNED AUTO_INCREMENT,
+    missatge TEXT, 
+    id_usuari BIGINT UNSIGNED, 
+    data_creacio TIMESTAMP, 
+    CONSTRAINT fk_usuariMsg FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    PRIMARY KEY (id)
+);");

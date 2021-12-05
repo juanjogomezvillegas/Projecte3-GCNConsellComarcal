@@ -39,3 +39,13 @@ foreach ($articles as $actual) {
     $sql = $connexio->prepare("INSERT INTO article VALUES (:id, :titol, :contingut, :publicat, :categoria, :usuari, :dataCreacio)");
     $sql->execute([":id" => $actual["id"],":titol" => $actual["titol"],":contingut" => $actual["contingut"],":publicat" => $actual["publicat"],":categoria" => $actual["categoria"],":usuari" => $actual["usuari"],":dataCreacio" => $actual["dataCreacio"]]);
 }
+
+/*Afageix dades per defecte a la taula "contacte" de la base de dades*/
+$contactes = $contactes = [
+    ["id" => 1,"missatge" => "Nota Projecte 3: 0","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")]
+];
+
+foreach ($contactes as $actual) {
+    $sql = $connexio->prepare("INSERT INTO contacte VALUES (:id, :missatge, :usuari, :dataCreacio)");
+    $sql->execute([":id" => $actual["id"],":missatge" => $actual["missatge"],":usuari" => $actual["usuari"],":dataCreacio" => $actual["dataCreacio"]]);
+}

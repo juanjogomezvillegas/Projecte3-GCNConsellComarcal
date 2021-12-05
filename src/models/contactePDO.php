@@ -31,13 +31,30 @@ class ContactePDO extends ModelPDO
         return $contacte;
     }
 
-    public function add($nom,$email,$telefon,$missatge)
+    /**
+     * getllistatPublic: Mostra tots els articles
+     **/
+    public function getllistatPublic()
+    {
+        $query = "select c.id,c.missatge,concat(u.nom, ' ', u.cognom) as creador,u.email,u.telefon,c.data_creacio from contacte c left join usuari u on c.id_usuari = u.id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+ 
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+  
+        return $registres;
+    }
+
+    public function add()
     {
         $taula2 = $this->taula;
 
-        $query = "insert into $taula2 (nom,email,telefon,missatge) values (:nom,:email,:telefon,:missatge);";
+        $query = "insert into $taula2 () values ();";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom,':email' => $email,':telefon' => $telefon,':missatge' => $missatge]);
+        $result = $stm->execute([]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
