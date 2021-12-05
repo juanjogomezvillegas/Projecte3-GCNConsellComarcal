@@ -37,6 +37,10 @@ $ ./addhost.sh gcnaltemporda.cat 1234
 
 Nota: El primer parametre (gcnaltemporda.cat) correspon al domini que usarem per accedir a l'aplicació. I el segon parametre (1234) es el password de l'usuari de la base de dades (gcnaltemporda_cat).
 
+Per accedir a l'aplicació via web usarem l'adreça "https://www.gcnaltemporda.cat/".
+
+Nota: www.gcnaltemporda.cat s'ha de canviar per el domini real.
+
 # Dades
 
 Base de dades de l'aplicació.
