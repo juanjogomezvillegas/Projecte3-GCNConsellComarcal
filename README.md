@@ -49,7 +49,7 @@ Base de dades de l'aplicació.
 CREATE DATABASE gcnaltemporda_cat;
 ```
 
-Nota: Només crear la base de dades si no has executat l'script addhost.sh.
+Nota: Només cal crear la base de dades si no has executat l'script addhost.sh.
 
 Configurar el config.php per accedir a la base de dades.
 
