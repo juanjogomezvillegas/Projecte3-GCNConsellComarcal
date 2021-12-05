@@ -26,55 +26,57 @@
                 <thead class="bg-gray-100 dark:bg-gray-700">
                         <tr>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                ID
+                                #
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Creat per
+                                Títol
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Data de creació	
+                                Publicació	
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Títol	
+                                Categoria	
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Publicació
+                                Creador
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Categoria
+                                Data de Creació
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Accions
                             </th>
                         </tr>
                     </thead>
-    <?php foreach($dadesarticle as $actual) { ?>
+                    <?php foreach($dadesarticle as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['id'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['id_usuari'];?>
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['data_creacio'];?>
-                            </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['titol'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?php if($actual['publicat'] == 1){echo'<span class="text-green-500 font-semibold">Public</span>';}
-                                 else{echo'<span class="text-red-500 font-semibold">Privat</span>';}
-                                 ?>
+                                <?php if($actual['publicat'] == 1) { ?>
+                                    <span class="text-green-500 font-semibold">Public</span>
+                                <?php } else { ?>
+                                    <span class="text-red-500 font-semibold">Privat</span>
+                                <?php } ?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['categoria'];?>
+                                <?= $actual['id_categoria'];?>
+                            </td>
+                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
+                            <?= $actual['id_usuari'];?> 
+                            </td>
+                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
+                                <?= $actual['data_creacio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="index.php?r=actualitzararticle&id=<?= $actual['id'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
                                 <a href="index.php?r=esborrararticle&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">Esborrar</a>                            </td>
                         </tr>
-    <?php } ?>
+                    <?php } ?>
                 </table>
             </div>
         </div>

@@ -29,7 +29,7 @@
                 <thead class="bg-gray-100 dark:bg-gray-700">
                         <tr>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                ID
+                                #
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Nom
@@ -38,16 +38,16 @@
                                 Cognom
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Usuari
+                                Nom d'Usuari (Username)
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Rol
+                                Permisos o Rol
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Email
+                                Correu Elèctronic
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Telefón
+                                Telèfón
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Accions
@@ -72,10 +72,10 @@
                                  <?= $actual['rol'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['email'];?>
+                                 <a href="mailto:<?= $actual['email'];?>"><?= $actual['email'];?></a>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['telefon'];?>
+                                 <a href="tel:<?= $actual['telefon'];?>"><?= $actual['telefon'];?></a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
