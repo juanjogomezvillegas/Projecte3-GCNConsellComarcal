@@ -55,7 +55,7 @@
          <span class="text-gray-50">Categoria</span>
          <select name="categoria" class="form-select block w-full mt-1 text-gray-900">
          <?php foreach($dadescategoria as $actual) { ?>
-            <option><?= $actual['nom'];?></option>
+            <option value="<?= $actual["id"]; ?>"><?= $actual['nom'];?></option>
              <?php } ?>
             </select>
           </label>
