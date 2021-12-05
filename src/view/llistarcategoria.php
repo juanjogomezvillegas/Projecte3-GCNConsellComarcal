@@ -58,8 +58,8 @@
                                  <?= $actual['data_creacio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">Editar</a>
-                            <a href="index.php?r=esborrarcategoria&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">Esborrar</a>                            </td>
+                            <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
+                            <a href="index.php?r=esborrarcategoria&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>                            </td>
                         </tr>
     <?php } ?>
                 </table>
