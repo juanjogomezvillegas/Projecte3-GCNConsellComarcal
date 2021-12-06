@@ -140,3 +140,7 @@ div.itemsAdmin:hover {
     background-color: rgba(31, 41, 55, 1) !important;
     transition: background-color 1s, box-shadow 1s;
 }
+div.articlesPortada {
+    border-radius: 5px !important;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3) !important;
+}

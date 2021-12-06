@@ -51,6 +51,31 @@ class ArticlesPDO extends ModelPDO
         return $registres;
     }
 
+    /**
+     * getllistatPortada: Mostra tots els articles
+     * 
+     * @param limit limit d'articles que es veuran a la portada
+     **/
+    public function getllistatPortada($limit)
+    {
+        if ($limit == 0) {
+            $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+            from article a left join categoria c on a.id_categoria = c.id where a.publicat = 1 order by dataEdicio desc;";
+        } else {
+            $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria
+            from article a left join categoria c on a.id_categoria = c.id where a.publicat = 1 order by dataEdicio desc limit $limit;";
+        }
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+ 
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+  
+        return $registres;
+    }
+
     public function getArrayValorsPredefinits($usuariLogat)
     {
         $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);;
