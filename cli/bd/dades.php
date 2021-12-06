@@ -30,30 +30,6 @@ foreach ($categories as $actual) {
     $sql->execute([":id" => $actual["id"],":nom" => $actual["nom"],":usuari" => $actual["usuari"],":dataCreacio" => $actual["dataCreacio"]]);
 }
 
-/*Afageix dades per defecte a la taula "article" de la base de dades*/
-$articles = $articles = [
-    ["id" => 1,"titol" => "Com Registrar-se a la Web","contingut" => "Ves al Formulari de Registre","publicat" => 1,"categoria" => 1,"usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 2,"titol" => "Com fer Login","contingut" => "Ves al Formulari de Registre","publicat" => 1,"categoria" => 1,"usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")]
-];
-
-foreach ($articles as $actual) {
-    $sql = $connexio->prepare("INSERT INTO article VALUES (:id, :titol, :contingut, :publicat, :categoria, :usuari, :dataCreacio)");
-    $sql->execute([":id" => $actual["id"],":titol" => $actual["titol"],":contingut" => $actual["contingut"],":publicat" => $actual["publicat"],":categoria" => $actual["categoria"],":usuari" => $actual["usuari"],":dataCreacio" => $actual["dataCreacio"]]);
-}
-
-/*Afageix dades per defecte a la taula "usuari_article_edita" de la base de dades*/
-$articlesEdit = $articlesEdit = [
-    ["usuari" => 2,"article" => 1,"dataEdicio" => $dataCreacio->format("Y/n/j H:i:s")], 
-    ["usuari" => 1,"article" => 1,"dataEdicio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["usuari" => 2,"article" => 1,"dataEdicio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["usuari" => 1,"article" => 2,"dataEdicio" => $dataCreacio->format("Y/n/j H:i:s")]
-];
-
-foreach ($articlesEdit as $actual) {
-    $sql = $connexio->prepare("INSERT INTO usuari_article_edita VALUES (:usuari, :article, :dataEdicio)");
-    $sql->execute([":usuari" => $actual["usuari"],":article" => $actual["article"],":dataEdicio" => $actual["dataEdicio"]]);
-}
-
 /*Afageix dades per defecte a la taula "contacte" de la base de dades*/
 $contactes = $contactes = [
     ["id" => 1,"missatge" => "Nota Projecte 3: 0","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")]

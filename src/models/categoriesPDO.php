@@ -49,11 +49,9 @@ class CategoriesPDO extends ModelPDO
         return $registres;
     }
 
-    public function delete($id)
+    public function delete($id, $creador)
     {
-        $taula2 = $this->taula;
-
-        $query = "delete from $taula2 where id = :id;";
+        $query = "delete from categoria where id = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
 
@@ -66,13 +64,29 @@ class CategoriesPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function add($nom)
+    public function add($nom, $creador)
     {
-        $taula2 = $this->taula;
-
-        $query = "insert into $taula2 (nom) values (:nom);";
+        $query = "select id from usuari where username = :usuari;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom]);
+        $result = $stm->execute([':usuari' => $creador]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $dataActual = new DateTime();
+
+        $query = "insert into categoria (nom, id_usuari, data_creacio) values (:nom, :creador, :dataCreacio);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nom' => $nom, ':creador' => $usuaris["id"], ':dataCreacio' => $dataActual->format("Y-n-j h:i:s")]);
+
+        $query = "select id from categoria where nom = :nomcategeria;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nomcategeria' => $nom]);
+
+        $categories = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "insert into usuari_categoria_edita (id_usuari, id_categoria, data_edicio) values (:creador, :categoria, :dataEdicio);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s")]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

@@ -26,6 +26,7 @@ $connexio->query("CREATE TABLE article (
     titol VARCHAR(150),
     contingut TEXT,
     publicat INT(1) DEFAULT 0, 
+    imatge VARCHAR(100) DEFAULT 'img/articles/logo2.png', 
     id_categoria BIGINT UNSIGNED,
     id_usuari BIGINT UNSIGNED, 
     data_creacio TIMESTAMP, 
@@ -38,18 +39,22 @@ $connexio->query("CREATE TABLE usuari_categoria_edita (
     id_usuari BIGINT UNSIGNED,
     id_categoria BIGINT UNSIGNED, 
     data_edicio TIMESTAMP, 
+    nom VARCHAR(150),
     CONSTRAINT fk_usuariEditaCat FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     CONSTRAINT fk_categoriaEditaUser FOREIGN KEY (id_categoria) REFERENCES categoria(id) ON UPDATE CASCADE ON DELETE CASCADE, 
-    PRIMARY KEY (id_usuari, id_categoria)
+    PRIMARY KEY (id_usuari, id_categoria, data_edicio)
 );");
 
 $connexio->query("CREATE TABLE usuari_article_edita (
     id_usuari BIGINT UNSIGNED,
     id_article BIGINT UNSIGNED, 
     data_edicio TIMESTAMP, 
+    titol VARCHAR(150),
+    contingut TEXT,
+    imatge VARCHAR(100) DEFAULT 'img/articles/logo2.png', 
     CONSTRAINT fk_usuariEditaArt FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     CONSTRAINT fk_articleEditaUser FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
-    PRIMARY KEY (id_usuari, id_article)
+    PRIMARY KEY (id_usuari, id_article, data_edicio)
 );");
 
 $connexio->query("CREATE TABLE document (

@@ -4,13 +4,14 @@ function ctrlDoCrearCategoria($peticio, $resposta, $contenidor)
 {
     $categoriesPDO = $contenidor->categoriesPDO();
 
+    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
     $nomIntroduit = $peticio->get(INPUT_POST, "nom");
 
     $error = false;
     if (empty($nomIntroduit)) {
         $error = true;
     }else{
-        $registre = $categoriesPDO->add($nomIntroduit);
+        $registre = $categoriesPDO->add($nomIntroduit, $usuarilogat);
     }
     if ($registre) {
         $error = false;
