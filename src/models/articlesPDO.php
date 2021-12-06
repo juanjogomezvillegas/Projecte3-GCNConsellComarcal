@@ -58,8 +58,13 @@ class ArticlesPDO extends ModelPDO
      **/
     public function getllistatPortada($limit)
     {
-        $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio 
-        from article a where a.publicat = 1 order by dataEdicio desc limit $limit;";
+        if ($limit == 0) {
+            $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+            from article a left join categoria c on a.id_categoria = c.id where a.publicat = 1 order by dataEdicio desc;";
+        } else {
+            $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria
+            from article a left join categoria c on a.id_categoria = c.id where a.publicat = 1 order by dataEdicio desc limit $limit;";
+        }
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
  
