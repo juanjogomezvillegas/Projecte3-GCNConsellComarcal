@@ -84,9 +84,9 @@ class CategoriesPDO extends ModelPDO
 
         $categories = $stm->fetch(\PDO::FETCH_ASSOC);
 
-        $query = "insert into usuari_categoria_edita (id_usuari, id_categoria, data_edicio) values (:creador, :categoria, :dataEdicio);";
+        $query = "insert into usuari_categoria_edita (id_usuari, id_categoria, data_edicio, nom) values (:creador, :categoria, :dataEdicio, :nom);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s")]);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s"), ':nom' => $nom]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
