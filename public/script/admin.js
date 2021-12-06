@@ -4,14 +4,26 @@ let categories;
 let usuarisAntic;
 let articlesAntic;
 let categoriesAntic;
+let tempsresfresc;
 
 const countUsuaris = $("div#countUsuaris");
 const countArticles = $("div#countArticles");
 const countCategories = $("div#countCategories");
 
 $(document).ready(function() {
-    setInterval(obtenirCount, 10000);
+    tempsresfresc = parseInt($("input#tempsRefresc").val()) * 1000;
+    panell = setInterval(obtenirCount, tempsresfresc);
 
+    $("input#tempsRefresc").on("change", function() {
+        if (parseInt($(this).val()) < 1 && parseInt($(this).val()) > 15) {
+            tempsresfresc = 10 * 1000;
+        } else {
+            tempsresfresc = parseInt($(this).val()) * 1000;
+        }
+        
+        clearInterval(panell);
+        panell = setInterval(obtenirCount, tempsresfresc);
+    });
     $("div.itemsAdminUsuaris").click(function() {
         window.location.assign("index.php?r=llistarusuari");
     });

@@ -21,6 +21,7 @@ class Contenidor
 {
     public $config = [];
     public $connexio;
+
     /**
      * __construct:  Crear contenidor
      *
