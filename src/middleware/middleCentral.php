@@ -13,10 +13,15 @@ function middleCentral($peticio, $resposta, $contenidor, $next)
 {    
     $usuarisPDO = $contenidor->usuarisPDO();
 
+    $r = $peticio->get("INPUT_REQUEST", "r");
     $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
     $logat = $peticio->get("SESSION", "logat");
     
     $dadesUsuariLogat = $usuarisPDO->get($usuarilogat);
+
+    if ($r == "" || !isset($r)) {
+        $resposta->setCookie("paginaAnterior", $r, strtotime("+1 month"));
+    }
 
     $resposta->set("dadesUsuariLogat", $dadesUsuariLogat);
     $resposta->set("usuarilogat", $usuarilogat);
