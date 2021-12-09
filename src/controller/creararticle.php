@@ -1,17 +1,14 @@
 <?php
 
-use Emeset\Contenidor;
-
 function ctrlCrearArticle($peticio, $resposta, $contenidor)
 {
-    $articlesPDO = $contenidor -> ArticlesPDO();
+    $categoriesPDO = $contenidor->categoriesPDO();
 
-    //Necessito una funció que retorni el usuari logat actual
+    $llistatcategoria = $categoriesPDO->getLlistat();
 
-    $usuariLogat = NULL;
+    $resposta->set("llistatcategoria", $llistatcategoria);
 
-    $valorspredefinits = $articlesPDO -> getArrayValorsPredefinits($usuariLogat);
+    $resposta->SetTemplate("creararticle.php");
 
-    $resposta->SetTemplate("llistararticle.php");
     return $resposta;
 }

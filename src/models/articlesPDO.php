@@ -144,6 +144,49 @@ class ArticlesPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+
+    /**
+     * update: modificara els dades d'usuari registrat a la base de dades
+     * @param id id de l'usuari a modificar
+     * @param nom nom de l'usuari
+     * @param cognom cognom de l'usuari
+     * @param username nom que fara servir l'usuari per fer login
+     * @param rol rol de l'usuari
+     * @param email correu electronic de l'usuari
+     * @param telefon telefon de l'usuari
+     **/
+    public function add($titol,$contingut,$publicat,$categoria,$creador)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $creador]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $dataActual = new DateTime();
+
+        $query = "insert into article (titol,contingut,publicat,id_categoria,id_usuari,data_creacio) values (:titol,:contingut,:publicat,:categoria,:creador,:datacreacio);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':titol' => $titol,':contingut' => $contingut, ':publicat' => $publicat,':categoria' => $categoria,':creador' => $usuaris["id"],':datacreacio' => $dataActual->format("Y-n-j h:i:s")]);
+
+        $query = "select id, imatge from article where titol = :nomArticle;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nomArticle' => $titol]);
+
+        $articles = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "insert into usuari_article_edita (id_usuari, id_article, data_edicio, titol, contingut, imatge) values (:creador, :article, :dataEdicio, :titol, :contingut, :imatge);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s"), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
     public function getAlert($id){
         if ($id == 'faltacamp'){
             $id = 'Introdueix tots els camps abans de enviar les dades';
