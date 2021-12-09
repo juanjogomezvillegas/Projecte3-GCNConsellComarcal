@@ -29,7 +29,7 @@
     </div>
           <?php } ?>
           <div class="mb-3 mt-6 pt-0">
-            <form action="index.php?r=doactualitzararticle&id=<?= $article['id']; ?>" method="post">
+            <form action="index.php?r=doactualitzararticle&id=<?= $article['id']; ?>" method="POST">
               <input type="text" name="titol" value="<?= $article['titol']; ?>" placeholder="Titol de la pagina" class="px-3 py-3 placeholder-grey-300 text-grey-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
           </div>
           <div class="col-start-2 col-span-4">
@@ -49,19 +49,23 @@
             </div>
             <label for="toggle" class="text-s mt-2 text-gray-50">Publicar</label>
         </div>
-              </form>
               <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5 ">
               <label class="block text-center">
          <span class="text-gray-50">Categoria</span>
          <select name="categoria" class="form-select block w-full mt-1 text-gray-900">
          <?php foreach($dadescategoria as $actual) { ?>
-            <option value="<?= $actual["id"]; ?>"><?= $actual['nom'];?></option>
+            <?php if ($actual["id"] == $article["id_categoria"]) { ?>
+              <option value="<?= $actual["id"]; ?>" selected=""><?= $actual['nom'];?></option>
+            <?php } else { ?>
+              <option value="<?= $actual["id"]; ?>"><?= $actual['nom'];?></option>
+            <?php } ?>
              <?php } ?>
             </select>
           </label>
               </div>
             </div>
           </div>
+          </form>
     </div>
 
   </div>

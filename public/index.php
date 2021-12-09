@@ -27,11 +27,12 @@ require_once "../src/controller/llistararticle.php";
 require_once "../src/controller/llistarcategoria.php";
 require_once "../src/controller/crearcategoria.php";
 require_once "../src/controller/creararticle.php";
+require_once "../src/controller/docreararticle.php";
+require_once "../src/controller/actualitzararticle.php";
+require_once "../src/controller/doactualitzararticle.php";
 require_once "../src/controller/esborrarusuari.php";
 require_once "../src/controller/esborrararticle.php";
 require_once "../src/controller/esborrarcategoria.php";
-require_once "../src/controller/actualitzararticle.php";
-require_once "../src/controller/doactualitzararticle.php";
 
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -60,8 +61,11 @@ $app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"])
 $app->ruta("docrearcategoria", "ctrlDoCrearCategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrarcategoria", "ctrlEsborrarcategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("llistararticle", "ctrlLlistararticle", ["middleCentral", "middleLogat"]);
+$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"]);
+$app->ruta("docreararticle", "ctrlDocreararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrararticle", "ctrlEsborrararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("actualitzararticle", "ctrlActualitzararticle", ["middleCentral", "middleLogat"]);
+$app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle", ["middleCentral", "middleLogat"]);
 $app->ruta("llistarusuari", "ctrlLlistarusuari", ["middleCentral", "middleLogat"]);
 $app->ruta("registreadmin", "ctrlRegistreAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLogat"]);

@@ -1,24 +1,20 @@
 <?php
 
-function ctrlactualitzararticle($peticio, $resposta, $contenidor)
+function ctrlActualitzararticle($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
-
     $categoriesPDO = $contenidor->categoriesPDO();
 
-    $dadescategoria = $categoriesPDO->getllistat();
+    $idarticle = $peticio->get("INPUT_REQUEST", "id");
 
-    $idarticle = $peticio->get(INPUT_GET, "id");
+    $dadescategoria = $categoriesPDO->getllistat();
 
     $article = $articlesPDO->show($idarticle);
 
     $resposta->set('article', $article);
-
     $resposta->set('dadescategoria', $dadescategoria);
 
     $resposta->SetTemplate("actualitzararticle.php");
-
-    //$resposta->redirect("Location:index.php?r=actualitzararticle&id=$idarticle");
 
     return $resposta;
 }
