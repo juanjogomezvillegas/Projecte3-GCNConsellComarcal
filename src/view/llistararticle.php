@@ -14,9 +14,15 @@
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
+<<<<<<< HEAD
+<a href="index.php?r=creararticle">
+<button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5" href="index.php?r=creararticle">
+                <i class="fas fa-file-medical"></i>
+=======
     <form action="index.php?r=creararticle" method="POST">
         <button type="submit" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <i class="fas fa-folder-plus"></i>
+>>>>>>> feature-HistorialCanvis
                 <span class="ml-1">Crear Article</span>
         </button>
     </form>

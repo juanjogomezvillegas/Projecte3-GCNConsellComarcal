@@ -57,6 +57,7 @@ $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
 $app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("llistarcategoria", "ctrlLlistarcategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("crearcategoria", "ctrlCrearCategoria", ["middleCentral", "middleLogat"]);
+$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"]);
 $app->ruta("docrearcategoria", "ctrlDoCrearCategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrarcategoria", "ctrlEsborrarcategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("llistararticle", "ctrlLlistararticle", ["middleCentral", "middleLogat"]);
