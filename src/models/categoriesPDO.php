@@ -76,7 +76,7 @@ class CategoriesPDO extends ModelPDO
 
         $query = "insert into categoria (nom, id_usuari, data_creacio) values (:nom, :creador, :dataCreacio);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nom' => $nom, ':creador' => $usuaris["id"], ':dataCreacio' => $dataActual->format("Y-n-j h:i:s")]);
+        $result = $stm->execute([':nom' => $nom, ':creador' => $usuaris["id"], ':dataCreacio' => $dataActual->format("Y-n-j H:i:s")]);
 
         $query = "select id from categoria where nom = :nomcategeria;";
         $stm = $this->sql->prepare($query);
@@ -86,7 +86,7 @@ class CategoriesPDO extends ModelPDO
 
         $query = "insert into usuari_categoria_edita (id_usuari, id_categoria, data_edicio, nom) values (:creador, :categoria, :dataEdicio, :nom);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s"), ':nom' => $nom]);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s"), ':nom' => $nom]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -95,5 +95,62 @@ class CategoriesPDO extends ModelPDO
         }
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function update($nom, $creador, $nomAntic)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $creador]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "select id from categoria where nom = :nomcategeria;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nomcategeria' => $nomAntic]);
+
+        $categories = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $dataActual = new DateTime();
+
+        $query = "update categoria set nom = :nom, id_usuari = :creador where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nom' => $nom, ':creador' => $usuaris["id"], ':id' => $categories["id"]]);
+
+        $query = "insert into usuari_categoria_edita (id_usuari, id_categoria, data_edicio, nom) values (:creador, :categoria, :dataEdicio, :nom);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':categoria' => $categories["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s"), ':nom' => $nom]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function get($id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "select * from $taula2 where id = :id LIMIT 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getAlert($id){
+        if ($id == 'faltacamp'){
+            $id = 'Introdueix tots els camps abans de enviar les dades';
+        }
+        return $id;
     }
 }
