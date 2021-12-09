@@ -156,11 +156,11 @@ class CategoriesPDO extends ModelPDO
 
     public function getHistorialComplet()
     {
-        $query = "select * 
-        from usuari_categoria_edita uc 
-        left join usuari u on u.id = uc.id_usuari;";
+        $query = "select uc.*, concat(u.nom, ' ', u.cognom) as creador 
+        from usuari_categoria_edita uc left join usuari u on u.id = uc.id_usuari 
+        order by uc.data_edicio desc;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id]);
+        $result = $stm->execute([]);
 
         $comptador = 0;
         $versions = array();

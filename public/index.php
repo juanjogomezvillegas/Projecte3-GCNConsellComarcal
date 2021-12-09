@@ -35,6 +35,7 @@ require_once "../src/controller/esborrarcategoria.php";
 require_once "../src/controller/actualitzacategoria.php";
 require_once "../src/controller/doactualitzacategoria.php";
 require_once "../src/controller/historialCategories.php";
+require_once "../src/controller/historialArticles.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -75,5 +76,6 @@ $app->ruta("esborrarusuari", "ctrlEsborrarusuari", ["middleCentral", "middleLoga
 $app->ruta("actualitzacategoria", "ctrlActualitzacategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("doactualitzacategoria", "ctrlDoactualitzacategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "middleLogat"]);
+$app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat"]);
 
 $app->executa();

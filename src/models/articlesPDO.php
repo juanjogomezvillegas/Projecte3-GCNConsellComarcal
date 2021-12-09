@@ -210,4 +210,22 @@ class ArticlesPDO extends ModelPDO
         }
         return $id;
     }
+
+    public function getHistorialComplet()
+    {
+        $query = "select ua.*, concat(u.nom, ' ', u.cognom) as creador 
+        from usuari_article_edita ua left join usuari u on u.id = ua.id_usuari 
+        order by ua.data_edicio desc;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+
+        $comptador = 0;
+        $versions = array();
+        while ($versio = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $versions[$comptador] = $versio;
+            $comptador = $comptador + 1;
+        }
+
+        return $versions;
+    }
 }
