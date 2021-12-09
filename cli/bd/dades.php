@@ -16,13 +16,14 @@ foreach ($usuaris as $actual) {
 
 /*Afageix dades per defecte a la taula "categoria" de la base de dades*/
 $categories = $categories = [
-    ["id" => 1,"nom" => "Ambits","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 2,"nom" => "Salut","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 3,"nom" => "Ocupació","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 4,"nom" => "Formació","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 5,"nom" => "Cites Previes","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 6,"nom" => "Habitatge","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
-    ["id" => 7,"nom" => "Noves Tecnologies","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")]
+    ["id" => 1,"nom" => "Tramits","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 2,"nom" => "Ambits","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 3,"nom" => "Salut","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 4,"nom" => "Ocupació","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 5,"nom" => "Formació","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 6,"nom" => "Cites Previes","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 7,"nom" => "Habitatge","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")],
+    ["id" => 8,"nom" => "Noves Tecnologies","usuari" => 2,"dataCreacio" => $dataCreacio->format("Y/n/j H:i:s")]
 ];
 
 foreach ($categories as $actual) {
