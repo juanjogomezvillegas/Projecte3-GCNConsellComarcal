@@ -22,7 +22,7 @@
         </div>
     </div>
     <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <a href="" class="text-2xl text-gray-300"><i class="fas fa-history"></i> Historial</a>
+        <a href="index.php?r=historial" class="text-2xl text-gray-300"><i class="fas fa-history"></i> Historial</a>
     </div>
 </div>
 <div class="flex flex-wrap">

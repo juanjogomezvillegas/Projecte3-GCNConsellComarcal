@@ -33,6 +33,7 @@ require_once "../src/controller/doactualitzararticle.php";
 require_once "../src/controller/esborrarusuari.php";
 require_once "../src/controller/esborrararticle.php";
 require_once "../src/controller/esborrarcategoria.php";
+require_once "../src/controller/historial.php";
 
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -70,5 +71,6 @@ $app->ruta("llistarusuari", "ctrlLlistarusuari", ["middleCentral", "middleLogat"
 $app->ruta("registreadmin", "ctrlRegistreAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrarusuari", "ctrlEsborrarusuari", ["middleCentral", "middleLogat"]);
+$app->ruta("historial", "ctrlHistorial", ["middleCentral", "middleLogat"]);
 
 $app->executa();
