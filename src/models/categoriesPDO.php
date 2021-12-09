@@ -153,4 +153,22 @@ class CategoriesPDO extends ModelPDO
         }
         return $id;
     }
+
+    public function getHistorialComplet()
+    {
+        $query = "select * 
+        from usuari_categoria_edita uc 
+        left join usuari u on u.id = uc.id_usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        $comptador = 0;
+        $versions = array();
+        while ($versio = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $versions[$comptador] = $versio;
+            $comptador = $comptador + 1;
+        }
+
+        return $versions;
+    }
 }
