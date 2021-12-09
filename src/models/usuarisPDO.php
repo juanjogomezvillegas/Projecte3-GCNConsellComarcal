@@ -38,20 +38,18 @@ class UsuarisPDO extends ModelPDO
      * @param usuari usuari logat
      * @param password password logat
      **/
-    public function islogin($usuari, $password)
+    public function islogin($usuari, $password,$passwordhash)
     {
         $taula2 = $this->taula;
 
-        $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass";
-        $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':usuari' => $usuari,':pass' => $password]);
-
-        $logat = $stm->fetch(\PDO::FETCH_ASSOC);
-
-        if (isset($logat["username"]) && isset($logat["contrasenya"])) {
-            return true;
-        } else {
-            return false;
+        if (password_verify($password, $passwordhash)) {
+            $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass";
+            $stm = $this->sql->prepare($query);
+            $result = $stm->execute([':usuari' => $usuari,':pass' => $password]);
+    
+            $logat = $stm->fetch(\PDO::FETCH_ASSOC);
+            
+            print_r($logat);
         }
     }
 
@@ -141,6 +139,22 @@ class UsuarisPDO extends ModelPDO
         $query = "update $taula2 set nom = :nom,cognom = :cognom,username = :username,contrasenya = :pass,rol = :rol,email = :email,telefon = :telefon where id = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id,':nom' => $nom, ':cognom' => $cognom,':username' => $username,':pass' => $contrasenya,':rol' => $rol,':email' => $email,':telefon' => $telefon]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function obtenirHash($usuariLogat)
+    {
+        $taula2 = $this->taula;
+
+        $query = "select contrasenya from $taula2 where username = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $usuariLogat]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

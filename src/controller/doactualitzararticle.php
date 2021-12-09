@@ -30,7 +30,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     //$publicat = $peticio->get(INPUT_POST, "publicat");
     if(!empty($contingut) | !empty($titol)){
 
-    $articlesPDO -> update($idarticle,$contingut,$titol,$publicat);
+    $articlesPDO -> update($idarticle,$contingut,$titol,$publicat,);
 
     } else{
 
