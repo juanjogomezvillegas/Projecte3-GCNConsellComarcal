@@ -128,13 +128,30 @@ class ArticlesPDO extends ModelPDO
      * @param email correu electronic de l'usuari
      * @param telefon telefon de l'usuari
      **/
-    public function update($id, $contingut, $titol,$publicat)
+    public function update($id, $titol, $contingut, $publicat, $categoria, $creador)
     {
-        $taula2 = $this->taula;
-
-        $query = "update $taula2 set contingut = :contingut,titol = :titol,publicat = :publicat where id = :id;";
+        $query = "update article set titol = :titol, contingut = :contingut,publicat = :publicat,id_categoria = :categoria where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id,':contingut' => $contingut, ':titol' => $titol,':publicat' => $publicat]);
+        $result = $stm->execute([':id' => $id, ':titol' => $titol,':contingut' => $contingut,':publicat' => $publicat,':categoria' => $categoria]);
+
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $creador]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $dataActual = new DateTime();
+
+        $query = "select id, imatge from article where titol = :nomArticle;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':nomArticle' => $titol]);
+
+        $articles = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "insert into usuari_article_edita (id_usuari, id_article, data_edicio, titol, contingut, imatge) values (:creador, :article, :dataEdicio, :titol, :contingut, :imatge);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s "), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
+
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -167,7 +184,7 @@ class ArticlesPDO extends ModelPDO
 
         $query = "insert into article (titol,contingut,publicat,id_categoria,id_usuari,data_creacio) values (:titol,:contingut,:publicat,:categoria,:creador,:datacreacio);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':titol' => $titol,':contingut' => $contingut, ':publicat' => $publicat,':categoria' => $categoria,':creador' => $usuaris["id"],':datacreacio' => $dataActual->format("Y-n-j h:i:s")]);
+        $result = $stm->execute([':titol' => $titol,':contingut' => $contingut, ':publicat' => $publicat,':categoria' => $categoria,':creador' => $usuaris["id"],':datacreacio' => $dataActual->format("Y-n-j H:i:s")]);
 
         $query = "select id, imatge from article where titol = :nomArticle;";
         $stm = $this->sql->prepare($query);
@@ -177,7 +194,7 @@ class ArticlesPDO extends ModelPDO
 
         $query = "insert into usuari_article_edita (id_usuari, id_article, data_edicio, titol, contingut, imatge) values (:creador, :article, :dataEdicio, :titol, :contingut, :imatge);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j h:i:s"), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
+        $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s"), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
