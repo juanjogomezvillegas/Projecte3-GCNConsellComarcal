@@ -12,6 +12,6 @@ function ctrlCrearArticle($peticio, $resposta, $contenidor)
 
     $valorspredefinits = $articlesPDO -> getArrayValorsPredefinits($usuariLogat);
 
-    $resposta->SetTemplate("llistararticle.php");
+    $resposta->SetTemplate("creararticle.php");
     return $resposta;
 }

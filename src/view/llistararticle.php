@@ -14,8 +14,9 @@
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
+<a href="index.php?r=creararticle">
 <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5" href="index.php?r=creararticle">
-                <i class="fas fa-folder-plus"></i>
+                <i class="fas fa-file-medical"></i>
                 <span class="ml-1">Crear Article</span>
             </button>
 <div class="flex flex-col">
