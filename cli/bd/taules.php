@@ -73,3 +73,11 @@ $connexio->query("CREATE TABLE contacte (
     CONSTRAINT fk_usuariMsg FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
+
+$connexio->query("CREATE TABLE articles_favorits (
+    id_article BIGINT UNSIGNED,  
+    id_usuari BIGINT UNSIGNED, 
+    CONSTRAINT fk_usuari_favorit FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    CONSTRAINT fk_article_favorit FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    PRIMARY KEY (id_article, id_usuari)
+);");
