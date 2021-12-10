@@ -47,27 +47,27 @@
 			<div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block mt-2 lg:mt-0 bg-red-600 z-20 ml-3" id="nav-content">
 				<ul class="list-reset lg:flex flex-1 items-center px-4 md:px-0">
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="index.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100 border-gray-50 hover:border-blue-200">
+                        <a href="index.php" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200 border-gray-50 hover:border-blue-200">
                             <i class="fas fa-home fa-fw mr-3 "></i><span class="pb-1 md:pb-0 text-sm">Inici</span>
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="index.php?r=admin" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100 border-gray-50 hover:border-blue-200">
+                        <a href="index.php?r=admin" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200 border-gray-50 hover:border-blue-200">
                             <i class="fas fa-home fa-fw mr-3 "></i><span class="pb-1 md:pb-0 text-sm">Inici Panell</span>
                         </a>
                     </li>
 					<li class="mr-6 my-2 md:my-0">
-                        <a href="index.php?r=llistarusuari" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100  border-gray-50  hover:border-blue-200">
+                        <a href="index.php?r=llistarusuari" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200  border-gray-50  hover:border-blue-200">
                             <i class="fas fa-user fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Usuari</span>
                         </a>
                     </li> 
                     <li class="mr-6 my-2 md:my-0">
-                        <a href="index.php?r=llistararticle" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100 border-gray-50  hover:border-blue-200">
+                        <a href="index.php?r=llistararticle" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200 border-gray-50  hover:border-blue-200">
                             <i class="fa fa-tasks fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Articles</span>
                         </a>
                     </li>
                     <li class="mr-6 my-2 md:my-0">
-                        <a href="index.php?r=llistarcategoria" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-100  border-gray-50  hover:border-blue-200">
+                        <a href="index.php?r=llistarcategoria" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200  border-gray-50  hover:border-blue-200">
                             <i class="fas fa-wallet fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Categories</span>
                         </a>
                     </li>
