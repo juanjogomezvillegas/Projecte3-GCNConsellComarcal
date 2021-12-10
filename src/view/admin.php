@@ -18,7 +18,7 @@
     <div class="flex flex-row mr-10 p-3">
         <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
         <div class="mt-1 relative rounded-md shadow-sm">
-            <input type="text" name="tempsRefresc" id="tempsRefresc" value="10" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
+            <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?=$tempsresfresc;?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
         </div>
     </div>
 </div>

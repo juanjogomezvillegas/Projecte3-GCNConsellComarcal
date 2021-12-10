@@ -4,7 +4,6 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $rCookie = $peticio->get(INPUT_COOKIE, "rCookie");
     $usuarilogat = $peticio->get(INPUT_POST, "inputusuari");
     $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
@@ -28,8 +27,14 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 
     $resposta->setSession("logat", $logat);
 
+    $dadesUsuari = $usuarisPDO->get($usuarilogat);
+
     if (!$error) {
-        $resposta->redirect("Location:index.php?r=$rCookie");
+        if ($dadesUsuari["rol"] === "Administrador") {
+            $resposta->redirect("Location:index.php?r=admin");
+        } else {
+            $resposta->redirect("Location:index.php");
+        }
     } else {
         $resposta->setSession("missatgeError", "Error: Usuari o Contrasenya Incorrectes !!!");
         $resposta->redirect("Location:index.php?r=login");

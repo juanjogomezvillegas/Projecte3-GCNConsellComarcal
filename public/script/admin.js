@@ -20,6 +20,12 @@ $(document).ready(function() {
         } else {
             tempsresfresc = parseInt($(this).val()) * 1000;
         }
+
+        $.ajax({
+            url: "index.php?r=canviTempsRefresc", 
+            type: "POST",
+            data: { tempsresfresc }
+        });
         
         clearInterval(panell);
         panell = setInterval(obtenirCount, tempsresfresc);

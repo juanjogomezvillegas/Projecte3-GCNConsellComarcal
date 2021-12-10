@@ -48,6 +48,7 @@ $app = new \Emeset\Emeset($contenidor);
 $app->ruta("countUsuaris", "ctrlCountUsuaris");
 $app->ruta("countArticles", "ctrlCountArticles");
 $app->ruta("countCategories", "ctrlCountCategories");
+$app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc");
 
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);

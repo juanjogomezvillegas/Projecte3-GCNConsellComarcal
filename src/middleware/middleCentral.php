@@ -18,10 +18,6 @@ function middleCentral($peticio, $resposta, $contenidor, $next)
     $logat = $peticio->get("SESSION", "logat");
     
     $dadesUsuariLogat = $usuarisPDO->get($usuarilogat);
-
-    if ($r === "admin" || $r == "") {
-        $resposta->setCookie("rCookie", $r, strtotime("+1 month"));
-    }
     
     $resposta->set("dadesUsuariLogat", $dadesUsuariLogat);
     $resposta->set("usuarilogat", $usuarilogat);

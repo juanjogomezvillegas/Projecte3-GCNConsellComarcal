@@ -32,3 +32,14 @@ function ctrlCountCategories($peticio, $resposta, $contenidor)
 
     return $resposta;
 }
+
+function ctrlCanviTempsRefresc($peticio, $resposta, $contenidor)
+{
+    $tempsresfresc = $peticio->get(INPUT_POST, "tempsresfresc");
+
+    $tempsresfresc = $tempsresfresc / 1000;
+
+    $resposta->setCookie("tempsresfresc", $tempsresfresc, strtotime("+1 month"));
+
+    return $resposta;
+}
