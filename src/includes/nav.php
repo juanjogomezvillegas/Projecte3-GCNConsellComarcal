@@ -26,13 +26,17 @@
 				<div class="hidden md:flex items-center space-x-3">
 					<div class="relative text-sm text-gray-100">
 						<button id="userButton" class="flex items-center focus:outline-none mr-3">
-						<img src="img/user.png" alt="user">
+							<img src="img/user.png" alt="user">
 						</button>
 						<div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
 							<ul class="list-reset">
-								<li><p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?=$usuarilogat;?></p></li>
+								<li>
+									<p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
+								</li>
 								<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">El Meu Perfil</a></li>
-								<li><hr class="border-t mx-2 border-gray-400"></li>
+								<li>
+									<hr class="border-t mx-2 border-gray-400">
+								</li>
 								<li><a href="index.php?r=logout" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Surt de la sessió</a></li>
 							</ul>
 						</div>
@@ -47,18 +51,10 @@
 			<!-- Mobile menu button -->
 			<div class="md:hidden flex items-center">
 				<button class="outline-none mobile-menu-button">
-				<svg class=" w-6 h-6 text-white hover:text-white"
-					x-show="!showMenu"
-					fill="none"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					stroke-width="2"
-					viewBox="0 0 24 24"
-					stroke="currentColor"
-				>
-					<path d="M4 6h16M4 12h16M4 18h16"></path>
-				</svg>
-			</button>
+					<svg class=" w-6 h-6 text-white hover:text-white" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+						<path d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
 			</div>
 		</div>
 	</div>
@@ -66,14 +62,18 @@
 	<div class="hidden mobile-menu">
 		<ul class="">
 			<?php if ($logat) { ?>
-				<li><p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?=$usuarilogat;?></p></li>
+				<li>
+					<p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
+				</li>
 				<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">El Meu Perfil</a></li>
 				<li><a href="index.php?r=logout" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Surt de la sessió</a></li>
 			<?php } else { ?>
 				<li><a href="index.php?r=login" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Inicia Sessió</a></li>
 				<li><a href="index.php?r=registre" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Registrat</a></li>
 			<?php } ?>
-			<li><hr class="border-t mx-2 border-gray-400"></li>
+			<li>
+				<hr class="border-t mx-2 border-gray-400">
+			</li>
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Articles</a></li>
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Tramits</a></li>
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Blog</a></li>

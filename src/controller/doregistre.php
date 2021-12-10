@@ -19,6 +19,8 @@ function ctrlDoRegistre($peticio, $resposta, $contenidor)
     }else if($passwordIntroduit != $passwordConfirmar){
         $error = true;
     }else{
+        $passwordIntroduit = $usuarisPDO -> crearPasswordEncriptat($passwordIntroduit);
+        
         $registre = $usuarisPDO->add($nomIntroduit,$cognomIntroduit,$usuarnameIntroduit,$passwordIntroduit,$rolIntroduit,$emailIntroduit,$telefonIntroduit);
     }
     if ($registre) {

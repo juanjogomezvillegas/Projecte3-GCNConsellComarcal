@@ -14,7 +14,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $dadescategoria = $categoriesPDO->getllistat();
 
-    $numPublicat;
+    $numPublicat = 0;
     if ($publicat == "on") {
         $numPublicat = 1;
     } else {
@@ -24,7 +24,10 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     $message = '';
 
     if(!empty($contingut) | !empty($titol)){
+
         $articlesPDO -> update($idarticle,$titol,$contingut,$numPublicat, $categoria, $usuarilogat);
+
+
     } else{
         $message = $articlesPDO -> getAlert('faltacamp');
     }

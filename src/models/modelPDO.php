@@ -52,4 +52,8 @@ class ModelPDO
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
         return $total;
     }
+    public function crearPasswordEncriptat($password){
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        return $passwordHash;
+    }
 }
