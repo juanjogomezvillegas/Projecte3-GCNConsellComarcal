@@ -79,10 +79,10 @@ $app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLo
 $app->ruta("esborrarusuari", "ctrlEsborrarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("actualitzacategoria", "ctrlActualitzacategoria", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("doactualitzacategoria", "ctrlDoactualitzacategoria", ["middleCentral", "middleLogat", "middleGestor"]);
-$app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "middleLogat", "middleGestor"]);
-$app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleGestor"]);
-$app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleGestor"]);
-$app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleAdmin"]);
 /*Controladors Ajax*/
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);

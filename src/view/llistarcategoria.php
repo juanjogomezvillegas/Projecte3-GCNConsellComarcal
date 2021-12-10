@@ -20,12 +20,14 @@
                 <span class="ml-1">Crear Categoria</span>
             </button>
 </a>
+<?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
 <a href="index.php?r=historialCategories">
 <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <i class="fas fa-history"></i>
                 <span class="ml-1">Historial de les Categories</span>
             </button>
 </a>
+<?php } ?>
 <div class="flex flex-col">
     <div>
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -39,9 +41,11 @@
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Nom
                             </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Creador
-                            </th>
+                            <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
+                                <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                    Creador
+                                </th>
+                            <?php } ?>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Data de Creació
                             </th>
@@ -58,14 +62,18 @@
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['nom'];?>
                             </td>
-                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['creador'];?>
-                            </td>
+                            <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
+                                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
+                                    <?= $actual['creador'];?>
+                                </td>
+                            <?php } ?>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['data_creacio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="index.php?r=historialCategoriaConcreta&id=<?= $actual['id'];?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
+                            <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
+                                <a href="index.php?r=historialCategoriaConcreta&id=<?= $actual['id'];?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
+                            <?php } ?>
                             <a href="index.php?r=actualitzacategoria&id=<?= $actual['id'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
                             <a href="index.php?r=esborrarcategoria&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                         </td>
