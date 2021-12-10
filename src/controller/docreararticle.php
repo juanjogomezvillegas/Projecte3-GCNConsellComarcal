@@ -1,6 +1,6 @@
 <?php
 
-function ctrlDocreararticle($peticio, $resposta, $contenidor)
+function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 

@@ -70,7 +70,6 @@ $app->ruta("docrearcategoria", "ctrlDoCrearCategoria", ["middleCentral", "middle
 $app->ruta("esborrarcategoria", "ctrlEsborrarcategoria", ["middleCentral", "middleLogat"]);
 $app->ruta("llistararticle", "ctrlLlistararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"]);
-$app->ruta("docreararticle", "ctrlDocreararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrararticle", "ctrlEsborrararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("actualitzararticle", "ctrlActualitzararticle", ["middleCentral", "middleLogat"]);
 $app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle", ["middleCentral", "middleLogat"]);
