@@ -13,7 +13,7 @@
     <?php
     include '../src/includes/nav.php';
     ?>
-    <h1 class="text-5xl text-red-900 text-center">Articles</h1>
+    <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles</h1>
     <?php if (count($articlesPortada) > 0) { ?>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             <?php foreach ($articlesPortada as $actual) { ?>

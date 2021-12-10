@@ -5,6 +5,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /*Inclou el fitxer config.php*/
 require_once "../src/config.php";
 /*Afegim els controladors necessaris per executar tots els requests*/
+require_once "../src/controller/ajaxFavorits.php";
 require_once "../src/controller/ajaxServer.php";
 require_once "../src/controller/portada.php";
 require_once "../src/controller/login.php";

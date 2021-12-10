@@ -88,6 +88,86 @@ class ArticlesPDO extends ModelPDO
         return $registres;
     }
 
+    /**
+     * getllistatFavorits: Mostra tots els articles favorits de l'usuari actualment logat
+     * 
+     * @param nomUsuari nom de l'usuari logat
+     **/
+    public function getllistatFavorits($nomUsuari)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $nomUsuari]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "select a.id, a.titol, a.contingut, a.publicat, a.imatge, (select data_edicio 
+        from usuari_article_edita 
+        where id_article = a.id 
+        order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+        from article a 
+        inner join articles_favorits af on af.id_article = a.id
+        left join categoria c on a.id_categoria = c.id 
+        where a.publicat = 1 and af.id_usuari = :idUsuari
+        order by dataEdicio desc;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idUsuari' => $usuaris["id"]]);
+ 
+        $comptador = 0;
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre[$comptador]] = $registre;
+            $comptador = $comptador + 1;
+        }
+  
+        return $registres;
+    }
+
+    public function addFavorit($idArticle, $nomUsuari)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $nomUsuari]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "insert into articles_favorits values (:idArticle, :idUsuari);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idArticle' => $idArticle, ':idUsuari' => $usuaris["id"]]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function isFavorit($idArticle, $nomUsuari)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $nomUsuari]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "select * 
+        from articles_favorits 
+        where id_article = :idArticle and id_usuari = :idUsuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idArticle' => $idArticle, ':idUsuari' => $usuaris["id"]]);
+
+        $favorit = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $exists = false;
+        if (isset($favorit["id_article"])) {
+            $exists = true;
+        }        
+
+        return $exists;
+    }
+
     public function getArrayValorsPredefinits($usuariLogat)
     {
         $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);;
