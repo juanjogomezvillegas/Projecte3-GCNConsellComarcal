@@ -83,6 +83,7 @@ $app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "
 $app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleGestor"]);
+
 /*Controladors Ajax*/
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
