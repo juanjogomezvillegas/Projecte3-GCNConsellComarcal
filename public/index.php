@@ -42,46 +42,51 @@ require_once "../src/controller/historialArticleConcret.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
+require_once "../src/middleware/middleAdmin.php";
+require_once "../src/middleware/middleGestor.php";
 
 $contenidor = new \Emeset\Contenidor($config);
 $app = new \Emeset\Emeset($contenidor);
 
-$app->ruta("countUsuaris", "ctrlCountUsuaris");
-$app->ruta("countArticles", "ctrlCountArticles");
-$app->ruta("countCategories", "ctrlCountCategories");
-$app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc");
-
+/*Access a la Portada*/
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("tramit", "ctrlTramit", ["middleCentral"]);
 $app->ruta("blog", "ctrlBlog", ["middleCentral"]);
 $app->ruta("contacte", "ctrlContacte", ["middleCentral"]);
+/*Iniciar i Tancar la Sessió a la aplicació*/
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDoLogin", ["middleCentral"]);
 $app->ruta("registre", "ctrlRegistre", ["middleCentral"]);
 $app->ruta("doregistre", "ctrlDoRegistre", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
-$app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat"]);
-$app->ruta("llistarcategoria", "ctrlLlistarcategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("crearcategoria", "ctrlCrearCategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"]);
-$app->ruta("docreararticle", "ctrlDoCrearArticle", ["middleCentral", "middleLogat"]);
-$app->ruta("docrearcategoria", "ctrlDoCrearCategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("esborrarcategoria", "ctrlEsborrarcategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("llistararticle", "ctrlLlistararticle", ["middleCentral", "middleLogat"]);
-$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat"]);
-$app->ruta("esborrararticle", "ctrlEsborrararticle", ["middleCentral", "middleLogat"]);
-$app->ruta("actualitzararticle", "ctrlActualitzararticle", ["middleCentral", "middleLogat"]);
-$app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle", ["middleCentral", "middleLogat"]);
-$app->ruta("llistarusuari", "ctrlLlistarusuari", ["middleCentral", "middleLogat"]);
-$app->ruta("registreadmin", "ctrlRegistreAdmin", ["middleCentral", "middleLogat"]);
-$app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLogat"]);
-$app->ruta("esborrarusuari", "ctrlEsborrarusuari", ["middleCentral", "middleLogat"]);
-$app->ruta("actualitzacategoria", "ctrlActualitzacategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("doactualitzacategoria", "ctrlDoactualitzacategoria", ["middleCentral", "middleLogat"]);
-$app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "middleLogat"]);
-$app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat"]);
-$app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat"]);
-$app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat"]);
+/*Access al Panell d'Administració*/
+$app->ruta("admin", "ctrlAdmin", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("llistarcategoria", "ctrlLlistarcategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("crearcategoria", "ctrlCrearCategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("docrearcategoria", "ctrlDoCrearCategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("esborrarcategoria", "ctrlEsborrarcategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("llistararticle", "ctrlLlistararticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("creararticle", "ctrlCrearArticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("docreararticle", "ctrlDocreararticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("esborrararticle", "ctrlEsborrararticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("actualitzararticle", "ctrlActualitzararticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("llistarusuari", "ctrlLlistarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("registreadmin", "ctrlRegistreAdmin", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("esborrarusuari", "ctrlEsborrarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("actualitzacategoria", "ctrlActualitzacategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("doactualitzacategoria", "ctrlDoactualitzacategoria", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleGestor"]);
+/*Controladors Ajax*/
+$app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("countCategories", "ctrlCountCategories", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc", ["middleCentral", "middleLogat", "middleGestor"]);
 
 $app->executa();
