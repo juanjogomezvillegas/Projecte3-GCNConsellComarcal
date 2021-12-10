@@ -4,9 +4,9 @@ function ctrlCrearArticle($peticio, $resposta, $contenidor)
 {
     $categoriesPDO = $contenidor->categoriesPDO();
 
-    $llistatcategoria = $categoriesPDO->getLlistat();
+    $dadescategoria = $categoriesPDO->getllistatPublic();
 
-    $resposta->set("llistatcategoria", $llistatcategoria);
+    $resposta->set('dadescategoria', $dadescategoria);
 
     $resposta->SetTemplate("creararticle.php");
 

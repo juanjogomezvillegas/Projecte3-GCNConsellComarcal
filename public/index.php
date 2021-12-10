@@ -12,6 +12,7 @@ require_once "../src/controller/dologin.php";
 require_once "../src/controller/logout.php";
 require_once "../src/controller/doregistre.php";
 require_once "../src/controller/docrearcategoria.php";
+require_once "../src/controller/docreararticle.php";
 require_once "../src/controller/doregistreadmin.php";
 require_once "../src/controller/docontacte.php";
 require_once "../src/controller/registre.php";
