@@ -21,9 +21,6 @@
             <input type="text" name="tempsRefresc" id="tempsRefresc" value="10" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
         </div>
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-        <a href="index.php?r=historial" class="text-2xl text-gray-300"><i class="fas fa-history"></i> Historial</a>
-    </div>
 </div>
 <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">

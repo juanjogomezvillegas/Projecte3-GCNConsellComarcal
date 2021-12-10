@@ -14,12 +14,18 @@
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
-    <form action="index.php?r=creararticle" method="POST">
-        <button type="submit" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+<a href="index.php?r=creararticle">
+<button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <i class="fas fa-folder-plus"></i>
                 <span class="ml-1">Crear Article</span>
-        </button>
-    </form>
+            </button>
+</a>
+<a href="index.php?r=historialArticles">
+<button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                <i class="fas fa-history"></i>
+                <span class="ml-1">Historial dels Articles</span>
+            </button>
+</a>
 <div class="flex flex-col">
     <div>
         <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -75,8 +81,9 @@
                                 <?= $actual['data_creacio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <a href="index.php?r=historialArticleConcret&id=<?= $actual['id'];?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
                             <a href="index.php?r=actualitzararticle&id=<?= $actual['id'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
-                                <a href="index.php?r=esborrararticle&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>                            </td>
+                            <a href="index.php?r=esborrararticle&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>                            </td>
                         </tr>
                     <?php } ?>
                 </table>
