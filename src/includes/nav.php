@@ -18,7 +18,7 @@
 					<?php if ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor") { ?>
 						<a href="index.php?r=admin" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Administració del Lloc</a>
 					<?php } ?>
-					<a href="https://www.altemporda.org/portal/" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Consell comarcal</a>
+					<a href="https://www.altemporda.org/portal/" target="_blank" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Consell comarcal</a>
 				</div>
 			</div>
 			<!-- Secondary Navbar items -->
