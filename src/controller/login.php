@@ -3,14 +3,14 @@
 function ctrlLogin($peticio, $resposta, $contenidor)
 {
     $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $missatgeError = $peticio->get("SESSION", "missatgeError");
+
+    $error = $peticio->get(INPUT_GET, "error");  
+
+    if(!empty($error)){
+        $resposta->set("error", $error);
+    }
 
     $resposta->set("usuarilogat", $usuarilogat);
-    $resposta->set("missatgeError", $missatgeError);
-
-    if (!is_null($missatgeError)) {
-        $resposta->setSession("missatgeError", null);
-    }
 
     $resposta->SetTemplate("login.php");
     

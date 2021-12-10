@@ -5,31 +5,49 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
     $usuarisPDO = $contenidor->usuarisPDO();
 
     $usuarilogat = $peticio->get(INPUT_POST, "inputusuari");
+
     $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
 
+    $recaptcha_response = $peticio->get(INPUT_POST, 'recaptcha_response');
 
-    $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
+    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
 
-    $passwordHash = $usuarisPDO -> obtenirHash($usuarilogat);
+    $recaptcha_secret = '6LcaaJIdAAAAAMfLO4Fkuk0_eY6u80d0enMY-_7U';
 
-    $passwordHash = $passwordHash['contrasenya'];
+    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
 
-    $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat,$passwordHash);
+    $recaptcha = json_decode($recaptcha);
+
+    if ($recaptcha->score >= 0.7) {
+
+        $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
+
+        $passwordHash = $usuarisPDO -> obtenirHash($usuarilogat);
+
+        $passwordHash = $passwordHash['contrasenya'];
     
+        $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat,$passwordHash);
 
-    if ($logat) {
-        $error = false;
+        if ($logat) {
+            $error = false;
+        } else {
+            $error = true;
+        }
+
+        $resposta->setSession("logat", $logat);
+
+        if (!$error) {
+            $resposta->redirect("Location:index.php");
+        } else {
+            $resposta->redirect("Location:index.php?r=login&error=1");
+        }
+
     } else {
-        $error = true;
+
+        $resposta->redirect("Location:index.php?r=login&error=2");
+
     }
-    $resposta->setSession("logat", $logat);
 
-    /*if (!$error) {
-        $resposta->redirect("Location:index.php");
-    } else {
-        $resposta->setSession("missatgeError", "Error: Usuari o Contrasenya Incorrectes !!!");
-        $resposta->redirect("Location:index.php?r=login");
-    }*/
 
     return $resposta;
 }
