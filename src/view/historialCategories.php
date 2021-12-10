@@ -30,6 +30,9 @@
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Data d'Edició
                             </th>
+                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                Accions
+                            </th>
                         </tr>
                     </thead>
     <?php foreach($historialComplet as $actual) { ?>
@@ -42,6 +45,13 @@
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['data_edicio'];?>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <form action="index.php?r=doactualitzacategoria&id=<?= $actual['id_categoria'];?>" method="POST">
+                                    <input type="hidden" name="nom" value="<?= $actual['nom'];?>">
+                                    <input type="hidden" name="nomAntic" value="<?= $actual['nomAntic'];?>">
+                                    <button type="submit"><span class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-exchange-alt"></i></span></button>
+                                </form>
                             </td>
                         </tr>
     <?php } ?>

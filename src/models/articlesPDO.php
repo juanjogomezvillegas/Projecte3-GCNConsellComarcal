@@ -213,11 +213,34 @@ class ArticlesPDO extends ModelPDO
 
     public function getHistorialComplet()
     {
-        $query = "select ua.*, concat(u.nom, ' ', u.cognom) as creador 
-        from usuari_article_edita ua left join usuari u on u.id = ua.id_usuari 
+        $query = "select ua.*, concat(u.nom, ' ', u.cognom) as creador, a.id_categoria, a.publicat 
+        from usuari_article_edita ua 
+        left join usuari u on u.id = ua.id_usuari 
+        left join article a on a.id = ua.id_article
         order by ua.data_edicio desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
+
+        $comptador = 0;
+        $versions = array();
+        while ($versio = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $versions[$comptador] = $versio;
+            $comptador = $comptador + 1;
+        }
+
+        return $versions;
+    }
+
+    public function getHistorialConcret($id)
+    {
+        $query = "select ua.*, concat(u.nom, ' ', u.cognom) as creador, a.id_categoria, a.publicat 
+        from usuari_article_edita ua 
+        left join usuari u on u.id = ua.id_usuari 
+        left join article a on a.id = ua.id_article 
+        where ua.id_article = :id
+        order by ua.data_edicio desc;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
 
         $comptador = 0;
         $versions = array();

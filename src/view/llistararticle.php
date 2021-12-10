@@ -81,7 +81,7 @@
                                 <?= $actual['data_creacio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="index.php?r=versionsArticle&id=<?= $actual['id'];?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
+                            <a href="index.php?r=historialArticleConcret&id=<?= $actual['id'];?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
                             <a href="index.php?r=actualitzararticle&id=<?= $actual['id'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
                             <a href="index.php?r=esborrararticle&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>                            </td>
                         </tr>

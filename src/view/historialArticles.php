@@ -25,9 +25,6 @@
                                 Títol
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                Contingut
-                            </th>
-                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Imatge
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
@@ -35,6 +32,9 @@
                             </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Data d'Edició
+                            </th>
+                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                Accions
                             </th>
                         </tr>
                     </thead>
@@ -44,9 +44,6 @@
                                  <?= $actual['titol'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                 <?= $actual['contingut'];?>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <img class="w-10 md:w-16 lg:w-18" src="<?= $actual['imatge'];?>" alt="<?= $actual['imatge'];?>">
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
@@ -54,6 +51,15 @@
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['data_edicio'];?>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <form action="index.php?r=doactualitzararticle&id=<?= $actual['id_article'];?>" method="POST">
+                                    <input type="hidden" name="contingut" value="<?= $actual['contingut'];?>">
+                                    <input type="hidden" name="titol" value="<?= $actual['titol'];?>">
+                                    <input type="hidden" name="publicat" value="<?=$actual["publicat"];?>">
+                                    <input type="hidden" name="categoria" value="<?=$actual["id_categoria"];?>">
+                                    <button type="submit"><span class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-exchange-alt"></i></span></button>
+                                </form>
                             </td>
                         </tr>
     <?php } ?>
