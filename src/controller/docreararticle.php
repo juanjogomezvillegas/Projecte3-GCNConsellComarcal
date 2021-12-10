@@ -5,6 +5,7 @@ function ctrlDocreararticle($peticio, $resposta, $contenidor)
     $articlesPDO = $contenidor->articlesPDO();
 
     $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
+
     $titol = $peticio->get(INPUT_POST, "titol");
     $contingut = $peticio->get(INPUT_POST, "contingut");
     $publicat = $peticio->get(INPUT_POST, "publicat");
@@ -33,6 +34,7 @@ function ctrlDocreararticle($peticio, $resposta, $contenidor)
     } else {
         $resposta->setSession("missatgeError", "Error: L'article no s'ha pogut crear!!!");
         $resposta->redirect("Location:index.php?r=creararticle");
+
     }
     return $resposta;
 }

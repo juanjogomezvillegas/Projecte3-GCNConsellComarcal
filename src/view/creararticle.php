@@ -20,6 +20,7 @@
       <div class="grid grid-cols-6 gap-4">
         <div class="col-start-2 col-span-4">
           <div class="mb-3 mt-6 pt-0">
+<<<<<<< HEAD
             <form action="index.php?r=docreararticle" method="POST">
               <input type="text" name="titol" placeholder="Titol de la pagina" class="px-3 py-3 placeholder-grey-300 text-grey-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" />
           </div>
@@ -27,6 +28,28 @@
 
             <textarea id="editor-article" name="contingut"></textarea>
           </div>
+=======
+            <form action="index.php?r=docreararticle>" method="post">
+              <input type="text" name="titol" value="Titol Exemple Article" placeholder="Titol de la pagina" class="px-3 py-3 placeholder-grey-300 text-grey-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+          </div>
+          <div class="col-start-2 col-span-4">
+            <textarea id="editor-article" name="contingut">
+            <h1>Exemple de titol</h1>
+            <br>
+            <p>contingut de la pagina</p>
+            <br>
+            <ul>
+                <li>priemra part</li>
+                <li>segona part</li>
+                <li>tercera part</li>
+            </ul>
+            </textarea>
+          </div>
+          <button id="crear" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+            <i class="fas fa-file-medical" aria-hidden="true"></i>
+            <span class="ml-1">Crear Article</span>
+          </button>
+>>>>>>> feature-creararticle
           <button id="guardar" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
             <i class="fa fa-save" aria-hidden="true"></i>
             <span class="ml-1">Guardar Canvis</span>
