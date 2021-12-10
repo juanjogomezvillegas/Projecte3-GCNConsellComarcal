@@ -110,13 +110,30 @@ class ArticlesPDO extends ModelPDO
         left join categoria c on a.id_categoria = c.id 
         where a.publicat = 1 and af.id_usuari = :idUsuari
         order by dataEdicio desc;";
+
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idUsuari' => $usuaris["id"]]);
  
         $comptador = 0;
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
-            $registres[$registre[$comptador]] = $registre;
+            $registres[$comptador] = $registre;
+            $comptador = $comptador + 1;
+        }
+  
+        return $registres;
+    }
+
+    public function getllistatTotsFavorits()
+    {
+        $query = "select * from articles_favorits;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+ 
+        $comptador = 0;
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$comptador] = $registre;
             $comptador = $comptador + 1;
         }
   
@@ -132,6 +149,27 @@ class ArticlesPDO extends ModelPDO
         $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
 
         $query = "insert into articles_favorits values (:idArticle, :idUsuari);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idArticle' => $idArticle, ':idUsuari' => $usuaris["id"]]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function deleteFavorit($idArticle, $nomUsuari)
+    {
+        $query = "select id from usuari where username = :usuari;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':usuari' => $nomUsuari]);
+
+        $usuaris = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        $query = "delete from articles_favorits where id_article = :idArticle and id_usuari = :idUsuari;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idArticle' => $idArticle, ':idUsuari' => $usuaris["id"]]);
 

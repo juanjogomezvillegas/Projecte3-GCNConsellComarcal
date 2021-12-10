@@ -21,8 +21,20 @@
                     <img class="w-full" src="<?=$actual["imatge"];?>" alt="">
                     <div class="px-6 py-4">
                         <div class="flex justify-end">
+                            <input type="hidden" name="idArticle" value="<?=$actual["id"];?>">
                             <span class="text-2xl font-semibold text-yellow-600"><i class="fas fa-folder-open"></i></span>
-                            <span class="text-2xl font-semibold text-yellow-400 ml-5"><i class="fas fa-star"></i></span>
+                            
+                            <?php $actiu = false; ?>
+                            <?php foreach ($articlesFavoritsTots as $actual2) { ?>
+                                <?php if ($actual2["id_article"] === $actual["id"] && $actual2["id_usuari"] === $dadesUsuari["id"]) { ?>
+                                    <?php $actiu = true; ?>
+                                <?php } ?>
+                            <?php } ?>
+                            <?php if ($actiu) { ?>
+                                <span class="estrella text-2xl font-semibold text-yellow-400 ml-5"><i class="fas fa-star"></i></span>
+                            <?php } else { ?>
+                                <span class="estrella text-2xl font-semibold text-gray-400 ml-5"><i class="fas fa-star"></i></span>
+                            <?php } ?>
                         </div>
                         <div class="font-bold text-xl mb-2"><?=$actual["titol"];?></div>
                         <p class="text-gray-700 text-base">
@@ -46,6 +58,6 @@
 <?php include '../src/includes/footer.php';?>
 </footer>
 <?php include '../src/includes/scripts.php';?>
-
+<script src="script/favorits.js"></script>
 </body>
 </html>

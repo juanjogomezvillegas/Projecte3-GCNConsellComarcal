@@ -89,5 +89,8 @@ $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", 
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countCategories", "ctrlCountCategories", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("afegirFavorits", "ctrlAfegirFavorits", ["middleCentral", "middleLogat"]);
+$app->ruta("esborrarFavorits", "ctrlEsborrarFavorits", ["middleCentral", "middleLogat"]);
+$app->ruta("consultarFavorits", "ctrlConsultarFavorits", ["middleCentral", "middleLogat"]);
 
 $app->executa();
