@@ -12,9 +12,21 @@ function ctrlDoContacte($peticio, $resposta, $contenidor)
 
     $missatge = $peticio->get(INPUT_POST, "missatge");
 
-    $contactePDO -> add($nom,$email,$telefon,$missatge,$contactePDO);
+    $recaptcha_response = $peticio->get(INPUT_POST, 'recaptcha_response');
 
-    $resposta->SetTemplate("contacte.php");
+    $recaptcha = $contactePDO -> validacionRecaptcha($recaptcha_response);
+
+    if ($recaptcha->score >= 0.7) {
+
+        $contactePDO -> add($nom,$email,$telefon,$missatge);
+
+        $resposta->SetTemplate("contacte.php");
+    }
+    else{
+        $resposta->redirect("Location:index.php?r=contacte&error=1");
+    }
+
+    
 
     return $resposta;
 }
