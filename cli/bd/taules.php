@@ -5,7 +5,7 @@ $connexio->query("CREATE TABLE usuari (
     nom VARCHAR(150),
     cognom VARCHAR(150),
     username VARCHAR(150) UNIQUE,
-    contrasenya VARCHAR(50),
+    contrasenya VARCHAR(150),
     rol VARCHAR(150) DEFAULT 'Usuari',
     email VARCHAR(150), 
     telefon VARCHAR(15), 

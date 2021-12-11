@@ -7,11 +7,12 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
 
     $titol = $peticio->get(INPUT_POST, "titol");
-    $contingut = $peticio->get(INPUT_POST, "contingut");
+    $contingut = $peticio->getRaw(INPUT_POST, "contingut");
     $publicat = $peticio->get(INPUT_POST, "publicat");
     $categoria = $peticio->get(INPUT_POST, "categoria");
 
-    $numPublicat;
+    $numPublicat = 0;
+
     if ($publicat == "on") {
         $numPublicat = 1;
     } else {
