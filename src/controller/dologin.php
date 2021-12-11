@@ -10,13 +10,7 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 
     $recaptcha_response = $peticio->get(INPUT_POST, 'recaptcha_response');
 
-    $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
-
-    $recaptcha_secret = '6LcaaJIdAAAAAMfLO4Fkuk0_eY6u80d0enMY-_7U';
-
-    $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-
-    $recaptcha = json_decode($recaptcha);
+    $recaptcha = $usuarisPDO -> validacionRecaptcha($recaptcha_response);
 
     if ($recaptcha->score >= 0.7) {
 

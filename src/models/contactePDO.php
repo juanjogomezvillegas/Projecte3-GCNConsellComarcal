@@ -48,13 +48,13 @@ class ContactePDO extends ModelPDO
         return $registres;
     }
 
-    public function add()
+    public function add($nom,$email,$telefon,$missatge)
     {
         $taula2 = $this->taula;
 
-        $query = "insert into $taula2 () values ();";
+        $query = "insert into $taula2 (nom,email,telefon,missatge) values (:nom,:email,:telefon,:missatge);";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([]);
+        $result = $stm->execute([':nom' => $nom,':email' => $email,':telefon' => $telefon,':missatge' => $missatge]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

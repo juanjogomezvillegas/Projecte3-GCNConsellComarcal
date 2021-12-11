@@ -1,6 +1,6 @@
  <!-- Footer section -->
 
- <div class="mt-60 bg-cover bg-center" style="background-image: url('img/the-background-292729_960_720.png');">
+ <div class="bg-cover bg-center" style="background-image: url('img/the-background-292729_960_720.png');">
     <div style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="container mx-auto px-6 lg:px-20 py-12 text-center">
             <div class="lg:flex">

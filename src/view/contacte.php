@@ -5,6 +5,9 @@
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php include '../src/includes/head.php'; ?>
     <title>GCN Consell Comarcal</title>
+    <?php
+    include '../src/includes/recaptcha.php';
+    ?>
 </head>
 <body>
     <?php
@@ -36,9 +39,23 @@
         <textarea name="missatge" class="text-center resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>
       </div>
       <div class="p-3 pt-4">
+      <?php if (!empty($error)) { ?>
+                        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <strong class="font-bold">S'ha produit algun error</strong>
+                            <span class="block">
+                                <?php if($error == 1){?>
+                                 Revisa que el password coincideixi amb la contrasenya
+                                 <?php }?>
+                                </span>
+                                
+                        </div>
+                    <?php }  ?>
+      </div>
+      <div class="p-3 pt-4">
       <button  type='submit' class="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded text-2xl">
       Enviar
       </button>
+      <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
     </form>
     </div>
      </div>

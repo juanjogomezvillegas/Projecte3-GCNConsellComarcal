@@ -88,5 +88,7 @@ $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", 
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countCategories", "ctrlCountCategories", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("docontacte", "ctrlDoContacte", ["middleCentral"]);
+
 
 $app->executa();

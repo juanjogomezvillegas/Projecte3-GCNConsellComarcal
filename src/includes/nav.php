@@ -41,6 +41,18 @@
 							</ul>
 						</div>
 					</div>
+					<div class="inline-flex relative">
+						<button class="increase bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-l top-0 right-0 text-lg logonavbar
+">
+							<i class="fa fa-plus" aria-hidden="true">A</i>
+						</button>
+						<button class="reset bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-r top-0 right-0 text-sm logonavbar">
+						<i class="fa fa-redo-alt" aria-hidden="true"></i>
+						</button>
+						<button class="decrease bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-r top-0 right-0 text-xs logonavbar">
+						<i class="fa fa-minus" aria-hidden="true">A</i>
+						</button>
+					</div>
 				</div>
 			<?php } else { ?>
 				<div class="hidden md:flex items-center space-x-3 ">
@@ -48,6 +60,7 @@
 					<a href="index.php?r=registre" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrat</a>
 				</div>
 			<?php } ?>
+
 			<!-- Mobile menu button -->
 			<div class="md:hidden flex items-center">
 				<button class="outline-none mobile-menu-button">
