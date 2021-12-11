@@ -17,6 +17,7 @@
     <?php if (count($articlesPortada) > 0) { ?>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
             <?php foreach ($articlesPortada as $actual) { ?>
+                <a href="index.php?r=article&id=<?=$actual["id"];?>">
                 <div class="articlesPortada max-w-sm rounded overflow-hidden shadow-lg bg-gray-200">
                     <img class="w-full" src="<?=$actual["imatge"];?>" alt="">
                     <div class="px-6 py-4">
@@ -38,6 +39,7 @@
                 </div>
             <?php } ?>
         </div>
+        </a>
     <?php } else { ?>
         <h1 class="text-3xl text-red-900 text-center">En Aquest moment no hi han articles disponibles.</h1>
     <?php } ?>

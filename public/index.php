@@ -22,6 +22,7 @@ require_once "../src/controller/blog.php";
 require_once "../src/controller/tramit.php";
 require_once "../src/controller/contacte.php";
 require_once "../src/controller/admin.php";
+require_once "../src/controller/article.php";
 require_once "../src/controller/llistarusuari.php";
 require_once "../src/controller/llistararticle.php";
 require_once "../src/controller/llistarcategoria.php";
@@ -54,6 +55,8 @@ $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("tramit", "ctrlTramit", ["middleCentral"]);
 $app->ruta("blog", "ctrlBlog", ["middleCentral"]);
 $app->ruta("contacte", "ctrlContacte", ["middleCentral"]);
+$app->ruta("article", "ctrlArticle", ["middleCentral"]);
+
 /*Iniciar i Tancar la Sessió a la aplicació*/
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDoLogin", ["middleCentral"]);

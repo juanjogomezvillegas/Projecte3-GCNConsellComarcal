@@ -106,7 +106,7 @@ class ArticlesPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "select * from $taula2 where id = :id LIMIT 1;";
+        $query = "select a.titol,a.publicat,a.contingut,concat(u.nom, ' ', u.cognom) as creador,a.data_creacio from article a left join usuari u on a.id_usuari = u.id where a.id = :id LIMIT 1;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
 

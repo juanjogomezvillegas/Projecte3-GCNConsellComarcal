@@ -14,18 +14,18 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $dadescategoria = $categoriesPDO->getllistat();
 
-    $numPublicat = 0;
-    if ($publicat == "on") {
-        $numPublicat = 1;
-    } else {
-        $numPublicat = 0;
+    if (!empty($publicat)){
+        $publicat = 1;
     }
+    else{
+         $publicat = 0;
+        }
     
     $message = '';
 
     if(!empty($contingut) | !empty($titol)){
 
-        $articlesPDO -> update($idarticle,$titol,$contingut,$numPublicat, $categoria, $usuarilogat);
+        $articlesPDO -> update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
 
 
     } else{

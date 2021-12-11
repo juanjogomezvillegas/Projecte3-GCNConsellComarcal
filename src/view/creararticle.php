@@ -34,15 +34,16 @@
           </div>
           <div class="col-start-2 col-span-4">
             <textarea id="editor-article" name="contingut">
-            <h1>Exemple de titol</h1>
-            <br>
-            <p>contingut de la pagina</p>
-            <br>
-            <ul>
-                <li>priemra part</li>
-                <li>segona part</li>
-                <li>tercera part</li>
-            </ul>
+            <p class="py-6">
+        👋 Hola això es una plantilla per <a> facilitar la feina </a>, aquí pots començar a escriure el teu article
+    </p>
+
+    <p class="py-6">
+        Aqui tens unes proves de coses xules que pots fer amb els articles
+    </p>
+
+    <blockquote class="border-l-4 border-red-500 italic my-8 pl-8 md:pl-12">Exemple de citació - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.</blockquote>
+
             </textarea>
           </div>
           <button type="submit" id="crear" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
