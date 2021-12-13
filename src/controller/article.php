@@ -2,12 +2,15 @@
 
 function ctrlArticle($peticio, $resposta, $contenidor)
 {
-    $idarticle = $peticio->get(INPUT_GET, "id");
-
     $articlesPDO = $contenidor->articlesPDO();
 
-    $informacioArticle = $articlesPDO-> show($idarticle);
+    $idarticle = $peticio->get("INPUT_REQUEST", "id");
 
+    $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
+
+    $maxmin = $articlesPDO->getMaxMin();
+
+    $resposta->set('maxmin', $maxmin);
     $resposta->set('informacioArticle', $informacioArticle);
 
     $resposta->SetTemplate("article.php");

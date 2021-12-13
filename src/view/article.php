@@ -22,7 +22,7 @@
     <div class="font-sans">
         <p class="text-base md:text-sm text-green-500 font-bold">&lt; <a href="index.php" class="text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Tornar a la portada</a></p>
                 <h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl"><?= $informacioArticle['titol'];?></h1>
-                <p class="text-sm md:text-base font-normal text-gray-600 mb-5">Creat el <?= $informacioArticle['data_creacio'];?></p>
+                <p class="text-sm md:text-base font-normal text-gray-600 mb-5">Ultima Edició el <?= $informacioArticle['dataEdicio'];?></p>
     </div>
 
 
@@ -36,40 +36,26 @@
 
 <!--Categoria -->
 <div class="text-base md:text-sm text-gray-500 px-4 py-6">
-    Categoria: <a href="#" class="text-base md:text-sm text-red-500 no-underline hover:underline">Link</a>
+    Categoria: <?= $informacioArticle["categoria"]; ?>
 </div>
-
-<!--Divisor-->
-<hr class="border-b-2 border-gray-400 mb-8 mx-4">
-
-
-
-<!--Autor-->
-<div class="flex w-full items-center font-sans px-4 py-12">
-    <img class="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-    <div class="flex-1 px-2">
-        <p class="text-base font-bold text-base md:text-xl leading-none mb-2">Autor que ha creat el article</p>
-        <p class="text-gray-600 text-xs md:text-base">    <?= $informacioArticle['creador'];?>  </p>
-    </div>
-    <div class="justify-end">
-        <button class="bg-transparent border border-gray-500 hover:border-red-500 text-xs text-gray-500 hover:text-red-500 font-bold py-2 px-4 rounded-full">Contacte</button>
-    </div>
-</div>
-<!--/Autor-->
 
 <!--Divisor-->
 <hr class="border-b-2 border-gray-400 mb-8 mx-4">
 
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
+    <?php if ($maxmin["idminim"] >= $informacioArticle["id"] && $maxmin["idmaxim"] <= $informacioArticle["id"]) { ?>
     <div class="text-left">
-        <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Article anterior</span><br>
-        <p><a href="#" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article titol</a></p>
+        <?php $idAnterior = $informacioArticle["id"] - 1; ?>
+        <p><a href="index.php?r=article&id=<?=$idAnterior;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">&lt; Article Anterior</a></p>
     </div>
+    <?php } ?>
+    <?php if ($maxmin["idminim"] >= $informacioArticle["id"] && $maxmin["idmaxim"] <= $informacioArticle["id"]) { ?>
     <div class="text-right">
-        <span class="text-xs md:text-sm font-normal text-gray-600">Article següent &gt;</span><br>
-        <p><a href="#" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article titol</a></p>
+        <?php $idSeguent = $informacioArticle["id"] + 1; ?>
+        <p><a href="index.php?r=article&id=<?=$idSeguent;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article Següent &gt;</a></p>
     </div>
+    <?php } ?>
 </div>
 
 
