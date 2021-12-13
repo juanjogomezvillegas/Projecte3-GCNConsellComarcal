@@ -12,6 +12,14 @@ class ArticlesPDO extends ModelPDO
 {
     private $taula = "article";
 
+
+    public function getMaxMin()
+    {
+        $maxmin = parent::maxmin($this->taula);
+
+        return $maxmin;
+    }
+
     /**
      * gettotalregistres: Mostra el numero total de articles
      **/

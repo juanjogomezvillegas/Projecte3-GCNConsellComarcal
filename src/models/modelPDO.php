@@ -52,6 +52,16 @@ class ModelPDO
         $total = $stm->fetch(\PDO::FETCH_ASSOC);
         return $total;
     }
+
+    public function maxmin($taula)
+    {
+        $query = "select max(id) idmaxim, min(id) idminim from $taula;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute();
+        $total = $stm->fetch(\PDO::FETCH_ASSOC);
+        return $total;
+    }
+
     public function crearPasswordEncriptat($password){
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         return $passwordHash;
