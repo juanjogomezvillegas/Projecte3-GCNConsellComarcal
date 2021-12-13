@@ -34,6 +34,7 @@
 									<p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
 								</li>
 								<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">El Meu Perfil</a></li>
+								<li><a href="index.php?r=articlespreferitsusuari" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Els Meus Articles</a></li>
 								<li>
 									<hr class="border-t mx-2 border-gray-400">
 								</li>
@@ -79,6 +80,7 @@
 					<p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
 				</li>
 				<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">El Meu Perfil</a></li>
+				<li><a href="index.php?r=articlespreferitsusuari" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Els Meus Articles</a></li>
 				<li><a href="index.php?r=logout" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Surt de la sessió</a></li>
 			<?php } else { ?>
 				<li><a href="index.php?r=login" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Inicia Sessió</a></li>
