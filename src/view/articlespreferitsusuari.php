@@ -13,30 +13,13 @@
     <?php
     include '../src/includes/nav.php';
     ?>
-    <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles</h1>
-    <?php if (count($articlesPortada) > 0) { ?>
+    <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles Preferits</h1>
+    <?php if (count($articlesFavorits) > 0) { ?>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
-            <?php foreach ($articlesPortada as $actual) { ?>
+            <?php foreach ($articlesFavorits as $actual) { ?>
                 <div class="articlesPortada max-w-sm rounded overflow-hidden shadow-lg bg-gray-200">
                     <a href="index.php?r=article&id=<?=$actual["id"];?>"><img class="w-full" src="<?=$actual["imatge"];?>" alt=""></a>
                     <div class="px-6 py-4">
-                        <?php if ($logat) { ?>
-                            <div class="flex justify-end">
-                                <input type="hidden" name="idArticle" value="<?=$actual["id"];?>">
-
-                                <?php $actiu = false; ?>
-                                <?php foreach ($articlesFavoritsTots as $actual2) { ?>
-                                    <?php if ($actual2["id_article"] === $actual["id"] && $actual2["id_usuari"] === $dadesUsuari["id"]) { ?>
-                                        <?php $actiu = true; ?>
-                                    <?php } ?>
-                                <?php } ?>
-                                <?php if ($actiu) { ?>
-                                    <span class="estrella text-2xl font-semibold text-yellow-400 ml-5"><i class="fas fa-star"></i></span>
-                                <?php } else { ?>
-                                    <span class="estrella text-2xl font-semibold text-gray-400 ml-5"><i class="fas fa-star"></i></span>
-                                <?php } ?>
-                            </div>
-                        <?php } ?>
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
                             <div class="font-bold text-xl mb-2"><?=$actual["titol"];?></div>
                             <p class="text-gray-700 text-base">
@@ -55,7 +38,7 @@
             <?php } ?>
         </div>
     <?php } else { ?>
-        <h1 class="text-3xl text-red-900 text-center">En Aquest moment no hi han articles disponibles.</h1>
+        <h1 class="text-3xl text-red-900 text-center">En Aquest moment no tens articles favorits.</h1>
     <?php } ?>
     <br>
 <footer>
