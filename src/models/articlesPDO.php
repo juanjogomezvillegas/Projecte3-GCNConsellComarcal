@@ -124,6 +124,22 @@ class ArticlesPDO extends ModelPDO
         return $registres;
     }
 
+    public function getInfoArticle($id)
+    {
+        $query = "select a.*, (select data_edicio 
+            from usuari_article_edita 
+            where id_article = a.id 
+            order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+            from article a 
+            left join categoria c on a.id_categoria = c.id 
+            where a.publicat = 1 and a.id = :id
+            order by dataEdicio desc;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+  
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     public function getllistatTotsFavorits()
     {
         $query = "select * from articles_favorits;";

@@ -2,11 +2,11 @@
 
 function ctrlArticle($peticio, $resposta, $contenidor)
 {
-    $idarticle = $peticio->get(INPUT_GET, "id");
+    $idarticle = $peticio->get("INPUT_REQUEST", "id");
 
     $articlesPDO = $contenidor->articlesPDO();
 
-    $informacioArticle = $articlesPDO-> show($idarticle);
+    $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
 
     $resposta->set('informacioArticle', $informacioArticle);
 
