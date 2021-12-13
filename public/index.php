@@ -5,6 +5,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 /*Inclou el fitxer config.php*/
 require_once "../src/config.php";
 /*Afegim els controladors necessaris per executar tots els requests*/
+require_once "../src/controller/ajaxFavorits.php";
 require_once "../src/controller/ajaxServer.php";
 require_once "../src/controller/portada.php";
 require_once "../src/controller/login.php";
@@ -92,6 +93,8 @@ $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat"
 $app->ruta("countCategories", "ctrlCountCategories", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("docontacte", "ctrlDoContacte", ["middleCentral"]);
-
+$app->ruta("afegirFavorits", "ctrlAfegirFavorits", ["middleCentral", "middleLogat"]);
+$app->ruta("esborrarFavorits", "ctrlEsborrarFavorits", ["middleCentral", "middleLogat"]);
+$app->ruta("consultarFavorits", "ctrlConsultarFavorits", ["middleCentral", "middleLogat"]);
 
 $app->executa();
