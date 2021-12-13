@@ -44,15 +44,13 @@
 
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
-    <?php if ($maxmin["idminim"] >= $informacioArticle["id"] && $maxmin["idmaxim"] <= $informacioArticle["id"]) { ?>
+    <?php if ($informacioArticle["id"] > 1) { ?>
     <div class="text-left">
-        <?php $idAnterior = $informacioArticle["id"] - 1; ?>
         <p><a href="index.php?r=article&id=<?=$idAnterior;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">&lt; Article Anterior</a></p>
     </div>
     <?php } ?>
-    <?php if ($maxmin["idminim"] >= $informacioArticle["id"] && $maxmin["idmaxim"] <= $informacioArticle["id"]) { ?>
+    <?php if ($informacioArticle["id"] < $count["total"]) { ?>
     <div class="text-right">
-        <?php $idSeguent = $informacioArticle["id"] + 1; ?>
         <p><a href="index.php?r=article&id=<?=$idSeguent;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article Següent &gt;</a></p>
     </div>
     <?php } ?>

@@ -8,9 +8,14 @@ function ctrlArticle($peticio, $resposta, $contenidor)
 
     $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
 
-    $maxmin = $articlesPDO->getMaxMin();
+    $count = $articlesPDO->gettotalregistres();
 
-    $resposta->set('maxmin', $maxmin);
+    $idAnterior = $idarticle - 1;
+    $idSeguent = $idarticle + 1;
+
+    $resposta->set('count', $count);
+    $resposta->set('idAnterior', $idAnterior);
+    $resposta->set('idSeguent', $idSeguent);
     $resposta->set('informacioArticle', $informacioArticle);
 
     $resposta->SetTemplate("article.php");
