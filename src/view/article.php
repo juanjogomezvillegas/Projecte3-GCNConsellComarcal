@@ -45,12 +45,12 @@
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
     <div class="text-left">
-        <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Article anterior</span><br>
-        <p><a href="index.php?r=article&id=<?=$informacioArticle["id"]--;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline"><?= $informacioArticle["titol"]; ?></a></p>
+        <?php $idAnterior = $informacioArticle["id"] - 1; ?>
+        <p><a href="index.php?r=article&id=<?=$idAnterior;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">&lt; Article Anterior</a></p>
     </div>
     <div class="text-right">
-        <span class="text-xs md:text-sm font-normal text-gray-600">Article següent &gt;</span><br>
-        <p><a href="index.php?r=article&id=<?=$informacioArticle["id"]++;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline"><?= $informacioArticle["titol"]; ?></a></p>
+        <?php $idSeguent = $informacioArticle["id"] + 1; ?>
+        <p><a href="index.php?r=article&id=<?=$idSeguent;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article Següent &gt;</a></p>
     </div>
 </div>
 
