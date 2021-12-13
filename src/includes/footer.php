@@ -21,7 +21,7 @@
                             <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
                                 <h2 class="font-bold text-gray-100 mb-4">
                                     Articles Favorits</h2>
-                                <ul id="favoritsFooter" class="text-gray-500 text-sm">
+                                <ul id="favoritsFooter" class="text-gray-300 mb-8">
                                 </ul>
                             </div>
                         </div>

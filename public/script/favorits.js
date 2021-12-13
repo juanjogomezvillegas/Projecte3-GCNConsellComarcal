@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    setInterval(setArticlesFavoritsFooter, 1000);
+    setArticlesFavoritsFooter();
 
     $("span.estrella").click(function(e) {
         let favoritActiu = $( e.target ).is(".text-yellow-400");
@@ -27,17 +27,19 @@ $(document).ready(function() {
             });
             $( e.target ).removeClass("text-gray-400").addClass("text-yellow-400");
         }
+
+        setArticlesFavoritsFooter();
     });
 });
 
 function setArticlesFavoritsFooter() {
+    $("ul#favoritsFooter").children().remove();
     $.ajax({
         url: "index.php?r=consultarFavorits", 
         type: "POST",
         success: function(data) {
-            //console.table($.parseJSON(data));
-            $.parseJSON(data).forEach(element => {
-                console.log(element);
+            $.parseJSON(data).forEach(element   => {
+                $("ul#favoritsFooter").append("<a href='index.php?r=article&id="+element["id"]+"'>"+element["titol"]+"</a><br>");
             });
         }
     });
