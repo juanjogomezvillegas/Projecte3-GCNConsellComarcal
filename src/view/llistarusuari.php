@@ -40,6 +40,9 @@
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Nom d'Usuari (Username)
                             </th>
+                            <th scope="col" class="text-center text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                Contrasenya
+                            </th>
                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                 Permisos o Rol
                             </th>
@@ -69,6 +72,9 @@
                                  <?= $actual['username'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
+                                 <?= $actual['contrasenya'];?>
+                            </td>
+                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                  <?= $actual['rol'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
@@ -78,7 +84,7 @@
                                  <a href="tel:<?= $actual['telefon'];?>"><?= $actual['telefon'];?></a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
+                                <a href="index.php?r=actualitzarusuari&id=<?= $actual['nom'];?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
                                 <a href="index.php?r=esborrarusuari&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
