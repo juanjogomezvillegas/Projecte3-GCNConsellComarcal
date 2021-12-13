@@ -17,14 +17,16 @@
                                     class="socialNetwork flex items-center justify-center h-12 w-12 mx-1 rounded-full fab fill-current text-white text-xl fa-twitter"></i></a>
                             </div>
                         </div>
-                        <div class="w-full inline-flex justify-center">
-                            <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
-                                <h2 class="font-bold text-gray-100 mb-4">
-                                    Articles Favorits</h2>
-                                <ul id="favoritsFooter" class="text-gray-300 mb-8">
-                                </ul>
+                        <?php if ($logat) { ?>
+                            <div class="w-full inline-flex justify-center">
+                                <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
+                                    <h2 class="font-bold text-gray-100 mb-4">
+                                        Articles Favorits</h2>
+                                    <ul id="favoritsFooter" class="text-gray-300 mb-8">
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="w-full lg:w-1/3">

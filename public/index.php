@@ -43,6 +43,7 @@ require_once "../src/controller/historialCategories.php";
 require_once "../src/controller/historialArticles.php";
 require_once "../src/controller/historialCategoriaConcreta.php";
 require_once "../src/controller/historialArticleConcret.php";
+require_once "../src/controller/articlespreferitsusuari.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -59,6 +60,7 @@ $app->ruta("tramit", "ctrlTramit", ["middleCentral"]);
 $app->ruta("blog", "ctrlBlog", ["middleCentral"]);
 $app->ruta("contacte", "ctrlContacte", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
+$app->ruta("articlespreferitsusuari", "ctrlArticlespreferitsusuari", ["middleCentral", "middleLogat"]);
 
 /*Iniciar i Tancar la Sessió a la aplicació*/
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
