@@ -10,7 +10,9 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 
     $recaptcha_response = $peticio->get(INPUT_POST, 'recaptcha_response');
 
-    $recaptcha = $usuarisPDO -> validacionRecaptcha($recaptcha_response);
+    $recaptcha = $usuarisPDO->validacionRecaptcha($recaptcha_response);
+
+    print_r($recaptcha);
 
     if ($recaptcha->score >= 0.7) {
 
