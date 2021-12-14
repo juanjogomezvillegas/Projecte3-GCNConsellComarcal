@@ -57,3 +57,4 @@
         </div>
     </div>
 </div>
+<script src="script/favorits.js"></script>

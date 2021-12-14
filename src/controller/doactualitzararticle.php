@@ -11,7 +11,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     $titol = $peticio->get(INPUT_POST, "titol");
     $publicat = $peticio->get(INPUT_POST, "publicat");
     $categoria = $peticio->get(INPUT_POST, "categoria");
-    $imatgearticle = $peticio->get(INPUT_POST, "imatgearticle");
+    $imatgearticle = $peticio->get("FILES", "imatgearticle");
 
     $dadescategoria = $categoriesPDO->getllistat();
 
@@ -20,25 +20,26 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     } else {
         $publicat = 0;
     }
+
+    print_r($imatgearticle);
     
+
     $message = '';
 
-    if(!empty($contingut) | !empty($titol)){
+    if(!empty($contingut) || !empty($titol) || str_ends_with($imatgearticle["name"], ".png") || str_ends_with($imatgearticle["name"], ".jpg")){
 
         $articlesPDO->update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
 
-        $articlesPDO->updateImage($idarticle, $imatgearticle);
+        $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
-        move_uploaded_file("/tmp/".$imatgearticle, "img/articles/".$imatgearticle);
+        move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
     } else{
         $message = $articlesPDO -> getAlert('faltacamp');
     }
 
     $article = $articlesPDO->show($idarticle);
 
-    print_r($_FILES);
-
-    //$resposta->redirect("Location:index.php?r=llistararticle");
+    $resposta->redirect("Location:index.php?r=llistararticle");
 
     return $resposta;
 }

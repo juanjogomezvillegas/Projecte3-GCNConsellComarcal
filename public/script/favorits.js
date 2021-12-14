@@ -38,7 +38,7 @@ function setArticlesFavoritsFooter() {
         url: "index.php?r=consultarFavorits", 
         type: "POST",
         success: function(data) {
-            $.parseJSON(data).forEach(element   => {
+            $.parseJSON(data).forEach(element => {
                 $("ul#favoritsFooter").append("<a href='index.php?r=article&id="+element["id"]+"'>"+element["titol"]+"</a><br>");
             });
         }
