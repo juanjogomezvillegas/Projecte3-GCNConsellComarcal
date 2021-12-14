@@ -12,14 +12,6 @@ class ArticlesPDO extends ModelPDO
 {
     private $taula = "article";
 
-
-    public function getMaxMin()
-    {
-        $maxmin = parent::maxmin($this->taula);
-
-        return $maxmin;
-    }
-
     /**
      * gettotalregistres: Mostra el numero total de articles
      **/
@@ -260,7 +252,7 @@ class ArticlesPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "select a.titol,a.publicat,a.contingut,concat(u.nom, ' ', u.cognom) as creador,a.data_creacio from article a left join usuari u on a.id_usuari = u.id where a.id = :id LIMIT 1;";
+        $query = "select a.* from article a left join usuari u on a.id_usuari = u.id where a.id = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
 
@@ -296,9 +288,9 @@ class ArticlesPDO extends ModelPDO
 
         $dataActual = new DateTime();
 
-        $query = "select id, imatge from article where titol = :nomArticle;";
+        $query = "select id, imatge from article where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':nomArticle' => $titol]);
+        $result = $stm->execute([':id' => $id]);
 
         $articles = $stm->fetch(\PDO::FETCH_ASSOC);
 
@@ -306,6 +298,20 @@ class ArticlesPDO extends ModelPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s "), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
 
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateImage($id, $imatge)
+    {
+        $query = "update article set imatge = concat('img/articles/', :imatgeArticle) where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id, ':imatgeArticle' => $imatge]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();

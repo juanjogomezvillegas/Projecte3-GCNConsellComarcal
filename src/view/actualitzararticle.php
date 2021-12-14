@@ -63,11 +63,16 @@
             </select>
           </label>
               </div>
+              <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                <label class="block">
+                  <span class="sr-only">Afageix una imatge</span>
+                  <input type="file" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold" name="imatgearticle">
+                </label>
+              </div>
             </div>
           </div>
           </form>
     </div>
-
   </div>
           <?php include '../src/includes/scripts.php'; ?>
           <?php include '../src/includes/tinyMCE.php'; ?>
