@@ -22,7 +22,7 @@ function ctrlDoactualitzarUsuari($peticio, $resposta, $contenidor)
         $message = $usuarisPDO->getAlert('no existeix el usuari');
     }
 
-    $resposta->redirect("Location:index.php?r=llistarusuari");
+    $resposta->redirect("Location:index.php?r=actualitzarusuari&id=$usernameUsuari");
 
     return $resposta;
 }
