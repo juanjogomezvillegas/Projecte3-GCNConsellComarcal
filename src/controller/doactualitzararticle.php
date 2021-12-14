@@ -21,12 +21,9 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
         $publicat = 0;
     }
 
-    print_r($imatgearticle);
-    
-
     $message = '';
 
-    if(!empty($contingut) || !empty($titol) || str_ends_with($imatgearticle["name"], ".png") || str_ends_with($imatgearticle["name"], ".jpg")){
+    if((!empty($contingut) || !empty($titol)) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg")){
 
         $articlesPDO->update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
 

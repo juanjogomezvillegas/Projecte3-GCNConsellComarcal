@@ -10,6 +10,7 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     $contingut = $peticio->getRaw(INPUT_POST, "contingut");
     $publicat = $peticio->get(INPUT_POST, "publicat");
     $categoria = $peticio->get(INPUT_POST, "categoria");
+    $imatgearticle = $peticio->get("FILES", "imatgearticle");
 
     $numPublicat = 0;
 
@@ -19,13 +20,20 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
         $numPublicat = 0;
     }
 
+    $idarticle = 0;
     $error = false;
     if (empty($titol)) {
         $error = true;
     } else{
-        $registre = $articlesPDO->add($titol, $contingut, $numPublicat, $categoria, $usuarilogat);
+        $idarticle = $articlesPDO->add($titol, $contingut, $numPublicat, $categoria, $usuarilogat);
+
+        if ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg") {
+            $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
+
+            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+        }
     }
-    if ($registre) {
+    if (isset($idarticle)) {
         $error = false;
     } else {
         $error = true;

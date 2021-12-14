@@ -356,13 +356,7 @@ class ArticlesPDO extends ModelPDO
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':creador' => $usuaris["id"], ':article' => $articles["id"], ':dataEdicio' => $dataActual->format("Y-n-j H:i:s"), ':titol' => $titol, ':contingut' => $contingut, ':imatge' => $articles["imatge"]]);
 
-        if ($stm->errorCode() !== '00000') {
-            $err = $stm->errorInfo();
-            $code = $stm->errorCode();
-            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
-        }
-
-        return $stm->fetch(\PDO::FETCH_ASSOC);
+        return $articles["id"];
     }
     public function getAlert($id){
         if ($id == 'faltacamp'){

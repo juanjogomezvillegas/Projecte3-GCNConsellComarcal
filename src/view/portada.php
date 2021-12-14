@@ -62,5 +62,6 @@
 <?php include '../src/includes/footer.php';?>
 </footer>
 <?php include '../src/includes/scripts.php';?>
+<script src="script/favorits.js"></script>
 </body>
 </html>
