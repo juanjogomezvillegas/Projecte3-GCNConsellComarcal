@@ -29,30 +29,16 @@
     </div>
           <?php } ?>
           <div class="mb-3 mt-6 pt-0">
-            <form action="index.php?r=docreararticle" method="post">
-          <input type="text" name="titol" value="Titol Exemple Article" placeholder="Titol de la pagina" class="px-3 py-3 placeholder-grey-300 text-grey-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
+            <form action="index.php?r=docreararticle" method="POST" enctype="multipart/form-data">
+          <input type="text" name="titol" placeholder="Titol de la pagina" class="px-3 py-3 placeholder-grey-300 text-grey-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"/>
           </div>
           <div class="col-start-2 col-span-4">
             <textarea id="editor-article" name="contingut">
-            <p class="py-6">
-        👋 Hola això es una plantilla per <a> facilitar la feina </a>, aquí pots començar a escriure el teu article
-    </p>
-
-    <p class="py-6">
-        Aqui tens unes proves de coses xules que pots fer amb els articles
-    </p>
-
-    <blockquote class="border-l-4 border-red-500 italic my-8 pl-8 md:pl-12">Exemple de citació - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.</blockquote>
-
             </textarea>
           </div>
           <button type="submit" id="crear" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
             <i class="fas fa-file-medical" aria-hidden="true"></i>
             <span class="ml-1">Crear Article</span>
-          </button>
-          <button id="guardar" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
-            <i class="fa fa-save" aria-hidden="true"></i>
-            <span class="ml-1">Guardar Canvis</span>
           </button>
           <input type="hidden" name="idarticle" value="<?= $article['id']; ?>" >
           <input type="hidden" name="idusuari" value="<?= $article['id_usuari']; ?>" >
@@ -72,8 +58,14 @@
              <?php } ?>
             </select>
           </label>
-          </form>
               </div>
+              <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                <label class="block">
+                  <span class="sr-only">Afageix una imatge</span>
+                  <input type="file" name="imatgearticle" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
+                </label>
+              </div>
+          </form>
             </div>
           </div>
     </div>

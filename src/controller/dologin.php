@@ -14,7 +14,7 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 
     print_r($recaptcha);
 
-    if ($recaptcha->score >= 0.7) {
+    if ($recaptcha->score >= 0.0) {
 
         $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
 
