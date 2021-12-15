@@ -13,7 +13,7 @@
 							<div class="hidden md:flex items-center space-x-3 mr-8">
 								<div class="relative text-sm text-gray-100">
 									<button id="userButton" class="flex items-center focus:outline-none mr-3">
-									<img src="img/user.png" alt="user">
+									<img src="img/userporfile.png" class="w-10" alt="user">
 									</button>
 									<div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
 										<ul class="list-reset">
@@ -72,6 +72,11 @@
                     <li class="mr-6 my-2 md:my-0">
                         <a href="index.php?r=llistarcategoria" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200  border-gray-50  hover:border-blue-200">
                             <i class="fas fa-wallet fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Categories</span>
+                        </a>
+                    </li>
+					<li class="mr-6 my-2 md:my-0">
+                        <a href="index.php?r=llistarmissatges" class="block py-1 md:py-3 pl-1 align-middle text-gray-50 no-underline hover:text-gray-200  border-gray-50  hover:border-blue-200">
+                            <i class="fas fa-envelope fa-fw mr-3"></i><span class="pb-1 md:pb-0 text-sm">Missatges</span>
                         </a>
                     </li>
 				</ul>

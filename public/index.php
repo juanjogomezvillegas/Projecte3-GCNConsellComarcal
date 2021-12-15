@@ -8,6 +8,7 @@ require_once "../src/config.php";
 require_once "../src/controller/ajaxFavorits.php";
 require_once "../src/controller/ajaxServer.php";
 require_once "../src/controller/portada.php";
+require_once "../src/controller/perfilusuari.php";
 require_once "../src/controller/login.php";
 require_once "../src/controller/dologin.php";
 require_once "../src/controller/logout.php";
@@ -44,6 +45,8 @@ require_once "../src/controller/historialArticles.php";
 require_once "../src/controller/historialCategoriaConcreta.php";
 require_once "../src/controller/historialArticleConcret.php";
 require_once "../src/controller/articlespreferitsusuari.php";
+require_once "../src/controller/llistarmissatges.php";
+require_once "../src/controller/esborrarmissatge.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -55,6 +58,7 @@ $app = new \Emeset\Emeset($contenidor);
 
 /*Access a la Portada*/
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
+$app->ruta("perfilusuari", "ctrlPerfilUsuari", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("tramit", "ctrlTramit", ["middleCentral"]);
 $app->ruta("blog", "ctrlBlog", ["middleCentral"]);
@@ -95,6 +99,8 @@ $app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "
 $app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("llistarmissatges", "ctrlLlistarmissatges", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("esborrarmissatge", "ctrlEsborrarmissatge", ["middleCentral", "middleLogat", "middleGestor"]);
 /*Controladors Ajax*/
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);

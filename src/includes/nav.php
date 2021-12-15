@@ -11,9 +11,8 @@
 				</div>
 				<!-- Primary Navbar items -->
 				<div class="hidden md:flex items-center space-x-1">
-					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Articles</a>
-					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Tramits</a>
-					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Blog</a>
+					<a href="index.php?r=mostrarArticles" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Articles</a>
+					<a href="index.php?r=mostrarTramits" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Tramits</a>
 					<a href="index.php?r=contacte" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Contacte</a>
 					<?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor")) { ?>
 						<a href="index.php?r=admin" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Administració del Lloc</a>
@@ -26,14 +25,14 @@
 				<div class="hidden md:flex items-center space-x-3">
 					<div class="relative text-sm text-gray-100">
 						<button id="userButton" class="flex items-center focus:outline-none mr-3">
-							<img src="img/user.png" alt="user">
+							<img src="img/userporfile.png" alt="user" class="w-10">
 						</button>
 						<div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
 							<ul class="list-reset">
 								<li>
 									<p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
 								</li>
-								<li><a href="#" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">El Meu Perfil</a></li>
+								<li><a href="index.php?r=perfilusuari" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">El Meu Perfil</a></li>
 								<li><a href="index.php?r=articlespreferitsusuari" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Els Meus Articles</a></li>
 								<li>
 									<hr class="border-t mx-2 border-gray-400">
@@ -89,9 +88,8 @@
 			<li>
 				<hr class="border-t mx-2 border-gray-400">
 			</li>
-			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Articles</a></li>
-			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Tramits</a></li>
-			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Blog</a></li>
+			<li><a href="index.php?r=mostrarArticles" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Articles</a></li>
+			<li><a href="index.php?r=mostrarTramits" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Tramits</a></li>
 			<li><a href="index.php?r=contacte" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Contacte</a></li>
 			<?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor")) { ?>
 				<li><a href="index.php?r=admin" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Administració del Lloc</a></li>

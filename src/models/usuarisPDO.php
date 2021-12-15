@@ -124,6 +124,10 @@ class UsuarisPDO extends ModelPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
 
+        $query = "alter table $taula2 AUTO_INCREMENT = 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 

@@ -39,15 +39,11 @@
     Categoria: <?= $informacioArticle["categoria"]; ?>
 </div>
 
-
-        <!--Categoria -->
-        <div class="text-base md:text-sm text-gray-500 px-4 py-6">
-            Categoria: <a href="#" class="text-base md:text-sm text-red-500 no-underline hover:underline">Link</a>
-        </div>
+<hr>
 
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
-    <?php if ($informacioArticle["id"] > 1) { ?>
+    <?php if ($informacioArticle["id"] > 2) { ?>
     <div class="text-left">
         <p><a href="index.php?r=article&id=<?=$idAnterior;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">&lt; Article Anterior</a></p>
     </div>

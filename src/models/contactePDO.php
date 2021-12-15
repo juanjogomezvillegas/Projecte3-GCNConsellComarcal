@@ -36,7 +36,7 @@ class ContactePDO extends ModelPDO
      **/
     public function getllistatPublic()
     {
-        $query = "select c.id,c.nom,c.email,c.telefon,c.missatge,concat(u.nom, ' ', u.cognom) as creador,c.data_enviament
+        $query = "select c.*,concat(u.nom, ' ', u.cognom) as creador
         from contacte c
         left join usuari u on c.id_usuari = u.id;";
         $stm = $this->sql->prepare($query);
@@ -65,6 +65,27 @@ class ContactePDO extends ModelPDO
             $code = $stm->errorCode();
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function delete($id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "delete from $taula2 where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        $query = "alter table $taula2 AUTO_INCREMENT = 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }

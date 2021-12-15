@@ -18,9 +18,9 @@
         <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             <?php foreach ($articlesPortada as $actual) { ?>
                 <div class="articlesPortada max-w-sm rounded overflow-hidden shadow-lg bg-gray-200">
-
-                <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                    <img class="w-full" src="<?=$actual["imatge"];?>" alt="">
+                    <a href="index.php?r=article&id=<?=$actual["id"];?>">
+                        <img class="w-full" src="<?=$actual["imatge"];?>" alt="">
+                    </a>
                     <div class="px-6 py-4">
                         <?php if ($logat) { ?>
                             <div class="flex justify-end">
@@ -43,7 +43,7 @@
                             <div class="font-bold text-xl mb-2"><?=$actual["titol"];?></div>
                             <p class="text-gray-700 text-base">
                             <?php $contingut = strip_tags($actual["contingut"]); ?>
-                            <?= substr($contingut, 0, 100);?>
+                            <?= substr($contingut, 0, 100);?> ...
                             </p>
                         </a>
                     </div>
