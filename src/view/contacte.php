@@ -60,6 +60,8 @@
     </div>
      </div>
   </div>
+  <br>
+  <br>
 <footer>
 <?php include '../src/includes/footer.php';?>
 </footer>
