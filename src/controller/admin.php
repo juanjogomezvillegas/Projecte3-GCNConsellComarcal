@@ -5,6 +5,7 @@ function ctrlAdmin($peticio, $resposta, $contenidor)
     $articlesPDO = $contenidor->articlesPDO();
     $usuarisPDO = $contenidor->usuarisPDO();
     $categoriesPDO = $contenidor->categoriesPDO();
+    $contactePDO = $contenidor->contactePDO();
 
     $tempsresfresc = $peticio->get(INPUT_COOKIE, "tempsresfresc");
 
@@ -14,6 +15,8 @@ function ctrlAdmin($peticio, $resposta, $contenidor)
 
     $totalcategories = $categoriesPDO->gettotalregistres();
 
+    $totalcontactes = $contactePDO->gettotalregistres();
+
     if (!isset($tempsresfresc)) {
         $tempsresfresc = 10;
     }
@@ -22,6 +25,7 @@ function ctrlAdmin($peticio, $resposta, $contenidor)
     $resposta->set('totalarticle', $totalarticle);
     $resposta->set('totalusers', $totalusers);
     $resposta->set('totalcategories', $totalcategories);
+    $resposta->set('totalcontactes', $totalcontactes);
 
 
     $resposta->SetTemplate("admin.php");

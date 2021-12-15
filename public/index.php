@@ -97,6 +97,7 @@ $app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCen
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countCategories", "ctrlCountCategories", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("countContacte", "ctrlCountContacte", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("canviTempsRefresc", "ctrlCanviTempsRefresc", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("docontacte", "ctrlDoContacte", ["middleCentral"]);
 $app->ruta("afegirFavorits", "ctrlAfegirFavorits", ["middleCentral", "middleLogat"]);
