@@ -137,13 +137,13 @@ class UsuarisPDO extends ModelPDO
      * @param email correu electronic de l'usuari
      * @param telefon telefon de l'usuari
      **/
-    public function update($id, $nom, $cognom, $username, $contrasenya, $rol, $email, $telefon)
+    public function update($id, $nom, $cognom, $username, $rol, $email, $telefon)
     {
         $taula2 = $this->taula;
 
-        $query = "update $taula2 set nom = :nom,cognom = :cognom,username = :username,contrasenya = :pass,rol = :rol,email = :email,telefon = :telefon where id = :id;";
+        $query = "update $taula2 set nom = :nom,cognom = :cognom,username = :username,rol = :rol,email = :email,telefon = :telefon where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $id,':nom' => $nom, ':cognom' => $cognom,':username' => $username,':pass' => $contrasenya,':rol' => $rol,':email' => $email,':telefon' => $telefon]);
+        $result = $stm->execute([':id' => $id,':nom' => $nom, ':cognom' => $cognom,':username' => $username,':rol' => $rol,':email' => $email,':telefon' => $telefon]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
