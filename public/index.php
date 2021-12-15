@@ -8,6 +8,7 @@ require_once "../src/config.php";
 require_once "../src/controller/ajaxFavorits.php";
 require_once "../src/controller/ajaxServer.php";
 require_once "../src/controller/portada.php";
+require_once "../src/controller/perfilusuari.php";
 require_once "../src/controller/login.php";
 require_once "../src/controller/dologin.php";
 require_once "../src/controller/logout.php";
@@ -55,6 +56,7 @@ $app = new \Emeset\Emeset($contenidor);
 
 /*Access a la Portada*/
 $app->ruta("", "ctrlPortada", ["middleCentral"]);
+$app->ruta("perfilusuari", "ctrlPerfilUsuari", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("tramit", "ctrlTramit", ["middleCentral"]);
 $app->ruta("blog", "ctrlBlog", ["middleCentral"]);
