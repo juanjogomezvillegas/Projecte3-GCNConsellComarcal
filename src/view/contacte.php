@@ -9,7 +9,7 @@
     include '../src/includes/recaptcha.php';
     ?>
 </head>
-<body>
+<body class="bg-red-400">
     <?php
     include '../src/includes/preloader.php';
     ?>
@@ -17,7 +17,7 @@
     include '../src/includes/nav.php';
     ?>
          
- <div class="flex justify-center h-screen mx-auto bg-red-400 text-center">
+ <div id="containerContacte" class="flex justify-center h-screen mx-auto text-center">
     <form id=contacte class="w-full md:w-3/4 lg:w-3/6 p-4">
       <div class="p-3">
       <h1 class="text-center text-white text-4xl mb-10">Contacte</h1>
@@ -33,7 +33,7 @@
         <input name="email" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Correu electronic" required>
       </div>
       <div class="p-3">
-        <input name="telefon" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="number" placeholder="Numero de telefon" required>
+        <input name="telefon" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Numero de telefon" required>
       </div>
       <div class="p-3">
         <textarea name="missatge" class="text-center resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>

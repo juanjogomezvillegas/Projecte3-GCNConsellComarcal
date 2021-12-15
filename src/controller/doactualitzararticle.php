@@ -27,7 +27,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
         $articlesPDO->update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
 
-        if (isset($imatgearticle) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg")) {
+        if (isset($imatgearticle["name"]) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpeg")) {
             $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
             move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);

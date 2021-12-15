@@ -14,7 +14,7 @@
 					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Articles</a>
 					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Tramits</a>
 					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Blog</a>
-					<a href="" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Contacte</a>
+					<a href="index.php?r=contacte" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Contacte</a>
 					<?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor")) { ?>
 						<a href="index.php?r=admin" class="py-4 px-2 text-white font-semibold hover:text-gray-400 transition duration-300">Administració del Lloc</a>
 					<?php } ?>
@@ -92,7 +92,7 @@
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Articles</a></li>
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Tramits</a></li>
 			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Blog</a></li>
-			<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Contacte</a></li>
+			<li><a href="index.php?r=contacte" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Contacte</a></li>
 			<?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor")) { ?>
 				<li><a href="index.php?r=admin" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Administració del Lloc</a></li>
 			<?php } ?>

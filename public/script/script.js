@@ -58,11 +58,11 @@
 		  'searchreplace visualblocks code fullscreen',
 		  'insertdatetime media table paste code help wordcount'
 		],
-		toolbar: 'undo redo | formatselect | ' +
-		'bold italic backcolor | alignleft aligncenter ' +
-		'alignright alignjustify | bullist numlist outdent indent | ' +
-		'removeformat | help',
-		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+		toolbar: 'fullscreen preview | undo redo | formatselect | ' +
+		'bold italic backcolor visualblocks | alignleft aligncenter ' +
+		'alignright alignjustify | table link | bullist numlist outdent indent | ' +
+		'removeformat | code print wordcount charmap searchreplace insertdatetime anchor help',
+		content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:15px }'
 	  });
 	  
 
