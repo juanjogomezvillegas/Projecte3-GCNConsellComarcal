@@ -23,7 +23,7 @@
     </div>
 </div>
 <div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta usuaris-->
                     <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                         <div class="itemsAdminUsuaris itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
@@ -52,7 +52,7 @@
                     <?php } ?>
                     <!--/Etiqueta usuaris-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta article-->
                     <div class="itemsAdminArticles itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
@@ -67,7 +67,7 @@
                     </div>
                     <!--/Etiqueta article-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta categories-->
                     <div class="itemsAdminCategories itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
@@ -82,7 +82,7 @@
                     </div>
                     <!--/Etiqueta categories-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta contacte-->
                     <div class="itemsAdminMissatges itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">

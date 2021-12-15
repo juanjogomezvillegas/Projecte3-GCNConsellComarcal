@@ -41,7 +41,7 @@
                             <div class="font-bold text-xl mb-2"><?=$actual["titol"];?></div>
                             <p class="text-gray-700 text-base">
                             <?php $contingut = strip_tags($actual["contingut"]); ?>
-                            <?= substr($contingut, 0, 100);?>
+                            <?= substr($contingut, 0, 100);?> ...
                             </p>
                         </a>
                     </div>

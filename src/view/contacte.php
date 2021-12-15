@@ -9,7 +9,7 @@
     include '../src/includes/recaptcha.php';
     ?>
 </head>
-<body class="bg-red-400">
+<body class="bg-red-800">
     <?php
     include '../src/includes/preloader.php';
     ?>
@@ -58,7 +58,7 @@
         <input name="telefon" type="hidden" placeholder="Numero de telefon" value="<?= $dadesUsuari["telefon"] ?>">
       <?php } ?>
       <div class="p-3">
-        <textarea name="missatge" class="text-center resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>
+        <textarea name="missatge" class="dadesContacte text-center bg-gray-200 resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>
       </div>
       <div class="p-3 pt-4">
       <?php if (!empty($error)) { ?>
