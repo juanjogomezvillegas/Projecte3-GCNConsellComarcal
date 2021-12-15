@@ -36,7 +36,9 @@ class ContactePDO extends ModelPDO
      **/
     public function getllistatPublic()
     {
-        $query = "select c.id,c.missatge,concat(u.nom, ' ', u.cognom) as creador,u.email,u.telefon,c.data_creacio from contacte c left join usuari u on c.id_usuari = u.id;";
+        $query = "select c.id,c.nom,c.email,c.telefon,c.missatge,concat(u.nom, ' ', u.cognom) as creador,c.data_enviament
+        from contacte c
+        left join usuari u on c.id_usuari = u.id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
  
