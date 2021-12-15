@@ -67,9 +67,12 @@ $connexio->query("CREATE TABLE document (
 
 $connexio->query("CREATE TABLE contacte (
     id BIGINT UNSIGNED AUTO_INCREMENT,
+    nom VARCHAR(200),
+    email VARCHAR(200),
+    telefon VARCHAR(11),
     missatge TEXT, 
     id_usuari BIGINT UNSIGNED, 
-    data_creacio TIMESTAMP, 
+    data_enviament TIMESTAMP, 
     CONSTRAINT fk_usuariMsg FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");

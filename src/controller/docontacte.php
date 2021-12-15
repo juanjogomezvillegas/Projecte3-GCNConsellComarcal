@@ -2,8 +2,10 @@
 
 function ctrlDoContacte($peticio, $resposta, $contenidor)
 {
+    $usuarisPDO = $contenidor->usuarisPDO();
     $contactePDO = $contenidor->contactePDO();
 
+    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
     $nom = $peticio->get(INPUT_POST, "nom");
     $email = $peticio->get(INPUT_POST, "email");
     $telefon = $peticio->get(INPUT_POST, "telefon");
@@ -14,7 +16,9 @@ function ctrlDoContacte($peticio, $resposta, $contenidor)
 
     if ($recaptcha->score >= 0.0) {
 
-        $contactePDO -> add($nom,$email,$telefon,$missatge);
+        $dadesUsuari = $usuarisPDO->get($usuarilogat);
+
+        $contactePDO->add($nom,$email,$telefon,$missatge,$dadesUsuari["id"]);
 
         $resposta->SetTemplate("contacte.php");
     } else{
