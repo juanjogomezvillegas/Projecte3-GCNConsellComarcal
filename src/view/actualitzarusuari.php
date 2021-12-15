@@ -77,7 +77,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="hidden" name="id" value="<?= $dadesusuari['username']; ?>">
                             <input type="hidden" name="id" value="<?= $dadesusuari['id']; ?>">
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">

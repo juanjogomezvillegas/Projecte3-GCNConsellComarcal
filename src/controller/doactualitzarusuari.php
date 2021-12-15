@@ -19,18 +19,13 @@ function ctrlDoactualitzarusuari($peticio, $resposta, $contenidor)
     $telefon = $peticio->get(INPUT_POST, "telefon");
     
 
-    $valor = $usuarisPDO -> update($id,$nom,$cognom,$usuari,$tipususuari,$email,$telefon);
-
-    print_r($valor);
+    $usuarisPDO -> update($id,$nom,$cognom,$usuari,$tipususuari,$email,$telefon);
     
     $dadesusuari = $usuarisPDO->get($id);
 
     $resposta->set('dadesusuari', $dadesusuari);
 
-    // $resposta->redirect("Location :index.php?r=actualitzarusuari&id=$usuari");
-
     $resposta->redirect("Location:index.php?r=actualitzarusuari&id=$usuari");
-
 
     return $resposta;
 }

@@ -78,7 +78,7 @@ $app->ruta("esborrararticle", "ctrlEsborrararticle", ["middleCentral", "middleLo
 $app->ruta("actualitzararticle", "ctrlActualitzararticle", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("doactualitzararticle", "ctrlDoActualitzarArticle", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("llistarusuari", "ctrlLlistarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
-$app->ruta("doactualitzarusuari", "ctrlActualitzarusuari", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("doactualitzarusuari", "ctrlDoactualitzarusuari", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("actualitzarusuari", "ctrlActualitzarusuari", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("registreadmin", "ctrlRegistreAdmin", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("doregistreadmin", "ctrlDoRegistreAdmin", ["middleCentral", "middleLogat", "middleAdmin"]);
