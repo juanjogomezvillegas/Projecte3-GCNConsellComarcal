@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-   <?php include '../src/includes/head.php';?>
+    <?php include '../src/includes/head.php'; ?>
     <title>Document</title>
 </head>
+
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
     include '../src/includes/preloader.php';
@@ -12,17 +14,17 @@
     <?php
     include '../src/includes/nav_admin.php';
     ?>
-<div class="container w-full mx-auto pt-20">
-<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
-<div class="flex flex-row">
-    <div class="flex flex-row mr-10 p-3">
-        <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
-        <div class="mt-1 relative rounded-md shadow-sm">
-            <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?=$tempsresfresc;?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
-        </div>
-    </div>
-</div>
-<div class="flex flex-wrap">
+    <div class="container w-full mx-auto pt-20">
+        <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
+            <div class="flex flex-row">
+                <div class="flex flex-row mr-10 p-3">
+                    <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?= $tempsresfresc; ?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap">
                 <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                     <!--Etiqueta usuaris-->
                     <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
@@ -98,10 +100,10 @@
                     <!--/Etiqueta contacte-->
                 </div>
             </div>
-</div>
-</div>
+        </div>
+    </div>
 </body>
-<?php include '../src/includes/scripts.php';?>
+<?php include '../src/includes/scripts.php'; ?>
 <script src="script/admin.js"></script>
 
 </html>

@@ -1,27 +1,31 @@
 <?php
 
-function ctrlDoactualitzarUsuari($peticio, $resposta, $contenidor)
+function ctrlDoactualitzarusuari($peticio, $resposta, $contenidor)
 {
-    $usuarisPDO = $contenidor->usuarisPDO();
+    $usuarisPDO = $contenidor->UsuarisPDO();
 
-    $usuariID = $peticio->get(INPUT_POST, "id");
-    $nomUsuari = $peticio->get(INPUT_POST, "nom");
-    $cognomUsuari = $peticio->get(INPUT_POST, "cognom");
-    $usernameUsuari = $peticio->get(INPUT_POST, "username");
-    $usernameRol = $peticio->get(INPUT_POST, "rol");
-    $usernameEmail = $peticio->get(INPUT_POST, "email");
-    $usernameTel = $peticio->get(INPUT_POST, "telefon");
+    $id = $peticio->get(INPUT_POST, "id");
 
+    $usuari = $peticio->get(INPUT_POST, "username");
+
+    $tipususuari = $peticio->get(INPUT_POST, "rol");
     
-    $message = '';
+    $nom = $peticio->get(INPUT_POST, "nom");
 
-    if(!empty($usernameUsuari)){
-        $usuarisPDO->update($usuariID,$nomUsuari,$cognomUsuari,$usernameUsuari,$usernameRol,$usernameEmail,$usernameTel);
-    } else{
-        $message = $usuarisPDO->getAlert('no existeix el usuari');
-    }
+    $cognom = $peticio->get(INPUT_POST, "cognom");
 
-    $resposta->redirect("Location:index.php?r=actualitzarusuari&id=$usernameUsuari");
+    $email = $peticio->get(INPUT_POST, "email");
+
+    $telefon = $peticio->get(INPUT_POST, "telefon");
+    
+
+    $usuarisPDO -> update($id,$nom,$cognom,$usuari,$tipususuari,$email,$telefon);
+    
+    $dadesusuari = $usuarisPDO->get($id);
+
+    $resposta->set('dadesusuari', $dadesusuari);
+
+    $resposta->redirect("Location:index.php?r=actualitzarusuari&id=$usuari");
 
     return $resposta;
 }

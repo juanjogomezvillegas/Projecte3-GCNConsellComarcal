@@ -2,11 +2,11 @@
 
 function ctrlActualitzarusuari($peticio, $resposta, $contenidor)
 {
-    $usuarisPDO = $contenidor->usuarisPDO();
+    $usuarisPDO = $contenidor->UsuarisPDO();
 
-    $idusuari = $peticio->get("INPUT_REQUEST", "id");
+    $usuari = $peticio->get("INPUT_REQUEST", "id");
 
-    $dadesusuari = $usuarisPDO->get($idusuari);
+    $dadesusuari = $usuarisPDO->get($usuari);
 
     $resposta->set('dadesusuari', $dadesusuari);
 

@@ -15,10 +15,15 @@
     ?>
     <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles</h1>
     <?php if (count($articlesPortada) > 0) { ?>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
             <?php foreach ($articlesPortada as $actual) { ?>
                 <div class="articlesPortada max-w-sm rounded overflow-hidden shadow-lg bg-gray-200">
+<<<<<<< HEAD
                     <a href="index.php?r=article&id=<?=$actual["id"];?>"><img class="w-full" src="<?=$actual["imatge"];?>" alt=""></a>
+=======
+                <a href="index.php?r=article&id=<?=$actual["id"];?>">
+                    <img class="w-full" src="<?=$actual["imatge"];?>" alt="">
+>>>>>>> feature-articlesPortadaBeta
                     <div class="px-6 py-4">
                         <?php if ($logat) { ?>
                             <div class="flex justify-end">
@@ -52,6 +57,7 @@
                         <span class="bg-gray-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><?=$actual["dataEdicio"];?></span>
                     </div>
                 </div>
+                </a>
             <?php } ?>
         </div>
     <?php } else { ?>
