@@ -26,15 +26,37 @@
   <span class="block sm:inline">Rebrás una resposta el més ràpid possible</span>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
   </span>
-</div>
-        <input name="nom" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Nom" required>
+  <?php if (!$logat) { ?>
+      </div>
+        <input name="nom" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Nom i Cognom" required>
       </div>
       <div class="p-3">
-        <input name="email" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Correu electronic" required>
+        <input name="email" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Correu Electrònic" required>
       </div>
       <div class="p-3">
-        <input name="telefon" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Numero de telefon" required>
+        <input name="telefon" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Numero de Telèfon" required>
       </div>
+      <?php } else { ?>
+      </div>
+      <div class="dadesContacte rounded overflow-hidden shadow-lg bg-gray-200">
+                    <div class="px-6 py-4">
+                            <p class="text-gray-700 text-base">
+                            <span class="negreta">Nom i Cognom:</span><br> <?= $dadesUsuari["nom"] ?> <?= $dadesUsuari["cognom"] ?>
+                            </p>
+                            <br>
+                            <p class="text-gray-700 text-base">
+                            <span class="negreta">Correu Electrònic:</span><br> <?= $dadesUsuari["email"] ?>
+                            </p>
+                            <br>
+                            <p class="text-gray-700 text-base">
+                            <span class="negreta">Numero de Telèfon:</span><br> <?= $dadesUsuari["telefon"] ?>
+                            </p>
+                    </div>
+          </div>
+        <input name="nom" type="hidden" placeholder="Nom" value="<?= $dadesUsuari["nom"] ?> <?= $dadesUsuari["cognom"] ?>">
+        <input name="email" type="hidden" placeholder="Correu electronic" value="<?= $dadesUsuari["email"] ?>">
+        <input name="telefon" type="hidden" placeholder="Numero de telefon" value="<?= $dadesUsuari["telefon"] ?>">
+      <?php } ?>
       <div class="p-3">
         <textarea name="missatge" class="text-center resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>
       </div>
