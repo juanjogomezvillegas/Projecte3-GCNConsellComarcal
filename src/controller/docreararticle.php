@@ -27,7 +27,7 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     } else{
         $idarticle = $articlesPDO->add($titol, $contingut, $numPublicat, $categoria, $usuarilogat);
 
-        if ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg") {
+        if (isset($imatgearticle) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg")) {
             $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
             move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
@@ -38,7 +38,7 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     } else {
         $error = true;
     }
-    if ($error) {
+    if (!$error) {
         $resposta->redirect("Location:index.php?r=llistararticle");
     } else {
         $resposta->setSession("missatgeError", "Error: L'article no s'ha pogut crear!!!");

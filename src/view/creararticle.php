@@ -36,10 +36,6 @@
             <textarea id="editor-article" name="contingut">
             </textarea>
           </div>
-          <button type="submit" id="crear" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
-            <i class="fas fa-file-medical" aria-hidden="true"></i>
-            <span class="ml-1">Crear Article</span>
-          </button>
           <input type="hidden" name="idarticle" value="<?= $article['id']; ?>" >
           <input type="hidden" name="idusuari" value="<?= $article['id_usuari']; ?>" >
           <div class="bg-red-500 text-white font-bold py-2 px-4 rounded inline-block items-center mt-5">
@@ -59,12 +55,25 @@
             </select>
           </label>
               </div>
+              <br>
               <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
-                  <span class="sr-only">Afageix una imatge</span>
+                  <span>Afageix una imatge</span>
                   <input type="file" name="imatgearticle" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
                 </label>
               </div>
+              <br>
+              <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                <label class="block">
+                  <span>Afageix els Documents de l'Article</span>
+                  <input type="file" name="documents[]" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold" multiple="">
+                </label>
+              </div>
+              <br>
+              <button type="submit" id="crear" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+            <i class="fas fa-file-medical" aria-hidden="true"></i>
+            <span class="ml-1">Crear Article</span>
+          </button>
           </form>
             </div>
           </div>

@@ -23,20 +23,22 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $message = '';
 
-    if((!empty($contingut) || !empty($titol)) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg")){
+    if(!empty($contingut) || !empty($titol)){
 
         $articlesPDO->update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
 
-        $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
+        if (isset($imatgearticle) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpg")) {
+            $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
-        move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+        }
     } else{
         $message = $articlesPDO -> getAlert('faltacamp');
     }
 
     $article = $articlesPDO->show($idarticle);
 
-    $resposta->redirect("Location:index.php?r=llistararticle");
+    $resposta->redirect("Location:index.php?r=actualitzararticle&id=$idarticle");
 
     return $resposta;
 }

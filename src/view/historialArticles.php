@@ -53,12 +53,12 @@
                                  <?= $actual['data_edicio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <form action="index.php?r=doactualitzararticle&id=<?= $actual['id_article'];?>" method="POST">
+                                <form action="index.php?r=doactualitzararticle&id=<?= $actual['id_article'];?>" method="POST" enctype="multipart/form-data">
                                     <input type="hidden" name="contingut" value="<?= strip_tags($actual['contingut']);?>">
                                     <input type="hidden" name="titol" value="<?= $actual['titol'];?>">
                                     <input type="hidden" name="publicat" value="<?=$actual["publicat"];?>">
                                     <input type="hidden" name="categoria" value="<?=$actual["id_categoria"];?>">
-                                    <input type="hidden" name="categoria" value="<?=$actual["imatge"];?>">
+                                    <input type="hidden" name="imatgearticle" value="<?=$actual["imatge"];?>">
                                     <button type="submit"><span class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-exchange-alt"></i></span></button>
                                 </form>
                             </td>
