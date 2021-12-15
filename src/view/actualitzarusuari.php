@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <?php include '../src/includes/head.php'; ?>
     <title>Sing Up | GCN Consell Comarcal</title>
@@ -18,6 +19,13 @@
                     </div>
                     <div>
                         <form action="index.php?r=doactualitzarusuari" method="post">
+                       <?php if(!empty($update)){?>
+                        <div class="bg-green-100 border border-green-300 text-center text-green-700 px-4 py-3 rounded relative mb-4 success-missatge" role="alert">
+                                    <strong class="font-bold"> S'han actualitzat les dades del usuari satisfactoriament </strong>
+                                    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                    </span>
+                                </div>
+                                <?php } ?>
                             <div class="flex -mx-3">
                                 <div class="w-1/2 px-3 mb-5">
                                     <div class="flex">
@@ -26,16 +34,16 @@
                                     </div>
                                 </div>
                                 <div class="w-1/2 px-3 mb-5">
-                            <div class="flex">
-                                <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                <select name="rol" class=" text-gray-400 appearance-none w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500">
-                                    <option class="mdi mdi-account-outline text-gray-400 text-lg"><?=$dadesusuari["rol"];?></option>´
-                                    <option class="mdi mdi-account-outline text-gray-400 text-lg">Usuari</option>´
-                                    <option class="mdi mdi-account-outline text-gray-400 text-lg">Administrador</option>
-                                    <option class="mdi mdi-account-outline text-gray-400 text-lg">Gestor</option>
-                                </select>
-                            </div>
-                        </div>
+                                    <div class="flex">
+                                        <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
+                                        <select name="rol" class=" text-gray-400 appearance-none w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500">
+                                            <option class="mdi mdi-account-outline text-gray-400 text-lg"><?= $dadesusuari["rol"]; ?></option>´
+                                            <option class="mdi mdi-account-outline text-gray-400 text-lg">Usuari</option>´
+                                            <option class="mdi mdi-account-outline text-gray-400 text-lg">Administrador</option>
+                                            <option class="mdi mdi-account-outline text-gray-400 text-lg">Gestor</option>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <div class="flex -mx-3">
                                 <div class="w-1/2 px-3 mb-5">
@@ -77,6 +85,7 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 </body>
+
 </html>

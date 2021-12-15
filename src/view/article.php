@@ -45,7 +45,6 @@
             Categoria: <a href="#" class="text-base md:text-sm text-red-500 no-underline hover:underline">Link</a>
         </div>
 
-<<<<<<< HEAD
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
     <?php if ($informacioArticle["id"] > 1) { ?>
@@ -59,17 +58,6 @@
     </div>
     <?php } ?>
 </div>
-
-        <!--Veure articles-->
-        <div class="font-sans flex justify-between content-center px-4 pb-12">
-            <div class="text-left">
-                <span class="text-xs md:text-sm font-normal text-gray-600">&lt; Article anterior</span><br>
-                <p><a href="#" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article titol</a></p>
-            </div>
-            <div class="text-right">
-                <span class="text-xs md:text-sm font-normal text-gray-600">Article següent &gt;</span><br>
-                <p><a href="#" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article titol</a></p>
-            </div>
         </div>
 
 
