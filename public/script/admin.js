@@ -42,6 +42,9 @@ $(document).ready(function() {
     $("div.itemsAdminCategories").click(function() {
         window.location.assign("index.php?r=llistarcategoria");
     });
+    $("div.itemsAdminMissatges").click(function() {
+        window.location.assign("index.php?r=llistarmissatges");
+    });
 });
 
 function obtenirCount() {

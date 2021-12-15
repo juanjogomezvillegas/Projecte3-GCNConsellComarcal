@@ -45,6 +45,7 @@ require_once "../src/controller/historialArticles.php";
 require_once "../src/controller/historialCategoriaConcreta.php";
 require_once "../src/controller/historialArticleConcret.php";
 require_once "../src/controller/articlespreferitsusuari.php";
+require_once "../src/controller/llistarmissatges.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -97,6 +98,7 @@ $app->ruta("historialCategories", "ctrlHistorialCategories", ["middleCentral", "
 $app->ruta("historialArticles", "ctrlHistorialArticles", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleAdmin"]);
+$app->ruta("llistarmissatges", "ctrlLlistarmissatges", ["middleCentral", "middleLogat", "middleGestor"]);
 /*Controladors Ajax*/
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
