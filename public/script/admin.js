@@ -1,14 +1,17 @@
 let usuaris;
 let articles;
 let categories;
+let contacte;
 let usuarisAntic;
 let articlesAntic;
 let categoriesAntic;
+let contacteAntic;
 let tempsresfresc;
 
 const countUsuaris = $("div#countUsuaris");
 const countArticles = $("div#countArticles");
 const countCategories = $("div#countCategories");
+const countContacte = $("div#countMissatges");
 
 $(document).ready(function() {
     tempsresfresc = parseInt($("input#tempsRefresc").val()) * 1000;
@@ -45,6 +48,7 @@ function obtenirCount() {
     usuarisAntic = $("div#countUsuaris h3").text().trim();
     articlesAntic = $("div#countArticles h3").text().trim();
     categoriesAntic = $("div#countCategories h3").text().trim();
+    contacteAntic = $("div#countMissatges h3").text().trim();
 
     $.ajax({
         url: "index.php?r=countUsuaris", 
@@ -70,10 +74,19 @@ function obtenirCount() {
             categories = parseInt(response);
         }
     });
+    $.ajax({
+        url: "index.php?r=countContacte", 
+        type: "POST",
+        data: { categories },
+        success: (response) => {
+            contacte = parseInt(response);
+        }
+    });
 
     drawResultsUsuaris();
     drawResultsArticles();
     drawResultsCategories();
+    drawResultsContacte();
 };
 
 function drawResultsUsuaris() {
@@ -143,4 +156,27 @@ function drawResultsCategories() {
     }
 
     countCategories.html(tmp);
+};
+
+function drawResultsContacte() {
+    let tmp;
+
+    if (contacte == contacteAntic) {
+        tmp = `<h5 class="font-bold uppercase text-gray-100">Missatges</h5>
+        <h3 class="font-bold text-3xl text-gray-300">
+        ${contacte} <span class="text-pink-500"><i class="fas fa-equals"></i></span>
+        </h3>`;
+    } else if (contacte > contacteAntic) {
+        tmp = `<h5 class="font-bold uppercase text-gray-100">Missatges</h5>
+        <h3 class="font-bold text-3xl text-gray-300">
+        ${contacte} <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+        </h3>`;
+    } else if (contacte < contacteAntic) {
+        tmp = `<h5 class="font-bold uppercase text-gray-100">Missatges</h5>
+        <h3 class="font-bold text-3xl text-gray-300">
+        ${contacte} <span class="text-red-600"><i class="fas fa-caret-down"></i></span>
+        </h3>`;
+    }
+
+    countContacte.html(tmp);
 };

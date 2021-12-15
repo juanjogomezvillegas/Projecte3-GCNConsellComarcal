@@ -33,6 +33,17 @@ function ctrlCountCategories($peticio, $resposta, $contenidor)
     return $resposta;
 }
 
+function ctrlCountContacte($peticio, $resposta, $contenidor)
+{
+    $contactePDO = $contenidor->contactePDO();
+
+    $totalcontactes = $contactePDO->gettotalregistres();
+
+    echo $totalcontactes["total"];
+
+    return $resposta;
+}
+
 function ctrlCanviTempsRefresc($peticio, $resposta, $contenidor)
 {
     $tempsresfresc = $peticio->get(INPUT_POST, "tempsresfresc");
