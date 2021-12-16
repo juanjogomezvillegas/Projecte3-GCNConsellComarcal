@@ -6,7 +6,7 @@
     <title>Sing Up | GCN Consell Comarcal</title>
 </head>
 
-<body class="bg-black font-sans leading-normal tracking-normal">
+<body class="bg-gray-300 bg-black font-sans leading-normal tracking-normal">
     <?php
     include '../src/includes/nav_admin.php';
     ?>
