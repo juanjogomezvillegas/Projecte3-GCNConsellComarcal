@@ -1,7 +1,7 @@
 <?php
 /*Crea totes les taules de la base de dades que necessita l'aplicació per funcionar*/
 $connexio->query("CREATE TABLE usuari (
-    id BIGINT UNSIGNED AUTO_INCREMENT,
+    id BIGINT AUTO_INCREMENT,
     nom VARCHAR(150),
     cognom VARCHAR(150),
     username VARCHAR(150) UNIQUE,
@@ -13,22 +13,22 @@ $connexio->query("CREATE TABLE usuari (
 );");
 
 $connexio->query("CREATE TABLE categoria (
-    id BIGINT UNSIGNED AUTO_INCREMENT,
+    id BIGINT AUTO_INCREMENT,
     nom VARCHAR(150),
-    id_usuari BIGINT UNSIGNED, 
+    id_usuari BIGINT, 
     data_creacio TIMESTAMP, 
     CONSTRAINT fk_usuariCat FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
 
 $connexio->query("CREATE TABLE article (
-    id BIGINT UNSIGNED AUTO_INCREMENT,
+    id BIGINT AUTO_INCREMENT,
     titol VARCHAR(150),
     contingut TEXT,
     publicat INT(1) DEFAULT 0, 
     imatge VARCHAR(100) DEFAULT 'img/articles/logo2.png', 
-    id_categoria BIGINT UNSIGNED,
-    id_usuari BIGINT UNSIGNED, 
+    id_categoria BIGINT,
+    id_usuari BIGINT, 
     data_creacio TIMESTAMP, 
     CONSTRAINT fk_categoriaArt FOREIGN KEY (id_categoria) REFERENCES categoria(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     CONSTRAINT fk_usuariArt FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
@@ -36,8 +36,8 @@ $connexio->query("CREATE TABLE article (
 );");
 
 $connexio->query("CREATE TABLE usuari_categoria_edita (
-    id_usuari BIGINT UNSIGNED,
-    id_categoria BIGINT UNSIGNED, 
+    id_usuari BIGINT,
+    id_categoria BIGINT, 
     data_edicio TIMESTAMP, 
     nom VARCHAR(150),
     CONSTRAINT fk_usuariEditaCat FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
@@ -46,8 +46,8 @@ $connexio->query("CREATE TABLE usuari_categoria_edita (
 );");
 
 $connexio->query("CREATE TABLE usuari_article_edita (
-    id_usuari BIGINT UNSIGNED,
-    id_article BIGINT UNSIGNED, 
+    id_usuari BIGINT,
+    id_article BIGINT, 
     data_edicio TIMESTAMP, 
     titol VARCHAR(150),
     contingut TEXT,
@@ -58,28 +58,28 @@ $connexio->query("CREATE TABLE usuari_article_edita (
 );");
 
 $connexio->query("CREATE TABLE document (
-    id BIGINT UNSIGNED AUTO_INCREMENT,
+    id BIGINT AUTO_INCREMENT,
     enllac VARCHAR(255),
-    id_article BIGINT UNSIGNED, 
+    id_article BIGINT, 
     CONSTRAINT fk_articleDocument FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
 
 $connexio->query("CREATE TABLE contacte (
-    id BIGINT UNSIGNED AUTO_INCREMENT,
+    id BIGINT AUTO_INCREMENT,
     nom VARCHAR(200),
     email VARCHAR(200),
     telefon VARCHAR(11),
     missatge TEXT, 
-    id_usuari BIGINT UNSIGNED, 
+    id_usuari BIGINT, 
     data_enviament TIMESTAMP, 
     CONSTRAINT fk_usuariMsg FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id)
 );");
 
 $connexio->query("CREATE TABLE articles_favorits (
-    id_article BIGINT UNSIGNED,  
-    id_usuari BIGINT UNSIGNED, 
+    id_article BIGINT, 
+    id_usuari BIGINT, 
     CONSTRAINT fk_usuari_favorit FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     CONSTRAINT fk_article_favorit FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
     PRIMARY KEY (id_article, id_usuari)

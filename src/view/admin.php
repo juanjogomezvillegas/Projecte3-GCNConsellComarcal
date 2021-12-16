@@ -14,18 +14,18 @@
     <?php
     include '../src/includes/nav_admin.php';
     ?>
-    <div class="container w-full mx-auto pt-20">
-        <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
-            <div class="flex flex-row">
-                <div class="flex flex-row mr-10 p-3">
-                    <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
-                    <div class="mt-1 relative rounded-md shadow-sm">
-                        <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?= $tempsresfresc; ?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
-                    </div>
-                </div>
-            </div>
-            <div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+<div class="container w-full mx-auto pt-20">
+<div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
+<div class="flex flex-row">
+    <div class="flex flex-row mr-10 p-3">
+        <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
+        <div class="mt-1 relative rounded-md shadow-sm">
+            <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?=$tempsresfresc;?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
+        </div>
+    </div>
+</div>
+<div class="flex flex-wrap">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta usuaris-->
                     <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                         <div class="itemsAdminUsuaris itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
@@ -54,7 +54,7 @@
                     <?php } ?>
                     <!--/Etiqueta usuaris-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta article-->
                     <div class="itemsAdminArticles itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
@@ -69,7 +69,7 @@
                     </div>
                     <!--/Etiqueta article-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta categories-->
                     <div class="itemsAdminCategories itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">
@@ -84,7 +84,7 @@
                     </div>
                     <!--/Etiqueta categories-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <div class="w-full md:w-1/2 xl:w-1/4 p-3">
                     <!--Etiqueta contacte-->
                     <div class="itemsAdminMissatges itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                         <div class="flex flex-row items-center">

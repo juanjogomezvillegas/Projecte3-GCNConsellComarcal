@@ -61,7 +61,7 @@ class CategoriesPDO extends ModelPDO
             die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
         }
 
-        $query = "alter table categoria auto_increment = 1;";
+        $query = "alter table categoria AUTO_INCREMENT = 1;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
 
