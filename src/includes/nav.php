@@ -4,6 +4,7 @@
 		<div class="flex justify-between">
 			<div class="flex space-x-7">
 				<div>
+					<div class="absolute top-0 right-0 form-select appearance-none text-center text-gray-900" id="google_translate_element"></div>
 					<!-- Website Logo -->
 					<a href="index.php" class="flex items-center py-4 px-2">
 						<img src="../img/logoNavbar-blanc.png" alt="Logo" class="logonavbar h-15 w-10 mr-2 ">
@@ -43,7 +44,7 @@
 					</div>
 					<div class="inline-flex relative">
 						<button class="increase bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-l top-0 right-0 text-lg logonavbar
-">
+">						
 							<i class="fa fa-plus" aria-hidden="true">A</i>
 						</button>
 						<button class="reset bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-r top-0 right-0 text-sm logonavbar">
@@ -98,6 +99,9 @@
 		</ul>
 	</div>
 	<script>
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+		  }
 		/*Guarradas no porfavor alex :)*/
 		const btn = document.querySelector("button.mobile-menu-button");
 		const menu = document.querySelector(".mobile-menu");

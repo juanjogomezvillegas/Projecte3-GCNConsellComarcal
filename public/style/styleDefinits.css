@@ -164,3 +164,13 @@ footer {
 .dadesContacte span.negreta {
     font-weight: bold !important;
 }
+.goog-logo-link {
+    display:none !important;
+} 
+    
+.goog-te-gadget{
+    color: transparent !important;
+}
+.goog-te-combo{
+    color: black;
+}

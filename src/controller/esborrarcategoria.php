@@ -9,7 +9,5 @@ function ctrlEsborrarcategoria($peticio, $resposta, $contenidor)
     
     $categoriesPDO->delete($idcategoria, $usuarilogat);
 
-    $resposta->redirect("Location:index.php?r=llistarcategoria");
-
     return $resposta;
 }

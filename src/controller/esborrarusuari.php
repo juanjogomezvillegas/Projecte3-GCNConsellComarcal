@@ -8,7 +8,5 @@ function ctrlEsborrarusuari($peticio, $resposta, $contenidor)
     
     $usuarisPDO->delete($idusuari);
 
-    $resposta->redirect("Location:index.php?r=llistarusuari");
-
     return $resposta;
 }
