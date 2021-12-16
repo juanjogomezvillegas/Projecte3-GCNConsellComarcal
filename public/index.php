@@ -18,6 +18,8 @@ require_once "../src/controller/docreararticle.php";
 require_once "../src/controller/doregistreadmin.php";
 require_once "../src/controller/docontacte.php";
 require_once "../src/controller/registre.php";
+require_once "../src/controller/canviarcontrasenya.php";
+require_once "../src/controller/docanvicontrasenya.php";
 require_once "../src/controller/registreadmin.php";
 require_once "../src/controller/article.php";
 require_once "../src/controller/blog.php";
@@ -70,6 +72,8 @@ $app->ruta("articlespreferitsusuari", "ctrlArticlespreferitsusuari", ["middleCen
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);
 $app->ruta("dologin", "ctrlDoLogin", ["middleCentral"]);
 $app->ruta("registre", "ctrlRegistre", ["middleCentral"]);
+$app->ruta("canviarcontrasenya", "ctrlCanviarContrasenya", ["middleCentral"]);
+$app->ruta("docanvicontrasenya", "ctrlDoCanviarContrasenya", ["middleCentral"]);
 $app->ruta("doregistre", "ctrlDoRegistre", ["middleCentral"]);
 $app->ruta("logout", "ctrlLogout", ["middleCentral", "middleLogat"]);
 /*Access al Panell d'Administració*/

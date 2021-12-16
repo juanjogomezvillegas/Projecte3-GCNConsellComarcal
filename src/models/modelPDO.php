@@ -66,6 +66,16 @@ class ModelPDO
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         return $passwordHash;
     }
+
+    public function verificarPassword($passwordusuari,$passwordHash)
+    {
+        if(password_verify($passwordusuari,$passwordHash)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function validacionRecaptcha($recaptcha_response){
 
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';

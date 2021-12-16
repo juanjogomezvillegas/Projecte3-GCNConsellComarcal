@@ -173,4 +173,29 @@ class UsuarisPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
+    public function updatepassword($contrasenya,$id)
+    {
+        $taula2 = $this->taula;
+
+        $query = "update $taula2 set contrasenya = :contrasenya where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id,':contrasenya' => $contrasenya]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function getAlert($id)
+    {
+        if ($id == 'passanticincorrecte'){
+            $id = 'La contrasenya antigua es incorrecte!';
+        }elseif($id == 'passnouincorrecte'){
+            $id = 'La contrasenya nova no son iguals!';
+        }
+        return $id;
+    }
 }
