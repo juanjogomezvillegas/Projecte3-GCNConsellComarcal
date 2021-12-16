@@ -59,7 +59,7 @@
                         type="text" value="<?=$dadesUsuari["telefon"];?>"  readonly/>
                 </div>
                 <div class="text-center">
-                    <a href="index.php?r=">
+                    <a href="index.php?r=canviarcontrasenya">
                         <button class="bg-red-600 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                             <i class="fas fa-unlock-alt" aria-hidden="true"></i>
                             <span class="ml-1">Canviar Contrasenya</span>
