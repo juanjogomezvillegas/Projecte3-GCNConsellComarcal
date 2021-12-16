@@ -54,6 +54,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <span class="contentMsg text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">
+                              <input type="hidden" name="id" value="<?= $actual["id"]; ?>">
                               <input type="hidden" name="contingut" value="<?= $actual["missatge"]; ?>">
                               <i class="fas fa-info-circle"></i>
                             </span>
@@ -68,42 +69,29 @@
 </div>
 </div>
 </div>
+</body>
+
 <!-- Modal del Contingut del missatge -->
-<div id="modalMissatge" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
-  <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-
-    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-
-    <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
-    <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-        <div class="sm:flex sm:items-start">
-          <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full sm:mx-0 sm:h-10 sm:w-10">
-            <span class="text-3xl text-blue-600">
-              <i class="fas fa-info-circle"></i>
-            </span>
-          </div>
-          <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-              Contingut del Misstage
-            </h3>
-            <div class="mt-2">
-              <p id="contentMessage" class="text-sm text-gray-500">
-              </p>
-            </div>
-          </div>
-        </div>
+<div id="modalMissatge" class="hidden flex items-center justify-center fixed left-0 bottom-0 fixed z-10 inset-0 overflow-y-auto bg-gray-500 bg-opacity-75 transition-opacity" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+  <div class="bg-white rounded-lg w-1/2">
+    <div class="flex flex-col items-start p-4">
+      <div class="flex items-center w-full">
+        <div class="text-gray-900 font-medium text-lg">Contingut del Misstage</div>
+        <span id="tancaModal" class="ml-auto fill-current text-gray-700 w-6 h-6 cursor-pointer"><i class="fas fa-times"></i></span>
       </div>
-      <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="button" id="tancaModal" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
-          Tanca
+      <hr>
+      <div class="">
+        <p id="contentMessage" class="text-sm text-gray-500">
+      </div>
+      <hr>
+      <div class="ml-auto">
+        <button id="esborrarMissatgeModal" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+          <i class="fas fa-trash-alt"></i> Esborrar el Missatge
         </button>
       </div>
     </div>
   </div>
 </div>
-</body>
 <?php include '../src/includes/scripts.php';?>
 <script src="script/contingutMissatge.js"></script>
 </html>
