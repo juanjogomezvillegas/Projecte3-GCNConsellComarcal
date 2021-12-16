@@ -63,8 +63,7 @@ class ModelPDO
     }
 
     public function crearPasswordEncriptat($password){
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        return $passwordHash;
+        return password_hash($password, PASSWORD_DEFAULT);
     }
 
     public function verificarPassword($passwordusuari,$passwordHash)

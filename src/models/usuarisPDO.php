@@ -48,8 +48,6 @@ class UsuarisPDO extends ModelPDO
             $result = $stm->execute([':usuari' => $usuari,':pass' => $passwordhash]);
             
             $logat = $stm->fetch(\PDO::FETCH_ASSOC);
-            print_r($logat);
-
         }
         if (isset($logat["username"]) && isset($logat["contrasenya"])) {
             return true;

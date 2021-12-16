@@ -73,7 +73,7 @@
 
     });
 	
-	//Funció ajax
+	//Funció per enviar un contacte amb ajax
 	$(function () {
 
         $('#contacte').on('submit', function (e) {
@@ -125,6 +125,5 @@
 		  }
 		  return false;
 		});
-	  
 	  });
 	  

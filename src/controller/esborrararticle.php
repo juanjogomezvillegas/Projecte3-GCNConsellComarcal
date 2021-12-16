@@ -8,7 +8,5 @@ function ctrlEsborrararticle($peticio, $resposta, $contenidor)
     
     $articlesPDO->delete($idarticle);
 
-    $resposta->redirect("Location:index.php?r=llistararticle");
-
     return $resposta;
 }
