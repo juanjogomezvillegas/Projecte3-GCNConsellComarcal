@@ -15,35 +15,43 @@
     ?>
     <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles Preferits</h1>
     <?php if (count($articlesFavorits) > 0) { ?>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
             <?php foreach ($articlesFavorits as $actual) { ?>
-                <div class="articlesPortada max-w-sm rounded overflow-hidden shadow-lg bg-gray-200">
-                    <a href="index.php?r=article&id=<?=$actual["id"];?>"><img class="w-full" src="<?=$actual["imatge"];?>" alt=""></a>
-                    <div class="px-6 py-4">
+                <div class="articlesPortada mb-5 flex items-stretch flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
+                    <div class="w-full md:w-1/3 bg-white grid place-items-center">
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                            <div class="font-bold text-xl mb-2"><?=$actual["titol"];?></div>
-                            <p class="text-gray-700 text-base">
-                            <?php $contingut = strip_tags($actual["contingut"]); ?>
-                            <?= substr($contingut, 0, 100);?>
-                            </p>
+                            <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
                         </a>
                     </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <span class="bg-gray-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><?=$actual["categoria"];?></span>
-                    </div>
-                    <div class="px-6 pt-4 pb-2">
-                        <span class="bg-gray-400 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><?=$actual["dataEdicio"];?></span>
+                    <div class="w-full md:w-2/3 space-y-2 p-3">
+                        <a href="index.php?r=article&id=<?=$actual["id"];?>">
+                            <h3 class="text-gray-900 md:text-3xl text-xl"><?= $actual["titol"]; ?></h3>
+                            <p class="md:text-lg text-gray-700">
+                                <?php $contingut = strip_tags($actual["contingut"]); ?>
+                                <?= substr($contingut, 0, 100);?> ...
+                            </p>
+                            <br>
+                            <p class="text-sm text-gray-500">
+					        Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
+				            </p>
+                            <p class="text-sm text-gray-500">
+					        Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
+				            </p>
+                        </a>
                     </div>
                 </div>
             <?php } ?>
-        </div>
+	    </div>
     <?php } else { ?>
-        <h1 class="text-3xl text-red-900 text-center">En Aquest moment no tens articles favorits.</h1>
+        <div class="bg-red-100 border-red-500 text-red-700 p-4" role="alert">
+            <p class="text-xl text-center"><i class="fas fa-info-circle"></i> En Aquest moment no tens articles favorits.</p>
+        </div>
     <?php } ?>
     <br>
 <footer>
 <?php include '../src/includes/footer.php';?>
 </footer>
 <?php include '../src/includes/scripts.php';?>
+<script src="script/favorits.js"></script>
 </body>
 </html>

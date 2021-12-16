@@ -15,10 +15,9 @@
     ?>
     <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles</h1>
     <?php if (count($articlesPortada) > 0) { ?>
-        <div class="grid grid-cols-2 gap-10 ml-10 mr-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
             <?php foreach ($articlesPortada as $actual) { ?>
-                <div class="mb-5 flex items-stretch">
-                <div class="articlesPortada flex flex-col md:flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
+                <div class="articlesPortada mb-5 flex items-stretch flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
                     <div class="w-full md:w-1/3 bg-white grid place-items-center">
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
                             <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
@@ -60,7 +59,6 @@
                         </a>
                     </div>
                 </div>
-                </div>
             <?php } ?>
 	    </div>
     <?php } else { ?>
@@ -71,10 +69,9 @@
     <br>
     <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Tramits</h1>
     <?php if (count($articlesPortadaTramits) > 0) { ?>
-        <div class="grid grid-cols-2 gap-10 ml-10 mr-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
             <?php foreach ($articlesPortadaTramits as $actual) { ?>
-                <div class="mb-5 flex items-stretch">
-                <div class="articlesPortada flex flex-col md:flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
+                <div class="articlesPortada mb-5 flex flex-row items-stretch md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
                     <div class="w-full md:w-1/3 bg-white grid place-items-center">
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
                             <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
@@ -112,7 +109,6 @@
 				            </p>
                         </a>
                     </div>
-                </div>
                 </div>
             <?php } ?>
 	    </div>
