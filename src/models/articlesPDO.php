@@ -59,23 +59,51 @@ class ArticlesPDO extends ModelPDO
     public function getllistatPortada($limit)
     {
         if ($limit == 0) {
-            $query = "select a.*, (select data_edicio 
-            from usuari_article_edita 
-            where id_article = a.id 
-            order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+            $query = "select a.*, 
+            (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, 
+            (select count(*) from articles_favorits where id_article = a.id) as likes, c.nom as categoria 
             from article a 
             left join categoria c on a.id_categoria = c.id 
-            where a.publicat = 1 
-            order by dataEdicio desc;";
+            where a.publicat = 1 and c.nom not like 'Tramits'
+            order by dataEdicio desc, likes desc;";
         } else {
-            $query = "select a.*, (select data_edicio 
-            from usuari_article_edita 
-            where id_article = a.id 
-            order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+            $query = "select a.*, 
+            (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, 
+            (select count(*) from articles_favorits where id_article = a.id) as likes, c.nom as categoria 
             from article a 
             left join categoria c on a.id_categoria = c.id 
-            where a.publicat = 1 
-            order by dataEdicio desc limit $limit;";
+            where a.publicat = 1 and c.nom not like 'Tramits'
+            order by dataEdicio desc, likes desc limit $limit;";
+        }
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([]);
+ 
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+  
+        return $registres;
+    }
+
+    public function getllistatPortadaTramits($limit)
+    {
+        if ($limit == 0) {
+            $query = "select a.*, 
+            (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, 
+            (select count(*) from articles_favorits where id_article = a.id) as likes, c.nom as categoria 
+            from article a 
+            left join categoria c on a.id_categoria = c.id 
+            where a.publicat = 1 and c.nom like 'Tramits'
+            order by dataEdicio desc, likes desc;";
+        } else {
+            $query = "select a.*, 
+            (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, 
+            (select count(*) from articles_favorits where id_article = a.id) as likes, c.nom as categoria 
+            from article a 
+            left join categoria c on a.id_categoria = c.id 
+            where a.publicat = 1 and c.nom like 'Tramits'
+            order by dataEdicio desc, likes desc limit $limit;";
         }
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
@@ -224,6 +252,17 @@ class ArticlesPDO extends ModelPDO
         }        
 
         return $exists;
+    }
+
+    public function totalarticlesfavorits($id)
+    {
+        $query = "select count(*) as total from articles_favorits where id_article = :id";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+
+        $total = $stm->fetch(\PDO::FETCH_ASSOC);
+
+        return $total;
     }
 
     public function getArrayValorsPredefinits($usuariLogat)

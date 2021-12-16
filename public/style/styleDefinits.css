@@ -151,7 +151,13 @@ input#tempsRefresc:hover {
 }
 div.articlesPortada {
     border-radius: 5px !important;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3) !important;
+    transition: box-shadow 1s, border-radius 1s;
+}
+div.articlesPortada:hover {
+    border-radius: 25px !important;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3) !important;
+    transition: box-shadow 1s, border-radius 1s;
 }
 footer {
     margin-top: 100px !important;
