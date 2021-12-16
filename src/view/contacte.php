@@ -23,7 +23,7 @@
       <h1 class="text-center text-white text-4xl mb-10">Contacte</h1>
       <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded relative mb-4 success-missatge hidden" role="alert">
   <strong class="font-bold">El seu missatge s'ha enviat correctament:</strong>
-  <span class="block sm:inline">Rebrás una resposta el més ràpid possible</span>
+  <span class="block sm:inline">Rebrás una resposta el més ràpid possible a l'adreça <?= $dadesUsuari["email"] ?></span>
   <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
   </span>
   <?php if (!$logat) { ?>
