@@ -81,7 +81,7 @@
 
   </div>
           <?php include '../src/includes/scripts.php'; ?>
-          <?php //include '../src/includes/tinyMCE.php'; ?>
+          <?php include '../src/includes/tinyMCE.php'; ?>
 </body>
 
 </html>

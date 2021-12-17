@@ -86,7 +86,6 @@
   </div>
           <?php include '../src/includes/scripts.php'; ?>
           <?php include '../src/includes/tinyMCE.php'; ?>
-          <script src="script/dragdrop.js"></script>
 </body>
 
 </html>
