@@ -181,7 +181,6 @@ footer {
     color: black;
 }
 div#dropzone {
-<<<<<<< HEAD
     width:  100%;
     height: auto;
 }
@@ -416,21 +415,6 @@ div#dropzone {
 .btn:focus {
     outline: 0;
 }
-=======
-    width: 300px !important;
-    height: auto !important;
+.tox-notifications-container {
+    display: none;
 }
-.goog-te-combo {
-    background-color: rgb(220 38 38) !important;
-    color: #fff !important;
-    font-weight: 600 !important;
-    font-size: 15px !important;
-}
-li.documentPdf {
-    transition: background-color 0.3s;
-}
-li.documentPdf:hover {
-    background-color: rgb(254 226 226) !important;
-    transition: background-color 0.3s;
-}
->>>>>>> aa7f44e84aa4b7fe740aa1dd90829da2626c7af8
