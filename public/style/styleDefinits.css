@@ -184,3 +184,9 @@ div#dropzone {
     width:  100%;
     height: auto;
 }
+.goog-te-combo {
+    background-color: rgb(220 38 38) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}

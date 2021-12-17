@@ -4,7 +4,7 @@
 		<div class="flex justify-between">
 			<div class="flex space-x-7">
 				<div>
-					<div class="absolute top-0 right-0 form-select appearance-none text-center text-gray-900" id="google_translate_element"></div>
+					<div class="absolute top-0 right-3" id="google_translate_element"></div>
 					<!-- Website Logo -->
 					<a href="index.php" class="flex items-center py-4 px-2">
 						<img src="../img/logoNavbar-blanc.png" alt="Logo" class="logonavbar h-15 w-10 mr-2 ">
@@ -43,8 +43,7 @@
 						</div>
 					</div>
 					<div class="inline-flex relative">
-						<button class="increase bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-l top-0 right-0 text-lg logonavbar
-">						
+						<button class="increase bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-l top-0 right-0 text-lg logonavbar">						
 							<i class="fa fa-plus" aria-hidden="true">A</i>
 						</button>
 						<button class="reset bg-red-600 hover:text-gray-300 text-gray-50 font-bold py-1 px-2 rounded-r top-0 right-0 text-sm logonavbar">
@@ -59,6 +58,7 @@
 				<div class="hidden md:flex items-center space-x-3 ">
 					<a href="index.php?r=login" class="py-2 px-2 font-medium text-white rounded hover:bg-red-300 hover:text-white transition duration-300">Inicia Sessió</a>
 					<a href="index.php?r=registre" class="py-2 px-2 font-medium text-red-800 bg-white rounded hover:bg-red-200 transition duration-300">Registrat</a>
+					<div class="" id="google_translate_element"></div>
 				</div>
 			<?php } ?>
 
@@ -75,6 +75,9 @@
 	<!-- mobile menu -->
 	<div class="hidden mobile-menu">
 		<ul class="">
+			<li>
+				<hr class="border-t mx-2 border-gray-400">
+			</li>
 			<?php if ($logat) { ?>
 				<li>
 					<p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
@@ -98,10 +101,6 @@
 			<li><a href="https://www.altemporda.org/portal/" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Consell comarcal</a></li>
 		</ul>
 	</div>
-	<script>
-		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({pageLanguage: 'ca'}, 'google_translate_element');
-		  }
-	</script>
+	<script src="script/traductor.js"></script>
 	<script src="script/mobilnav.js"></script>
 </nav>
