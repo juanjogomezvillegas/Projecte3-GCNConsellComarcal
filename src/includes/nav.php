@@ -26,7 +26,7 @@
 				<div class="hidden md:flex items-center space-x-3">
 					<div class="relative text-sm text-gray-100">
 						<button id="userButton" class="flex items-center focus:outline-none mr-3">
-							<img src="img/userporfile.png" alt="user" class="w-10">
+							<img src="<?=$dadesUsuariLogat["imatge"]?>" alt="user" class="w-10">
 						</button>
 						<div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
 							<ul class="list-reset">
@@ -100,14 +100,8 @@
 	</div>
 	<script>
 		function googleTranslateElementInit() {
-			new google.translate.TranslateElement({pageLanguage: 'es'}, 'google_translate_element');
+			new google.translate.TranslateElement({pageLanguage: 'ca'}, 'google_translate_element');
 		  }
-		/*Guarradas no porfavor alex :)*/
-		const btn = document.querySelector("button.mobile-menu-button");
-		const menu = document.querySelector(".mobile-menu");
-
-		btn.addEventListener("click", () => {
-			menu.classList.toggle("hidden");
-		});
 	</script>
+	<script src="script/mobilnav.js"></script>
 </nav>

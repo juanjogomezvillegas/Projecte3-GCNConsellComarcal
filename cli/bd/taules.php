@@ -8,7 +8,8 @@ $connexio->query("CREATE TABLE usuari (
     contrasenya VARCHAR(150),
     rol VARCHAR(150) DEFAULT 'Usuari',
     email VARCHAR(150), 
-    telefon VARCHAR(15), 
+    telefon VARCHAR(15),
+    imatge VARCHAR(100) DEFAULT '/img/users/userporfile.png', 
     PRIMARY KEY (id)
 );");
 
