@@ -170,3 +170,7 @@ footer {
 .dadesContacte span.negreta {
     font-weight: bold !important;
 }
+div#dropzone {
+    width:  100%;
+    height: auto;
+}

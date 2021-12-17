@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
             <?php foreach ($articlesFavorits as $actual) { ?>
                 <div class="articlesPortada mb-5 flex items-stretch flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
-                    <div class="w-full md:w-1/3 bg-white grid place-items-center">
+                    <div class="w-full md:w-1/3 grid place-items-center">
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
                             <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
                         </a>
