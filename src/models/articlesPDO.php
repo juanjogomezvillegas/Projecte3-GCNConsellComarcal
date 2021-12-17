@@ -369,6 +369,21 @@ class ArticlesPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function addDocumentArticle($id, $document)
+    {
+        $query = "insert into document (enllac, id_article) values (:enllac, :id);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':enllac' => $document, ':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     /**
      * update: modificara els dades d'usuari registrat a la base de dades
      * @param id id de l'usuari a modificar
@@ -405,6 +420,7 @@ class ArticlesPDO extends ModelPDO
 
         return $articles["id"];
     }
+
     public function getAlert($id){
         if ($id == 'faltacamp'){
             $id = 'Introdueix tots els camps abans de enviar les dades';

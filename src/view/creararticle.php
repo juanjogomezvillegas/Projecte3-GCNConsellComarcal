@@ -66,7 +66,7 @@
               <div id="dropzone" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix els Documents de l'Article</span>
-                  <input type="file" name="documents[]" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold" multiple="">
+                  <input type="file" name="documents[]" id="documents[]" multiple="" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
                 </label>
               </div>
               <br>
