@@ -8,7 +8,7 @@
     <title>GCN Consell Comarcal</title>
 </head>
 
-<body class="bg-gray-300">
+<body>
     <?php
     include '../src/includes/preloader.php';
     ?>
