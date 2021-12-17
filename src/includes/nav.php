@@ -79,7 +79,7 @@
 				<li>
 					<p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
 				</li>
-				<li><a href="" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">El Meu Perfil</a></li>
+				<li><a href="index.php?r=perfilusuari" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">El Meu Perfil</a></li>
 				<li><a href="index.php?r=articlespreferitsusuari" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Els Meus Articles</a></li>
 				<li><a href="index.php?r=logout" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Surt de la sessió</a></li>
 			<?php } else { ?>
