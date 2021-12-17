@@ -12,7 +12,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     $publicat = $peticio->get(INPUT_POST, "publicat");
     $categoria = $peticio->get(INPUT_POST, "categoria");
     $imatgearticle = $peticio->get("FILES", "imatgearticle");
-    $documents = $peticio->get("FILES", "documents[]");
+    $documents = $peticio->get("FILES", "documents");
 
     $dadescategoria = $categoriesPDO->getllistat();
 
@@ -32,6 +32,22 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
             $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
             move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+        }
+
+        $comptadorPDF = 0;
+        for ($i = 0; $i < count($documents["name"]); $i++) { 
+            if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
+                $comptadorPDF = $comptadorPDF + 1;
+            }
+        }
+        if ($comptadorPDF == count($documents["name"])) {
+            for ($i = 0; $i < count($documents["name"]); $i++) { 
+                if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
+                    $articlesPDO->addDocumentArticle($idarticle, $documents["name"][$i]);
+
+                    move_uploaded_file($documents["tmp_name"][$i], "img/documents/".$documents["name"][$i]);
+                }
+            }
         }
     } else{
         $message = $articlesPDO -> getAlert('faltacamp');
