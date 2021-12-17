@@ -154,18 +154,35 @@ class ArticlesPDO extends ModelPDO
 
     public function getInfoArticle($id)
     {
-        $query = "select a.*, (select data_edicio 
-            from usuari_article_edita 
-            where id_article = a.id 
-            order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
+        $query = "select a.*, (select data_edicio from usuari_article_edita where id_article = a.id order by data_edicio desc limit 1) as dataEdicio, c.nom as categoria 
             from article a 
             left join categoria c on a.id_categoria = c.id 
-            where a.publicat = 1 and a.id = :id
+            where a.id = :id
             order by dataEdicio desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
   
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
         return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
+    public function getDocumentsArticle($id)
+    {
+        $query = "select * from document where id_article = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id]);
+  
+        $registres = array();
+        while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
+            $registres[$registre["id"]] = $registre;
+        }
+  
+        return $registres;
     }
 
     public function getllistatTotsFavorits()
@@ -369,6 +386,21 @@ class ArticlesPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
+    public function addDocumentArticle($id, $document)
+    {
+        $query = "insert into document (enllac, id_article) values (:enllac, :id);";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':enllac' => $document, ':id' => $id]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+
     /**
      * update: modificara els dades d'usuari registrat a la base de dades
      * @param id id de l'usuari a modificar
@@ -405,6 +437,7 @@ class ArticlesPDO extends ModelPDO
 
         return $articles["id"];
     }
+
     public function getAlert($id){
         if ($id == 'faltacamp'){
             $id = 'Introdueix tots els camps abans de enviar les dades';

@@ -201,7 +201,8 @@ class UsuarisPDO extends ModelPDO
     public function updateImage($id, $imatge)
     {
         $taula2 = $this->taula;
-        $query = "update $taula2 set imatge = concat('/img/users/', :imatgeUsuari) where id = :id;";
+        
+        $query = "update $taula2 set imatge = concat('img/users/', :imatgeUsuari) where id = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id, ':imatgeUsuari' => $imatge]);
 

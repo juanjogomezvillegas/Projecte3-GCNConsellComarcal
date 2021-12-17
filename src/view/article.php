@@ -8,7 +8,7 @@
     <title>GCN Consell Comarcal</title>
 </head>
 
-<body class="bg-gray-300">
+<body>
     <?php
     include '../src/includes/preloader.php';
     ?>
@@ -31,8 +31,24 @@
             <!--Post Content-->
 
             <?= $informacioArticle['contingut']; ?>
-
+ 
             <!--/ Post Content-->
+
+            <br>
+            <ul role="list" class="border border-gray-300 rounded-md divide-y divide-gray-200">
+                <?php foreach ($documentsArticle as $actual) { ?>
+                    <a href="img/documents/<?= $actual["enllac"]; ?>" target="__blank">
+                        <li class="documentPdf border border-gray-300 bg-gray-100 pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                            <div class="w-0 flex-1 flex items-center">
+                                <span class="flex-shrink-0 h-5 w-5 text-red-700 text-2xl"><i class="fas fa-file-pdf"></i></span>
+                                <span class="ml-2 flex-1 w-0 truncate">
+                                    <?= $actual["enllac"]; ?>
+                                </span>
+                            </div>
+                        </li>
+                    </a>
+                <?php } ?>
+            </ul>
 
 <!--Categoria -->
 <div class="text-base md:text-sm text-gray-500 px-4 py-6">

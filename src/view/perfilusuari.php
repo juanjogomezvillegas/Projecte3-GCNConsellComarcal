@@ -21,9 +21,9 @@
                 </div>
         </div>
         <div class="text-center">
-            <form action="index.php?r=docanviarimatge" method="post" enctype="multipart/form-data">
+            <form action="index.php?r=docanviarimatge" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?=$dadesUsuari["id"];?>">
-            <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+            <div id="dropzone" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix una imatge</span>
                   <input type="file" name="imatgeusuari" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
