@@ -2,20 +2,32 @@
 
 function ctrlArticle($peticio, $resposta, $contenidor)
 {
+    $idarticle = $peticio->get(INPUT_GET, "id");
+
     $articlesPDO = $contenidor->articlesPDO();
 
-    $idarticle = $peticio->get("INPUT_REQUEST", "id");
+    $informacioArticle = $articlesPDO-> show($idarticle);
+    
+    $seguentArticle = $articlesPDO-> obtenirSeguentArticle($idarticle);
 
-    $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
+    $idseguentArticle = $seguentArticle['id'];
 
-    $count = $articlesPDO->gettotalregistres();
+    $nomseguentArticle = $seguentArticle['titol'];
 
-    $idAnterior = $idarticle - 1;
-    $idSeguent = $idarticle + 1;
+    $anteriorArticle = $articlesPDO-> obtenirAnteriorArticle($idarticle);
 
-    $resposta->set('count', $count);
-    $resposta->set('idAnterior', $idAnterior);
-    $resposta->set('idSeguent', $idSeguent);
+    $idanteriorArticle = $anteriorArticle['id'];
+
+    $nomanteriorArticle = $anteriorArticle['titol'];
+    
+    $resposta->set('idseguentArticle', $idseguentArticle);
+
+    $resposta->set('nomseguentArticle', $nomseguentArticle);
+
+    $resposta->set('idanteriorArticle', $idanteriorArticle);
+    
+    $resposta->set('nomanteriorArticle', $nomanteriorArticle);
+
     $resposta->set('informacioArticle', $informacioArticle);
 
     $resposta->SetTemplate("article.php");

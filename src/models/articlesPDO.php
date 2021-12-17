@@ -452,4 +452,36 @@ class ArticlesPDO extends ModelPDO
 
         return $versions;
     }
+    public function obtenirAnteriorArticle($idarticle)
+    {
+        $taula2 = $this->taula;
+
+        $query = "select id,titol from article where id < :idarticle ORDER BY id ASC LIMIT 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idarticle' => $idarticle]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function obtenirSeguentArticle($idarticle)
+    {
+        $taula2 = $this->taula;
+
+        $query = "select id,titol from article where id > :idarticle ORDER BY id ASC LIMIT 1;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':idarticle' => $idarticle]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
 }

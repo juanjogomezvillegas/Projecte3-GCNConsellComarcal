@@ -43,20 +43,22 @@
 
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
-    <?php if ($informacioArticle["id"] > 2) { ?>
-    <div class="text-left">
-        <p><a href="index.php?r=article&id=<?=$idAnterior;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">&lt; Article Anterior</a></p>
-    </div>
-    <?php } ?>
-    <?php if ($informacioArticle["id"] < $count["total"]) { ?>
-    <div class="text-right">
-        <p><a href="index.php?r=article&id=<?=$idSeguent;?>" class="break-normal text-base md:text-sm text-red-500 font-bold no-underline hover:underline">Article Següent &gt;</a></p>
-    </div>
-    <?php } ?>
-</div>
+            <div class="text-left">
+            <?php if(isset($idanteriorArticle)){ ?>
+				<a href="index.php?r=article&id=<?=$idanteriorArticle?>" class="text-xs md:text-sm font-normal text-red-600">&lt; Anterior Article<br>
+				<p><?=$nomanteriorArticle?></p></a>
+                <?php } ?>
+            </div>
+            
+			<div class="text-right">
+            <?php if(isset($idseguentArticle)){ ?>
+				<a href="index.php?r=article&id=<?=$idseguentArticle?>" class="text-xs md:text-sm font-normal text-red-600">Seguent article &gt;<br>
+				<p><?=$nomseguentArticle?> </p></a>
+                <?php } ?>
+            </div>
+		</div>
+
         </div>
-
-
         <!--/Veure articles-->
 
     </div>
