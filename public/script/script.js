@@ -118,7 +118,7 @@
 	  
 		$(".decrease").click(function() {
 		  var originalFontSize = $(resize).css('font-size');
-		  var originalFontNumber = parseFloat(originalFontSize, 10);
+		  var originalFontNumber = parseFloat(originalFontSize, 10);3
 		  var newFontSize = originalFontNumber * 0.95;
 		  if (newFontSize >= 10) {
 			$(resize).css('font-size', newFontSize);
@@ -126,4 +126,21 @@
 		  return false;
 		});
 	  });
-	  
+	  // swiper    
+var mySwiper = new Swiper('.swiper-container', {
+	effect: '',
+	loop: false,
+	speed: 1000,
+	slidesPerView: 1,
+	navigation: {
+	   nextEl: '.swiper-button-next',
+	   prevEl: '.swiper-button-prev'
+	},
+	pagination: {
+	   el: '.swiper-pagination',
+	   type: 'bullets',
+	   clickable: 'true'
+	},
+ });
+		 
+		 

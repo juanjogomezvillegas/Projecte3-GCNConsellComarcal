@@ -456,7 +456,7 @@ class ArticlesPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "select id,titol from article where id < :idarticle ORDER BY id ASC LIMIT 1;";
+        $query = "select id,titol from article where id < :idarticle AND publicat=1 ORDER BY id DESC LIMIT 1;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idarticle' => $idarticle]);
 
@@ -472,7 +472,7 @@ class ArticlesPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "select id,titol from article where id > :idarticle ORDER BY id ASC LIMIT 1;";
+        $query = "select id,titol from article where id > :idarticle AND publicat=1 ORDER BY id ASC LIMIT 1;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idarticle' => $idarticle]);
 

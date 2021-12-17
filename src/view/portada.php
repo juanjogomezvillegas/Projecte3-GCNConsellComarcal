@@ -13,6 +13,30 @@
     <?php
     include '../src/includes/nav.php';
     ?>
+    <div class="swiper-container">
+   <!-- Additional required wrapper -->
+   <div class="swiper-wrapper">
+   <!-- Slider -->
+      <!-- Slide1 -->
+      <?php for($i = 1; $i < 4; ++$i) { ?>
+      <div class="swiper-slide" style="background-image: url(img/slider/<?=$i?>.jpg)">
+         <div class="slide-text">
+            <h1>Consell Comarcal de l'Alt Empordà</h1>
+            <p>Totes les gestions en un click.</p>
+            <a class="btn">Contacte</a>
+         </div>
+      </div>
+      <?php }?>
+ 
+   </div>
+   <!-- If we need pagination -->
+   <div class="swiper-pagination"></div>
+
+   <!-- If we need navigation buttons -->
+   <div class="swiper-button-prev"><span></span></div>
+   <div class="swiper-button-next"><span></span></div>
+
+</div>
     <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles</h1>
     <?php if (count($articlesPortada) > 0) { ?>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
