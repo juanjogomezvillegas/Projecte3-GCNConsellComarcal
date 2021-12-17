@@ -4,7 +4,7 @@
 		<div class="flex justify-between">
 			<div class="flex space-x-7">
 				<div>
-					<div class="absolute top-0 right-3" id="google_translate_element"></div>
+					<div class="absolute top-1 right-3" id="google_translate_element"></div>
 					<!-- Website Logo -->
 					<a href="index.php" class="flex items-center py-4 px-2">
 						<img src="../img/logoNavbar-blanc.png" alt="Logo" class="logonavbar h-15 w-10 mr-2 ">

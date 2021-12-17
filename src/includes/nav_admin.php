@@ -80,8 +80,9 @@
                         </a>
                     </li>
 				</ul>
+				<div id="google_translate_element"></div>
 				
 			
-			
+			<script src="script/traductor.js"></script>
 		</div>
 	</nav>
