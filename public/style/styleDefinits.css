@@ -181,10 +181,22 @@ footer {
     color: black;
 }
 div#dropzone {
-    width:  100%;
-    height: auto;
+    width: 300px !important;
+    height: auto !important;
 }
-
+.goog-te-combo {
+    background-color: rgb(220 38 38) !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+}
+li.documentPdf {
+    transition: background-color 0.3s;
+}
+li.documentPdf:hover {
+    background-color: rgb(254 226 226) !important;
+    transition: background-color 0.3s;
+}
 
 /*Responsive Slider */
 /* swiper */
@@ -415,6 +427,6 @@ div#dropzone {
 .btn:focus {
     outline: 0;
 }
-.tox-notifications-container {
+.sufo tox-notifications-container {
     display: none;
 }
