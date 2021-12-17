@@ -14,8 +14,6 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
     $imatgearticle = $peticio->get("FILES", "imatgearticle");
     $documents = $peticio->get("FILES", "documents[]");
 
-    print_r($documents);
-
     $dadescategoria = $categoriesPDO->getllistat();
 
     if (!empty($publicat)){
@@ -41,7 +39,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $article = $articlesPDO->show($idarticle);
 
-    //$resposta->redirect("Location:index.php?r=actualitzararticle&id=$idarticle");
+    $resposta->redirect("Location:index.php?r=actualitzararticle&id=$idarticle");
 
     return $resposta;
 }
