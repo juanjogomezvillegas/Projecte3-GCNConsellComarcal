@@ -3,15 +3,15 @@ $dataCreacio = new DateTime();
 
 /*Afageix dades per defecte a la taula "usuari" de la base de dades*/
 $usuaris = $usuaris = [
-    ["id" => 1,"nom" => "admin","cognom" => "admin","username" => "admin","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Administrador","mail" => "admin@altemporda.cat","telefon" => "111 111 111"],
-    ["id" => 2,"nom" => "gestor","cognom" => "gestor","username" => "gestor","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Gestor","mail" => "gestor@altemporda.cat","telefon" => "222 222 222"],
-    ["id" => 3,"nom" => "usuari","cognom" => "usuari","username" => "usuari","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Usuari","mail" => "usuari@altemporda.cat","telefon" => "333 333 333"],
+    ["id" => 1,"nom" => "admin","cognom" => "admin","username" => "admin","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Administrador","mail" => "admin@altemporda.cat","telefon" => "111 111 111","imatge" => "/img/users/userporfile.png"],
+    ["id" => 2,"nom" => "gestor","cognom" => "gestor","username" => "gestor","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Gestor","mail" => "gestor@altemporda.cat","telefon" => "222 222 222","imatge" => "/img/users/userporfile.png"],
+    ["id" => 3,"nom" => "usuari","cognom" => "usuari","username" => "usuari","contrasenya" => '$2y$10$sPIbIjxZg9yx3KuebAipjuN/u4.0e.q9YETRhe6uRzHhvgtGTyoYS', "rol" => "Usuari","mail" => "usuari@altemporda.cat","telefon" => "333 333 333","imatge" => "/img/users/userporfile.png"],
 ];
 
 foreach ($usuaris as $actual) {
-    $sql = $connexio->prepare("INSERT INTO usuari VALUES (:id,:nom,:cognom,:username,:pass,:rol,:mail,:telefon)");
+    $sql = $connexio->prepare("INSERT INTO usuari VALUES (:id,:nom,:cognom,:username,:pass,:rol,:mail,:telefon,:imatge)");
     $sql->execute([":id" => $actual["id"],":nom" => $actual["nom"],":cognom" => $actual["cognom"],":username" => $actual["username"],":pass" => $actual["contrasenya"],
-    ":rol" => $actual["rol"], ":mail" => $actual["mail"],":telefon" => $actual["telefon"]]);
+    ":rol" => $actual["rol"], ":mail" => $actual["mail"],":telefon" => $actual["telefon"],":imatge" => $actual["imatge"]]);
 }
 
 /*Afageix dades per defecte a la taula "categoria" de la base de dades*/

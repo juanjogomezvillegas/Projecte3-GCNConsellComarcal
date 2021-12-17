@@ -195,7 +195,24 @@ class UsuarisPDO extends ModelPDO
             $id = 'La contrasenya antigua es incorrecte!';
         }elseif($id == 'passnouincorrecte'){
             $id = 'La contrasenya nova no son iguals!';
+        }elseif($id == 'imatgeno'){
+            $id = 'La imatge te un format incorrecte!';
         }
         return $id;
+    }
+    public function updateImage($id, $imatge)
+    {
+        $taula2 = $this->taula;
+        $query = "update $taula2 set imatge = concat('/img/users/', :imatgeUsuari) where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id, ':imatgeUsuari' => $imatge]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 }
