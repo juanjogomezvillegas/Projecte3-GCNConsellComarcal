@@ -19,29 +19,29 @@ function ctrlDoCanviarContrasenya($peticio, $resposta, $contenidor)
     $passwordHash = $usuarisPDO -> obtenirHash($usernameUsuari);
     $passwordHash = $passwordHash['contrasenya'];
 
-    $verifica = $usuarisPDO -> verificarPassword($contrasenyavella,$passwordHash);
-    $message='';
+    $verifica = $usuarisPDO -> verificarPassword($contrasenyavella, $passwordHash);
+    $message = '';
 
     $error = false;
-    
-    if($verifica == 1){
+
+    if ($verifica == 1) {
         $error = false;
-        if($contrasenyanova == $contrasenyanovarepetida){
+        if ($contrasenyanova == $contrasenyanovarepetida) {
             $error = false;
             $passwordHashNou = $usuarisPDO -> crearPasswordEncriptat($contrasenyanova);
 
-            $usuarisPDO -> updatepassword($passwordHashNou,$IdUsuari);
-            
+            $usuarisPDO -> updatepassword($passwordHashNou, $IdUsuari);
+
             $resposta->redirect("Location:index.php?r=perfilusuari");
-         }else{
-            $error=true;
+        } else {
+            $error = true;
             $message = $usuarisPDO -> getAlert('passnouincorrecte');
-            $resposta->redirect("Location:index.php?r=canviarcontrasenya");  
+            $resposta->redirect("Location:index.php?r=canviarcontrasenya");
         }
-    }else{
-        $error=true;
+    } else {
+        $error = true;
         $message = $usuarisPDO -> getAlert('passanticincorrecte');
         $resposta->redirect("Location:index.php?r=canviarcontrasenya");
-     }
+    }
     return $resposta;
 }

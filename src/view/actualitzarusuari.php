@@ -19,13 +19,13 @@
                     </div>
                     <div>
                         <form action="index.php?r=doactualitzarusuari" method="post">
-                       <?php if(!empty($update)){?>
+                       <?php if (!empty($update)) {?>
                         <div class="bg-green-100 border border-green-300 text-center text-green-700 px-4 py-3 rounded relative mb-4 success-missatge" role="alert">
                                     <strong class="font-bold"> S'han actualitzat les dades del usuari satisfactoriament </strong>
                                     <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
                                     </span>
                                 </div>
-                                <?php } ?>
+                       <?php } ?>
                             <div class="flex -mx-3">
                                 <div class="w-1/2 px-3 mb-5">
                                     <div class="flex">

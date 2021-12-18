@@ -38,7 +38,7 @@
                             </th>
                         </tr>
                     </thead>
-    <?php foreach($dadescontacte as $actual) { ?>
+    <?php foreach ($dadescontacte as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['id'];?>
@@ -61,7 +61,7 @@
                             <a href="index.php?r=esborrarmissatge&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                         </td>
                         </tr>
-                  <?php } ?>
+    <?php } ?>
                 </table>
             </div>
         </div>

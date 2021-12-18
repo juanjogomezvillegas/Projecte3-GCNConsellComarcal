@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } else if ($dadesUsuariLogat["rol"] === "Gestor") { ?>
+                    <?php } elseif ($dadesUsuariLogat["rol"] === "Gestor") { ?>
                         <div class="itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">

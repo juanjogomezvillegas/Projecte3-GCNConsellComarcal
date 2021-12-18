@@ -10,7 +10,7 @@
  * @return result
  */
 function middleCentral($peticio, $resposta, $contenidor, $next)
-{    
+{
     $usuarisPDO = $contenidor->usuarisPDO();
 
     $r2 = $peticio->get("INPUT_REQUEST", "r");
@@ -20,9 +20,9 @@ function middleCentral($peticio, $resposta, $contenidor, $next)
     $r = trim(filter_var($r2, FILTER_SANITIZE_STRING));
     $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
     $logat = filter_var($logat2, FILTER_VALIDATE_BOOLEAN);
-    
+
     $dadesUsuariLogat = $usuarisPDO->get($usuarilogat);
-    
+
     $resposta->set("dadesUsuariLogat", $dadesUsuariLogat);
     $resposta->set("usuarilogat", $usuarilogat);
     $resposta->set("logat", $logat);

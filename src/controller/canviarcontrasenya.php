@@ -9,10 +9,10 @@ function ctrlCanviarContrasenya($peticio, $resposta, $contenidor)
     $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
 
     $dadesUsuari = $usuarisPDO->get($usuarilogat);
-    
+
     $resposta->set("dadesUsuari", $dadesUsuari);
 
     $resposta->SetTemplate("canviarcontrasenya.php");
-    
+
     return $resposta;
 }

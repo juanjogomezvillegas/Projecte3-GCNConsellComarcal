@@ -14,14 +14,13 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
     $recaptcha = $usuarisPDO->validacionRecaptcha($recaptcha_response);
 
     if ($recaptcha->score >= 0.0) {
-
         $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
 
         $passwordHash = $usuarisPDO -> obtenirHash($usuarilogat);
 
         $passwordHash = $passwordHash['contrasenya'];
-    
-        $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat,$passwordHash);
+
+        $logat = $usuarisPDO->islogin($usuarilogat, $passwordlogat, $passwordHash);
 
         if ($logat) {
             $error = false;
@@ -43,9 +42,7 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
             $resposta->redirect("Location:index.php?r=login&error=1");
         }
     } else {
-
         $resposta->redirect("Location:index.php?r=login&error=2");
-
     }
 
 

@@ -26,7 +26,7 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $dadescategoria = $categoriesPDO->getllistat();
 
-    if (!empty($publicat)){
+    if (!empty($publicat)) {
         $publicat = 1;
     } else {
         $publicat = 0;
@@ -34,32 +34,31 @@ function ctrlDoActualitzarArticle($peticio, $resposta, $contenidor)
 
     $message = '';
 
-    if(!empty($contingut) || !empty($titol)){
-
-        $articlesPDO->update($idarticle,$titol,$contingut,$publicat, $categoria, $usuarilogat);
+    if (!empty($contingut) || !empty($titol)) {
+        $articlesPDO->update($idarticle, $titol, $contingut, $publicat, $categoria, $usuarilogat);
 
         if (isset($imatgearticle["name"]) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpeg")) {
             $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
-            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/" . $imatgearticle["name"]);
         }
 
         $comptadorPDF = 0;
-        for ($i = 0; $i < count($documents["name"]); $i++) { 
+        for ($i = 0; $i < count($documents["name"]); $i++) {
             if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
                 $comptadorPDF = $comptadorPDF + 1;
             }
         }
         if ($comptadorPDF == count($documents["name"])) {
-            for ($i = 0; $i < count($documents["name"]); $i++) { 
+            for ($i = 0; $i < count($documents["name"]); $i++) {
                 if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
                     $articlesPDO->addDocumentArticle($idarticle, $documents["name"][$i]);
 
-                    move_uploaded_file($documents["tmp_name"][$i], "img/documents/".$documents["name"][$i]);
+                    move_uploaded_file($documents["tmp_name"][$i], "img/documents/" . $documents["name"][$i]);
                 }
             }
         }
-    } else{
+    } else {
         $message = $articlesPDO -> getAlert('faltacamp');
     }
 

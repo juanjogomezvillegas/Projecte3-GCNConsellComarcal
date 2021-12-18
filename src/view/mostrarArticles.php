@@ -42,7 +42,7 @@
                             <?php } ?>
                             </div>
                         </div>
-                        <?php } ?>
+                    <?php } ?>
                         <a href="index.php?r=article&id=<?=$actual["id"];?>">
                             <h3 class="text-gray-900 md:text-3xl text-xl"><?= $actual["titol"]; ?></h3>
                             <p class="md:text-lg text-gray-700">
@@ -51,16 +51,16 @@
                             </p>
                             <br>
                             <p class="text-sm text-gray-500">
-					        Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
-				            </p>
+                            Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
+                            </p>
                             <p class="text-sm text-gray-500">
-					        Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
-				            </p>
+                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
+                            </p>
                         </a>
                     </div>
                 </div>
             <?php } ?>
-	    </div>
+        </div>
     <?php } else { ?>
         <div class="bg-red-100 border-red-500 text-red-700 p-4" role="alert">
             <p class="text-xl text-center"><i class="fas fa-info-circle"></i> En Aquest Moment no hi han Articles Disponibles.</p>

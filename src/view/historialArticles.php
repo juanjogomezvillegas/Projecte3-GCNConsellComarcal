@@ -38,7 +38,7 @@
                             </th>
                         </tr>
                     </thead>
-    <?php foreach($historialComplet as $actual) { ?>
+    <?php foreach ($historialComplet as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['titol'];?>

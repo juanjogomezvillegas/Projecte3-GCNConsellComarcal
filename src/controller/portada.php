@@ -23,6 +23,6 @@ function ctrlPortada($peticio, $resposta, $contenidor)
     $resposta->set("dadesUsuari", $dadesUsuari);
 
     $resposta->SetTemplate("portada.php");
-    
+
     return $resposta;
 }

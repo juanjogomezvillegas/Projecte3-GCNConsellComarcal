@@ -9,7 +9,7 @@ function ctrlEsborrarcategoria($peticio, $resposta, $contenidor)
 
     $idcategoria = filter_var($idcategoria2, FILTER_SANITIZE_NUMBER_INT);
     $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
-    
+
     $categoriesPDO->delete($idcategoria, $usuarilogat);
 
     return $resposta;

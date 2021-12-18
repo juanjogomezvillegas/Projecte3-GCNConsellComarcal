@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Classe que gestiona la gestio d'usuaris
  * **/
 
 /**
  * UsuarisPDO: Classe que gestiona la gestio d'usuaris
- * 
+ *
  * Sera la classe que servira per esborrar, crear, modificar els usuaris de l'aplicació
  * **/
 class UsuarisPDO extends ModelPDO
@@ -38,7 +39,7 @@ class UsuarisPDO extends ModelPDO
      * @param usuari usuari logat
      * @param password password logat
      **/
-    public function islogin($usuari, $password,$passwordhash)
+    public function islogin($usuari, $password, $passwordhash)
     {
         $taula2 = $this->taula;
 
@@ -46,7 +47,7 @@ class UsuarisPDO extends ModelPDO
             $query = "select username,contrasenya from $taula2 where username = :usuari and contrasenya = :pass";
             $stm = $this->sql->prepare($query);
             $result = $stm->execute([':usuari' => $usuari,':pass' => $passwordhash]);
-            
+
             $logat = $stm->fetch(\PDO::FETCH_ASSOC);
         }
         if (isset($logat["username"]) && isset($logat["contrasenya"])) {
@@ -171,7 +172,7 @@ class UsuarisPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-    public function updatepassword($contrasenya,$id)
+    public function updatepassword($contrasenya, $id)
     {
         $taula2 = $this->taula;
 
@@ -189,11 +190,11 @@ class UsuarisPDO extends ModelPDO
     }
     public function getAlert($id)
     {
-        if ($id == 'passanticincorrecte'){
+        if ($id == 'passanticincorrecte') {
             $id = 'La contrasenya antigua es incorrecte!';
-        }elseif($id == 'passnouincorrecte'){
+        } elseif ($id == 'passnouincorrecte') {
             $id = 'La contrasenya nova no son iguals!';
-        }elseif($id == 'imatgeno'){
+        } elseif ($id == 'imatgeno') {
             $id = 'La imatge te un format incorrecte!';
         }
         return $id;
@@ -201,7 +202,7 @@ class UsuarisPDO extends ModelPDO
     public function updateImage($id, $imatge)
     {
         $taula2 = $this->taula;
-        
+
         $query = "update $taula2 set imatge = concat('img/users/', :imatgeUsuari) where id = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id, ':imatgeUsuari' => $imatge]);

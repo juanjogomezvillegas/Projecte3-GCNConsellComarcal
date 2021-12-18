@@ -11,7 +11,7 @@ function ctrlArticle($peticio, $resposta, $contenidor)
     $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
 
     $documentsArticle = $articlesPDO->getDocumentsArticle($idarticle);
-    
+
     $seguentArticle = $articlesPDO->obtenirSeguentArticle($idarticle);
 
     $idseguentArticle = $seguentArticle['id'];

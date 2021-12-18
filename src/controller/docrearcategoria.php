@@ -13,7 +13,7 @@ function ctrlDoCrearCategoria($peticio, $resposta, $contenidor)
     $error = false;
     if (empty($nomIntroduit)) {
         $error = true;
-    }else{
+    } else {
         $registre = $categoriesPDO->add($nomIntroduit, $usuarilogat);
     }
     if ($registre) {

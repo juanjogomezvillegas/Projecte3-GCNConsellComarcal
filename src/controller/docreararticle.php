@@ -29,27 +29,27 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     $error = false;
     if (empty($titol)) {
         $error = true;
-    } else{
+    } else {
         $idarticle = $articlesPDO->add($titol, $contingut, $numPublicat, $categoria, $usuarilogat);
 
         if (isset($imatgearticle["name"]) && ($imatgearticle["type"] === "image/png" || $imatgearticle["type"] === "image/jpeg")) {
             $articlesPDO->updateImage($idarticle, $imatgearticle["name"]);
 
-            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/".$imatgearticle["name"]);
+            move_uploaded_file($imatgearticle["tmp_name"], "img/articles/" . $imatgearticle["name"]);
         }
 
         $comptadorPDF = 0;
-        for ($i = 0; $i < count($documents["name"]); $i++) { 
+        for ($i = 0; $i < count($documents["name"]); $i++) {
             if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
                 $comptadorPDF = $comptadorPDF + 1;
             }
         }
         if ($comptadorPDF == count($documents["name"])) {
-            for ($i = 0; $i < count($documents["name"]); $i++) { 
+            for ($i = 0; $i < count($documents["name"]); $i++) {
                 if (isset($documents["name"]) && $documents["type"][$i] === "application/pdf") {
                     $articlesPDO->addDocumentArticle($idarticle, $documents["name"][$i]);
 
-                    move_uploaded_file($documents["tmp_name"][$i], "img/documents/".$documents["name"][$i]);
+                    move_uploaded_file($documents["tmp_name"][$i], "img/documents/" . $documents["name"][$i]);
                 }
             }
         }
@@ -64,7 +64,6 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
     } else {
         $resposta->setSession("missatgeError", "Error: L'article no s'ha pogut crear!!!");
         $resposta->redirect("Location:index.php?r=creararticle");
-
     }
     return $resposta;
 }

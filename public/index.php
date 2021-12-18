@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Gestor de Coneixement del Consell Comarcal de l'Alt Empordà.
+ * Projecte ABP 3
+ * @author: 2DAW
+ *
+ * Permet crear, gestionar i esborrar articles, tramits o categories.
+ * Per provar com funcionar podeu executar php -S localhost:8000 a la carpeta public.
+ * I amb el navegador visitar la url http://192.168.0.10:8000/
+**/
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /*Inclou el fitxer config.php*/

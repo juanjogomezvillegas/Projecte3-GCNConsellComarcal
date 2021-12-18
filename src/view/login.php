@@ -27,11 +27,11 @@
                         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
                             <strong class="font-bold">S'ha produit algun error</strong>
                             <span class="block">
-                                <?php if($error == 1){?>
+                                <?php if ($error == 1) {?>
                                  Revisa que el password coincideixi amb la contrasenya
-                                 <?php } elseif(($error == 1)){?>
+                                <?php } elseif (($error == 1)) {?>
                                  La verificació de recaptcha ha fallat
-                                    <?php }  ?>
+                                <?php }  ?>
                                 </span>
                                 
                         </div>

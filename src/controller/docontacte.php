@@ -21,17 +21,16 @@ function ctrlDoContacte($peticio, $resposta, $contenidor)
     $recaptcha = $contactePDO -> validacionRecaptcha($recaptcha_response);
 
     if ($recaptcha->score >= 0.0) {
-
         $dadesUsuari = $usuarisPDO->get($usuarilogat);
 
-        $contactePDO->add($nom,$email,$telefon,$missatge,$dadesUsuari["id"]);
+        $contactePDO->add($nom, $email, $telefon, $missatge, $dadesUsuari["id"]);
 
         $resposta->SetTemplate("contacte.php");
-    } else{
+    } else {
         $resposta->redirect("Location:index.php?r=contacte&error=1");
     }
 
-    
+
 
     return $resposta;
 }

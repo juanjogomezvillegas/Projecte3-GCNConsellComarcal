@@ -25,13 +25,12 @@ function ctrlDoRegistreAdmin($peticio, $resposta, $contenidor)
     $error = false;
     if (empty($usuarnameIntroduit) && empty($passwordIntroduit) && empty($nomIntroduit) && empty($cognomIntroduit) && empty($telefonIntroduit) && empty($emailIntroduit)) {
         $error = true;
-    }else if($passwordIntroduit != $passwordConfirmar){
+    } elseif ($passwordIntroduit != $passwordConfirmar) {
         $error = true;
-    }else{
-
+    } else {
         $passwordIntroduit = $usuarisPDO -> crearPasswordEncriptat($passwordIntroduit);
 
-        $registre = $usuarisPDO->add($nomIntroduit,$cognomIntroduit,$usuarnameIntroduit,$passwordIntroduit,$rolIntroduit,$emailIntroduit,$telefonIntroduit);
+        $registre = $usuarisPDO->add($nomIntroduit, $cognomIntroduit, $usuarnameIntroduit, $passwordIntroduit, $rolIntroduit, $emailIntroduit, $telefonIntroduit);
     }
     if ($registre) {
         $error = false;

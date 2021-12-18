@@ -12,7 +12,7 @@ function ctrlContacte($peticio, $resposta, $contenidor)
     $logat = filter_var($logat2, FILTER_VALIDATE_BOOLEAN);
     $error = trim(filter_var($error2, FILTER_SANITIZE_STRING));
 
-    if(!empty($error)){
+    if (!empty($error)) {
         $resposta->set("error", $error);
     }
 
@@ -23,7 +23,7 @@ function ctrlContacte($peticio, $resposta, $contenidor)
     }
 
     $resposta->set("logat", $logat);
-    
+
     $resposta->SetTemplate("contacte.php");
 
     return $resposta;

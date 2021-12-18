@@ -28,7 +28,7 @@ class Peticio
     /**
      * __construct:  Crear el petició http
      **/
-    public function __construct()    
+    public function __construct()
     {
         session_start();
     }
@@ -69,4 +69,3 @@ class Peticio
         return $this->get($input, $id, FILTER_DEFAULT, $opcions);
     }
 }
-
