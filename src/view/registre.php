@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <?php include '../src/includes/head.php'; ?>
-    <title>Sing Up | GCN Consell Comarcal</title>
+    <title>Registre | GCN Consell Comarcal</title>
 </head>
 <body class="bg-red-500">
 <div class="bg-grey-lighter min-h-screen flex flex-col">

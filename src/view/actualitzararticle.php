@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
   <!-- Incluguem el fitxer head que contindrà totes  -->
   <?php include '../src/includes/head.php'; ?>
-  <title>Document</title>
+  <title>Actualitzar Article <?= $article["titol"]; ?></title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
@@ -16,7 +16,7 @@
   ?>
   <div class="container w-full mx-auto pt-20">
     <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
-      <h1 class="font-bold text-3xl text-gray-50 text-center m-10">Editar article</h1>
+      <h1 class="font-bold text-3xl text-gray-50 text-center m-10">EDITAR ARTICLE</h1>
       <div class="grid grid-cols-6 gap-4">
         <div class="col-start-2 col-span-4">
         <?php if((!empty($message))){ ?>

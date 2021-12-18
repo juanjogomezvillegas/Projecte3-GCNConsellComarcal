@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
    <?php include '../src/includes/head.php';?>
-    <title>Document</title>
+    <title>Historial d'Articles | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php

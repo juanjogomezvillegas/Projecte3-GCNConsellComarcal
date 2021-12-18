@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
 
     <!-- Incluguem el fitxer head que contindrà totes  -->

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
     <?php include '../src/includes/head.php'; ?>
-    <title>Sing Up | GCN Consell Comarcal</title>
+    <title>Actualitzar Usuari <?= $dadesusuari["username"]; ?> | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">

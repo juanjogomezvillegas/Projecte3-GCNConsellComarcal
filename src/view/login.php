@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
     <?php include '../src/includes/head.php'; ?>
-    <title>Login | GCN Consell Comarcal</title>
+    <title>Iniciar Sessió | GCN Consell Comarcal</title>
     <?php
     include '../src/includes/recaptcha.php';
     ?>
