@@ -38,7 +38,7 @@
                             </th>
                         </tr>
                     </thead>
-    <?php foreach ($dadescontacte as $actual) { ?>
+                      <?php foreach ($dadescontacte as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['id'];?>
@@ -61,7 +61,7 @@
                             <a href="index.php?r=esborrarmissatge&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                         </td>
                         </tr>
-    <?php } ?>
+                      <?php } ?>
                 </table>
             </div>
         </div>
@@ -76,7 +76,8 @@
   <div class="bg-white rounded-lg w-1/2">
     <div class="flex flex-col items-start p-4">
       <div class="flex items-center w-full">
-        <div class="text-gray-900 font-medium text-lg">Contingut del Misstage</div>
+        <div class="text-gray-900 font-medium text-lg">
+          <span class="text-blue-600 mr-3 ml-1 text-2xl"><i class="fas fa-info-circle"></i></span> Contingut del Misstage</div>
         <span id="tancaModal" class="ml-auto fill-current text-gray-700 w-6 h-6 cursor-pointer"><i class="fas fa-times"></i></span>
       </div>
       <hr>
