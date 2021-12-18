@@ -4,9 +4,13 @@ function ctrlDoactualitzacategoria($peticio, $resposta, $contenidor)
 {
     $categoriesPDO = $contenidor->categoriesPDO();
 
-    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $nomCategoria = $peticio->get(INPUT_POST, "nom");
-    $nomAntic = $peticio->get(INPUT_POST, "nomAntic");
+    $usuarilogat2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $nomCategoria2 = $peticio->get(INPUT_POST, "nom");
+    $nomAntic2 = $peticio->get(INPUT_POST, "nomAntic");
+
+    $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
+    $nomCategoria = trim(filter_var($nomCategoria2, FILTER_SANITIZE_STRING));
+    $nomAntic = trim(filter_var($nomAntic2, FILTER_SANITIZE_STRING));
     
     $message = '';
 

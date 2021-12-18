@@ -4,19 +4,20 @@ function ctrlDoCanviarContrasenya($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $IdUsuari = $peticio->get(INPUT_POST, "id");
+    $IdUsuari2 = $peticio->get(INPUT_POST, "id");
+    $usernameUsuari2 = $peticio->get(INPUT_POST, "username");
+    $contrasenyavella2 = $peticio->get(INPUT_POST, "passantic");
+    $contrasenyanova2 = $peticio->get(INPUT_POST, "passnou");
+    $contrasenyanovarepetida2 = $peticio->get(INPUT_POST, "passrepetit");
 
-    $usernameUsuari = $peticio->get(INPUT_POST, "username");
+    $IdUsuari = filter_var($IdUsuari2, FILTER_SANITIZE_NUMBER_INT);
+    $usernameUsuari = trim(filter_var($usernameUsuari2, FILTER_SANITIZE_STRING));
+    $contrasenyavella = trim(filter_var($contrasenyavella2, FILTER_SANITIZE_STRING));
+    $contrasenyanova = trim(filter_var($contrasenyanova2, FILTER_SANITIZE_STRING));
+    $contrasenyanovarepetida = trim(filter_var($contrasenyanovarepetida2, FILTER_SANITIZE_STRING));
 
     $passwordHash = $usuarisPDO -> obtenirHash($usernameUsuari);
-
     $passwordHash = $passwordHash['contrasenya'];
-
-    $contrasenyavella = $peticio->get(INPUT_POST, "passantic");
-
-    $contrasenyanova = $peticio->get(INPUT_POST, "passnou");
-
-    $contrasenyanovarepetida = $peticio->get(INPUT_POST, "passrepetit");
 
     $verifica = $usuarisPDO -> verificarPassword($contrasenyavella,$passwordHash);
     $message='';

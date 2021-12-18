@@ -4,15 +4,14 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 {
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $usuarilogat = $peticio->get(INPUT_POST, "inputusuari");
-
-    $passwordlogat = $peticio->get(INPUT_POST, "inputpassword");
-
+    $usuarilogat2 = $peticio->get(INPUT_POST, "inputusuari");
+    $passwordlogat2 = $peticio->get(INPUT_POST, "inputpassword");
     $recaptcha_response = $peticio->get(INPUT_POST, 'recaptcha_response');
 
-    $recaptcha = $usuarisPDO->validacionRecaptcha($recaptcha_response);
+    $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
+    $passwordlogat = trim(filter_var($passwordlogat2, FILTER_SANITIZE_STRING));
 
-    print_r($recaptcha);
+    $recaptcha = $usuarisPDO->validacionRecaptcha($recaptcha_response);
 
     if ($recaptcha->score >= 0.0) {
 

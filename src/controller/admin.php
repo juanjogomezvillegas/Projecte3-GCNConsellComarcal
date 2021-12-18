@@ -7,7 +7,9 @@ function ctrlAdmin($peticio, $resposta, $contenidor)
     $categoriesPDO = $contenidor->categoriesPDO();
     $contactePDO = $contenidor->contactePDO();
 
-    $tempsresfresc = $peticio->get(INPUT_COOKIE, "tempsresfresc");
+    $tempsresfresc2 = $peticio->get(INPUT_COOKIE, "tempsresfresc");
+
+    $tempsresfresc = filter_var($tempsresfresc2, FILTER_SANITIZE_NUMBER_INT);
 
     $totalarticle = $articlesPDO->gettotalregistres();
 

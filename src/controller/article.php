@@ -4,12 +4,13 @@ function ctrlArticle($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $idarticle = $peticio->get(INPUT_GET, "id");
+    $idarticle2 = $peticio->get(INPUT_GET, "id");
+
+    $idarticle = filter_var($idarticle2, FILTER_SANITIZE_NUMBER_INT);
 
     $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
 
     $documentsArticle = $articlesPDO->getDocumentsArticle($idarticle);
-    
     
     $seguentArticle = $articlesPDO->obtenirSeguentArticle($idarticle);
 

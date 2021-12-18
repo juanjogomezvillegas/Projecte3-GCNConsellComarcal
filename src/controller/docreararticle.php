@@ -6,16 +6,20 @@ function ctrlDoCrearArticle($peticio, $resposta, $contenidor)
 
     $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
 
-    $titol = $peticio->get(INPUT_POST, "titol");
-    $contingut = $peticio->getRaw(INPUT_POST, "contingut");
-    $publicat = $peticio->get(INPUT_POST, "publicat");
-    $categoria = $peticio->get(INPUT_POST, "categoria");
+    $titol2 = $peticio->get(INPUT_POST, "titol");
+    $publicat2 = $peticio->get(INPUT_POST, "publicat");
+    $categoria2 = $peticio->get(INPUT_POST, "categoria");
     $imatgearticle = $peticio->get("FILES", "imatgearticle");
     $documents = $peticio->get("FILES", "documents");
+    $contingut = $peticio->getRaw(INPUT_POST, "contingut");
+
+    $titol = trim(filter_var($titol2, FILTER_SANITIZE_STRING));
+    $publicat = filter_var($publicat2, FILTER_VALIDATE_BOOLEAN);
+    $categoria = filter_var($categoria2, FILTER_SANITIZE_NUMBER_INT);
 
     $numPublicat = 0;
 
-    if ($publicat == "on") {
+    if ($publicat) {
         $numPublicat = 1;
     } else {
         $numPublicat = 0;

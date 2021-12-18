@@ -13,8 +13,11 @@ function middleGestor($peticio, $resposta, $contenidor, $next)
 {    
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $logat = $peticio->get("SESSION", "logat");
+    $usuarilogat2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $logat2 = $peticio->get("SESSION", "logat");
+
+    $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
+    $logat = filter_var($logat2, FILTER_VALIDATE_BOOLEAN);
     
     $dadesUsuariLogat = $usuarisPDO->get($usuarilogat);
 

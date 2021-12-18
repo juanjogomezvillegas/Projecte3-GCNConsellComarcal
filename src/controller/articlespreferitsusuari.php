@@ -5,7 +5,9 @@ function ctrlArticlespreferitsusuari($peticio, $resposta, $contenidor)
     $articlesPDO = $contenidor->articlesPDO();
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $nomUsuari = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $nomUsuari2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+
+    $nomUsuari = trim(filter_var($nomUsuari2, FILTER_SANITIZE_STRING));
 
     $articlesFavorits = $articlesPDO->getllistatFavorits($nomUsuari);
 

@@ -4,7 +4,9 @@ function ctrlHistorialArticleConcret($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $idArticle = $peticio->get("INPUT_REQUEST", "id");
+    $idArticle2 = $peticio->get("INPUT_REQUEST", "id");
+
+    $idArticle = filter_var($idArticle2, FILTER_SANITIZE_NUMBER_INT);
 
     $historialComplet = $articlesPDO->getHistorialConcret($idArticle);
 
