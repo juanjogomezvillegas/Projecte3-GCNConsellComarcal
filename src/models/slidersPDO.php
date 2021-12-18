@@ -3,6 +3,8 @@
  * Classe que gestiona la gestio d'usuaris
  * **/
 
+namespace Daw;
+
 /**
  * UsuarisPDO: Classe que gestiona la gestio d'usuaris
  * 
