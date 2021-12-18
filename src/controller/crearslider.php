@@ -7,6 +7,6 @@ function ctrlCrearslider($peticio, $resposta, $contenidor)
     $slidersPDO -> add();
 
     $resposta->redirect("Location:index.php?r=sliders");
-    
+
     return $resposta;
 }

@@ -9,6 +9,6 @@ function ctrlSliders($peticio, $resposta, $contenidor)
     $resposta->set('dadesliders', $dadesliders);
 
     $resposta->SetTemplate("sliders.php");
-    
+
     return $resposta;
 }

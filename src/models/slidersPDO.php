@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Classe que gestiona la gestio d'usuaris
  * **/
@@ -7,7 +8,7 @@ namespace Daw;
 
 /**
  * UsuarisPDO: Classe que gestiona la gestio d'usuaris
- * 
+ *
  * Sera la classe que servira per esborrar, crear, modificar els usuaris de l'aplicació
  * **/
 class SlidersPDO extends ModelPDO
@@ -64,13 +65,14 @@ class SlidersPDO extends ModelPDO
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
-    public function add(){
+    public function add()
+    {
         $taula2 = $this->taula;
 
         $query = "insert into $taula2 (nom,imatge,posicio) VALUES ('asdf','asdf','2');";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
-        
+
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 }
