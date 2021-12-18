@@ -39,6 +39,8 @@ require_once "../src/controller/article.php";
 require_once "../src/controller/llistarusuari.php";
 require_once "../src/controller/llistararticle.php";
 require_once "../src/controller/llistarcategoria.php";
+require_once "../src/controller/sliders.php";
+require_once "../src/controller/crearslider.php";
 require_once "../src/controller/crearcategoria.php";
 require_once "../src/controller/creararticle.php";
 require_once "../src/controller/docreararticle.php";
@@ -49,6 +51,7 @@ require_once "../src/controller/doactualitzarusuari.php";
 require_once "../src/controller/esborrarusuari.php";
 require_once "../src/controller/esborrararticle.php";
 require_once "../src/controller/esborrarcategoria.php";
+require_once "../src/controller/esborrarslider.php";
 require_once "../src/controller/actualitzacategoria.php";
 require_once "../src/controller/doactualitzacategoria.php";
 require_once "../src/controller/historialCategories.php";
@@ -117,6 +120,9 @@ $app->ruta("historialCategoriaConcreta", "ctrlHistorialCategoriaConcreta", ["mid
 $app->ruta("historialArticleConcret", "ctrlHistorialArticleConcret", ["middleCentral", "middleLogat", "middleAdmin"]);
 $app->ruta("llistarmissatges", "ctrlLlistarmissatges", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("esborrarmissatge", "ctrlEsborrarmissatge", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("sliders", "ctrlSliders", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("esborrarslider", "ctrlEsborrarslider", ["middleCentral", "middleLogat", "middleGestor"]);
+$app->ruta("crearslider", "ctrlCrearslider", ["middleCentral", "middleLogat", "middleGestor"]);
 /*Controladors Ajax*/
 $app->ruta("countUsuaris", "ctrlCountUsuaris", ["middleCentral", "middleLogat", "middleGestor"]);
 $app->ruta("countArticles", "ctrlCountArticles", ["middleCentral", "middleLogat", "middleGestor"]);
