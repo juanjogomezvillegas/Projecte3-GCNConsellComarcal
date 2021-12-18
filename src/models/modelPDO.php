@@ -4,6 +4,8 @@
  * Classe que gestiona la connexió a la base de dades
  * **/
 
+namespace Daw;
+
 /**
  * ModelPDO: Classe que gestiona la connexió a la base de dades
  *
