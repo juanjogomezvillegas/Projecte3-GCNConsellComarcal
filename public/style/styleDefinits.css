@@ -357,7 +357,7 @@ li.documentPdf:hover {
     background-color: red;
     opacity: 0.7;
     border-radius: 10px;
-    padding-bottom: 3%;
+    padding: 3%;
 }
 .slide-text h1 {
     font-size: 30px;

@@ -22,8 +22,8 @@
       <div class="swiper-slide" style="background-image: url(img/slider/<?=$i?>.jpg)">
          <div class="slide-text">
             <h1>Consell Comarcal de l'Alt Empordà</h1>
-            <p>Totes les gestions en un click.</p>
-            <a class="btn">Contacte</a>
+            <p>Totes les Gestions en un Click.</p>
+            <a class="btn" href="index.php?r=contacte">Contacte</a>
          </div>
       </div>
       <?php }?>
