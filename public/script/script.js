@@ -142,5 +142,3 @@ var mySwiper = new Swiper('.swiper-container', {
 	   clickable: 'true'
 	},
  });
-		 
-		 

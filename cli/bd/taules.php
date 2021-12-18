@@ -78,6 +78,14 @@ $connexio->query("CREATE TABLE contacte (
     PRIMARY KEY (id)
 );");
 
+$connexio->query("CREATE TABLE slider (
+    id BIGINT AUTO_INCREMENT,
+    nom VARCHAR(200),
+    imatge VARCHAR(200),
+    posicio INT(3), 
+    PRIMARY KEY (id)
+);");
+
 $connexio->query("CREATE TABLE articles_favorits (
     id_article BIGINT, 
     id_usuari BIGINT, 

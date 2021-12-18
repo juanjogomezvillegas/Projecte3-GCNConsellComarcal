@@ -21,4 +21,6 @@ require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/articlesPDO.php";
 require_once "../src/models/categoriesPDO.php";
 require_once "../src/models/contactePDO.php";
+require_once "../src/models/slidersPDO.php";
+
 
