@@ -5,7 +5,7 @@
  * Projecte ABP 3
  * @author: 2DAW
  *
- * Arxiu de Configuració
+ * Arxiu que conté configuració que necessita l'apliaqció per funcionar
 **/
 
 $config = array();
