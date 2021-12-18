@@ -4,6 +4,8 @@
  * Classe que gestiona la gestio dels categories
  * **/
 
+namespace Daw;
+
 /**
  * Article PDO: Classe que gestiona la gestio de categories
  *
