@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Classe que gestiona la connexió a la base de dades
  * **/
 
 /**
  * Connexio: Classe que gestiona la connexió a la base de dades
- * 
+ *
  * Sera la classe que servira de model per els altres models que es connectin a la base de dades
  * **/
 class Connexio

@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Gestor de Coneixement del Consell Comarcal de l'Alt Empordà.
+ * Projecte ABP 3
+ * @author: 2DAW
+ *
+ * Arxiu de Configuració
+**/
+
 $config = array();
 
 /*Configuració de les dades per fer la connexió a la base de dades*/
@@ -21,4 +29,3 @@ require_once "../src/models/usuarisPDO.php";
 require_once "../src/models/articlesPDO.php";
 require_once "../src/models/categoriesPDO.php";
 require_once "../src/models/contactePDO.php";
-

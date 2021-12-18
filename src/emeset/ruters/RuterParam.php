@@ -11,7 +11,6 @@
 
 namespace Emeset\Ruters;
 
-
 /**
     * Ruter: objecte que enruta a la petició al controlador adequat.
     * @author: Dani Prados dprados@cendrassos.net
@@ -55,12 +54,12 @@ class RuterParam
         $ruta = $peticio->get("INPUT_REQUEST", "r");
 
         if (is_null($ruta)) {
-            $ruta = "";    
+            $ruta = "";
         }
-         
-        if(isset($this->rutes[$ruta])){
+
+        if (isset($this->rutes[$ruta])) {
             $controlador = $this->rutes[$ruta];
-        } elseif(isset($this->rutes[0])) {
+        } elseif (isset($this->rutes[0])) {
             $controlador = $this->rutes[0];
         } else {
             throw("Ruta no definida!");

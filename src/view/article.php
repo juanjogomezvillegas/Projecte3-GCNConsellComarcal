@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
 
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php include '../src/includes/head.php'; ?>
-    <title>GCN Consell Comarcal</title>
+    <title><?= $informacioArticle["titol"] ?> | GCN Consell Comarcal</title>
 </head>
 
 <body>
@@ -60,19 +60,19 @@
 <!--Veure articles-->
 <div class="font-sans flex justify-between content-center px-4 pb-12">
             <div class="text-left">
-            <?php if(isset($idanteriorArticle)){ ?>
-				<a href="index.php?r=article&id=<?=$idanteriorArticle?>" class="text-xs md:text-sm font-normal text-red-600">&lt; Anterior Article<br>
-				<p><?=$nomanteriorArticle?></p></a>
-                <?php } ?>
+            <?php if (isset($idanteriorArticle)) { ?>
+                <a href="index.php?r=article&id=<?=$idanteriorArticle?>" class="text-xs md:text-sm font-normal text-red-600">&lt; Anterior Article<br>
+                <p><?=$nomanteriorArticle?></p></a>
+            <?php } ?>
             </div>
             
-			<div class="text-right">
-            <?php if(isset($idseguentArticle)){ ?>
-				<a href="index.php?r=article&id=<?=$idseguentArticle?>" class="text-xs md:text-sm font-normal text-red-600">Seguent article &gt;<br>
-				<p><?=$nomseguentArticle?> </p></a>
-                <?php } ?>
+            <div class="text-right">
+            <?php if (isset($idseguentArticle)) { ?>
+                <a href="index.php?r=article&id=<?=$idseguentArticle?>" class="text-xs md:text-sm font-normal text-red-600">Seguent article &gt;<br>
+                <p><?=$nomseguentArticle?> </p></a>
+            <?php } ?>
             </div>
-		</div>
+        </div>
 
         </div>
         <!--/Veure articles-->

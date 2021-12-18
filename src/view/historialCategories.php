@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
    <?php include '../src/includes/head.php';?>
-    <title>Document</title>
+    <title>Historial de Categories | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
@@ -35,7 +35,7 @@
                             </th>
                         </tr>
                     </thead>
-    <?php foreach($historialComplet as $actual) { ?>
+    <?php foreach ($historialComplet as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                  <?= $actual['nom'];?>

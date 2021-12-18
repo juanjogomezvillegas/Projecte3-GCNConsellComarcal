@@ -46,7 +46,9 @@ function ctrlCountContacte($peticio, $resposta, $contenidor)
 
 function ctrlCanviTempsRefresc($peticio, $resposta, $contenidor)
 {
-    $tempsresfresc = $peticio->get(INPUT_POST, "tempsresfresc");
+    $tempsresfresc2 = $peticio->get(INPUT_POST, "tempsresfresc");
+
+    $tempsresfresc = filter_var($tempsresfresc2, FILTER_SANITIZE_NUMBER_INT);
 
     $tempsresfresc = $tempsresfresc / 1000;
 

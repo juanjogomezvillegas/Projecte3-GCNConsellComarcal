@@ -34,37 +34,46 @@ class Contenidor
         $this->connexio = new \connexio($this->config);
     }
 
-    public function resposta(){
+    public function resposta()
+    {
         return new \Emeset\Http\Resposta("../src/view/");
     }
 
-    public function peticio(){
+    public function peticio()
+    {
         return new \Emeset\Http\Peticio();
     }
 
-    public function ruter(){
+    public function ruter()
+    {
         return new \Emeset\Ruters\RuterParam($this);
     }
 
-    public function connexio(){
-       return $this->connexio;
+    public function connexio()
+    {
+        return $this->connexio;
     }
 
-    public function modelPDO(){
+    public function modelPDO()
+    {
         return new \ModelPDO($this->connexio);
     }
 
-    //Aquest model 
-    public function usuarisPDO(){
+    //Aquest model
+    public function usuarisPDO()
+    {
         return new \UsuarisPDO($this->connexio);
     }
-    public function articlesPDO(){
+    public function articlesPDO()
+    {
         return new \ArticlesPDO($this->connexio);
     }
-    public function categoriesPDO(){
+    public function categoriesPDO()
+    {
         return new \CategoriesPDO($this->connexio);
     }
-    public function contactePDO(){
+    public function contactePDO()
+    {
         return new \ContactePDO($this->connexio);
     }
 }

@@ -5,7 +5,9 @@ function ctrlPortada($peticio, $resposta, $contenidor)
     $articlesPDO = $contenidor->articlesPDO();
     $usuarisPDO = $contenidor->usuarisPDO();
 
-    $usuarilogat = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $usuarilogat2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+
+    $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
 
     $articlesPortada = $articlesPDO->getllistatPortada(4);
 
@@ -21,6 +23,6 @@ function ctrlPortada($peticio, $resposta, $contenidor)
     $resposta->set("dadesUsuari", $dadesUsuari);
 
     $resposta->SetTemplate("portada.php");
-    
+
     return $resposta;
 }

@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Classe que gestiona la gestio dels articles
  * **/
 
 /**
  * Article PDO: Classe que gestiona la gestio d'articles
- * 
+ *
  * Sera la classe que servira per esborrar, crear, modificar els articles de l'aplicació
  * **/
 class ArticlesPDO extends ModelPDO
@@ -15,7 +16,7 @@ class ArticlesPDO extends ModelPDO
     /**
      * gettotalregistres: Mostra el numero total de articles
      **/
- public function gettotalregistres()
+    public function gettotalregistres()
     {
         $article = parent::totalregistres($this->taula);
 
@@ -42,18 +43,18 @@ class ArticlesPDO extends ModelPDO
         left join categoria c on a.id_categoria = c.id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
     /**
      * getllistatPortada: Mostra tots els articles
-     * 
+     *
      * @param limit limit d'articles que es veuran a la portada
      **/
     public function getllistatPortada($limit)
@@ -77,12 +78,12 @@ class ArticlesPDO extends ModelPDO
         }
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
@@ -107,18 +108,18 @@ class ArticlesPDO extends ModelPDO
         }
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
     /**
      * getllistatFavorits: Mostra tots els articles favorits de l'usuari actualment logat
-     * 
+     *
      * @param nomUsuari nom de l'usuari logat
      **/
     public function getllistatFavorits($nomUsuari)
@@ -141,14 +142,14 @@ class ArticlesPDO extends ModelPDO
 
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idUsuari' => $usuaris["id"]]);
- 
+
         $comptador = 0;
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$comptador] = $registre;
             $comptador = $comptador + 1;
         }
-  
+
         return $registres;
     }
 
@@ -161,7 +162,7 @@ class ArticlesPDO extends ModelPDO
             order by dataEdicio desc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
-  
+
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
             $code = $stm->errorCode();
@@ -176,12 +177,12 @@ class ArticlesPDO extends ModelPDO
         $query = "select * from document where id_article = :id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':id' => $id]);
-  
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
@@ -190,14 +191,14 @@ class ArticlesPDO extends ModelPDO
         $query = "select * from articles_favorits;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $comptador = 0;
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$comptador] = $registre;
             $comptador = $comptador + 1;
         }
-  
+
         return $registres;
     }
 
@@ -266,7 +267,7 @@ class ArticlesPDO extends ModelPDO
         $exists = false;
         if (isset($favorit["id_article"])) {
             $exists = true;
-        }        
+        }
 
         return $exists;
     }
@@ -284,7 +285,8 @@ class ArticlesPDO extends ModelPDO
 
     public function getArrayValorsPredefinits($usuariLogat)
     {
-        $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);;
+        $arrayPredefinit = array('Nou Article', '<h1 style="text-align: center;">Article de prova</h1>	',0,$usuariLogat);
+        ;
 
         return $arrayPredefinit;
     }
@@ -411,7 +413,7 @@ class ArticlesPDO extends ModelPDO
      * @param email correu electronic de l'usuari
      * @param telefon telefon de l'usuari
      **/
-    public function add($titol,$contingut,$publicat,$categoria,$creador)
+    public function add($titol, $contingut, $publicat, $categoria, $creador)
     {
         $query = "select id from usuari where username = :usuari;";
         $stm = $this->sql->prepare($query);
@@ -438,8 +440,9 @@ class ArticlesPDO extends ModelPDO
         return $articles["id"];
     }
 
-    public function getAlert($id){
-        if ($id == 'faltacamp'){
+    public function getAlert($id)
+    {
+        if ($id == 'faltacamp') {
             $id = 'Introdueix tots els camps abans de enviar les dades';
         }
         return $id;

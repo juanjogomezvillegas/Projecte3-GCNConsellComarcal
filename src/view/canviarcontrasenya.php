@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
    <?php include '../src/includes/head.php';?>
-    <title>Document</title>
+    <title>Canviar la Contrasenya | GCN Consell Comarcal</title>
 </head>
 <body class="bg-gray-300 font-sans leading-normal tracking-normal">
     <?php
@@ -17,7 +17,7 @@
         <div class="md:flex w-full">
             <div class="w-full py-10 px-5 md:px-10">
                 <div class="text-center mb-10">
-                    <h1 class="font-bold text-3xl text-gray-900">CANVIAR CONTRASENYA</h1>
+                    <h1 class="font-bold text-3xl text-gray-900">CANVIAR LA CONTRASENYA</h1>
                 </div>
                 <div>
                     <form action="index.php?r=docanvicontrasenya" method="post">

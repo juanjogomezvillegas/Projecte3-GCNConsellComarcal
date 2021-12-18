@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
 <?php include '../src/includes/head.php'; ?>
-<title>Sing Up | GCN Consell Comarcal</title>
+<title>Crear Categoria | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
 <?php

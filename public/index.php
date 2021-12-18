@@ -1,5 +1,15 @@
 <?php
 
+/**
+ * Gestor de Coneixement del Consell Comarcal de l'Alt Empordà.
+ * Projecte ABP 3
+ * @author: 2DAW
+ *
+ * Permet crear, gestionar i esborrar articles, tramits o categories.
+ * Per provar com funcionar podeu executar php -S localhost:8000 a la carpeta public.
+ * I amb el navegador visitar la url http://192.168.0.10:8000/
+**/
+
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
 /*Inclou el fitxer config.php*/
@@ -23,7 +33,6 @@ require_once "../src/controller/docanvicontrasenya.php";
 require_once "../src/controller/docanviarimatge.php";
 require_once "../src/controller/registreadmin.php";
 require_once "../src/controller/article.php";
-require_once "../src/controller/blog.php";
 require_once "../src/controller/contacte.php";
 require_once "../src/controller/admin.php";
 require_once "../src/controller/article.php";
@@ -66,7 +75,6 @@ $app->ruta("perfilusuari", "ctrlPerfilUsuari", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("mostrarArticles", "ctrlMostrarArticles", ["middleCentral"]);
 $app->ruta("mostrarTramits", "ctrlMostrarTramits", ["middleCentral"]);
-$app->ruta("blog", "ctrlBlog", ["middleCentral"]);
 $app->ruta("contacte", "ctrlContacte", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("articlespreferitsusuari", "ctrlArticlespreferitsusuari", ["middleCentral", "middleLogat"]);

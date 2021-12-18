@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Classe que gestiona la connexió a la base de dades
  * **/
 
 /**
  * ModelPDO: Classe que gestiona la connexió a la base de dades
- * 
+ *
  * Sera la classe que servira de model per els altres models que es connectin a la base de dades
  * **/
 class ModelPDO
@@ -35,12 +36,12 @@ class ModelPDO
         $query = "select * from $taula;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
@@ -62,27 +63,29 @@ class ModelPDO
         return $total;
     }
 
-    public function crearPasswordEncriptat($password){
+    public function crearPasswordEncriptat($password)
+    {
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
-    public function verificarPassword($passwordusuari,$passwordHash)
+    public function verificarPassword($passwordusuari, $passwordHash)
     {
-        if(password_verify($passwordusuari,$passwordHash)){
+        if (password_verify($passwordusuari, $passwordHash)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public function validacionRecaptcha($recaptcha_response){
+    public function validacionRecaptcha($recaptcha_response)
+    {
 
         $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
 
         $recaptcha_secret = '6LcaaJIdAAAAAMfLO4Fkuk0_eY6u80d0enMY-_7U';
-    
+
         $recaptcha = file_get_contents($recaptcha_url . '?secret=' . $recaptcha_secret . '&response=' . $recaptcha_response);
-    
+
         $recaptcha = json_decode($recaptcha);
 
         return $recaptcha;

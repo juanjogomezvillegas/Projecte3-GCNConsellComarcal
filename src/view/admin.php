@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php include '../src/includes/head.php'; ?>
-    <title>Document</title>
+    <title>Panell d'Administració | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } else if ($dadesUsuariLogat["rol"] === "Gestor") { ?>
+                    <?php } elseif ($dadesUsuariLogat["rol"] === "Gestor") { ?>
                         <div class="itemsAdmin bg-gray-900 border border-gray-800 rounded shadow p-2">
                             <div class="flex flex-row items-center">
                                 <div class="flex-shrink pr-4">

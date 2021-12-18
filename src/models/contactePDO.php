@@ -1,12 +1,13 @@
 <?php
+
 /**
- * Classe que gestiona la gestio dels categories
+ * Classe que gestiona la gestio de Contacte
  * **/
 
 /**
- * Article PDO: Classe que gestiona la gestio de categories
- * 
- * Sera la classe que servira per esborrar, crear, modificar les categoria de l'aplicació
+ * Article PDO: Classe que gestiona la gestio de Contacte
+ *
+ * Sera la classe que servira per esborrar i consultar els missatges enviats per els usuaris de l'aplicació
  * **/
 class ContactePDO extends ModelPDO
 {
@@ -15,7 +16,7 @@ class ContactePDO extends ModelPDO
     /**
      * gettotalregistres: Mostra el numero total de categories
      **/
- public function gettotalregistres()
+    public function gettotalregistres()
     {
         $contacte = parent::totalregistres($this->taula);
 
@@ -41,16 +42,16 @@ class ContactePDO extends ModelPDO
         left join usuari u on c.id_usuari = u.id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
-    public function add($nom,$email,$telefon,$missatge,$usuari)
+    public function add($nom, $email, $telefon, $missatge, $usuari)
     {
         $taula2 = $this->taula;
 

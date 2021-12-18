@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
 
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php include '../src/includes/head.php'; ?>
-    <title>GCN Consell Comarcal</title>
+    <title>Els Meus Articles | GCN Consell Comarcal</title>
 </head>
 <body class="bg-gray-300">
     <?php
@@ -13,7 +13,7 @@
     <?php
     include '../src/includes/nav.php';
     ?>
-    <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles Preferits</h1>
+    <h1 class="mt-7 mb-7 text-5xl text-red-900 text-center">Articles Favorits</h1>
     <?php if (count($articlesFavorits) > 0) { ?>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 ml-7 mr-7">
             <?php foreach ($articlesFavorits as $actual) { ?>
@@ -32,16 +32,16 @@
                             </p>
                             <br>
                             <p class="text-sm text-gray-500">
-					        Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
-				            </p>
+                            Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
+                            </p>
                             <p class="text-sm text-gray-500">
-					        Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
-				            </p>
+                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
+                            </p>
                         </a>
                     </div>
                 </div>
             <?php } ?>
-	    </div>
+        </div>
     <?php } else { ?>
         <div class="bg-red-100 border-red-500 text-red-700 p-4" role="alert">
             <p class="text-xl text-center"><i class="fas fa-info-circle"></i> En Aquest moment no tens articles favorits.</p>

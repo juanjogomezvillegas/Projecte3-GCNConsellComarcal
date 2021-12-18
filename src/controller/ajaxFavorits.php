@@ -4,8 +4,11 @@ function ctrlAfegirFavorits($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $nomUsuari = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $idArticle = $peticio->get(INPUT_POST, "idArticle");
+    $nomUsuari2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $idArticle2 = $peticio->get(INPUT_POST, "idArticle");
+
+    $nomUsuari = trim(filter_var($nomUsuari2, FILTER_SANITIZE_STRING));
+    $idArticle = filter_var($idArticle2, FILTER_SANITIZE_NUMBER_INT);
 
     $existeix = $articlesPDO->isFavorit($idArticle, $nomUsuari);
 
@@ -22,8 +25,11 @@ function ctrlEsborrarFavorits($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $nomUsuari = $peticio->get(INPUT_COOKIE, "usuarilogat");
-    $idArticle = $peticio->get(INPUT_POST, "idArticle");
+    $nomUsuari2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $idArticle2 = $peticio->get(INPUT_POST, "idArticle");
+
+    $nomUsuari = trim(filter_var($nomUsuari2, FILTER_SANITIZE_STRING));
+    $idArticle = filter_var($idArticle2, FILTER_SANITIZE_NUMBER_INT);
 
     $existeix = $articlesPDO->isFavorit($idArticle, $nomUsuari);
 
@@ -40,7 +46,9 @@ function ctrlConsultarFavorits($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
 
-    $nomUsuari = $peticio->get(INPUT_COOKIE, "usuarilogat");
+    $nomUsuari2 = $peticio->get(INPUT_COOKIE, "usuarilogat");
+
+    $nomUsuari = trim(filter_var($nomUsuari2, FILTER_SANITIZE_STRING));
 
     $articlesFavorits = $articlesPDO->getllistatFavorits($nomUsuari);
 

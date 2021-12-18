@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Classe que gestiona la gestio dels categories
  * **/
 
 /**
  * Article PDO: Classe que gestiona la gestio de categories
- * 
+ *
  * Sera la classe que servira per esborrar, crear, modificar les categoria de l'aplicació
  * **/
 class CategoriesPDO extends ModelPDO
@@ -15,7 +16,7 @@ class CategoriesPDO extends ModelPDO
     /**
      * gettotalregistres: Mostra el numero total de categories
      **/
- public function gettotalregistres()
+    public function gettotalregistres()
     {
         $categoria = parent::totalregistres($this->taula);
 
@@ -40,12 +41,12 @@ class CategoriesPDO extends ModelPDO
         from categoria c left join usuari u on c.id_usuari = u.id;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([]);
- 
+
         $registres = array();
         while ($registre = $stm->fetch(\PDO::FETCH_ASSOC)) {
             $registres[$registre["id"]] = $registre;
         }
-  
+
         return $registres;
     }
 
@@ -151,8 +152,9 @@ class CategoriesPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
 
-    public function getAlert($id){
-        if ($id == 'faltacamp'){
+    public function getAlert($id)
+    {
+        if ($id == 'faltacamp') {
             $id = 'Introdueix tots els camps abans de enviar les dades';
         }
         return $id;
