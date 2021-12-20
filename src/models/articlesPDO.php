@@ -4,8 +4,6 @@
  * Classe que gestiona la gestio dels articles
  * **/
 
-namespace Daw;
-
 /**
  * Article PDO: Classe que gestiona la gestio d'articles
  *

@@ -30,7 +30,7 @@ class Contenidor
     public function __construct($config)
     {
         $this->config = $config;
-        $this->connexio = new \Daw\connexio($this->config);
+        $this->connexio = new \connexio($this->config);
     }
 
     public function resposta()
@@ -55,28 +55,28 @@ class Contenidor
 
     public function modelPDO()
     {
-        return new \Daw\ModelPDO($this->connexio);
+        return new \ModelPDO($this->connexio);
     }
 
     //Aquest model
     public function usuarisPDO()
     {
-        return new \Daw\UsuarisPDO($this->connexio);
+        return new \UsuarisPDO($this->connexio);
     }
     public function articlesPDO()
     {
-        return new \Daw\ArticlesPDO($this->connexio);
+        return new \ArticlesPDO($this->connexio);
     }
     public function categoriesPDO()
     {
-        return new \Daw\CategoriesPDO($this->connexio);
+        return new \CategoriesPDO($this->connexio);
     }
     public function contactePDO()
     {
-        return new \Daw\ContactePDO($this->connexio);
+        return new \ContactePDO($this->connexio);
     }
     public function slidersPDO()
     {
-        return new \Daw\SlidersPDO($this->connexio);
+        return new \SlidersPDO($this->connexio);
     }
 }
