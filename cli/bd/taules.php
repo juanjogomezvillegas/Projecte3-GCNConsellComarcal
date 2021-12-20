@@ -112,3 +112,16 @@ $connexio->query(
     PRIMARY KEY (id_article, id_usuari)
 );"
 );
+
+$connexio->query(
+    "CREATE TABLE comentaris_article (
+    id BIGINT AUTO_INCREMENT,
+    missatge VARCHAR(200),
+    id_article BIGINT,
+    id_usuari BIGINT, 
+    data_enviament TIMESTAMP, 
+    CONSTRAINT fk_articleComentari FOREIGN KEY (id_article) REFERENCES article(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    CONSTRAINT fk_usuariComentari FOREIGN KEY (id_usuari) REFERENCES usuari(id) ON UPDATE CASCADE ON DELETE CASCADE, 
+    PRIMARY KEY (id)
+);"
+);
