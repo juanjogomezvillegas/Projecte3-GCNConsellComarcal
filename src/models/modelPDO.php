@@ -94,19 +94,18 @@ class ModelPDO
     }
     public function llistarFitxersCarpeta($carpeta)
     {
-    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($carpeta));
+        $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($carpeta));
 
-    $files = array();
+        $files = array();
 
-    foreach ($rii as $file) {
+        foreach ($rii as $file) {
+            if ($file->isDir()) {
+                continue;
+            }
 
-        if ($file->isDir()) {
-            continue;
+            $files[] = $file->getPathname();
+            sort($files);
         }
-
-        $files[] = $file->getPathname();
-        sort($files);
+        return $files;
     }
-    return $files;
-}
 }

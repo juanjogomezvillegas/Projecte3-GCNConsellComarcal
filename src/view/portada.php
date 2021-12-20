@@ -19,8 +19,7 @@
    <!-- Slider -->
       <!-- Slide1 -->
       <?php foreach ($imatgeCarpeta as $actual) { ?>
-        
-      <div class="swiper-slide" style="background-image: url(<?= $actual ?>)">
+      <div class="swiper-slide" style="background-image: url(<?php echo $actual ?>)">
          <div class="slide-text aparicioMagica">
             <h1>Consell Comarcal de l'Alt Empordà</h1>
             <p>Totes les Gestions en un Click.</p>

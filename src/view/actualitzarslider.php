@@ -30,10 +30,10 @@
         <?php } ?>
           <div class="text-center mb-3 mt-6 pt-0">
             <div class="text-center">
-              <img src="<?=$dadesSlider["imatge"];?>" alt="<?=$dadesSlider["imatge"];?>" class="w-screen h-min m-auto block rounded">
+              <img src="<?php echo $dadesSlider["imatge"];?>" alt="<?php echo $dadesSlider["imatge"];?>" class="w-screen h-min m-auto block rounded">
             </div>
             <form action="index.php?r=doactualitzarslider" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="id" value="<?=$dadesSlider["id"];?>"> 
+            <input type="hidden" name="id" value="<?php echo $dadesSlider["id"];?>"> 
               <div id="dropzone" class="text-center bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix una imatge</span>
