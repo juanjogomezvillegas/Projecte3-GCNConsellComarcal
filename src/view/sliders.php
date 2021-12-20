@@ -31,8 +31,8 @@
                                                 Nom
                                             </th>
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
-                                                <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                                    Ruta imatge
+                                                <th scope="col" class="text-center text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                                    imatge
                                                 </th>
                                             <?php } ?>
                                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
@@ -50,7 +50,7 @@
                                             </td>
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                                                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                    <?= $actual['imatge']; ?>
+                                                    <img src="<?= $actual['imatge']; ?>" alt="<?= $actual['imatge']; ?>" class="w-44 h-32">
                                                 </td>
                                             <?php } ?>  
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
