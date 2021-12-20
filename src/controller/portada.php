@@ -17,6 +17,9 @@ function ctrlPortada($peticio, $resposta, $contenidor)
 
     $dadesUsuari = $usuarisPDO->get($usuarilogat);
 
+    $imatgeCarpeta = $articlesPDO -> llistarFitxersCarpeta("img/slider");
+
+    $resposta->set("imatgeCarpeta", $imatgeCarpeta);
     $resposta->set("articlesPortada", $articlesPortada);
     $resposta->set("articlesPortadaTramits", $articlesPortadaTramits);
     $resposta->set("articlesFavoritsTots", $articlesFavoritsTots);
