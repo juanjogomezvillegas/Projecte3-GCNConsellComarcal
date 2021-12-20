@@ -1,4 +1,5 @@
 <?php
+
 $dataCreacio = new DateTime();
 
 /*Afageix dades per defecte a la taula "usuari" de la base de dades*/
@@ -10,8 +11,10 @@ $usuaris = $usuaris = [
 
 foreach ($usuaris as $actual) {
     $sql = $connexio->prepare("INSERT INTO usuari VALUES (:id,:nom,:cognom,:username,:pass,:rol,:mail,:telefon,:imatge)");
-    $sql->execute([":id" => $actual["id"],":nom" => $actual["nom"],":cognom" => $actual["cognom"],":username" => $actual["username"],":pass" => $actual["contrasenya"],
-    ":rol" => $actual["rol"], ":mail" => $actual["mail"],":telefon" => $actual["telefon"],":imatge" => $actual["imatge"]]);
+    $sql->execute(
+        [":id" => $actual["id"],":nom" => $actual["nom"],":cognom" => $actual["cognom"],":username" => $actual["username"],":pass" => $actual["contrasenya"],
+        ":rol" => $actual["rol"], ":mail" => $actual["mail"],":telefon" => $actual["telefon"],":imatge" => $actual["imatge"]]
+    );
 }
 
 /*Afageix dades per defecte a la taula "categoria" de la base de dades*/
