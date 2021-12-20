@@ -13,7 +13,7 @@
                             <div class="hidden md:flex items-center space-x-3 mr-8">
                                 <div class="relative text-sm text-gray-100">
                                     <button id="userButton" class="flex items-center focus:outline-none mr-3">
-                                    <img src="<?php echo $dadesUsuariLogat["imatge"]?>" class="w-10" alt="user">
+                                    <img src="<?php echo $dadesUsuariLogat["imatge"]?>" class="w-10 rounded-3xl" alt="user">
                                     </button>
                                     <div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                                         <ul class="list-reset">

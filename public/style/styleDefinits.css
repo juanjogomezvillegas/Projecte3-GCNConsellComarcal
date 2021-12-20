@@ -414,7 +414,7 @@ div#dropzone {
     background-color: rgba(255, 255, 255, 0.3);
 }
 .slide-text .btn:hover {
-    font-weight: 800;
+    font-weight: 700;
 }
 @media screen and (max-width: 768px) {
     .slide-text .btn:hover::after {

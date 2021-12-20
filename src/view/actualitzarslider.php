@@ -29,12 +29,15 @@
     </div>
         <?php } ?>
           <div class="text-center mb-3 mt-6 pt-0">
+            <div class="text-center">
+              <img src="<?=$dadesSlider["imatge"];?>" alt="<?=$dadesSlider["imatge"];?>" class="w-screen h-min m-auto block rounded">
+            </div>
             <form action="index.php?r=doactualitzarslider" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?=$dadesSlider["id"];?>"> 
               <div id="dropzone" class="text-center bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix una imatge</span>
-                  <input type="file" name="imatgeslider" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
+                  <input type="file" name="imatgeslider" class="block w-full text-sm text-gray-100 mr-4 border-0 font-semibold">
                 </label>
               </div>
               <br>
