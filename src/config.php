@@ -3,10 +3,11 @@
 /**
  * Gestor de Coneixement del Consell Comarcal de l'Alt Empordà.
  * Projecte ABP 3
+ *
  * @author: 2DAW
  *
  * Arxiu que conté configuració que necessita l'apliaqció per funcionar
-**/
+ **/
 
 $config = array();
 
