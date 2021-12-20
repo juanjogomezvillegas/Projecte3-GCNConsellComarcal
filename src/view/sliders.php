@@ -35,7 +35,9 @@
                                                     Ruta imatge
                                                 </th>
                                             <?php } ?>
-                                            
+                                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                            Accions
+                                            </th>
                                         </tr>
                                     </thead>
                                     <?php foreach ($dadesliders as $actual) { ?>
@@ -51,24 +53,13 @@
                                                     <?= $actual['imatge']; ?>
                                                 </td>
                                             <?php } ?>  
-                                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-
-                                            </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                            </td>
-
-                                            <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <a href="index.php?r=actualizarslider&id=<?= $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline mr-5"><i class="fas fa-edit"></i></a>
                                                 <a href="index.php?r=esborrarslider&id=<?= $actual['id']; ?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
                             </table>
-                            <a href="">
-                                <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
-                                    <i class="fas fa-save"></i>
-                                    <span class="ml-1">Guardar canvis</span>
-                                </button>
-                            </a>
                             </form>
                             <a href="index.php?r=crearslider">
                                 <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
