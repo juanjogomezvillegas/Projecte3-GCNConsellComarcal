@@ -76,7 +76,8 @@ class Contenidor
     {
         return new \Daw\ContactePDO($this->connexio);
     }
-    public function slidersPDO(){
+    public function slidersPDO()
+    {
         return new \Daw\SlidersPDO($this->connexio);
     }
 }
