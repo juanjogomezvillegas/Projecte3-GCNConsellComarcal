@@ -9,8 +9,6 @@ function ctrlDoActualitzarSlider($peticio, $resposta, $contenidor)
 
     $idslider = filter_var($idslider2, FILTER_SANITIZE_NUMBER_INT);
 
-    print_r($idslider);
-
     if (isset($imatgeslider["name"]) && ($imatgeslider["type"] === "image/png" || $imatgeslider["type"] === "image/jpeg")) {
         if($imatgeslider["type"] === "image/png"){
             $nomficher = $idslider2.".png";
@@ -18,7 +16,6 @@ function ctrlDoActualitzarSlider($peticio, $resposta, $contenidor)
             $nomficher = $idslider2.".jpg";
         }
         $slidersPDO->updateImage($idslider, $nomficher);
-
         move_uploaded_file($imatgeslider["tmp_name"], "img/slider/" . $nomficher);
     }
 
