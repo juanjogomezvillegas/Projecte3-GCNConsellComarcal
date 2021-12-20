@@ -4,6 +4,16 @@ Carregador de la nostra pagina
 --------------------------------------------- 
 */
 
+.aparicioMagica {
+    transform: translateY(-10em);
+    opacity: 0;
+}
+.aparicioContingut {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 1.5s, opacity 1s;
+}
+
 .js-preloader {
     position: fixed;
     top: 0;

@@ -21,6 +21,12 @@
                     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                         <div class="overflow-hidden sm:rounded-lg shadow-md">
                             <table class="mr-auto ml-auto mt-5">
+                            <a href="index.php?r=crearslider">
+                                <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
+                                    <i class="fas fa-plus"></i>
+                                    <span class="ml-1">Crear slider</span>
+                                </button>
+                            </a>
                                 <form action="index.php?r=doactualitzarslider" method="post">
                                     <thead class="bg-gray-100 dark:bg-gray-700">
                                         <tr>
@@ -55,12 +61,6 @@
                                     <?php } ?>
                             </table>
                             </form>
-                            <a href="index.php?r=crearslider">
-                                <button class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
-                                    <i class="fas fa-plus"></i>
-                                    <span class="ml-1">Crear slider</span>
-                                </button>
-                            </a>
                         </div>
                     </div>
                 </div>

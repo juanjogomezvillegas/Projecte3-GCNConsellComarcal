@@ -17,6 +17,7 @@
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 text-center">
             <form action="index.php?r=dologin" method="post">
                 <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <div class="aparicioMagica">
                     <a href="index.php?r=">
                         <img src="../img/LogoConsellComarcalAmbLletra.jpg" alt="Logo" class="h-100 w-100 block m-auto">
                     </a>
@@ -43,6 +44,7 @@
                         <a class="no-underline border-b border-blue text-blue" href="index.php?r=registre">
                             Registrat!
                         </a>.
+                    </div>
                     </div>
                     <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
                 </div>

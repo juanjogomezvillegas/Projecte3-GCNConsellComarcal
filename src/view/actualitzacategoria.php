@@ -28,7 +28,7 @@ require '../src/includes/nav_admin.php';
                     </div>
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
-                            <button type="submit" class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-300 focus:bg-red text-white rounded-lg px-3 py-3 font-semibold">CREA CATEGORIA</button>
+                            <button type="submit" class="block w-full max-w-xs mx-auto bg-red-500 hover:bg-red-300 focus:bg-red text-white rounded-lg px-3 py-3 font-semibold">ACTUALITZAR CATEGORIA</button>
                         </div>
                     </div>
                     </form>
