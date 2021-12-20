@@ -74,9 +74,6 @@
     <!-- mobile menu -->
     <div class="hidden mobile-menu">
         <ul class="">
-            <li>
-                <hr class="border-t mx-2 border-gray-400">
-            </li>
             <?php if ($logat) { ?>
                 <li>
                     <p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
