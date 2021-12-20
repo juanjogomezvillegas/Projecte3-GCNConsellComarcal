@@ -26,6 +26,8 @@ I posant la barra d'adreces del navegador (http://{IP_del_servidor}:8080).
 
 Nota: "IP_del_servidor" s'ha de canviar per la IP del servidor on heu clonat el repositori.
 
+---
+
 # Domini
 
 Per accedir a l'aplicació fent servir un domini, s'ha d'executar l'script addhost.sh.
@@ -40,6 +42,8 @@ Nota: El primer parametre correspon al domini que usarem per accedir a l'aplicac
 Per accedir a l'aplicació via web usarem l'adreça "https://www.gcnaltemporda.cat/".
 
 Nota: www.gcnaltemporda.cat s'ha de canviar per el domini real.
+
+---
 
 # Dades
 
