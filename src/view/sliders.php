@@ -4,7 +4,7 @@
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php require '../src/includes/head.php'; ?>
-    <title>Document</title>
+    <title>Gestió d'Slaider | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">

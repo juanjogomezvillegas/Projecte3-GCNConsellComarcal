@@ -4,7 +4,7 @@
 <head>
   <!-- Incluguem el fitxer head que contindrà totes  -->
   <?php require '../src/includes/head.php'; ?>
-  <title>Actualitzar Article <?php echo $article["titol"]; ?></title>
+  <title>Actualitzar Slaider | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
