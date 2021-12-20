@@ -3,10 +3,11 @@
 /**
  * Middelware que gestiona l'aplicació
  *
- * @param petitcio $peticio
- * @param resposta $resposta
- * @param funcio $next  ha de ser el controlador
- * @param array $config  paràmetres de configuració de l'aplicació
+ * @param  petitcio $peticio
+ * @param  resposta $resposta
+ * @param  funcio   $next     ha de ser el controlador
+ * @param  array    $config   paràmetres de configuració
+ *                            de l'aplicació
  * @return result
  */
 function middleCentral($peticio, $resposta, $contenidor, $next)

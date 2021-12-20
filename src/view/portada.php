@@ -3,15 +3,15 @@
 <head>
 
     <!-- Incluguem el fitxer head que contindrà totes  -->
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>GCN Consell Comarcal</title>
 </head>
 <body class="bg-gray-300">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav.php';
+    require '../src/includes/nav.php';
     ?>
     <div class="swiper-container">
    <!-- Additional required wrapper -->
@@ -19,7 +19,7 @@
    <!-- Slider -->
       <!-- Slide1 -->
       <?php for ($i = 1; $i < 4; ++$i) { ?>
-      <div class="swiper-slide" style="background-image: url(img/slider/<?=$i?>.jpg)">
+      <div class="swiper-slide" style="background-image: url(img/slider/<?php echo $i?>.jpg)">
          <div class="slide-text">
             <h1>Consell Comarcal de l'Alt Empordà</h1>
             <p>Totes les Gestions en un Click.</p>
@@ -43,15 +43,15 @@
             <?php foreach ($articlesPortada as $actual) { ?>
                 <div class="articlesPortada mb-5 flex items-stretch flex-row md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
                     <div class="w-full md:w-1/3 grid place-items-center">
-                        <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                            <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
+                        <a href="index.php?r=article&id=<?php echo $actual["id"];?>">
+                            <img src="<?php echo $actual["imatge"];?>" alt="logo" class="rounded-xl" />
                         </a>
                     </div>
                     <div class="w-full md:w-2/3 space-y-2 p-3">
                     <?php if ($logat) { ?>
                         <div class="flex justify-end">
                             <div class="flex justify-end">
-                            <input type="hidden" name="idArticle" value="<?=$actual["id"];?>">
+                            <input type="hidden" name="idArticle" value="<?php echo $actual["id"];?>">
 
                             <?php $actiu = false; ?>
                             <?php foreach ($articlesFavoritsTots as $actual2) { ?>
@@ -67,18 +67,18 @@
                             </div>
                         </div>
                     <?php } ?>
-                        <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                            <h3 class="text-gray-900 md:text-3xl text-xl"><?= $actual["titol"]; ?></h3>
+                        <a href="index.php?r=article&id=<?php echo $actual["id"];?>">
+                            <h3 class="text-gray-900 md:text-3xl text-xl"><?php echo $actual["titol"]; ?></h3>
                             <p class="md:text-lg text-gray-700">
                                 <?php $contingut = strip_tags($actual["contingut"]); ?>
-                                <?= substr($contingut, 0, 100);?> ...
+                                <?php echo substr($contingut, 0, 100);?> ...
                             </p>
                             <br>
                             <p class="text-sm text-gray-500">
-                            Categoria <span class="font-normal text-gray-600 text-base"><?= $actual["categoria"]; ?></span>
+                            Categoria <span class="font-normal text-gray-600 text-base"><?php echo $actual["categoria"]; ?></span>
                             </p>
                             <p class="text-sm text-gray-500">
-                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
+                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?php echo $actual["dataEdicio"]; ?></span>
                             </p>
                         </a>
                     </div>
@@ -97,15 +97,15 @@
             <?php foreach ($articlesPortadaTramits as $actual) { ?>
                 <div class="articlesPortada mb-5 flex flex-row items-stretch md:sp-acex-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-gray-200">
                     <div class="w-full md:w-1/3 grid place-items-center">
-                        <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                            <img src="<?=$actual["imatge"];?>" alt="logo" class="rounded-xl" />
+                        <a href="index.php?r=article&id=<?php echo $actual["id"];?>">
+                            <img src="<?php echo $actual["imatge"];?>" alt="logo" class="rounded-xl" />
                         </a>
                     </div>
                     <div class="w-full md:w-2/3 space-y-2 p-3">
                     <?php if ($logat) { ?>
                         <div class="flex justify-end">
                             <div class="flex justify-end">
-                            <input type="hidden" name="idArticle" value="<?=$actual["id"];?>">
+                            <input type="hidden" name="idArticle" value="<?php echo $actual["id"];?>">
 
                             <?php $actiu = false; ?>
                             <?php foreach ($articlesFavoritsTots as $actual2) { ?>
@@ -121,15 +121,15 @@
                             </div>
                         </div>
                     <?php } ?>
-                        <a href="index.php?r=article&id=<?=$actual["id"];?>">
-                            <h3 class="text-gray-900 md:text-3xl text-xl"><?= $actual["titol"]; ?></h3>
+                        <a href="index.php?r=article&id=<?php echo $actual["id"];?>">
+                            <h3 class="text-gray-900 md:text-3xl text-xl"><?php echo $actual["titol"]; ?></h3>
                             <p class="md:text-lg text-gray-700">
                                 <?php $contingut = strip_tags($actual["contingut"]); ?>
-                                <?= substr($contingut, 0, 100);?> ...
+                                <?php echo substr($contingut, 0, 100);?> ...
                             </p>
                             <br>
                             <p class="text-sm text-gray-500">
-                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?= $actual["dataEdicio"]; ?></span>
+                            Ultima Edició el <span class="font-normal text-gray-600 text-base"><?php echo $actual["dataEdicio"]; ?></span>
                             </p>
                         </a>
                     </div>
@@ -143,9 +143,9 @@
     <?php } ?>
     <br>
 <footer>
-<?php include '../src/includes/footer.php';?>
+<?php require '../src/includes/footer.php';?>
 </footer>
-<?php include '../src/includes/scripts.php';?>
+<?php require '../src/includes/scripts.php';?>
 <script src="script/favorits.js"></script>
 </body>
 </html>

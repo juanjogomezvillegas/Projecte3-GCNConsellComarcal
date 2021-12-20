@@ -1,23 +1,23 @@
 <?php
 
 /**
-    * Exemple de MVC per a M07 Desenvolupament d'aplicacions web en entorn de servidor.
-    * Ruter a partir d'un parametre d'entrada.
-    * @author: Dani Prados dprados@cendrassos.net
-    *
-    * Ruter que escull quin controlador s'ha d'executar
-    *
-**/
+ * Exemple de MVC per a M07 Desenvolupament d'aplicacions web en entorn de servidor.
+ * Ruter a partir d'un parametre d'entrada.
+ *
+ * @author: Dani Prados dprados@cendrassos.net
+ *
+ * Ruter que escull quin controlador s'ha d'executar
+ **/
 
 namespace Emeset\Ruters;
 
 /**
-    * Ruter: objecte que enruta a la petició al controlador adequat.
-    * @author: Dani Prados dprados@cendrassos.net
-    *
-    * Permet definir les rutes dels controladors
-    *
-**/
+ * Ruter: objecte que enruta a la petició al controlador adequat.
+ *
+ * @author: Dani Prados dprados@cendrassos.net
+ *
+ * Permet definir les rutes dels controladors
+ **/
 class RuterParam
 {
     public $rutes = [];
@@ -32,9 +32,9 @@ class RuterParam
     /**
      * Defineix el controlador i el middleware d'una ruta.
      *
-     * @param string $id
-     * @param function $callback
-     * @param function $midelware
+     * @param  string   $id
+     * @param  function $callback
+     * @param  function $midelware
      * @return void
      */
     public function ruta($id, $callback, $midelware = false)
@@ -45,8 +45,8 @@ class RuterParam
     /**
      * executa el controlador vinculat a la ruta definida
      *
-     * @param Emeset/HTTP/Peticio $peticio
-     * @param Emeset/HTTP/Resposta $resposta
+     * @param  Emeset/HTTP/Peticio  $peticio
+     * @param  Emeset/HTTP/Resposta $resposta
      * @return Emeset/HTTP/Resposta
      */
     public function executa($peticio, $resposta)

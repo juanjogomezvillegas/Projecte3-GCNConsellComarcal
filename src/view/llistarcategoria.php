@@ -3,16 +3,16 @@
 
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Gestió de Categories | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
     <div class="container w-full mx-auto pt-20">
         <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
@@ -59,27 +59,27 @@
                                 <?php foreach ($dadescategoria as $actual) { ?>
                                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                            <?= $actual['id']; ?>
+                                            <?php echo $actual['id']; ?>
                                         </td>
                                         <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                            <?= $actual['nom']; ?>
+                                            <?php echo $actual['nom']; ?>
                                         </td>
                                         <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                <?= $actual['creador']; ?>
+                                                <?php echo $actual['creador']; ?>
                                             </td>
                                         <?php } ?>
                                         <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                            <?= $actual['data_creacio']; ?>
+                                            <?php echo $actual['data_creacio']; ?>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
-                                                <a href="index.php?r=historialCategoriaConcreta&id=<?= $actual['id']; ?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
+                                                <a href="index.php?r=historialCategoriaConcreta&id=<?php echo $actual['id']; ?>" class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-history"></i></a>
                                             <?php } ?>
-                                            <a href="index.php?r=actualitzacategoria&id=<?= $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
+                                            <a href="index.php?r=actualitzacategoria&id=<?php echo $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
                                             <span class="esborrarMissatge text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">
                                                 <i class="fas fa-trash-alt"></i>
-                                                <input hidden type="hidden" name="idEsborrar" value="<?= $actual['id']; ?>" />
+                                                <input hidden type="hidden" name="idEsborrar" value="<?php echo $actual['id']; ?>" />
                                             </span>
                                         </td>
                                     </tr>
@@ -109,7 +109,7 @@
     </div>
 </div>
 </div>
-<?php include '../src/includes/scripts.php'; ?>
+<?php require '../src/includes/scripts.php'; ?>
 <script type="text/javascript" src="script/esborrarMissatgeConfirmacio.js"></script>
 
 </html>

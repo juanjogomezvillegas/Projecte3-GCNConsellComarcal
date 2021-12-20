@@ -2,15 +2,15 @@
 <html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-   <?php include '../src/includes/head.php';?>
+   <?php require '../src/includes/head.php';?>
     <title>Gestió de Missatges | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
@@ -41,24 +41,24 @@
                       <?php foreach ($dadescontacte as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                 <?= $actual['id'];?>
+                                 <?php echo $actual['id'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= substr($actual['missatge'], 0, 5); ?> ...
+                                 <?php echo substr($actual['missatge'], 0, 5); ?> ...
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['creador'];?>
+                                 <?php echo $actual['creador'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['data_enviament'];?>
+                                 <?php echo $actual['data_enviament'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <span class="contentMsg text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">
-                              <input type="hidden" name="id" value="<?= $actual["id"]; ?>">
-                              <input type="hidden" name="contingut" value="<?= $actual["missatge"]; ?>">
+                              <input type="hidden" name="id" value="<?php echo $actual["id"]; ?>">
+                              <input type="hidden" name="contingut" value="<?php echo $actual["missatge"]; ?>">
                               <i class="fas fa-info-circle"></i>
                             </span>
-                            <a href="index.php?r=esborrarmissatge&id=<?= $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
+                            <a href="index.php?r=esborrarmissatge&id=<?php echo $actual['id'];?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                         </td>
                         </tr>
                       <?php } ?>
@@ -93,6 +93,6 @@
     </div>
   </div>
 </div>
-<?php include '../src/includes/scripts.php';?>
+<?php require '../src/includes/scripts.php';?>
 <script src="script/contingutMissatge.js"></script>
 </html>

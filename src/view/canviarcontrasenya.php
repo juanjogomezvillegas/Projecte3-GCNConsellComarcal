@@ -2,15 +2,15 @@
 <html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-   <?php include '../src/includes/head.php';?>
+   <?php require '../src/includes/head.php';?>
     <title>Canviar la Contrasenya | GCN Consell Comarcal</title>
 </head>
 <body class="bg-gray-300 font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav.php';
+    require '../src/includes/nav.php';
     ?>
 <div class="flex items-center justify-center px-5 py-5 mt-5">
     <div class="bg-white text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
@@ -21,8 +21,8 @@
                 </div>
                 <div>
                     <form action="index.php?r=docanvicontrasenya" method="post">
-                    <input type="hidden" name="username" value="<?=$dadesUsuari["username"];?>">
-                    <input type="hidden" name="id" value="<?=$dadesUsuari["id"];?>">
+                    <input type="hidden" name="username" value="<?php echo $dadesUsuari["username"];?>">
+                    <input type="hidden" name="id" value="<?php echo $dadesUsuari["id"];?>">
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
                             <div class="flex">
@@ -59,8 +59,8 @@
     </div>
 </div>
 <footer>
-    <?php include '../src/includes/footer.php';?>
+    <?php require '../src/includes/footer.php';?>
 </footer>
 </body>
-<?php include '../src/includes/scripts.php';?>
+<?php require '../src/includes/scripts.php';?>
 </html>

@@ -2,16 +2,16 @@
 <html lang="ca">
 
 <head>
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Iniciar Sessió | GCN Consell Comarcal</title>
     <?php
-    include '../src/includes/recaptcha.php';
+    require '../src/includes/recaptcha.php';
     ?>
     </head>
 
 <body class="bg-red-500">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <div class="bg-grey-lighter min-h-screen flex flex-col">
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 text-center">
@@ -20,7 +20,7 @@
                     <a href="index.php?r=">
                         <img src="../img/LogoConsellComarcalAmbLletra.jpg" alt="Logo" class="h-100 w-100 block m-auto">
                     </a>
-                    <input type="text" value="<?= $usuarilogat; ?>" class="block border border-grey-light w-full p-3 rounded mb-4" name="inputusuari" placeholder="Nom d'usuari" />
+                    <input type="text" value="<?php echo $usuarilogat; ?>" class="block border border-grey-light w-full p-3 rounded mb-4" name="inputusuari" placeholder="Nom d'usuari" />
                     <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="inputpassword" placeholder="Contrasenya" />
 
                     <?php if (!empty($error)) { ?>
@@ -49,7 +49,7 @@
             </form>
         </div>
     </div>
-    <?php include '../src/includes/scripts.php'; ?>
+    <?php require '../src/includes/scripts.php'; ?>
 </body>
 
 </html>

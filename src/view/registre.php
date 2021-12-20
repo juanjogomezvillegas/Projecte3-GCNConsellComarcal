@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Registre | GCN Consell Comarcal</title>
 </head>
 <body class="bg-red-500">

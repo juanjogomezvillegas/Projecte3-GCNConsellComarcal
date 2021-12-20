@@ -293,9 +293,10 @@ class ArticlesPDO extends ModelPDO
         return $arrayPredefinit;
     }
       /**
-     * delete: esborra un article amb l'id especificat per parametre de la base de dades
-     * @param id id de l'article a borrar
-     **/
+       * delete: esborra un article amb l'id especificat per parametre de la base de dades
+       *
+       * @param id id de l'article a borrar
+       **/
     public function delete($id)
     {
         $taula2 = $this->taula;
@@ -333,15 +334,16 @@ class ArticlesPDO extends ModelPDO
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
      /**
-     * update: modificara els dades d'usuari registrat a la base de dades
-     * @param id id de l'usuari a modificar
-     * @param nom nom de l'usuari
-     * @param cognom cognom de l'usuari
-     * @param username nom que fara servir l'usuari per fer login
-     * @param rol rol de l'usuari
-     * @param email correu electronic de l'usuari
-     * @param telefon telefon de l'usuari
-     **/
+      * update: modificara els dades d'usuari registrat a la base de dades
+      *
+      * @param id id de l'usuari a modificar
+      * @param nom nom de l'usuari
+      * @param cognom cognom de l'usuari
+      * @param username nom que fara servir l'usuari per fer login
+      * @param rol rol de l'usuari
+      * @param email correu electronic de l'usuari
+      * @param telefon telefon de l'usuari
+      **/
     public function update($id, $titol, $contingut, $publicat, $categoria, $creador)
     {
         $query = "update article set titol = :titol, contingut = :contingut,publicat = :publicat,id_categoria = :categoria where id = :id;";
@@ -407,6 +409,7 @@ class ArticlesPDO extends ModelPDO
 
     /**
      * update: modificara els dades d'usuari registrat a la base de dades
+     *
      * @param id id de l'usuari a modificar
      * @param nom nom de l'usuari
      * @param cognom cognom de l'usuari

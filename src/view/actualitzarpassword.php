@@ -2,13 +2,13 @@
 <html lang="ca">
 
 <head>
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Canviar la Contrasenya | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-gray-300 bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
     <div class="min-w-screen min-h-screen flex items-center justify-center px-5 py-5 mt-20">
         <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">

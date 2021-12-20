@@ -2,15 +2,15 @@
 <html lang="ca">
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-   <?php include '../src/includes/head.php';?>
+   <?php require '../src/includes/head.php';?>
     <title>Historial de Categories | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
@@ -38,18 +38,18 @@
     <?php foreach ($historialComplet as $actual) { ?>
                          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                 <?= $actual['nom'];?>
+                                 <?php echo $actual['nom'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['creador'];?>
+                                 <?php echo $actual['creador'];?>
                             </td>
                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                 <?= $actual['data_edicio'];?>
+                                 <?php echo $actual['data_edicio'];?>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <form action="index.php?r=doactualitzacategoria&id=<?= $actual['id_categoria'];?>" method="POST">
-                                    <input type="hidden" name="nom" value="<?= $actual['nom'];?>">
-                                    <input type="hidden" name="nomAntic" value="<?= $actual['nomAntic'];?>">
+                                <form action="index.php?r=doactualitzacategoria&id=<?php echo $actual['id_categoria'];?>" method="POST">
+                                    <input type="hidden" name="nom" value="<?php echo $actual['nom'];?>">
+                                    <input type="hidden" name="nomAntic" value="<?php echo $actual['nomAntic'];?>">
                                     <button type="submit"><span class="text-pink-600 hover:text-pink-900 dark:text-pink-500 dark:hover:underline"><i class="fas fa-exchange-alt"></i></span></button>
                                 </form>
                             </td>
@@ -63,5 +63,5 @@
 </div>
 </div>
 </body>
-<?php include '../src/includes/scripts.php';?>
+<?php require '../src/includes/scripts.php';?>
 </html>

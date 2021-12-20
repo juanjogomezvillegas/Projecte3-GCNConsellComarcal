@@ -26,8 +26,8 @@ class UsuarisPDO extends ModelPDO
         return $usuaris;
     }
      /**
-     * gettotalregistres: Mostra el numero total de usuaris
-     **/
+      * gettotalregistres: Mostra el numero total de usuaris
+      **/
 
     public function gettotalregistres()
     {
@@ -38,6 +38,7 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * islogin: Comrpova si un usuari i un password especificats per parametre existeixen a la base de dades
+     *
      * @param usuari usuari logat
      * @param password password logat
      **/
@@ -61,6 +62,7 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * get: Consulta les dades d'un usuari registrat amb l'id especificat per parametre a la base de dades
+     *
      * @param nom nom de l'usuari a consultar
      **/
     public function get($nom)
@@ -82,6 +84,7 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * add: afegira un usuari a la base de dades
+     *
      * @param nom nom de l'usuari
      * @param cognom cognom de l'usuari
      * @param username nom que fara servir l'usuari per fer login
@@ -109,6 +112,7 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * delete: esborrara un usuari amb l'id especificat per parametre de la base de dades
+     *
      * @param id id de l'usuari a borrar
      **/
     public function delete($id)
@@ -134,6 +138,7 @@ class UsuarisPDO extends ModelPDO
 
     /**
      * update: modificara els dades d'usuari registrat a la base de dades
+     *
      * @param id id de l'usuari a modificar
      * @param nom nom de l'usuari
      * @param cognom cognom de l'usuari

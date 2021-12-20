@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-<?php include '../src/includes/head.php'; ?>
-<title>Actualitzar Categoria <?= $dadescategoria["nom"] ?> | GCN Consell Comarcal</title>
+<?php require '../src/includes/head.php'; ?>
+<title>Actualitzar Categoria <?php echo $dadescategoria["nom"] ?> | GCN Consell Comarcal</title>
 </head>
 <body class="bg-black font-sans leading-normal tracking-normal">
 <?php
-include '../src/includes/nav_admin.php';
+require '../src/includes/nav_admin.php';
 ?>
 <div class="min-w-screen min-h-screen flex items-center justify-center px-5 py-5 mt-20">
     <div class="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
@@ -17,12 +17,12 @@ include '../src/includes/nav_admin.php';
                 </div>
                 <div>
                     <form action="index.php?r=doactualitzacategoria" method="POST">
-                        <input type="hidden" name="nomAntic" value="<?=$dadescategoria["nom"];?>">
+                        <input type="hidden" name="nomAntic" value="<?php echo $dadescategoria["nom"];?>">
                     <div class="flex -mx-3">
                         <div class="w-full px-3 mb-5">
                             <div class="flex">
                                 <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                <input type="text" name="nom" value="<?=$dadescategoria["nom"];?>" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500" placeholder="Nom Categoria">
+                                <input type="text" name="nom" value="<?php echo $dadescategoria["nom"];?>" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-red-500" placeholder="Nom Categoria">
                             </div>
                         </div>
                     </div>

@@ -14,13 +14,13 @@ function ctrlDoContacte($peticio, $resposta, $contenidor)
 
     $usuarilogat = trim(filter_var($usuarilogat2, FILTER_SANITIZE_STRING));
     $nom = trim(filter_var($nom2, FILTER_SANITIZE_STRING));
-    $email = trim(filter_var($email2, FILTER_SANITIZE_STRING, FILTER_VALIDATE_EMAIL));
+    $email = trim(filter_var($email2, FILTER_SANITIZE_STRING, FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL));
     $telefon = trim(filter_var($telefon2, FILTER_SANITIZE_STRING));
     $missatge = trim(filter_var($missatge2, FILTER_SANITIZE_STRING));
 
-    $recaptcha = $contactePDO -> validacionRecaptcha($recaptcha_response);
+    $recaptcha = $contactePDO->validacionRecaptcha($recaptcha_response);
 
-    if ($recaptcha->score >= 0.0) {
+    if ($recaptcha->score >= 0.7) {
         $dadesUsuari = $usuarisPDO->get($usuarilogat);
 
         $contactePDO->add($nom, $email, $telefon, $missatge, $dadesUsuari["id"]);
@@ -29,8 +29,6 @@ function ctrlDoContacte($peticio, $resposta, $contenidor)
     } else {
         $resposta->redirect("Location:index.php?r=contacte&error=1");
     }
-
-
 
     return $resposta;
 }

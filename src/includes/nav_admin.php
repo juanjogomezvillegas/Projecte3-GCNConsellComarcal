@@ -13,11 +13,11 @@
                             <div class="hidden md:flex items-center space-x-3 mr-8">
                                 <div class="relative text-sm text-gray-100">
                                     <button id="userButton" class="flex items-center focus:outline-none mr-3">
-                                    <img src="<?=$dadesUsuariLogat["imatge"]?>" class="w-10" alt="user">
+                                    <img src="<?php echo $dadesUsuariLogat["imatge"]?>" class="w-10" alt="user">
                                     </button>
                                     <div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                                         <ul class="list-reset">
-                                            <li><p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?=$usuarilogat;?></p></li>
+                                            <li><p class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Has Iniciat Sessió amb l'usuari <?php echo $usuarilogat;?></p></li>
                                             <li><a href="index.php?r=perfilusuari" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">El Meu Perfil</a></li>
                                             <li><a href="index.php?r=articlespreferitsusuari" class="px-4 py-2 block text-gray-100 hover:bg-gray-800 no-underline hover:no-underline">Els Meus Articles</a></li>
                                             <li><hr class="border-t mx-2 border-gray-400"></li>

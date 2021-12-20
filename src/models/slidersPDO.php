@@ -16,8 +16,8 @@ class SlidersPDO extends ModelPDO
     private $taula = "slider";
 
       /**
-     * getllistat: Mostra tots els sliders que hi ha
-     **/
+       * getllistat: Mostra tots els sliders que hi ha
+       **/
     public function getllistat()
     {
         $sliders = parent::llistat($this->taula);
@@ -27,6 +27,7 @@ class SlidersPDO extends ModelPDO
 
     /**
      * get: Consulta les dades d'un usuari registrat amb l'id especificat per parametre a la base de dades
+     *
      * @param nom nom de l'usuari a consultar
      **/
     public function get($nom)

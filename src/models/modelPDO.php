@@ -17,6 +17,7 @@ class ModelPDO
 
     /**
      * __construct: S'encarrega de establir la connexió amb la base de dades
+     *
      * @param connexio conte l'objecte que es connecta a la base de dades
      **/
     public function __construct($connexio)
@@ -30,9 +31,10 @@ class ModelPDO
      * **/
 
     /**
-      * llistat: Mostra tots els registres de la taula especificada per parametre
-      * @param taula taula que volem consultar
-      **/
+     * llistat: Mostra tots els registres de la taula especificada per parametre
+     *
+     * @param taula taula que volem consultar
+     **/
     public function llistat($taula)
     {
         $query = "select * from $taula;";

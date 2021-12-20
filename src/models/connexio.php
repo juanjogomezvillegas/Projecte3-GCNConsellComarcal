@@ -17,6 +17,7 @@ class Connexio
 
     /**
      * __construct: S'encarrega de establir la connexió amb la base de dades
+     *
      * @param config conte les dades necessaries per connectar-se amb la base de dades
      **/
     public function __construct($config)
@@ -33,6 +34,7 @@ class Connexio
     }
     /**
      * getConnexio: S'encarrega de retorna la connexio a la base de dades
+     *
      * @return sql la connexio a la base de dades
      **/
     public function getConnexio()

@@ -3,16 +3,16 @@
 
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Panell d'Administració | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
 <div class="container w-full mx-auto pt-20">
 <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal">
@@ -20,7 +20,7 @@
     <div class="flex flex-row mr-10 p-3">
         <label for="tempsRefresc" class="mr-5 text-2xl text-gray-300"><i class="fas fa-sync"></i></label>
         <div class="mt-1 relative rounded-md shadow-sm">
-            <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?=$tempsresfresc;?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
+            <input type="text" name="tempsRefresc" id="tempsRefresc" value="<?php echo $tempsresfresc;?>" class="focus:ring-indigo-500 focus:border-indigo-500 bg-gray-900 block w-20 pl-5 pr-5 text-2xl text-gray-300 border-gray-300 rounded-md">
         </div>
     </div>
 </div>
@@ -35,7 +35,7 @@
                                 </div>
                                 <div id="countUsuaris" class="flex-1 text-right md:text-center">
                                     <h5 class="font-bold uppercase text-gray-100">Usuaris</h5>
-                                    <h3 class="font-bold text-3xl text-gray-300"><?= $totalusers["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
+                                    <h3 class="font-bold text-3xl text-gray-300"><?php echo $totalusers["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                                 </div>
                                 <div id="countUsuaris" class="flex-1 text-right md:text-center">
                                     <h5 class="font-bold uppercase text-gray-100">Usuaris</h5>
-                                    <h3 class="font-bold text-3xl text-gray-300"><?= $totalusers["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
+                                    <h3 class="font-bold text-3xl text-gray-300"><?php echo $totalusers["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                             </div>
                             <div id="countArticles" class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-100">Articles</h5>
-                                <h3 class="font-bold text-3xl text-gray-300"><?= $totalarticle["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-gray-300"><?php echo $totalarticle["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <div id="countCategories" class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-100">Categories</h5>
-                                <h3 class="font-bold text-3xl text-gray-300"><?= $totalcategories["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-gray-300"><?php echo $totalcategories["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                             </div>
                             <div id="countMissatges" class="flex-1 text-right md:text-center">
                                 <h5 class="font-bold uppercase text-gray-100">Missatges</h5>
-                                <h3 class="font-bold text-3xl text-gray-300"><?= $totalcontactes["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
+                                <h3 class="font-bold text-3xl text-gray-300"><?php echo $totalcontactes["total"]; ?> <span class="text-pink-600"><i class="fas fa-equals"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
         </div>
     </div>
 </body>
-<?php include '../src/includes/scripts.php'; ?>
+<?php require '../src/includes/scripts.php'; ?>
 <script src="script/admin.js"></script>
 
 </html>

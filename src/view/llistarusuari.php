@@ -3,16 +3,16 @@
 
 <head>
     <!-- Incluguem el fitxer head que contindrà totes  -->
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Gestió d'Usuaris | GCN Consell Comarcal</title>
 </head>
 
 <body class="bg-black font-sans leading-normal tracking-normal">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav_admin.php';
+    require '../src/includes/nav_admin.php';
     ?>
     <div class="container w-full mx-auto pt-20">
         <div class="w-full px-4 md:px-0 md-8 mt-20 mb-16 text-gray-800 leading-normal text-center">
@@ -59,31 +59,31 @@
                             <?php foreach ($dadesusuari as $actual) { ?>
                                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                        <?= $actual['id']; ?>
+                                        <?php echo $actual['id']; ?>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <?= $actual['nom']; ?>
+                                        <?php echo $actual['nom']; ?>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <?= $actual['cognom']; ?>
+                                        <?php echo $actual['cognom']; ?>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <?= $actual['username']; ?>
+                                        <?php echo $actual['username']; ?>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <?= $actual['rol']; ?>
+                                        <?php echo $actual['rol']; ?>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <a href="mailto:<?= $actual['email']; ?>"><?= $actual['email']; ?></a>
+                                        <a href="mailto:<?php echo $actual['email']; ?>"><?php echo $actual['email']; ?></a>
                                     </td>
                                     <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                        <a href="tel:<?= $actual['telefon']; ?>"><?= $actual['telefon']; ?></a>
+                                        <a href="tel:<?php echo $actual['telefon']; ?>"><?php echo $actual['telefon']; ?></a>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                        <a href="index.php?r=actualitzarusuari&id=<?= $actual['username']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
+                                        <a href="index.php?r=actualitzarusuari&id=<?php echo $actual['username']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline"><i class="fas fa-edit"></i></a>
                                         <span class="esborrarMissatge text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">
                                             <i class="fas fa-trash-alt"></i>
-                                        <input hidden type="hidden" name="idEsborrar" value="<?= $actual['id']; ?>" />
+                                        <input hidden type="hidden" name="idEsborrar" value="<?php echo $actual['id']; ?>" />
                                     </span>
                                     </td>
                                 </tr>
@@ -113,7 +113,7 @@
     </div>
 </div>
 </div>
-<?php include '../src/includes/scripts.php'; ?>
+<?php require '../src/includes/scripts.php'; ?>
 <script type="text/javascript" src="script/esborrarMissatgeConfirmacio.js"></script>
 
 </html>

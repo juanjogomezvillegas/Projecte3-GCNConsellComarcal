@@ -3,18 +3,18 @@
 <head>
 
     <!-- Incluguem el fitxer head que contindrà totes  -->
-    <?php include '../src/includes/head.php'; ?>
+    <?php require '../src/includes/head.php'; ?>
     <title>Contacte | GCN Consell Comarcal</title>
     <?php
-    include '../src/includes/recaptcha.php';
+    require '../src/includes/recaptcha.php';
     ?>
 </head>
 <body class="bg-red-800">
     <?php
-    include '../src/includes/preloader.php';
+    require '../src/includes/preloader.php';
     ?>
     <?php
-    include '../src/includes/nav.php';
+    require '../src/includes/nav.php';
     ?>
          
  <div id="containerContacte" class="flex justify-center h-screen mx-auto text-center">
@@ -24,7 +24,7 @@
       <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded relative mb-4 success-missatge hidden" role="alert">
   <?php if ($logat) { ?>
     <strong class="font-bold">El seu missatge s'ha enviat correctament:</strong>
-    <span class="block sm:inline">Rebrás una resposta el més ràpid possible a l'adreça <?= $dadesUsuari["email"] ?></span>
+    <span class="block sm:inline">Rebrás una resposta el més ràpid possible a l'adreça <?php echo $dadesUsuari["email"] ?></span>
   <?php } else { ?>
     <strong class="font-bold">El seu missatge s'ha enviat correctament:</strong>
     <span class="block sm:inline">Rebrás una resposta el més ràpid possible a l'adreça de Correu Indicada</span>
@@ -46,21 +46,21 @@
       <div class="dadesContacte rounded overflow-hidden shadow-lg bg-gray-200">
                     <div class="px-6 py-4">
                             <p class="text-gray-700 text-base">
-                            <span class="negreta">Nom i Cognom:</span><br> <?= $dadesUsuari["nom"] ?> <?= $dadesUsuari["cognom"] ?>
+                            <span class="negreta">Nom i Cognom:</span><br> <?php echo $dadesUsuari["nom"] ?> <?php echo $dadesUsuari["cognom"] ?>
                             </p>
                             <br>
                             <p class="text-gray-700 text-base">
-                            <span class="negreta">Correu Electrònic:</span><br> <?= $dadesUsuari["email"] ?>
+                            <span class="negreta">Correu Electrònic:</span><br> <?php echo $dadesUsuari["email"] ?>
                             </p>
                             <br>
                             <p class="text-gray-700 text-base">
-                            <span class="negreta">Numero de Telèfon:</span><br> <?= $dadesUsuari["telefon"] ?>
+                            <span class="negreta">Numero de Telèfon:</span><br> <?php echo $dadesUsuari["telefon"] ?>
                             </p>
                     </div>
           </div>
-        <input name="nom" type="hidden" placeholder="Nom" value="<?= $dadesUsuari["nom"] ?> <?= $dadesUsuari["cognom"] ?>">
-        <input name="email" type="hidden" placeholder="Correu electronic" value="<?= $dadesUsuari["email"] ?>">
-        <input name="telefon" type="hidden" placeholder="Numero de telefon" value="<?= $dadesUsuari["telefon"] ?>">
+        <input name="nom" type="hidden" placeholder="Nom" value="<?php echo $dadesUsuari["nom"] ?> <?php echo $dadesUsuari["cognom"] ?>">
+        <input name="email" type="hidden" placeholder="Correu electronic" value="<?php echo $dadesUsuari["email"] ?>">
+        <input name="telefon" type="hidden" placeholder="Numero de telefon" value="<?php echo $dadesUsuari["telefon"] ?>">
   <?php } ?>
       <div class="p-3">
         <textarea name="missatge" class="dadesContacte text-center bg-gray-200 resize-none border rounded-md block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300 h-56" placeholder="Missatge (Motiu per que contactes)" required></textarea>
@@ -90,9 +90,9 @@
   <br>
   <br>
 <footer>
-<?php include '../src/includes/footer.php';?>
+<?php require '../src/includes/footer.php';?>
 </footer>
-<?php include '../src/includes/scripts.php';?>
+<?php require '../src/includes/scripts.php';?>
 
 </body>
 </html>

@@ -81,11 +81,11 @@
           e.preventDefault();
 
           $.ajax({
-            type: 'post',
+            type: 'POST',
             url: 'index.php?r=docontacte',
             data: $('#contacte').serialize(),
             success: function () {
-			$(".success-missatge").removeClass( 'hidden' );
+			$(".success-missatge").removeClass('hidden');
 			$('#contacte').trigger("reset");
             }
 			});
