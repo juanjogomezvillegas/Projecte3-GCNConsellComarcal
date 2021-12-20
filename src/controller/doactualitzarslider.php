@@ -12,9 +12,14 @@ function ctrlDoActualitzarSlider($peticio, $resposta, $contenidor)
     print_r($idslider);
 
     if (isset($imatgeslider["name"]) && ($imatgeslider["type"] === "image/png" || $imatgeslider["type"] === "image/jpeg")) {
-        $slidersPDO->updateImage($idslider, $imatgeslider["name"]);
+        if($imatgeslider["type"] === "image/png"){
+            $nomficher = $idslider2.".png";
+        }else{
+            $nomficher = $idslider2.".jpg";
+        }
+        $slidersPDO->updateImage($idslider, $nomficher);
 
-        move_uploaded_file($imatgeslider["tmp_name"], "img/slider/" . $imatgeslider["name"]);
+        move_uploaded_file($imatgeslider["tmp_name"], "img/slider/" . $nomficher);
     }
 
     $resposta->redirect("Location:index.php?r=sliders");
