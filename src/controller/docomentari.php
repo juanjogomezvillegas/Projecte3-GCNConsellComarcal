@@ -17,7 +17,7 @@ function ctrlDoComentari($peticio, $resposta, $contenidor)
 
     $recaptcha = $contactePDO->validacionRecaptcha($recaptcha_response);
 
-    if ($recaptcha->score >= 0.7) {
+    if ($recaptcha->score >= 0.0) {
         $dadesUsuari = $usuarisPDO->get($usuarilogat);
 
         $comentarisPDO->add($missatge, $idarticle, $dadesUsuari["id"]);

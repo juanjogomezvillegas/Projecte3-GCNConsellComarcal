@@ -4,11 +4,13 @@ function ctrlDoEliminarComentari($peticio, $resposta, $contenidor)
 {
     $comentarisPDO = $contenidor->comentarisPDO();
 
-    $idarticle2 = $peticio->get(INPUT_GET, "idarticle");
+    $idComentari2 = $peticio->get(INPUT_GET, "id");
+    $idarticle2 = $peticio->get(INPUT_GET, "idArticle");
 
+    $idComentari = trim(filter_var($idComentari2, FILTER_SANITIZE_NUMBER_INT));
     $idarticle = trim(filter_var($idarticle2, FILTER_SANITIZE_NUMBER_INT));
 
-    $comentarisPDO->delete($idarticle);
+    $comentarisPDO->delete($idComentari);
 
     $resposta->redirect("Location:index.php?r=article&id=$idarticle");
 

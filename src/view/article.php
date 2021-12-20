@@ -59,7 +59,7 @@
 </div>
 
 <br>
-
+<h1 class="font-bold font-sans break-normal text-gray-900 pt-6 pb-2 text-3xl md:text-4xl">Comentaris</h1>
 <?php if ($logat) { ?>
     <form class="flex mb-3" action="index.php?r=docomentari" method="POST">
         <input type="hidden" name="idarticle" value="<?= $informacioArticle["id"]; ?>">
@@ -71,24 +71,30 @@
     </form>
 <?php } ?>
 <ul role="list" class="border border-gray-300 rounded-md divide-y divide-gray-200">
-    <?php foreach ($llistatComentarisArticle as $actual) { ?>
-        <li class="documentPdf border border-gray-300 bg-gray-100 pl-3 pr-4 py-3 flex items-center justify-between text-sm">
-            <div class="w-0 flex-1 flex items-center">
-                <span class="ml-2 flex-1 w-0 truncate">
-                    <?= $actual["missatge"]; ?>
-                </span>
-                <div class="w-1/4 text-wrap text-center flex flex-col text-white text-bold rounded-md bg-red-500 justify-center items-center mr-10 p-2">
-                    <?= $actual["nomUsuari"]; ?>
-                    <br>
-                    <?= $actual["data_enviament"]; ?>
+    <?php if (count($llistatComentarisArticle) > 0) { ?>
+        <?php foreach ($llistatComentarisArticle as $actual) { ?>
+            <li class="documentPdf border border-gray-300 bg-gray-100 pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+                <div class="w-0 flex-1 flex items-center">
+                    <span class="ml-2 flex-1 w-0 truncate">
+                        <?= $actual["missatge"]; ?>
+                    </span>
+                    <div class="w-1/4 text-wrap text-center flex flex-col text-white text-bold rounded-md bg-red-500 justify-center items-center mr-10 p-2">
+                        <?= $actual["nomUsuari"]; ?>
+                        <br>
+                        <?= $actual["data_enviament"]; ?>
+                    </div>
+                    <?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $$dadesUsuariLogat["rol"] === "Gestor")) { ?>
+                    <a href="index.php?r=doeliminarcomentari&id=<?= $actual["id"]; ?>&idArticle=<?= $informacioArticle["id"]; ?>"><span class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">
+                        <i class="fas fa-trash-alt"></i>
+                    </span></a>
+                    <?php } ?>
                 </div>
-                <?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $$dadesUsuariLogat["rol"] === "Gestor")) { ?>
-                <a href="index.php?r=doeliminarcomentari&id=<?= $llistatComentarisArticle["id"]; ?>$&idArticle=<?= $informacioArticle["id"]; ?>"><span class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">
-                    <i class="fas fa-trash-alt"></i>
-                </span></a>
-                <?php } ?>
-            </div>
-        </li>
+            </li>
+        <?php } ?>
+    <?php } else { ?>
+        <div class="bg-red-100 border-red-500 text-red-700 p-4" role="alert">
+            <p class="text-xl text-center"><i class="fas fa-info-circle"></i> En Aquest Moment no hi han Comentaris.</p>
+        </div>
     <?php } ?>
 </ul>
 
