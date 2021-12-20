@@ -26,7 +26,7 @@
                 <div class="hidden md:flex items-center space-x-3">
                     <div class="relative text-sm text-gray-100">
                         <button id="userButton" class="flex items-center focus:outline-none mr-3">
-                            <img src="<?php echo $dadesUsuariLogat["imatge"]?>" alt="user" class="w-10">
+                            <img src="<?php echo $dadesUsuariLogat["imatge"]?>" alt="user" class="w-10 rounded-3xl">
                         </button>
                         <div id="userMenu" class="bg-red-600 rounded shadow-md mt-2 w-60 absolute mt-12 top-0 right-0 min-w-full overflow-auto z-30 invisible">
                             <ul class="list-reset">
