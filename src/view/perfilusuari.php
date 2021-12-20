@@ -17,7 +17,7 @@
 <div>
         <div>
                 <div class="flex w-full h-full relative mt-10">
-                    <img src="<?php echo $dadesUsuari["imatge"];?>" class="w-44 h-44 m-auto" alt="">
+                    <img src="<?php echo $dadesUsuari["imatge"];?>" class="w-44 h-44 m-auto rounded-3xl" alt="">
                 </div>
         </div>
         <div class="text-center">
@@ -26,9 +26,10 @@
             <div id="dropzone" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix una imatge</span>
-                  <input type="file" name="imatgeusuari" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
+                  <input type="file" name="imatgeusuari" class="block w-full text-sm text-gray-100 mr-4 border-0 font-semibold">
                 </label>
             </div>
+            <div>
                 <button type="submit" class="bg-red-600 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                     <i class="fas fa-camera" aria-hidden="true"></i>
                     <span class="ml-1">Canviar Imatge</span>
