@@ -31,3 +31,4 @@ require_once "../src/models/articlesPDO.php";
 require_once "../src/models/categoriesPDO.php";
 require_once "../src/models/contactePDO.php";
 require_once "../src/models/slidersPDO.php";
+require_once "../src/models/comentarisPDO.php";

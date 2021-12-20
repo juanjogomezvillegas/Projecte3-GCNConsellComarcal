@@ -15,6 +15,9 @@
     <?php
     require '../src/includes/nav.php';
     ?>
+    <?php
+    require '../src/includes/recaptcha.php';
+    ?>
     <!--Container-->
     <div class="container w-full md:max-w-3xl mx-auto pt-20">
 
@@ -42,7 +45,7 @@
                             <div class="w-0 flex-1 flex items-center">
                                 <span class="flex-shrink-0 h-5 w-5 text-red-700 text-2xl"><i class="fas fa-file-pdf"></i></span>
                                 <span class="ml-2 flex-1 w-0 truncate">
-                                    <?php echo $actual["enllac"]; ?>
+                                    <?= $actual["enllac"]; ?>
                                 </span>
                             </div>
                         </li>
@@ -54,6 +57,40 @@
 <div class="text-base md:text-sm text-gray-500 px-4 py-6">
     Categoria: <?php echo $informacioArticle["categoria"]; ?>
 </div>
+
+<br>
+
+<?php if ($logat) { ?>
+    <form class="flex mb-3" action="index.php?r=docomentari" method="POST">
+        <input type="hidden" name="idarticle" value="<?= $informacioArticle["id"]; ?>">
+        <textarea name="missatge" class="flex-1 text-center documentPdf resize-none ntPdf border border-gray-300 bg-gray-100 pl-3 pr-4 py-3 flex items-center justify-between text-sm" placeholder="Escriu Aquí el teu Comentari"></textarea>
+        <button type='submit' class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded text-2xl">
+            Comentar <span class="text-2xl"><i class="fas fa-comments"></i></span>
+        </button>
+        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+    </form>
+<?php } ?>
+<ul role="list" class="border border-gray-300 rounded-md divide-y divide-gray-200">
+    <?php foreach ($llistatComentarisArticle as $actual) { ?>
+        <li class="documentPdf border border-gray-300 bg-gray-100 pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+            <div class="w-0 flex-1 flex items-center">
+                <span class="ml-2 flex-1 w-0 truncate">
+                    <?= $actual["missatge"]; ?>
+                </span>
+                <div class="w-1/4 text-wrap text-center flex flex-col text-white text-bold rounded-md bg-red-500 justify-center items-center mr-10 p-2">
+                    <?= $actual["nomUsuari"]; ?>
+                    <br>
+                    <?= $actual["data_enviament"]; ?>
+                </div>
+                <?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $$dadesUsuariLogat["rol"] === "Gestor")) { ?>
+                <a href="index.php?r=doeliminarcomentari&id=<?= $llistatComentarisArticle["id"]; ?>$&idArticle=<?= $informacioArticle["id"]; ?>"><span class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline">
+                    <i class="fas fa-trash-alt"></i>
+                </span></a>
+                <?php } ?>
+            </div>
+        </li>
+    <?php } ?>
+</ul>
 
 <hr>
 
