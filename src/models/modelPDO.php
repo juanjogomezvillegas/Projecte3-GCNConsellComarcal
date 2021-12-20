@@ -92,4 +92,21 @@ class ModelPDO
 
         return $recaptcha;
     }
+    public function llistarFitxersCarpeta($carpeta)
+    {
+    $rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($carpeta));
+
+    $files = array();
+
+    foreach ($rii as $file) {
+
+        if ($file->isDir()) {
+            continue;
+        }
+
+        $files[] = $file->getPathname();
+        sort($files);
+    }
+    return $files;
+}
 }

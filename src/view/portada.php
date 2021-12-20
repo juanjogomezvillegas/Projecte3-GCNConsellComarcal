@@ -18,8 +18,9 @@
    <div class="swiper-wrapper">
    <!-- Slider -->
       <!-- Slide1 -->
-      <?php for ($i = 1; $i < 4; ++$i) { ?>
-      <div class="swiper-slide" style="background-image: url(img/slider/<?php echo $i?>.jpg)">
+      <?php foreach ($imatgeCarpeta as $actual) { ?>
+        
+      <div class="swiper-slide" style="background-image: url(<?= $actual ?>)">
          <div class="slide-text">
             <h1>Consell Comarcal de l'Alt Empordà</h1>
             <p>Totes les Gestions en un Click.</p>
