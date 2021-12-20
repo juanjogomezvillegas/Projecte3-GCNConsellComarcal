@@ -27,9 +27,6 @@
                                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                                 #
                                             </th>
-                                            <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                                Nom
-                                            </th>
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                                                 <th scope="col" class="text-center text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                                     imatge
@@ -44,9 +41,6 @@
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                                                 <?= $actual['id']; ?>
-                                            </td>
-                                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                <?= $actual['nom']; ?>
                                             </td>
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                                                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
