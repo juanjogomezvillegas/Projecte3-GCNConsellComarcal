@@ -62,6 +62,7 @@
                 </div>
             <?php } ?>
 
+<<<<<<< HEAD
             <!-- Mobile menu button -->
             <div class="md:hidden flex items-center">
                 <button class="outline-none mobile-menu-button">
@@ -103,4 +104,48 @@
     </div>
     <script src="script/traductor.js"></script>
     <script src="script/mobilnav.js"></script>
+=======
+			<!-- Mobile menu button -->
+			<div class="md:hidden flex items-center">
+				<button class="outline-none mobile-menu-button">
+					<svg class=" w-6 h-6 text-white hover:text-white" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+						<path d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- mobile menu -->
+	<div class="hidden mobile-menu">
+		<ul class="">
+			<?php if ($logat) { ?>
+				<li>
+					<p class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Has Iniciat Sessió amb l'usuari <?= $usuarilogat; ?></p>
+				</li>
+				<li><a href="index.php?r=perfilusuari" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">El Meu Perfil</a></li>
+				<li><a href="index.php?r=articlespreferitsusuari" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Els Meus Articles</a></li>
+				<li><a href="index.php?r=logout" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Surt de la sessió</a></li>
+			<?php } else { ?>
+				<li><a href="index.php?r=login" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Inicia Sessió</a></li>
+				<li><a href="index.php?r=registre" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Registrat</a></li>
+			<?php } ?>
+			<li>
+				<hr class="border-t mx-2 border-gray-400">
+			</li>
+			<li><a href="index.php?r=mostrarArticles" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Articles</a></li>
+			<li><a href="index.php?r=mostrarTramits" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Tramits</a></li>
+			<li><a href="index.php?r=contacte" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Contacte</a></li>
+			<?php if ($logat && ($dadesUsuariLogat["rol"] === "Administrador" || $dadesUsuariLogat["rol"] === "Gestor")) { ?>
+				<li><a href="index.php?r=admin" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Administració del Lloc</a></li>
+			<?php } ?>
+			<li><a href="https://www.altemporda.org/portal/" class="block text-sm px-2 py-4 text-white hover:bg-red-400 transition duration-500">Consell comarcal</a></li>
+		</ul>
+	</div>
+	<script>
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement({pageLanguage: 'ca'}, 'google_translate_element');
+		  }
+	</script>
+	<script src="script/mobilnav.js"></script>
+>>>>>>> feature-Nginx
 </nav>
