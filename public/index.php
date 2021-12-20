@@ -66,6 +66,8 @@ require_once "../src/controller/llistarmissatges.php";
 require_once "../src/controller/esborrarmissatge.php";
 require_once "../src/controller/mostrarArticles.php";
 require_once "../src/controller/mostrarTramits.php";
+require_once "../src/controller/docomentari.php";
+require_once "../src/controller/doeliminarcomentari.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -84,6 +86,8 @@ $app->ruta("mostrarTramits", "ctrlMostrarTramits", ["middleCentral"]);
 $app->ruta("contacte", "ctrlContacte", ["middleCentral"]);
 $app->ruta("article", "ctrlArticle", ["middleCentral"]);
 $app->ruta("articlespreferitsusuari", "ctrlArticlespreferitsusuari", ["middleCentral", "middleLogat"]);
+$app->ruta("docomentari", "ctrlDoComentari", ["middleCentral", "middleLogat"]);
+$app->ruta("doeliminarcomentari", "ctrlDoEliminarComentari", ["middleCentral", "middleLogat"]);
 
 /*Iniciar i Tancar la Sessió a la aplicació*/
 $app->ruta("login", "ctrlLogin", ["middleCentral"]);

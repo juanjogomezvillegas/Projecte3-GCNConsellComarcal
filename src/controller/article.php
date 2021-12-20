@@ -3,6 +3,8 @@
 function ctrlArticle($peticio, $resposta, $contenidor)
 {
     $articlesPDO = $contenidor->articlesPDO();
+    $comentarisPDO = $contenidor->comentarisPDO();
+    $usuarisPDO = $contenidor->UsuarisPDO();
 
     $idarticle2 = $peticio->get(INPUT_GET, "id");
 
@@ -24,12 +26,15 @@ function ctrlArticle($peticio, $resposta, $contenidor)
 
     $nomanteriorArticle = $anteriorArticle['titol'];
 
+    $llistatComentarisArticle = $comentarisPDO->getllistatPublic($idarticle);
+
     $resposta->set('idseguentArticle', $idseguentArticle);
     $resposta->set('nomseguentArticle', $nomseguentArticle);
     $resposta->set('idanteriorArticle', $idanteriorArticle);
     $resposta->set('nomanteriorArticle', $nomanteriorArticle);
     $resposta->set('informacioArticle', $informacioArticle);
     $resposta->set('documentsArticle', $documentsArticle);
+    $resposta->set('llistatComentarisArticle', $llistatComentarisArticle);
 
     $resposta->SetTemplate("article.php");
 

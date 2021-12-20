@@ -79,4 +79,8 @@ class Contenidor
     {
         return new \SlidersPDO($this->connexio);
     }
+    public function comentarisPDO()
+    {
+        return new \ComentarisPDO($this->connexio);
+    }
 }

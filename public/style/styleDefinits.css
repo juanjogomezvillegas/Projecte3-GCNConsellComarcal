@@ -190,10 +190,10 @@ div#dropzone {
     font-weight: 600 !important;
     font-size: 15px !important;
 }
-li.documentPdf {
+.documentPdf {
     transition: background-color 0.3s;
 }
-li.documentPdf:hover {
+.documentPdf:hover {
     background-color: rgb(254 226 226) !important;
     transition: background-color 0.3s;
 }
