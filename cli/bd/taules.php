@@ -96,9 +96,8 @@ $connexio->query(
 $connexio->query(
     "CREATE TABLE slider (
     id BIGINT AUTO_INCREMENT,
+    imatge VARCHAR(200) DEFAULT 'img/slider/1.jpg',
     nom VARCHAR(200),
-    imatge VARCHAR(200),
-    posicio INT(3), 
     PRIMARY KEY (id)
 );"
 );

@@ -28,13 +28,13 @@ class SlidersPDO extends ModelPDO
      *
      * @param nom nom de l'usuari a consultar
      **/
-    public function get($nom)
+    public function get($id)
     {
         $taula2 = $this->taula;
 
-        $query = "select * from $taula2 where username = :id;";
+        $query = "select * from $taula2 where id = :id;";
         $stm = $this->sql->prepare($query);
-        $result = $stm->execute([':id' => $nom]);
+        $result = $stm->execute([':id' => $id]);
 
         if ($stm->errorCode() !== '00000') {
             $err = $stm->errorInfo();
@@ -68,9 +68,25 @@ class SlidersPDO extends ModelPDO
     {
         $taula2 = $this->taula;
 
-        $query = "insert into $taula2 (nom,imatge,posicio) VALUES ('asdf','asdf','2');";
+        $query = "insert into $taula2 (nom) values ('imatge Slider');";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute();
+
+        return $stm->fetch(\PDO::FETCH_ASSOC);
+    }
+    public function updateImage($id, $imatge)
+    {
+        $taula2 = $this->taula;
+
+        $query = "update $taula2 set imatge = concat('img/slider/', :imatgeSlider) where id = :id;";
+        $stm = $this->sql->prepare($query);
+        $result = $stm->execute([':id' => $id, ':imatgeSlider' => $imatge]);
+
+        if ($stm->errorCode() !== '00000') {
+            $err = $stm->errorInfo();
+            $code = $stm->errorCode();
+            die("Error.   {$err[0]} - {$err[1]}\n{$err[2]} $query");
+        }
 
         return $stm->fetch(\PDO::FETCH_ASSOC);
     }
