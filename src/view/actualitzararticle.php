@@ -36,15 +36,16 @@
 
             <textarea id="editor-article" name="contingut"> <?php echo $article['contingut']; ?> </textarea>
           </div>
-
+          
           <input type="hidden" name="idarticle" value="<?php echo $article['id']; ?>" >
           <input type="hidden" name="idusuari" value="<?php echo $article['id_usuari']; ?>" >
+          <div class="text-center m-auto bg-red-500 rounded mt-5">
           <div class="bg-red-500 text-white font-bold py-2 px-4 rounded inline-block items-center mt-5">
-            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-              <input type="checkbox" name="publicat" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" <?php echo $article['publicat'] == 1 ? 'checked' : '';?> />
-              <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+            <div class="mt-5 relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+              <label for="toggle" class="text-s mt-10 text-gray-50">Publicar</label>
+              <input type="checkbox" name="publicat" id="toggle" class="mt-3 toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" <?php echo $article['publicat'] == 1 ? 'checked' : '';?> />
+              <label for="toggle" class="mt-3 toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
             </div>
-            <label for="toggle" class="text-s mt-2 text-gray-50">Publicar</label>
         </div>
               <div class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5 ">
               <label class="block text-center">
@@ -60,26 +61,28 @@
             </select>
           </label>
               </div>
-              <br>
               <div id="dropzone" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix una imatge</span>
-                  <input type="file" name="imatgearticle" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
+                  <input type="file" name="imatgearticle" class="block w-full text-sm text-gray-100 mr-4 border-0 font-semibold">
                 </label>
               </div>
-              <br>
               <div id="dropzone" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
                 <label class="block">
                   <span>Afageix els Documents de l'Article</span>
-                  <input type="file" name="documents[]" id="documents[]" multiple="" class="block w-full text-sm text-gray-100 mr-4 rounded-full border-0 font-semibold">
+                  <input type="file" name="documents[]" id="documents[]" multiple="" class="block w-full text-sm text-gray-100 mr-4 border-0 font-semibold">
                 </label>
               </div>
-              <br>
-              <button id="guardar" class="bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5">
-            <i class="fa fa-save" aria-hidden="true"></i>
-            <span class="ml-1">Guardar Canvis</span>
-          </button>
+          <div class="text-center">
+              <button type="submit" id="crear" class="text-center w-full bg-red-500 hover:bg-red-300 text-white font-bold py-2 px-4 rounded inline-flex items-center mt-5 mr-16">
+                  <div class="text-center m-auto">
+                    <i class="fas fa-file-medical" aria-hidden="true"></i>
+                    <span>Guardar Canvis</span>
+                  </div>
+              </button>
+              </div>
             </div>
+          </div>
           </div>
           </form>
     </div>
