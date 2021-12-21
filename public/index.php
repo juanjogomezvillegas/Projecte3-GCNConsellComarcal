@@ -68,6 +68,7 @@ require_once "../src/controller/mostrarArticles.php";
 require_once "../src/controller/mostrarTramits.php";
 require_once "../src/controller/docomentari.php";
 require_once "../src/controller/doeliminarcomentari.php";
+require_once "../src/controller/error.php";
 /*Afegim els middleware necessaris*/
 require_once "../src/middleware/middleCentral.php";
 require_once "../src/middleware/middleLogat.php";
@@ -142,5 +143,7 @@ $app->ruta("docontacte", "ctrlDoContacte", ["middleCentral"]);
 $app->ruta("afegirFavorits", "ctrlAfegirFavorits", ["middleCentral", "middleLogat"]);
 $app->ruta("esborrarFavorits", "ctrlEsborrarFavorits", ["middleCentral", "middleLogat"]);
 $app->ruta("consultarFavorits", "ctrlConsultarFavorits", ["middleCentral", "middleLogat"]);
+/*Controlador d'Error*/
+$app->ruta("error", "ctrlError", ["middleCentral"]);
 
 $app->executa();

@@ -10,33 +10,39 @@ function ctrlArticle($peticio, $resposta, $contenidor)
 
     $idarticle = filter_var($idarticle2, FILTER_SANITIZE_NUMBER_INT);
 
-    $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
+    $articleExists = $articlesPDO->show($idarticle);
 
-    $documentsArticle = $articlesPDO->getDocumentsArticle($idarticle);
+    if (isset($articleExists["id"])) {
+        $informacioArticle = $articlesPDO->getInfoArticle($idarticle);
 
-    $seguentArticle = $articlesPDO->obtenirSeguentArticle($idarticle);
+        $documentsArticle = $articlesPDO->getDocumentsArticle($idarticle);
 
-    $idseguentArticle = $seguentArticle['id'];
+        $seguentArticle = $articlesPDO->obtenirSeguentArticle($idarticle);
 
-    $nomseguentArticle = $seguentArticle['titol'];
+        $idseguentArticle = $seguentArticle['id'];
 
-    $anteriorArticle = $articlesPDO->obtenirAnteriorArticle($idarticle);
+        $nomseguentArticle = $seguentArticle['titol'];
 
-    $idanteriorArticle = $anteriorArticle['id'];
+        $anteriorArticle = $articlesPDO->obtenirAnteriorArticle($idarticle);
 
-    $nomanteriorArticle = $anteriorArticle['titol'];
+        $idanteriorArticle = $anteriorArticle['id'];
 
-    $llistatComentarisArticle = $comentarisPDO->getllistatPublic($idarticle);
+        $nomanteriorArticle = $anteriorArticle['titol'];
 
-    $resposta->set('idseguentArticle', $idseguentArticle);
-    $resposta->set('nomseguentArticle', $nomseguentArticle);
-    $resposta->set('idanteriorArticle', $idanteriorArticle);
-    $resposta->set('nomanteriorArticle', $nomanteriorArticle);
-    $resposta->set('informacioArticle', $informacioArticle);
-    $resposta->set('documentsArticle', $documentsArticle);
-    $resposta->set('llistatComentarisArticle', $llistatComentarisArticle);
+        $llistatComentarisArticle = $comentarisPDO->getllistatPublic($idarticle);
 
-    $resposta->SetTemplate("article.php");
+        $resposta->set('idseguentArticle', $idseguentArticle);
+        $resposta->set('nomseguentArticle', $nomseguentArticle);
+        $resposta->set('idanteriorArticle', $idanteriorArticle);
+        $resposta->set('nomanteriorArticle', $nomanteriorArticle);
+        $resposta->set('informacioArticle', $informacioArticle);
+        $resposta->set('documentsArticle', $documentsArticle);
+        $resposta->set('llistatComentarisArticle', $llistatComentarisArticle);
+
+        $resposta->SetTemplate("article.php");
+    } else {
+        $resposta->redirect("Location:index.php?r=error");
+    }
 
     return $resposta;
 }
