@@ -19,15 +19,13 @@ function ctrlPortada($peticio, $resposta, $contenidor)
 
     $imatgeCarpeta = array_diff(scandir("img/slider"), array('..', '.'));
 
-    print_r($imatgeCarpeta);
-
     $resposta->set("imatgeCarpeta", $imatgeCarpeta);
     $resposta->set("articlesPortada", $articlesPortada);
     $resposta->set("articlesPortadaTramits", $articlesPortadaTramits);
     $resposta->set("articlesFavoritsTots", $articlesFavoritsTots);
     $resposta->set("dadesUsuari", $dadesUsuari);
 
-    //$resposta->SetTemplate("portada.php");
+    $resposta->SetTemplate("portada.php");
 
     return $resposta;
 }
