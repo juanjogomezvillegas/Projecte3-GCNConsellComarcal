@@ -451,14 +451,8 @@ div#dropzone {
 .btn:focus {
     outline: 0;
 }
-.sufo tox-notifications-container {
-    display: none;
-}
 @media screen and (min-width: 768px) {
     .mobile-menu{
         display:none;
     }
-}
-.tox{
-    display: none;
 }
