@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <?php if ($logat) { ?>
-                            <div class="w-full inline-flex justify-center">
+                            <div class="ml-52 mr-10 w-full inline-flex justify-center">
                                 <div class="w-full mb-6 lg:mb-0 lg:w-1/2">
                                     <h2 class="font-bold text-gray-100 mb-4">
                                         Articles Favorits</h2>
