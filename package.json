@@ -1,0 +1,23 @@
+{
+  "name": "projecte3-gcnconsellcomarcal",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanjogomezvillegas/Projecte3-GCNConsellComarcal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanjogomezvillegas/Projecte3-GCNConsellComarcal/issues"
+  },
+  "homepage": "https://github.com/juanjogomezvillegas/Projecte3-GCNConsellComarcal#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "tailwindcss": "^2.2.19"
+  }
+}
