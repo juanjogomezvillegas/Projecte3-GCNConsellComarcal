@@ -30,11 +30,9 @@
                                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                                 Nom
                                             </th>
-                                            <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
-                                                <th scope="col" class="text-center text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
-                                                    imatge
-                                                </th>
-                                            <?php } ?>
+                                            <th scope="col" class="text-center text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
+                                                imatge
+                                            </th>
                                             <th scope="col" class="text-xs font-medium text-gray-700 px-6 py-3 text-left uppercase tracking-wider dark:text-gray-400">
                                             Accions
                                             </th>
@@ -52,11 +50,9 @@
                                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
                                                 <?php echo $actual['nom']; ?>
                                             </td>
-                                            <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
-                                                <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                    <img src="<?php echo $actual['imatge']; ?>" alt="<?php echo $actual['imatge']; ?>" class="w-44 h-32">
-                                                </td>
-                                            <?php } ?>  
+                                            <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
+                                                <img src="<?php echo $actual['imatge']; ?>" alt="<?php echo $actual['imatge']; ?>" class="w-44 h-32">
+                                            </td>
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                                 <a href="index.php?r=actualizarslider&id=<?php echo $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline mr-5"><i class="fas fa-edit"></i></a>
                                                 <a href="index.php?r=esborrarslider&id=<?php echo $actual['id']; ?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>

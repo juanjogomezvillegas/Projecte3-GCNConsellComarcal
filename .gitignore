@@ -4,3 +4,4 @@ yarn-error.log
 logs
 *.log
 jspm_packages/
+public/documents/*.pdf

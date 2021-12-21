@@ -84,7 +84,6 @@
 
   </div>
           <?php require '../src/includes/scripts.php'; ?>
-          <?php require '../src/includes/tinyMCE.php'; ?>
 </body>
 
 </html>
