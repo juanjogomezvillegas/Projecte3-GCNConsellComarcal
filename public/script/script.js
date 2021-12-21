@@ -56,9 +56,9 @@
 		plugins: [
 		  'advlist autolink lists link image charmap print preview anchor',
 		  'searchreplace visualblocks code fullscreen',
-		  'insertdatetime media table paste code help wordcount emotions'
+		  'insertdatetime media table paste code help wordcount'
 		],
-		toolbar: 'emotions fullscreen preview | undo redo | formatselect | ' +
+		toolbar: ' fullscreen preview | undo redo | formatselect | ' +
 		'bold italic backcolor visualblocks | alignleft aligncenter ' +
 		'alignright alignjustify | table link | bullist numlist outdent indent | ' +
 		'removeformat | code print wordcount charmap searchreplace insertdatetime anchor help',

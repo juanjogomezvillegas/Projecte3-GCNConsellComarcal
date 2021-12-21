@@ -37,10 +37,12 @@ class ComentarisPDO extends ModelPDO
      **/
     public function getllistatPublic($id)
     {
-        $query = "select ca.*, (select concat(nom, ' ', cognom) from usuari where id = ca.id_usuari) as nomUsuari
+        $query = "select ca.*, (select concat(nom, ' ', cognom) from usuari where id = ca.id_usuari) as nomUsuari, 
+        (select imatge from usuari where id = ca.id_usuari) as imatge, 
+        (select rol from usuari where id = ca.id_usuari) as rol
         from comentaris_article ca
         where id_article = :idarticle
-        order by ca.data_enviament desc;";
+        order by ca.data_enviament asc;";
         $stm = $this->sql->prepare($query);
         $result = $stm->execute([':idarticle' => $id]);
 

@@ -1,5 +1,3 @@
-<script src="https://cdn.tiny.cloud/1/75zckrmqvmmyxzmaububidy3iwcldrjhcxqg7cvozicap90t/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-<script type="text/javascript" src="script/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript" src="script/jquery.js" ></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.6/js/swiper.js"></script>
