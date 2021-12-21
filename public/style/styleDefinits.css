@@ -5,11 +5,11 @@ Carregador de la nostra pagina
 */
 
 .aparicioMagica {
-    transform: translateY(-10em);
+    transform: translateY(-50em) scale(0);
     opacity: 0;
 }
 .aparicioContingut {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
     transition: transform 1.5s, opacity 1s;
 }
@@ -206,6 +206,21 @@ div#dropzone {
 .documentPdf:hover {
     background-color: rgb(254 226 226) !important;
     transition: background-color 0.3s;
+}
+
+.swiper-container-article {
+    padding: 0;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width: 768px) {
+    .swiper-container-article {
+        height: 200px;
+    }
 }
 
 /*Responsive Slider */

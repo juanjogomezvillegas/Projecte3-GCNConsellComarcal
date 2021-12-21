@@ -3,7 +3,7 @@
                 
             <div class="flex w-1/2 pl-2 md:pl-0">
       <a href="index.php?r=admin" class="flex items-center py-4 px-2">
-                                <img src="../img/logoNavbar-blanc.png" alt="Logo" class="h-16 w-12 ml-2">
+                                <img src="../img/logoNavbar-blanc.png" alt="Logo" class="logonavbar h-16 w-12 ml-2">
                 <a class="mt-10 text-gray-100 text-base xl:text-xl no-underline hover:no-underline font-bold"  href="index.php?r=admin">Panell d'administració</a>
          </div>
             <div class="w-1/2 pr-0">

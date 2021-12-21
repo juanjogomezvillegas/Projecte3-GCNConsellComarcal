@@ -18,8 +18,21 @@
     <?php
     require '../src/includes/recaptcha.php';
     ?>
+
+<div class="swiper-container-article">
+   <!-- Additional required wrapper -->
+   <div class="swiper-wrapper">
+   <!-- Slider -->
+     
+   <div class="swiper-slide" style="background-image: url(<?php echo $informacioArticle["imatge"]; ?>)">
+      </div>
+
+   </div>
+
+</div>
+
     <!--Container-->
-    <div class="container w-full md:max-w-3xl mx-auto pt-20">
+    <div class="container w-full md:max-w-7xl mx-auto pt-20">
 
         <div class="w-full px-4 md:px-6 text-xl text-gray-800 leading-normal" style="font-family:Georgia,serif;">
 

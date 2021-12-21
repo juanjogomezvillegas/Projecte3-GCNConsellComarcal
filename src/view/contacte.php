@@ -9,7 +9,7 @@
     require '../src/includes/recaptcha.php';
     ?>
 </head>
-<body class="bg-red-800">
+<body class="bg-red-500">
     <?php
     require '../src/includes/preloader.php';
     ?>
@@ -33,13 +33,13 @@
   </span>
   <?php if (!$logat) { ?>
       </div>
-        <input name="nom" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Nom i Cognom" required>
+        <input name="nom" class="dadesContacte rounded overflow-hidden shadow-lg bg-gray-200 text-gray-700 text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Nom i Cognom" required>
       </div>
       <div class="p-3">
-        <input name="email" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Correu Electrònic" required>
+        <input name="email" class="dadesContacte rounded overflow-hidden shadow-lg bg-gray-200 text-gray-700 text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="email" placeholder="Correu Electrònic" required>
       </div>
       <div class="p-3">
-        <input name="telefon" class="text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Numero de Telèfon" required>
+        <input name="telefon" class="dadesContacte rounded overflow-hidden shadow-lg bg-gray-200 text-gray-700 text-center block appearance-none placeholder-gray-500 placeholder-opacity-100 border border-light-blue-400 rounded-md w-full py-3 px-4 text-gray-700 leading-5 focus:outline-none focus:ring-2 focus:ring-light-blue-300" type="text" placeholder="Numero de Telèfon" required>
       </div>
   <?php } else { ?>
       </div>
@@ -79,7 +79,7 @@
       <?php }  ?>
       </div>
       <div class="p-3 pt-4">
-      <button  type='submit' class="w-full bg-gray-700 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded text-2xl">
+      <button  type='submit' class="dadesContacte w-full bg-red-600 hover:bg-green-dark focus:outline-none text-white text-center font-bold py-3 px-4 rounded text-2xl">
       Enviar
       </button>
       <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
