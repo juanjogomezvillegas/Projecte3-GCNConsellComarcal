@@ -17,7 +17,9 @@ function ctrlPortada($peticio, $resposta, $contenidor)
 
     $dadesUsuari = $usuarisPDO->get($usuarilogat);
 
-    $imatgeCarpeta = $articlesPDO -> llistarFitxersCarpeta("img/slider");
+    $imatgeCarpeta = array_diff(scandir("img/slider"), array('..', '.'));
+
+    print_r($imatgeCarpeta);
 
     $resposta->set("imatgeCarpeta", $imatgeCarpeta);
     $resposta->set("articlesPortada", $articlesPortada);
@@ -25,7 +27,7 @@ function ctrlPortada($peticio, $resposta, $contenidor)
     $resposta->set("articlesFavoritsTots", $articlesFavoritsTots);
     $resposta->set("dadesUsuari", $dadesUsuari);
 
-    $resposta->SetTemplate("portada.php");
+    //$resposta->SetTemplate("portada.php");
 
     return $resposta;
 }

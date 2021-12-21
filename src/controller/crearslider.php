@@ -4,7 +4,7 @@ function ctrlCrearslider($peticio, $resposta, $contenidor)
 {
     $slidersPDO = $contenidor->slidersPDO();
 
-    $slidersPDO -> add();
+    $slidersPDO->add();
 
     $resposta->redirect("Location:index.php?r=sliders");
 
