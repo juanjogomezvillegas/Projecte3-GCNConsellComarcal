@@ -17,7 +17,7 @@ function ctrlDoactualitzarusuari($peticio, $resposta, $contenidor)
     $tipususuari = trim(filter_var($tipususuari2, FILTER_SANITIZE_STRING));
     $nom = trim(filter_var($nom2, FILTER_SANITIZE_STRING));
     $cognom = trim(filter_var($cognom2, FILTER_SANITIZE_STRING));
-    $email = trim(filter_var($email2, FILTER_SANITIZE_STRING, FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL));
+    $email = trim(filter_var($email2, FILTER_SANITIZE_STRING));
     $telefon = trim(filter_var($telefon2, FILTER_SANITIZE_STRING));
 
     $verificar = $usuarisPDO -> update($id, $nom, $cognom, $usuari, $tipususuari, $email, $telefon);

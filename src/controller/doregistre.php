@@ -18,7 +18,7 @@ function ctrlDoRegistre($peticio, $resposta, $contenidor)
     $passwordConfirmar = trim(filter_var($passwordConfirmar2, FILTER_SANITIZE_STRING));
     $nomIntroduit = trim(filter_var($nomIntroduit2, FILTER_SANITIZE_STRING));
     $cognomIntroduit = trim(filter_var($cognomIntroduit2, FILTER_SANITIZE_STRING));
-    $emailIntroduit = trim(filter_var($emailIntroduit2, FILTER_SANITIZE_STRING, FILTER_SANITIZE_EMAIL, FILTER_VALIDATE_EMAIL));
+    $emailIntroduit = trim(filter_var($emailIntroduit2, FILTER_SANITIZE_STRING));
     $telefonIntroduit = trim(filter_var($telefonIntroduit2, FILTER_SANITIZE_STRING));
     $rolIntroduit = trim(filter_var($rolIntroduit2, FILTER_SANITIZE_STRING));
 
