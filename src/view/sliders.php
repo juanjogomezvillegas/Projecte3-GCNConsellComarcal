@@ -47,19 +47,19 @@
                                     
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-600">
                                             <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
-                                                <?= $contador; ?>
+                                                <?php echo $contador; ?>
                                             </td>
                                             <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                <?= $actual['nom']; ?>
+                                                <?php echo $actual['nom']; ?>
                                             </td>
                                             <?php if ($dadesUsuariLogat["rol"] === "Administrador") { ?>
                                                 <td class="text-sm text-gray-500 px-6 py-4 whitespace-nowrap dark:text-gray-400">
-                                                    <img src="<?= $actual['imatge']; ?>" alt="<?= $actual['imatge']; ?>" class="w-44 h-32">
+                                                    <img src="<?php echo $actual['imatge']; ?>" alt="<?php echo $actual['imatge']; ?>" class="w-44 h-32">
                                                 </td>
                                             <?php } ?>  
                                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <a href="index.php?r=actualizarslider&id=<?= $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline mr-5"><i class="fas fa-edit"></i></a>
-                                                <a href="index.php?r=esborrarslider&id=<?= $actual['id']; ?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="index.php?r=actualizarslider&id=<?php echo $actual['id']; ?>" class="text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline mr-5"><i class="fas fa-edit"></i></a>
+                                                <a href="index.php?r=esborrarslider&id=<?php echo $actual['id']; ?>" class="text-red-600 hover:text-red-900 dark:text-red-500 dark:hover:underline"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>

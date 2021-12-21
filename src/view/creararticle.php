@@ -52,7 +52,7 @@
             <select name="categoria" class="form-select block w-full mt-1 text-gray-900">
             <?php foreach ($dadescategoria as $actual) { ?>
             <option value="<?php echo $actual["id"]; ?>"><?php echo $actual['nom'];?></option>
-         <?php } ?>
+            <?php } ?>
             </select>
           </label>
               </div>

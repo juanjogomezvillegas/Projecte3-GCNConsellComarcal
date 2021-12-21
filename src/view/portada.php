@@ -19,7 +19,7 @@
    <!-- Slider -->
       <!-- Slide1 -->
       <?php if (count($imatgeCarpeta) > 0) { ?>
-      <?php foreach ($imatgeCarpeta as $actual) { ?>
+            <?php foreach ($imatgeCarpeta as $actual) { ?>
       <div class="swiper-slide" style="background-image: url(img/slider/<?php echo $actual ?>)">
          <div class="slide-text aparicioMagica">
             <h1>Consell Comarcal de l'Alt Empordà</h1>
@@ -27,7 +27,7 @@
             <a class="btn" href="index.php?r=contacte">Contacte</a>
          </div>
       </div>
-      <?php }?>
+            <?php }?>
       <?php } else { ?>
         <div class="swiper-slide" style="background-image: url(img/logo2.png)">
          <div class="slide-text aparicioMagica">

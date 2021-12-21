@@ -18,7 +18,7 @@
     ?>
          
  <div id="containerContacte" class="flex justify-center h-screen mx-auto text-center">
-    <form id=contacte class="w-full md:w-3/4 lg:w-3/6 p-4">
+    <form id="contacte" class="w-full md:w-3/4 lg:w-3/6 p-4">
       <div class="p-3">
       <h1 class="text-center text-white text-4xl mb-10">Contacte</h1>
       <div class="bg-green-100 border border-green-300 text-green-700 px-4 py-3 rounded relative mb-4 success-missatge hidden" role="alert">

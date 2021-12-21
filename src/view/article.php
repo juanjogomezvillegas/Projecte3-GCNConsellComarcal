@@ -97,12 +97,12 @@
                             <?php } ?>
                         </div>
                     </div>
-                <?php } ?>
-            <?php } else { ?>
+            <?php } ?>
+        <?php } else { ?>
                 <div class="bg-red-100 border-red-500 text-red-700 p-4" role="alert">
                     <p class="text-xl text-center"><i class="fas fa-info-circle"></i> En Aquest Moment no hi han Comentaris.</p>
                 </div>
-            <?php } ?>
+        <?php } ?>
             </ul>
             <?php if ($logat) { ?>
                 <form class="flex mb-3" action="index.php?r=docomentari" method="POST">
