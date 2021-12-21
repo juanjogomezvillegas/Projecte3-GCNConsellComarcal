@@ -5,7 +5,7 @@
 
     <!-- Incluguem el fitxer head que contindrà totes  -->
     <?php require '../src/includes/head.php'; ?>
-    <title><?php echo $informacioArticle["titol"] ?> | GCN Consell Comarcal</title>
+    <title>Error 404 | GCN Consell Comarcal</title>
 </head>
 
 <body>
