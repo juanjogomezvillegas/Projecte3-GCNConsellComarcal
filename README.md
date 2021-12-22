@@ -1,4 +1,4 @@
-# Projecte3-GCNConsellComarcal
+# Projecte3-GCNConsellComarcal Projecte fer per Juanjo,Moha i Alex
 
 Es pot comprovar com funciona executant.
 
