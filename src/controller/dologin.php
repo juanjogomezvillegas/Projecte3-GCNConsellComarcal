@@ -13,7 +13,7 @@ function ctrlDoLogin($peticio, $resposta, $contenidor)
 
     $recaptcha = $usuarisPDO->validacionRecaptcha($recaptcha_response);
 
-    if ($recaptcha->score >= 0.0) {
+    if ($recaptcha->score >= 0.7) {
         $resposta->setCookie("usuarilogat", $usuarilogat, strtotime("+1 month"));
 
         $passwordHash = $usuarisPDO -> obtenirHash($usuarilogat);
