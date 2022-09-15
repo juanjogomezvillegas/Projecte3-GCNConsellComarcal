@@ -1,5 +1,13 @@
 # Projecte3-GCNConsellComarcal
 
+# Autors
+
+- Juan José Gómez Villegas
+- Àlex Aguilera
+- Mohamed Bourarach
+
+# Desplegament de l'Aplicació
+
 Es pot comprovar com funciona executant.
 
 ```sh
@@ -75,9 +83,3 @@ I Executem l'script initPDO.php que es a la carpeta cli/ per crear les taules qu
 $ cd cli/
 $ php initPDO.php
 ```
-
-# Autors
-
-- Juan José Gómez Villegas
-- Àlex Aguilera
-- Mohamed Bourarach
